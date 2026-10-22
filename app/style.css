@@ -18,3 +18,49 @@ main{padding:0 clamp(20px,5vw,54px) 50px}.intro{padding:36px 0 23px}.intro.compa
 
 /* Consistent app icon system and refined interactive surfaces */
 .shortcut-symbol{color:#1b458f}.shortcut-symbol svg,.bottom-nav svg{display:block}.shortcut{transition:border-color .15s,background-color .15s,transform .15s}.shortcut:active{transform:scale(.985)}.bottom-nav button{min-height:49px;justify-content:center}.bottom-nav button span{display:grid;place-items:center;min-height:24px}.network-entry{background:#f7f9fd;border-left:3px solid #d4a746}.network-entry .primary{margin-top:8px}.days button{min-height:36px}.menu-line:active,.wish-line:active{background:#f5f8fc}
+
+/* Saints design refinement — mobile-first editorial layout */
+:root{--blue:#123a88;--navy:#122447;--gold:#cba24e;--ink:#1c2b44;--muted:#77839a;--line:#e7ebf2}
+body{background:#f1f3f7;-webkit-font-smoothing:antialiased}
+.app{box-shadow:0 0 65px #2030520a}
+.topbar{background:#fff;position:relative;z-index:3}
+.brand{gap:12px;letter-spacing:-.35px;line-height:1.1}
+.brand-icon{width:43px;height:46px;border:1.5px solid #d1ad60;border-radius:11px 11px 16px 16px;background:#153a87;color:#e5c16d;font:800 17px Manrope,sans-serif;letter-spacing:-1px;box-shadow:inset 0 0 0 3px #153a87,inset 0 0 0 4px #c9a650}
+.brand small{letter-spacing:1.1px;margin-top:5px}
+.demo{display:inline-flex;align-items:center;gap:7px;color:#5a6b86;background:#f5f7fa;border:1px solid #e7ebf2;letter-spacing:1px;font-size:9px}
+.demo-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#cba24e}
+.intro{padding:43px 0 28px}.intro h1{font-size:clamp(31px,4.4vw,43px);line-height:1.12;letter-spacing:-1.7px;margin:12px 0 9px}.intro p{font-size:14px;color:#79869b;line-height:1.65}
+.intro.compact{padding-top:22px;padding-bottom:18px}.intro.compact h1{font-size:clamp(29px,4vw,39px)}
+.family-strip{border-radius:14px;padding:17px 21px;margin-bottom:19px;background:#f8fafc;border-color:#e7edf5;box-shadow:none}
+.avatar{background:#e9eff9;color:#214b91;font-size:17px}
+.family-strip .eyebrow{font-size:9px}.family-strip strong{font-size:14px;margin:2px 0}
+.feature{min-height:238px;border-radius:19px;padding:33px 37px;background:linear-gradient(125deg,#153e8b 0%,#10295f 100%);box-shadow:0 14px 30px #122f6719}
+.feature h2{max-width:450px;line-height:1.16;margin-top:17px}
+.feature p{max-width:390px}.feature button{padding:13px 18px;border-radius:8px;box-shadow:0 4px 13px #091d3b17}
+.feature-mark{font-size:265px;right:15px;bottom:-88px;font-family:Georgia,serif}
+.heading{margin:38px 0 18px}.heading .eyebrow{color:#8291a8;font-size:9px}.heading h2{font-size:clamp(21px,3vw,25px);margin:8px 0}
+.shortcuts{gap:12px}.shortcut{min-height:157px;padding:21px;border-radius:15px;box-shadow:0 3px 14px #182a4907;border-color:#e5eaf1}.shortcut:hover{background:#f9fbff;border-color:#c7d5ed;box-shadow:0 6px 20px #1a366310}
+.shortcut-symbol{border-radius:10px;background:#edf2f9;width:40px;height:40px;margin-bottom:17px}
+.shortcut strong{font-size:14px;font-weight:800;letter-spacing:-.15px}.shortcut small{font-size:11px;line-height:1.5;color:#7c8aa0}
+.bulletin{margin:19px 0 0;padding:25px 27px;background:#f5f7fb;border:1px solid #e6ebf3;border-radius:17px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.bulletin h2{font:800 23px Manrope,sans-serif;letter-spacing:-.8px;margin:9px 0}.bulletin p{margin:0;color:#748198;font-size:12px;line-height:1.65;max-width:420px}
+.bulletin button{flex-shrink:0;border:1px solid #cfd9ea;background:#fff;color:#123a88;border-radius:9px;padding:12px 16px;font-weight:800;font-size:12px}
+.bulletin button span{font-size:15px;margin-left:7px}
+.surface{border-color:#e6ebf2;box-shadow:0 3px 15px #142b5206;padding:24px}
+.secondary{background:#f8faff;border-color:#dfe6f2}
+.primary{border-radius:9px;background:#153d8b}
+.product-card{border-radius:15px}.product-art{border-radius:10px}.network-hero{background:linear-gradient(120deg,#173c87,#102759);border-bottom-color:#d5ac56}
+.directory-placeholder{background:#fbfcfe}.directory-icon{width:52px;height:52px;background:#edf2f9;border-radius:14px;color:#153e8b;display:grid;place-items:center;margin-bottom:15px}
+.bottom-nav{padding-top:11px;box-shadow:0 -5px 20px #142a4a0b}.bottom-nav button{color:#8290a6;font-size:10px;gap:5px}.bottom-nav button.active{color:#153d8b}.bottom-nav button svg{stroke-width:1.8}
+button{touch-action:manipulation}
+@media(max-width:600px){
+.topbar{padding:12px 18px;height:73px}.brand{font-size:12px}.brand-icon{width:40px;height:43px;font-size:16px}.brand small{font-size:7px}.demo{font-size:8px}
+.intro{padding:30px 0 21px}.intro h1{font-size:32px}.intro p{font-size:13px}
+.family-strip{padding:13px;gap:11px}.family-strip small{font-size:10px}
+.feature{padding:27px 24px;min-height:236px}.feature h2{font-size:29px;position:relative;z-index:1}.feature p{position:relative;z-index:1}.feature-mark{font-size:210px;right:-3px;bottom:-65px}
+.heading{margin:31px 0 16px}.heading h2{font-size:21px}
+.shortcuts{gap:10px}.shortcut{min-height:147px;padding:16px;border-radius:14px}.shortcut-symbol{margin-bottom:15px;width:39px;height:39px}.shortcut strong{font-size:12px}.shortcut small{font-size:10px}
+.bulletin{padding:21px;align-items:flex-start;flex-direction:column;gap:15px}.bulletin h2{font-size:20px}.bulletin button{width:100%;text-align:center}
+.surface{padding:19px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
