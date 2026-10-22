@@ -15,3 +15,6 @@ main{padding:0 clamp(20px,5vw,54px) 50px}.intro{padding:36px 0 23px}.intro.compa
 
 /* Quiet navigation affordances instead of emoji arrows */
 .shortcut .arrow{right:17px;bottom:16px;color:#8c9ab0;font:400 24px/1 'DM Sans',sans-serif;background:transparent;border:0}.shortcut:hover .arrow{color:#173e93}
+
+/* Consistent app icon system and refined interactive surfaces */
+.shortcut-symbol{color:#1b458f}.shortcut-symbol svg,.bottom-nav svg{display:block}.shortcut{transition:border-color .15s,background-color .15s,transform .15s}.shortcut:active{transform:scale(.985)}.bottom-nav button{min-height:49px;justify-content:center}.bottom-nav button span{display:grid;place-items:center;min-height:24px}.network-entry{background:#f7f9fd;border-left:3px solid #d4a746}.network-entry .primary{margin-top:8px}.days button{min-height:36px}.menu-line:active,.wish-line:active{background:#f5f8fc}
