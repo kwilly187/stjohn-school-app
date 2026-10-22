@@ -78,3 +78,11 @@ body{background:#e9edf5}
 .tabs button.active{border-bottom-color:#d4a737}
 @media(max-width:390px){.main{padding-left:13px;padding-right:13px}.tile{padding:16px 12px}.tile .button{padding:10px 8px}.header{padding-left:19px;padding-right:19px}.hero-card{padding:23px 19px}}
 @media(min-width:750px){.main{padding:38px 44px 70px}.hero-card{padding:34px 38px}.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+
+.product-size{display:flex;align-items:center;justify-content:space-between;font-size:12px;font-weight:800;color:#586882;margin:14px 0 10px}
+.product-size select{border:1px solid #dce4f2;background:#f7f9fd;border-radius:9px;padding:8px 12px;color:#153c97;font-weight:800;min-width:75px}
+.add-to-bag{width:100%;margin-top:5px;padding:13px}
+.card .input{margin:10px 0 12px}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #e5b944;outline-offset:3px}
+@media(max-width:430px){.grid .card{padding:14px}.grid .card h3{font-size:14px}.grid .product{height:126px}.grid .price{font-size:17px}}
