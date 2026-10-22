@@ -86,3 +86,5 @@ body{background:#e9edf5}
 .card .input{margin:10px 0 12px}
 button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #e5b944;outline-offset:3px}
 @media(max-width:430px){.grid .card{padding:14px}.grid .card h3{font-size:14px}.grid .product{height:126px}.grid .price{font-size:17px}}
+
+.calendar-day{border:1px solid #e1e8f5;background:#f2f5fb;border-radius:10px;min-height:39px;font-weight:700;color:#264270;cursor:pointer}.calendar-day:hover{background:#e6edff}.calendar-day.selected{background:#173f9e;color:#fff;border-color:#173f9e}.input{max-width:100%}
