@@ -97,3 +97,19 @@ button{touch-action:manipulation}
 .intro h1{font-family:Georgia,'Times New Roman',serif;font-weight:700;letter-spacing:-1px}.heading h2{font-family:Georgia,'Times New Roman',serif;letter-spacing:-.7px}
 .brand-icon{border-radius:5px;background:#153c7d;border-color:#b99854}.brand b{color:#153c7d}
 @media(max-width:600px){.feature.website-hero{min-height:318px;padding:30px 24px;background:linear-gradient(90deg,rgba(9,29,65,.94) 0%,rgba(11,31,67,.88) 58%,rgba(9,29,65,.46) 100%),url('https://stjohnocala.org/wp-content/uploads/2025/01/extra-1920x1280.jpg') center/cover no-repeat}.website-hero .feature-copy h2{font-size:39px}.school-pillars{gap:10px 17px;padding:15px 6px;font-size:9px}.school-pillars span+span:before{margin-right:12px}.shortcut{min-height:144px}}
+
+/* Silver-forward refinement: cool neutral surfaces with restrained Saints navy */
+body{background:#f0f2f5}
+.app{background:#f4f5f7}
+.topbar{background:#fafbfc;border-bottom:1px solid #c9cfd8;box-shadow:0 1px 12px rgba(20,37,65,.04)}
+.intro{background:transparent}
+.feature.website-hero{border-bottom:4px solid #b6c0cd}
+.website-hero .feature-copy h2 em{color:#e2e8f0}
+.website-hero .feature-copy button{background:#e1e6ed;color:#173763}
+.school-pillars{background:linear-gradient(110deg,#f8fafc,#e5e9ef,#f8fafc);border:1px solid #d6dce5;border-radius:6px;color:#304967}
+.school-pillars span+span:before{color:#9ba8b9}
+.shortcut,.family-strip,.surface,.smart-panel{background:#fcfcfd;border:1px solid #d8dee7;box-shadow:0 3px 15px rgba(25,44,73,.035)}
+.shortcut-symbol{background:linear-gradient(135deg,#f0f3f7,#dfe5ed);color:#28476e;border:1px solid #d1d9e3}
+.bulletin{background:linear-gradient(125deg,#e7ebf1,#f8fafc);color:#203e64;border:1px solid #d5dce6}
+.brand-icon{background:linear-gradient(145deg,#f6f8fa,#c9d2de);border:1px solid #b6c2d1;color:#173d74}
+.demo{background:#e8ecf2;color:#53657d}
