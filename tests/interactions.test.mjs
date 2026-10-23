@@ -40,7 +40,7 @@ test("primary navigation clears section details and the back control returns to 
 
   assert.match(source, /const go=\(p:Page,d=""\)=>\{setPage\(p\);setDetail\(d\)/);
   assert.match(source, /nav\.map\(\(x,i\)=><button[^]*?onClick=\{\(\)=>go\(x\)\}/);
-  assert.match(source, /const destination=detail\?\{page,detail:""\}:\{page:"Home",detail:""\};go\(destination\.page,destination\.detail\)/);
+  assert.match(source, /onClick=\{\(\)=>detail\?go\(page\):go\("Home"\)\}/);
   assert.match(source, /onClick=\{\(\)=>setDetail\(detail==="Bag"\?"":"Bag"\)\}/);
   assert.ok(source.includes('onClick={()=>setDetail("")}>← Community'));
   assert.ok(source.includes('onClick={()=>setDetail("")}>← Family'));
