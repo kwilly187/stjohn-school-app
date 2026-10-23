@@ -86,3 +86,14 @@ button{touch-action:manipulation}
 .smart-note{font-size:10px;color:#8490a2;line-height:1.5;margin:14px 0 0}
 @media(max-width:740px){.feature{padding:30px 24px;min-height:275px}.school-illustration{position:absolute;width:60%;min-width:0;right:-65px;bottom:0;opacity:.25}.feature-copy h2{font-size:34px}.smart-grid{grid-template-columns:1fr}.smart-grid button{padding:11px}.smart-panel{padding:19px}.smart-panel-heading h2{font-size:17px}}
 @media(max-width:450px){.school-illustration{width:77%;right:-115px;bottom:5px;opacity:.18}.feature-copy p{max-width:260px}.feature-copy h2{font-size:32px}.smart-panel{margin-top:15px}}
+
+/* St. John website-inspired identity: campus photography, navy, gold, purposeful typography */
+.feature.website-hero{position:relative;isolation:isolate;background:linear-gradient(90deg,rgba(9,29,65,.96) 0%,rgba(14,39,82,.9) 46%,rgba(16,39,73,.25) 100%),url('https://stjohnocala.org/wp-content/uploads/2025/01/extra-1920x1280.jpg') center/cover no-repeat;min-height:300px;border-radius:10px;box-shadow:none;border-bottom:5px solid #c6a153}
+.website-hero .feature-copy{max-width:565px}.website-hero .feature-copy h2{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:clamp(36px,5vw,55px);line-height:1.08;letter-spacing:-1.2px}.website-hero .feature-copy h2 em{font-style:normal;color:#eac676}
+.website-hero .feature-copy p{max-width:425px;color:#ecf0f7}.website-hero .feature-copy button{border-radius:4px;background:#d9b968;color:#142d51;font-weight:800}
+.school-pillars{display:flex;align-items:center;justify-content:center;gap:12px 30px;flex-wrap:wrap;padding:18px 12px;border-bottom:1px solid #e8edf4;color:#1a3c78;font-size:10px;font-weight:800;letter-spacing:1.7px}
+.school-pillars span+span:before{content:'·';display:inline-block;margin-right:28px;color:#d0ab59}
+.shortcut{border-radius:9px;box-shadow:none}.shortcut-symbol{border-radius:6px}.family-strip,.smart-panel{border-radius:9px}.bulletin{border-radius:9px}
+.intro h1{font-family:Georgia,'Times New Roman',serif;font-weight:700;letter-spacing:-1px}.heading h2{font-family:Georgia,'Times New Roman',serif;letter-spacing:-.7px}
+.brand-icon{border-radius:5px;background:#153c7d;border-color:#b99854}.brand b{color:#153c7d}
+@media(max-width:600px){.feature.website-hero{min-height:318px;padding:30px 24px;background:linear-gradient(90deg,rgba(9,29,65,.94) 0%,rgba(11,31,67,.88) 58%,rgba(9,29,65,.46) 100%),url('https://stjohnocala.org/wp-content/uploads/2025/01/extra-1920x1280.jpg') center/cover no-repeat}.website-hero .feature-copy h2{font-size:39px}.school-pillars{gap:10px 17px;padding:15px 6px;font-size:9px}.school-pillars span+span:before{margin-right:12px}.shortcut{min-height:144px}}
