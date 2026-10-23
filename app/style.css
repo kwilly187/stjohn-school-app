@@ -87,29 +87,67 @@ button{touch-action:manipulation}
 @media(max-width:740px){.feature{padding:30px 24px;min-height:275px}.school-illustration{position:absolute;width:60%;min-width:0;right:-65px;bottom:0;opacity:.25}.feature-copy h2{font-size:34px}.smart-grid{grid-template-columns:1fr}.smart-grid button{padding:11px}.smart-panel{padding:19px}.smart-panel-heading h2{font-size:17px}}
 @media(max-width:450px){.school-illustration{width:77%;right:-115px;bottom:5px;opacity:.18}.feature-copy p{max-width:260px}.feature-copy h2{font-size:32px}.smart-panel{margin-top:15px}}
 
-/* St. John website-inspired identity: campus photography, navy, gold, purposeful typography */
-.feature.website-hero{position:relative;isolation:isolate;background:linear-gradient(90deg,rgba(9,29,65,.96) 0%,rgba(14,39,82,.9) 46%,rgba(16,39,73,.25) 100%),url('https://stjohnocala.org/wp-content/uploads/2025/01/extra-1920x1280.jpg') center/cover no-repeat;min-height:300px;border-radius:10px;box-shadow:none;border-bottom:5px solid #c6a153}
-.website-hero .feature-copy{max-width:565px}.website-hero .feature-copy h2{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:clamp(36px,5vw,55px);line-height:1.08;letter-spacing:-1.2px}.website-hero .feature-copy h2 em{font-style:normal;color:#eac676}
-.website-hero .feature-copy p{max-width:425px;color:#ecf0f7}.website-hero .feature-copy button{border-radius:4px;background:#d9b968;color:#142d51;font-weight:800}
-.school-pillars{display:flex;align-items:center;justify-content:center;gap:12px 30px;flex-wrap:wrap;padding:18px 12px;border-bottom:1px solid #e8edf4;color:#1a3c78;font-size:10px;font-weight:800;letter-spacing:1.7px}
-.school-pillars span+span:before{content:'·';display:inline-block;margin-right:28px;color:#d0ab59}
-.shortcut{border-radius:9px;box-shadow:none}.shortcut-symbol{border-radius:6px}.family-strip,.smart-panel{border-radius:9px}.bulletin{border-radius:9px}
-.intro h1{font-family:Georgia,'Times New Roman',serif;font-weight:700;letter-spacing:-1px}.heading h2{font-family:Georgia,'Times New Roman',serif;letter-spacing:-.7px}
-.brand-icon{border-radius:5px;background:#153c7d;border-color:#b99854}.brand b{color:#153c7d}
-@media(max-width:600px){.feature.website-hero{min-height:318px;padding:30px 24px;background:linear-gradient(90deg,rgba(9,29,65,.94) 0%,rgba(11,31,67,.88) 58%,rgba(9,29,65,.46) 100%),url('https://stjohnocala.org/wp-content/uploads/2025/01/extra-1920x1280.jpg') center/cover no-repeat}.website-hero .feature-copy h2{font-size:39px}.school-pillars{gap:10px 17px;padding:15px 6px;font-size:9px}.school-pillars span+span:before{margin-right:12px}.shortcut{min-height:144px}}
 
-/* Silver-forward refinement: cool neutral surfaces with restrained Saints navy */
-body{background:#f0f2f5}
-.app{background:#f4f5f7}
-.topbar{background:#fafbfc;border-bottom:1px solid #c9cfd8;box-shadow:0 1px 12px rgba(20,37,65,.04)}
-.intro{background:transparent}
-.feature.website-hero{border-bottom:4px solid #b6c0cd}
-.website-hero .feature-copy h2 em{color:#e2e8f0}
-.website-hero .feature-copy button{background:#e1e6ed;color:#173763}
-.school-pillars{background:linear-gradient(110deg,#f8fafc,#e5e9ef,#f8fafc);border:1px solid #d6dce5;border-radius:6px;color:#304967}
-.school-pillars span+span:before{color:#9ba8b9}
-.shortcut,.family-strip,.surface,.smart-panel{background:#fcfcfd;border:1px solid #d8dee7;box-shadow:0 3px 15px rgba(25,44,73,.035)}
-.shortcut-symbol{background:linear-gradient(135deg,#f0f3f7,#dfe5ed);color:#28476e;border:1px solid #d1d9e3}
-.bulletin{background:linear-gradient(125deg,#e7ebf1,#f8fafc);color:#203e64;border:1px solid #d5dce6}
-.brand-icon{background:linear-gradient(145deg,#f6f8fa,#c9d2de);border:1px solid #b6c2d1;color:#173d74}
-.demo{background:#e8ecf2;color:#53657d}
+/* Consolidated Saints school design, editorial homepage */
+:root{--blue:#173f78;--navy:#102744;--gold:#b5a080;--ink:#172f4d;--muted:#64748b;--line:#e1e6ed}
+body{background:#e9edf1;color:#172f4d;font-family:'DM Sans',sans-serif}
+.app{max-width:1120px;background:#fff;box-shadow:0 15px 55px rgba(14,35,64,.07)}
+.topbar{height:88px;background:#fff;border-bottom:1px solid #e5eaf0;box-shadow:none}
+.brand-icon{border-radius:4px;background:#163960;color:#fff;border:0;font-size:23px;letter-spacing:-2px}
+.brand b{color:#173f78}
+.demo{border:1px solid #dfe5ec;background:#f6f8fa;border-radius:4px;color:#6b7789}
+main{padding-bottom:58px}
+.saints-welcome{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;min-height:465px;overflow:hidden;border-radius:0;margin:0 calc(-1 * clamp(20px,5vw,54px));padding:27px clamp(26px,6vw,70px) 23px;color:white;background:linear-gradient(90deg,rgba(11,29,52,.96) 0%,rgba(15,37,65,.89) 44%,rgba(18,44,75,.57) 100%),url('https://stjohnocala.org/wp-content/uploads/2025/01/extra-1920x1280.jpg') center/cover no-repeat}
+.saints-welcome:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,23,40,.35),transparent 40%);pointer-events:none}
+.saints-welcome-top,.saints-welcome-content,.saints-welcome-footer{position:relative;z-index:1}
+.saints-welcome-top{display:flex;align-items:center;gap:22px}
+.saints-overline{font-size:10px;font-weight:800;letter-spacing:2px;color:#e8edf3}
+.saints-overline span{margin-left:9px;color:#cbd4df;font-weight:500}
+.saints-welcome-rule{height:1px;background:rgba(255,255,255,.35);flex:1}
+.saints-kicker{display:block;font-size:10px;letter-spacing:2px;font-weight:800;color:#b9c8d8}
+.saints-welcome h1{margin:14px 0 16px;font-family:Georgia,'Times New Roman',serif;font-size:clamp(42px,5.8vw,69px);line-height:1.03;letter-spacing:-1.8px;font-weight:700}
+.saints-welcome h1 em{color:#d7dfe7;font-style:italic;font-weight:400}
+.saints-welcome p{max-width:400px;line-height:1.65;font-size:14px;color:#e7ebf1;margin-bottom:22px}
+.saints-welcome-content button{display:inline-flex;align-items:center;gap:13px;border:0;border-radius:4px;background:#fff;color:#17385a;padding:13px 18px;font-size:12px;font-weight:800}
+.saints-welcome-footer{display:flex;gap:26px;border-top:1px solid rgba(255,255,255,.27);padding-top:18px}
+.saints-welcome-footer span{font-size:10px;letter-spacing:2.2px;font-weight:800;color:#eef2f5}
+.saints-tools{padding-top:44px}
+.saints-section-title>span{color:#79879a;font-size:10px;letter-spacing:1.7px;font-weight:800}
+.saints-section-title h2{font-family:Georgia,'Times New Roman',serif;font-size:29px;letter-spacing:-.7px;color:#17304e;margin:10px 0 24px;font-weight:700}
+.saints-action-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+.saints-action{min-height:128px;padding:20px 17px;display:flex;align-items:flex-start;gap:13px;text-align:left;background:#f7f8fa;border:1px solid #e5e9ee;border-radius:6px;transition:background .15s,border-color .15s}
+.saints-action:hover{background:#edf1f5;border-color:#bfcbd8}
+.saints-action-icon{display:flex;color:#274769;margin-top:2px}
+.saints-action-text{display:flex;flex-direction:column;gap:7px}
+.saints-action strong{font-size:14px;font-weight:800;color:#203b5b}
+.saints-action small{font-size:11px;line-height:1.5;color:#69798a}
+.saints-lower{display:grid;grid-template-columns:1.1fr .9fr;gap:13px;margin-top:43px}
+.saints-community,.saints-info{padding:32px;border-radius:6px}
+.saints-community{background:#173553;color:white}
+.saints-community h2{font-family:Georgia,'Times New Roman',serif;font-size:30px;line-height:1.15;margin:13px 0}
+.saints-community p{font-size:13px;color:#dae3ec;line-height:1.7;max-width:355px}
+.saints-community button{margin-top:16px;background:#fff;color:#173553;border:0;border-radius:4px;padding:12px 16px;font-size:12px;font-weight:800}
+.saints-info{border:1px solid #dce3ea;background:#edf1f5}
+.saints-info .saints-kicker{color:#6b7f93}
+.saints-info h3{font-family:Georgia,'Times New Roman',serif;font-size:26px;margin:15px 0 10px}
+.saints-info p{font-size:13px;line-height:1.7;color:#607286}
+.saints-info button{font-size:12px;font-weight:800;color:#173e67;border:0;background:none;padding:10px 0}
+.saints-preview-note{margin-top:22px;padding-top:13px;border-top:1px solid #d0d9e3;font-size:10px;color:#738399}
+.intro h1,.heading h2{font-family:Georgia,'Times New Roman',serif}
+.surface,.family-strip,.shortcut,.bulletin{border-radius:6px}
+.bottom-nav{background:rgba(255,255,255,.98)}
+@media(max-width:680px){
+.topbar{height:74px}
+.saints-welcome{min-height:425px;padding:23px 25px 20px;background:linear-gradient(90deg,rgba(11,29,52,.94),rgba(15,37,65,.75)),url('https://stjohnocala.org/wp-content/uploads/2025/01/extra-1920x1280.jpg') center/cover no-repeat}
+.saints-overline{font-size:9px;letter-spacing:1.15px}.saints-overline span{display:block;margin:5px 0 0}
+.saints-welcome h1{font-size:46px}
+.saints-welcome-footer{gap:18px}
+.saints-welcome-footer span{font-size:9px;letter-spacing:1.25px}
+.saints-tools{padding-top:30px}.saints-section-title h2{font-size:25px}
+.saints-action-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.saints-action{min-height:125px;padding:16px 12px;gap:9px;flex-direction:column}
+.saints-action strong{font-size:13px}
+.saints-action small{font-size:11px}
+.saints-lower{grid-template-columns:1fr;margin-top:27px}
+.saints-community,.saints-info{padding:25px}
+}
