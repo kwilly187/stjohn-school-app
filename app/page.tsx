@@ -1,6 +1,22 @@
 import Link from 'next/link';
 import DevotionCard from './devotion-card';
 export const dynamic='force-dynamic';
-import {ExternalLink,Heading,HelpCard,Icon,NextDates,ResourceCard,SourceNote} from './components';
+import {ExternalLink,HelpCard,Icon,ResourceCard,SourceNote} from './components';
 import {resources,school} from './school-data.mjs';
-export default function Today(){return <><Heading eyebrow="YOUR SCHOOL DAY, SIMPLIFIED" title={`Hello, ${school.mascot} families.`}>What you need to know. Where you need to go.</Heading><DevotionCard/><section className="notice-card"><span className="notice-symbol"><Icon name="updates"/></span><div><h2>School notices</h2><p>Announcements and anything due, in {school.portalLabel}.</p><ExternalLink href={school.portal} className="text-link">Open {school.portalLabel}</ExternalLink></div></section><div className="today-grid"><NextDates/><section className="athletics-card"><div><div className="section-top"><span className="icon-tile"><Icon name="people"/></span><span className="eyebrow">GO {school.mascot.toUpperCase()}</span></div><h2>Athletics</h2><p>Games, teams & locations.</p></div><Link href="/calendar?source=athletics" className="button">View schedule</Link></section></div><section aria-labelledby="quick-heading"><div className="section-heading"><h2 id="quick-heading">Everyday essentials</h2><Link href="/resources" className="text-link">View all <span aria-hidden="true">→</span></Link></div><div className="resource-grid quick-grid">{['lunch','alma','tuition','aftercare'].map(id=><ResourceCard compact key={id} resource={resources.find(r=>r.id===id)!}/>)}</div></section><HelpCard/><SourceNote/></>}
+
+export default function Today(){return <div className="today-page">
+  <header className="today-welcome">
+    <div><span className="eyebrow">HOME OF THE {school.mascot.toUpperCase()}</span><h1>Hello, {school.mascot} families.</h1><p>A little faith. A little planning. A great school day.</p></div>
+    <div className="welcome-mark" aria-hidden="true"><span/><span/><span/></div>
+  </header>
+  <div className="today-overview">
+    <DevotionCard/>
+    <section className="school-day" aria-label="School calendars">
+      <Link href="/calendar" className="day-link"><span className="day-icon"><Icon name="calendar"/></span><span><span className="eyebrow">PLAN YOUR DAY</span><strong>Calendar</strong><span className="day-description">School dates & activities</span></span><span className="day-arrow" aria-hidden="true">→</span></Link>
+      <Link href="/calendar?source=athletics" className="day-link athletics-link"><span className="day-icon"><Icon name="people"/></span><span><span className="eyebrow">GO {school.mascot.toUpperCase()}</span><strong>Athletics</strong><span className="day-description">Games, teams & locations</span></span><span className="day-arrow" aria-hidden="true">→</span></Link>
+    </section>
+  </div>
+  <section className="notice-card"><span className="notice-symbol"><Icon name="updates"/></span><div><h2>School notices</h2><p>Announcements and anything due, in {school.portalLabel}.</p></div><ExternalLink href={school.portal} className="text-link">Open {school.portalLabel}</ExternalLink></section>
+  <section className="essentials" aria-labelledby="quick-heading"><div className="section-heading"><h2 id="quick-heading">Everyday essentials</h2><Link href="/resources" className="text-link">View all <span aria-hidden="true">→</span></Link></div><div className="resource-grid quick-grid">{['lunch','alma','tuition','aftercare'].map(id=><ResourceCard compact key={id} resource={resources.find(r=>r.id===id)!}/>)}</div></section>
+  <HelpCard/><SourceNote/>
+</div>}

@@ -8,3 +8,76 @@
 /* Focused parent-first refinement: less explanation, quicker choices. */
 .page-heading{padding:26px 0 20px}.page-heading h1{font-size:clamp(28px,4vw,37px);margin-bottom:7px}.page-heading .eyebrow{margin-bottom:7px}.notice-card{padding:17px 21px}.notice-card h2{margin-bottom:3px}.notice-card p{margin-bottom:0}.notice-card .text-link{min-height:40px}.today-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:20px 0 24px}.today-grid .card,.today-grid .athletics-card{padding:22px;min-width:0;display:flex;flex-direction:column;align-items:stretch;gap:0}.today-grid .athletics-card{justify-content:flex-start}.today-grid h2{margin:15px 0 8px;font-size:24px}.today-grid p{margin:0 0 18px;flex:1}.today-grid .button{width:100%;margin-top:auto;padding:10px;font-size:15px}.today-grid .section-top{gap:9px}.today-grid .section-top .eyebrow{font-size:9px;letter-spacing:1.1px;margin:0}.today-grid .athletics-card .section-top{margin-bottom:0}.resource-detail{font-size:15px}.source-note{font-size:13px;line-height:1.6}.source-note strong{color:var(--ink)}@media(max-width:680px){.page-heading{padding:21px 0 17px}.page-heading h1{font-size:28px}.notice-card{padding:14px 17px}.notice-card .text-link{min-height:40px}.today-grid{gap:12px;margin:18px 0 20px}.today-grid .card,.today-grid .athletics-card{padding:17px}.today-grid .section-top{display:block}.today-grid .section-top .eyebrow{margin-top:9px}.today-grid h2{font-size:21px;margin-top:12px}.today-grid p{font-size:15px;line-height:1.5;min-height:45px;margin-bottom:16px}.today-grid .button{font-size:14px;padding:10px 7px;min-height:44px}.section-heading{margin-top:8px}.resource-card{padding:16px}.help-card{margin-top:25px}}@media(max-width:359px){.today-grid{grid-template-columns:1fr}.today-grid .section-top{display:flex}.today-grid .section-top .eyebrow{margin-top:0}.today-grid p{min-height:0}}
 .devotion-card{border:1px solid #e3dfd3;border-left:3px solid var(--gold);background:#fcfbf7;border-radius:13px;padding:19px 23px;margin-bottom:18px}.devotion-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}.devotion-top h2{font-size:18px;letter-spacing:-.3px;margin:0}.devotion-status{font-size:11px;color:#77613b;line-height:1.4}.devotion-title{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px}.devotion-title h3{font-size:16px;margin:0}.devotion-title>span{font-size:13px;color:#68728a}.devotion-card p{font-size:15px;line-height:1.65;margin:0 0 9px}.devotion-card .devotion-prayer{margin-bottom:0;color:#4e5d73}.devotion-prayer strong{font-size:13px;margin-right:5px;color:var(--navy)}@media(max-width:680px){.devotion-card{padding:16px 17px;margin-bottom:16px}.devotion-top{align-items:flex-start;gap:9px}.devotion-top h2{font-size:17px;white-space:nowrap}.devotion-status{font-size:10px;max-width:140px;text-align:right}.devotion-title{gap:5px 10px}.devotion-card p{font-size:15px;line-height:1.6}}
+
+/* Saints visual system: an editorial school-day spread, not a stack of cards. */
+body{background:#e8ecf0}
+.app{background:#fdfcf9}
+.topbar{background:#fff;border-top:4px solid var(--gold);border-bottom:0}
+.brand strong{letter-spacing:-.7px}
+.preview-label{border:0;background:#f1f3f6;color:#536178;font-size:11px;letter-spacing:1px}
+.page-heading{border-bottom:1px solid #dedfdc;margin-bottom:24px;padding-bottom:22px}
+.page-heading h1{letter-spacing:-1.1px}
+.today-welcome{position:relative;overflow:hidden;background:var(--navy);color:#fff;margin:0 calc(-1 * clamp(20px,5vw,54px));padding:26px clamp(20px,5vw,54px) 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.today-welcome h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(30px,4vw,40px);font-weight:400;letter-spacing:-1.2px;color:#fff;margin:0 0 7px;position:relative;z-index:1}
+.today-welcome .eyebrow{color:#e5c477;font-size:11px;letter-spacing:2px;margin-bottom:9px}
+.today-welcome p{font-size:15px;color:#dce3ef;margin:0;position:relative;z-index:1}
+.welcome-mark{display:flex;gap:9px;position:absolute;right:48px;top:-55px;transform:rotate(28deg);height:260px;pointer-events:none}
+.welcome-mark span{display:block;width:24px;height:100%;border:1px solid #ffffff17}
+.welcome-mark span:nth-child(2){background:#ffffff05;border-color:#d4a74636}
+.today-overview{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:30px;padding:28px 0 24px;align-items:stretch}
+.today-page .devotion-card{position:relative;border:0;border-left:2px solid var(--gold);border-radius:0;background:transparent;padding:0 0 0 22px;margin:0}
+.today-page .devotion-top{display:block;margin-bottom:15px}
+.today-page .devotion-top h2{font-family:'DM Sans',Arial,sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:1.7px;color:#6d5931;margin:0 0 3px;font-weight:700}
+.today-page .devotion-status{display:block;font-size:12px;color:#74674f;line-height:1.5}
+.today-page .devotion-title{display:block;margin-bottom:8px}
+.today-page .devotion-title h3{font-family:Georgia,'Times New Roman',serif;font-size:27px;font-weight:400;letter-spacing:-.6px;margin-bottom:2px}
+.today-page .devotion-title>span{font-size:13px;color:#6b7079}
+.today-page .devotion-card p{font-size:15px;line-height:1.65;color:#4b5665;margin-bottom:10px}
+.today-page .devotion-card .devotion-prayer{font-size:14px;line-height:1.6;margin-bottom:0}
+.school-day{display:flex;flex-direction:column;background:var(--navy);border-radius:4px;overflow:hidden;align-self:stretch}
+.day-link{display:flex;align-items:center;gap:17px;flex:1;padding:23px;text-decoration:none;color:#fff;min-width:0;transition:background .15s}
+.day-link:hover{background:#1d365d}
+.day-icon{width:40px;min-width:40px;color:#e2bf6e}
+.day-icon svg{width:31px;height:31px;stroke-width:1.4}
+.day-link .eyebrow{font-size:10px;letter-spacing:1.5px;color:#e2bf6e;margin-bottom:4px}
+.day-link strong{display:block;font-family:Manrope,Arial,sans-serif;font-size:24px;font-weight:700;letter-spacing:-.7px;line-height:1.3}
+.day-description{display:block;color:#d2dceb;font-size:14px;margin-top:5px;line-height:1.4}
+.day-arrow{font-size:25px;margin-left:auto;color:#e2bf6e}
+.athletics-link{border-top:1px solid #ffffff26}
+.today-page .notice-card{border:0;border-top:1px solid #dedfdc;border-bottom:1px solid #dedfdc;border-radius:0;background:transparent;align-items:center;padding:16px 0;gap:15px}
+.today-page .notice-symbol{display:block;color:#7c663b;line-height:0;padding:0}
+.today-page .notice-card h2{font-size:16px;margin:0 0 2px}
+.today-page .notice-card p{font-size:14px;line-height:1.5;margin:0}
+.today-page .notice-card>.text-link{margin-left:auto;white-space:nowrap;min-height:44px;font-size:14px}
+.essentials{margin-top:25px}
+.essentials .section-heading{margin:0 0 5px}
+.essentials h2{font-size:23px;letter-spacing:-.7px}
+.quick-grid{column-gap:32px;row-gap:0}
+.quick-grid .resource-card{border:0;border-bottom:1px solid #e4e5e2;border-radius:0;padding:18px 0;align-items:center;gap:14px}
+.quick-grid .resource-card:hover{background:#f2f3ef}
+.quick-grid .icon-tile{border-radius:50%;background:#edf0f0;color:var(--navy);width:46px;height:46px;min-width:46px}
+.quick-grid .resource-card strong{font-size:16px;margin-bottom:3px}
+.quick-grid .resource-detail{font-size:14px}
+.today-page .help-card{background:transparent;border:0;border-bottom:1px solid #dedfdc;border-radius:0;margin:27px 0 20px;padding:0 0 24px;gap:16px}
+.today-page .help-card h2{font-family:Georgia,'Times New Roman',serif;font-size:26px;font-weight:400;letter-spacing:-.5px}
+.today-page .help-card .eyebrow{display:none}
+.today-page .help-card p{font-size:14px}
+.today-page .help-actions{align-items:flex-end}
+.today-page .help-actions .button{background:transparent;color:var(--navy);border:1px solid #bec7d3;border-radius:4px;font-size:14px}
+.today-page .help-actions .text-link{font-size:13px;min-height:44px}
+.bottom-nav{box-shadow:0 -3px 18px #12274b06}
+.bottom-nav a{border-radius:4px}
+.bottom-nav a[aria-current=page]{background:#f5f3eb;color:var(--navy);position:relative}
+.bottom-nav a[aria-current=page]:before{content:'';position:absolute;top:-8px;left:30%;right:30%;height:3px;background:var(--gold)}
+@media(min-width:681px){.today-page .help-actions{flex-direction:row;align-items:center;gap:20px}.quick-grid .resource-card:nth-last-child(-n+2){border-bottom:0}}
+@media(max-width:680px){
+ .topbar{height:82px}.preview-label{font-size:10px;padding:5px 7px}
+ .today-welcome{padding-top:21px;padding-bottom:23px}.today-welcome h1{font-size:31px;letter-spacing:-.9px}.today-welcome p{font-size:14px;max-width:280px}.today-welcome .eyebrow{font-size:10px;letter-spacing:1.7px}.welcome-mark{right:0;opacity:.7}
+ .today-overview{grid-template-columns:1fr;gap:23px;padding:24px 0 20px}
+ .today-page .devotion-card{padding-left:17px}.today-page .devotion-top{margin-bottom:12px}.today-page .devotion-title h3{font-size:25px}.today-page .devotion-status{max-width:none;text-align:left;font-size:12px}.today-page .devotion-card p{font-size:15px;line-height:1.6}
+ .school-day{flex-direction:row}.day-link{display:block;padding:18px 17px;position:relative}.day-icon{display:none}.day-link .eyebrow{font-size:10px;letter-spacing:1.2px}.day-link strong{font-size:22px}.day-description{font-size:13px;max-width:145px;margin-top:7px;padding-right:10px}.day-arrow{position:absolute;right:15px;top:40px;font-size:21px}.athletics-link{border-top:0;border-left:1px solid #ffffff26}
+ .today-page .notice-card{gap:11px;flex-wrap:wrap;padding:13px 0}.today-page .notice-symbol{display:none}.today-page .notice-card>div{flex:1;min-width:180px}.today-page .notice-card h2{font-size:16px}.today-page .notice-card p{font-size:14px}.today-page .notice-card>.text-link{font-size:14px;gap:5px}.today-page .notice-card .external-arrow{width:17px}
+ .essentials{margin-top:19px}.essentials h2{font-size:22px}.quick-grid{grid-template-columns:1fr}.quick-grid .resource-card{padding:16px 0}.quick-grid .resource-card:last-child{border-bottom:0}
+ .today-page .help-card{align-items:flex-start;flex-direction:row;flex-wrap:wrap;margin-top:24px}.today-page .help-actions{width:auto;align-items:flex-start;gap:0}.today-page .help-actions .button{width:auto}.today-page .help-card h2{font-size:24px}
+}
+@media(max-width:359px){.today-welcome h1{font-size:27px}.day-link{padding:16px 12px}.day-link strong{font-size:20px}.day-arrow{display:none}.day-description{padding-right:0}.today-page .notice-card>.text-link{margin-left:0}}
