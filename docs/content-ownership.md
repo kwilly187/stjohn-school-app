@@ -7,6 +7,7 @@ No duplicate entry: staff keep using their existing school systems. This app is 
 
 | Visible content | Authoritative owner / source | How an authorized school administrator updates it | Parent result / verification |
 | --- | --- | --- | --- |
+| Daily devotion | School-selected theological reviewer and content owner; currently a labeled original draft only | Approve/publish content in an existing approved source and schedule overrides through a future adapter; no working staff editor is present | Today displays preview status. Approved-and-published gate, local-date rotation and dated override behavior are tested; no real approved content is seeded. See devotion-content-contract.md. |
 | School & activities calendar | School's existing Google Calendar | Use the school's existing calendar editor and account; update the same event there | Calendar → School & activities. Verify title/time in Agenda and Month, and on the official school calendar page. No app redeployment for event edits. |
 | Athletics information and contact | School athletics page / athletics office | Maintain the existing https://stjohnocala.org/home-2/ page and school contact | Parents use current Google Calendar for dates; older 2025 PDFs are not imported. Contact email is school-published. |
 | Athletics calendar | Athletics staff's existing Google Calendar | Update the existing athletics calendar, not a duplicate app calendar | Calendar → Athletics. Verify Eastern Time and the correct event on the school's page. |

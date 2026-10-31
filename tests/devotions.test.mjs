@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import test from 'node:test';
+import {selectDailyDevotion,schoolDateKey} from '../app/devotion-selection.mjs';
+import {devotionRecords,draftDevotion} from '../app/devotion-data.mjs';
+const approved=id=>({id,approvalStatus:'approved',publishStatus:'published',title:'Synthetic test record'});
+const options={date:new Date('2026-10-31T12:00:00Z'),timeZone:'America/New_York'};
+test('only both approved and published records enter daily selection',()=>{const records=[{...approved('draft'),approvalStatus:'draft'},{...approved('unpublished'),publishStatus:'draft'},approved('eligible')];assert.equal(selectDailyDevotion({...options,records}).record.id,'eligible')});
+test('no approved published records means no automatic publication',()=>{assert.equal(selectDailyDevotion({...options,records:[draftDevotion]}),null);assert.equal(selectDailyDevotion({...options,records:[]}),null)});
+test('dated staff override wins over rotation when content is approved and published',()=>{const records=[approved('a'),approved('b')];assert.equal(selectDailyDevotion({...options,records,overrides:[{date:'2026-10-31',devotionId:'b'}]}).record.id,'b');assert.equal(selectDailyDevotion({...options,records,overrides:[{date:'2026-10-31',devotionId:'b'}]}).selection,'override')});
+test('a draft or unpublished override cannot be promoted by a date alone',()=>{const records=[approved('safe'),{...approved('draft'),approvalStatus:'draft'}];assert.equal(selectDailyDevotion({...options,records,overrides:[{date:'2026-10-31',devotionId:'draft'}]}).record.id,'safe')});
+test('school-local date controls selection across UTC midnight and daylight saving change',()=>{assert.equal(schoolDateKey(new Date('2026-11-01T03:30:00Z'),'America/New_York'),'2026-10-31');assert.equal(schoolDateKey(new Date('2026-11-01T04:30:00Z'),'America/New_York'),'2026-11-01');assert.equal(schoolDateKey(new Date('2026-11-02T04:30:00Z'),'America/New_York'),'2026-11-01')});
+test('approved rotation is stable within a school day and advances next day',()=>{const records=[approved('a'),approved('b')];const first=selectDailyDevotion({...options,records});assert.equal(first.record.id,selectDailyDevotion({...options,records,date:new Date('2026-10-31T23:00:00Z')}).record.id);assert.notEqual(first.record.id,selectDailyDevotion({...options,records,date:new Date('2026-11-01T12:00:00Z')}).record.id)});
+test('public prototype seeds no falsely approved school content',()=>{assert.deepEqual(devotionRecords,[]);assert.equal(draftDevotion.approvalStatus,'draft');assert.equal(draftDevotion.publishStatus,'draft')});
