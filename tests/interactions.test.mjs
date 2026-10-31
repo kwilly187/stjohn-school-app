@@ -1,47 +1,13 @@
-import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
-import test from "node:test";
-import { filterByCategory, products, wishLists } from "../app/demo-data.mjs";
-
-test("Saints Store filters apparel and accessories independently and All restores every product", () => {
-  const apparel = filterByCategory(products, "Apparel", "kind");
-  const accessories = filterByCategory(products, "Accessories", "kind");
-  const all = filterByCategory(products, "All", "kind");
-
-  assert.deepEqual(apparel.map((product) => product.name), ["Saints Tee", "Saints Crewneck"]);
-  assert.deepEqual(accessories.map((product) => product.name), ["Saints Cap", "Saints Water Bottle"]);
-  assert.deepEqual(all, products);
-});
-
-test("teacher and team wish lists filter independently and All restores both lists", () => {
-  const teachers = filterByCategory(wishLists, "Teachers", "type");
-  const teams = filterByCategory(wishLists, "Teams", "type");
-  const all = filterByCategory(wishLists, "All", "type");
-
-  assert.deepEqual(teachers.map((list) => list.name), ["Classroom supplies"]);
-  assert.deepEqual(teams.map((list) => list.name), ["Saints athletics"]);
-  assert.deepEqual(all, wishLists);
-});
-
-test("each rendered category control updates the state used by its own results", async () => {
-  const source = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
-
-  assert.match(source, /\[storeFilter,setStoreFilter\]=useState\("All"\)/);
-  assert.match(source, /className=\{storeFilter===x\?"active":""\} onClick=\{\(\)=>setStoreFilter\(x\)\}/);
-  assert.match(source, /filterByCategory\(products,storeFilter,"kind"\)/);
-  assert.match(source, /\[wishFilter,setWishFilter\]=useState\("All"\)/);
-  assert.match(source, /className=\{wishFilter===x\?"active":""\} onClick=\{\(\)=>setWishFilter\(x\)\}/);
-  assert.match(source, /filterByCategory\(wishLists,wishFilter,"type"\)/);
-  assert.doesNotMatch(source, /\[filter,setFilter\]=useState/);
-});
-
-test("primary navigation clears section details and the back control returns to its parent or Home", async () => {
-  const source = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
-
-  assert.match(source, /const go=\(p:Page,d=""\)=>\{setPage\(p\);setDetail\(d\)/);
-  assert.match(source, /nav\.map\(\(x,i\)=><button[^]*?onClick=\{\(\)=>go\(x\)\}/);
-  assert.match(source, /onClick=\{\(\)=>detail\?go\(page\):go\("Home"\)\}/);
-  assert.match(source, /onClick=\{\(\)=>setDetail\(detail==="Bag"\?"":"Bag"\)\}/);
-  assert.ok(source.includes('onClick={()=>setDetail("")}>← Community'));
-  assert.ok(source.includes('onClick={()=>setDetail("")}>← Family'));
-});
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import test from 'node:test';
+import {calendarUrl,calendarSources,resources,school} from '../app/school-data.mjs';
+const source = path => readFile(new URL('../'+path,import.meta.url),'utf8');
+test('school calendars preserve published identities and Eastern time in both views',()=>{for(const name of Object.keys(calendarSources))for(const mode of ['AGENDA','MONTH']){const url=new URL(calendarUrl(name,mode));assert.equal(url.origin,'https://calendar.google.com');assert.equal(url.searchParams.get('src'),calendarSources[name]);assert.equal(url.searchParams.get('ctz'),'America/New_York');assert.equal(url.searchParams.get('mode'),mode)}});
+test('calendar defaults reject unknown modes and sources',()=>{assert.equal(calendarUrl('not-real','not-real'),calendarUrl('activities','AGENDA'))});
+test('resource IDs are unique; all destinations are secure external links',()=>{assert.equal(new Set(resources.map(r=>r.id)).size,resources.length);for(const r of resources){assert.equal(new URL(r.url).protocol,'https:');assert.ok(r.title&&r.detail&&r.group)}});
+test('school services are linked directly rather than fake local balances',()=>{assert.equal(resources.find(r=>r.id==='alma').url,school.portal);assert.equal(new URL(resources.find(r=>r.id==='tuition').url).hostname,'parent.blackbaud.school');assert.equal(new URL(resources.find(r=>r.id==='lunch-account').url).hostname,'payschoolscentral.com');assert.match(resources.find(r=>r.id==='aftercare').title,/signup/);assert.match(resources.find(r=>r.id==='events').detail,/not active/)});
+test('primary navigation uses four real routes and active page semantics',async()=>{const nav=await source('app/navigation.tsx');for(const href of ['/','/calendar','/updates','/resources'])assert.ok(nav.includes(`href:'${href}'`));assert.match(nav,/usePathname/);assert.match(nav,/aria-current/);assert.doesNotMatch(nav,/setPage|Store|Family/)});
+test('Today and Updates disclose missing live information, not zero notices',async()=>{const today=await source('app/page.tsx'),updates=await source('app/updates/page.tsx');assert.match(today,/announcements aren’t connected/);assert.match(updates,/doesn’t mean there are no notices/);assert.doesNotMatch(today+updates,/cart|setCart|products|\$150|\$250|\$600/)});
+test('calendar has reload, source selection, load/error handling and a persistent direct fallback',async()=>{const view=await source('app/calendar/view.tsx');for(const text of ['onLoad','onError','aria-pressed','aria-live','Reload calendar','Open this calendar directly','setTimeout','clearTimeout'])assert.ok(view.includes(text))});
+test('school ownership and admin acceptance journey are documented without claiming authenticated testing',async()=>{const doc=await source('docs/content-ownership.md');for(const text of ['Google Calendar','Alma','Not performed','No duplicate entry','Production'])assert.ok(doc.includes(text))});

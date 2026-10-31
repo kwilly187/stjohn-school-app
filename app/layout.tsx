@@ -1,3 +1,5 @@
-import "./style.css";
-export const metadata = {title:"Saints Parent | St. John Lutheran",description:"St. John Lutheran School parent experience prototype"};
-export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body>{children}</body></html>}
+import Link from 'next/link';
+import Navigation from './navigation';
+import './style.css';
+export const metadata = {title:{default:'Saints Parent | St. John Lutheran',template:'%s | Saints Parent'},description:'School calendars, parent resources and everyday essentials for St. John Lutheran School families.'};
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body><a className="skip-link" href="#main">Skip to main content</a><div className="app"><header className="topbar"><Link className="brand" href="/" aria-label="Saints Parent — Today"><img src="/stjohn-logo.png" alt="" width="52" height="52"/><span>ST. JOHN LUTHERAN<strong>Saints Parent</strong></span></Link><span className="preview-label">PREVIEW</span></header><main id="main">{children}</main><footer className="footer">St. John Lutheran School <span>·</span> Ocala, Florida<br/>Public resources. Your school accounts stay with their providers.</footer><Navigation/></div></body></html>}
