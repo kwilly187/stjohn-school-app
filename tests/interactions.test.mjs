@@ -13,3 +13,5 @@ test('calendar has reload, source selection, load/error handling and a persisten
 test('school ownership and admin acceptance journey are documented without claiming authenticated testing',async()=>{const doc=await source('docs/content-ownership.md');for(const text of ['Google Calendar','Alma','Not performed','No duplicate entry','Production'])assert.ok(doc.includes(text))});
 
 test('calendar selection is reflected in URL for refresh, sharing and browser history',async()=>{const view=await source('app/calendar/view.tsx');assert.match(view,/router.push/);assert.match(view,/source=\$\{nextSource\}/);assert.match(view,/view=\$\{nextMode\}/);});
+
+test('contact choices use public school destinations without an in-app messaging system',async()=>{const updates=await source('app/updates/page.tsx');for(const text of ['mailto:aly.kirby@stjohnocala.org','mailto:bobby.anderson@stjohnocala.org','Find a teacher','No message is sent by this app'])assert.ok(updates.includes(text));});
