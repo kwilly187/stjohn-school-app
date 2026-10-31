@@ -17,6 +17,6 @@ export default function Today(){return <div className="today-page">
     </section>
   </div>
   <section className="notice-card"><span className="notice-symbol"><Icon name="updates"/></span><div><h2>School notices</h2><p>Announcements and anything due, in {school.portalLabel}.</p></div><ExternalLink href={school.portal} className="text-link">Open {school.portalLabel}</ExternalLink></section>
-  <section className="essentials" aria-labelledby="quick-heading"><div className="section-heading"><h2 id="quick-heading">Everyday essentials</h2><Link href="/resources" className="text-link">View all <span aria-hidden="true">→</span></Link></div><div className="resource-grid quick-grid">{['lunch','alma','tuition','aftercare'].map(id=><ResourceCard compact key={id} resource={resources.find(r=>r.id===id)!}/>)}</div></section>
+  <section className="essentials" aria-labelledby="quick-heading"><div className="section-heading"><h2 id="quick-heading">Everyday essentials</h2><Link href="/resources" className="text-link">View all <span aria-hidden="true">→</span></Link></div><div className="school-store-shortcut"><ResourceCard compact resource={{...resources.find(r=>r.id==='spirit')!,title:'School store'}}/></div><div className="resource-grid quick-grid">{['lunch','alma','tuition','aftercare'].map(id=><ResourceCard compact key={id} resource={resources.find(r=>r.id===id)!}/>)}</div></section>
   <HelpCard/><SourceNote/>
 </div>}

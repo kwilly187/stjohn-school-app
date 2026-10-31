@@ -81,3 +81,11 @@ body{background:#e8ecf0}
  .today-page .help-card{align-items:flex-start;flex-direction:row;flex-wrap:wrap;margin-top:24px}.today-page .help-actions{width:auto;align-items:flex-start;gap:0}.today-page .help-actions .button{width:auto}.today-page .help-card h2{font-size:24px}
 }
 @media(max-width:359px){.today-welcome h1{font-size:27px}.day-link{padding:16px 12px}.day-link strong{font-size:20px}.day-arrow{display:none}.day-description{padding-right:0}.today-page .notice-card>.text-link{margin-left:0}}
+.school-store-shortcut{margin:8px 0 3px;background:#f4efdf;border-left:2px solid var(--gold)}
+.school-store-shortcut .resource-card{border:0;border-radius:0;align-items:center;padding:15px 18px;gap:14px}
+.school-store-shortcut .resource-card:hover{background:#eee6d0}
+.school-store-shortcut .icon-tile{background:transparent;color:#79602e;width:32px;min-width:32px}
+.school-store-shortcut .resource-card strong{font-size:16px;margin:0 0 2px}
+.school-store-shortcut .resource-detail{font-size:14px;color:#655b46}
+.school-store-shortcut .external-arrow{color:#79602e}
+.lunch-back{margin-top:14px;font-size:14px}.lunch-back+.page-heading{padding-top:12px}.menu-status{font-size:13px;color:var(--muted);padding:0 0 13px;min-height:36px}.lunch-frame{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}.lunch-frame iframe{display:block;width:100%;height:760px;border:0}@media(max-width:680px){.lunch-frame iframe{height:680px}.menu-status{font-size:13px}}

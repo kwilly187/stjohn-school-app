@@ -15,7 +15,7 @@ No duplicate entry: staff keep using their existing school systems. This app is 
 | Forms, permission slips and child-specific actions | School office / teachers / existing school systems | Send through normal school channels and keep the public parent page current | Today directs families to school communications for anything due; portal and office links remain available. School supplies, dress code and general parent information open the authoritative website. |
 | Grades and attendance | School/teachers in Alma | Maintain records in Alma | Resources → Grades & attendance. Login stays with Alma. |
 | Tuition and school fees | School finance office / Blackbaud | Maintain existing Blackbaud accounts; school calls its link Smartcart | Resources → Tuition & school fees opens Blackbaud. No sample balance or local checkout. |
-| Lunch menu | Maschio's | Vendor maintains the existing school menu page | Today or Resources → Lunch menu; app always opens source. |
+| Lunch menu | Maschio’s school page links to school Nutrislice | Vendor maintains its school menu in Nutrislice | Today / Resources → Lunch menu opens the in-shell /lunch viewer for https://sjlof.nutrislice.com/ with a persistent open-in-new-tab fallback. Maschio’s index is secondary meal-program information. No daily items/allergens copied or invented. |
 | Lunch account | PaySchools / school food-service administration | Maintain existing PaySchools account workflows | Resources → Lunch account. No balances copied into app. |
 | Aftercare signup | School aftercare staff / Brightwheel | Maintain the existing school enrollment packet | Opens school-linked signup packet. Not labeled as existing-family account management or a pickup-change form. |
 | Easy contact choices on Updates | School-published office and athletics contacts / staff directory | School maintains contact pages; app maintainer updates mailto addresses if they change | Parents choose office, teacher or athletics. Email opens their email app; no in-app inbox and no automatic send. No test messages sent. |
@@ -54,3 +54,5 @@ No duplicate entry: staff keep using their existing school systems. This app is 
 ## Source provenance
 Public link map checked October 31, 2026 against https://stjohnocala.org/for-parents/ and https://stjohnocala.org/calendar/. Calendar IDs are the school's existing public embeds. This check date concerns link provenance, not live event/message freshness.
 Official logo downloaded from https://stjohnocala.org/wp-content/uploads/2025/01/80137d10ddb323d6c10bef428e05a2d3.png and visually verified. No newly generated branding.
+
+Public resource follow-up: Maschio’s school Menu href verified as https://sjlof.nutrislice.com/. School supply page currently includes 2024–2025 labels, so the resource asks parents to confirm current-year lists with the office.
