@@ -22,6 +22,7 @@ No duplicate entry: staff keep using their existing school systems. This app is 
 | Uniforms and spirit wear | School-approved FlynnO'Hara and BSN stores | Vendors manage products, prices, stock and checkout | Links open vendor stores. No demo cart or inventory in the app. |
 | Events & fundraising | Separate SaintsSpirit project owner | Update the separate event site | Resources opens its approved preview URL. Online giving is not active; app does not promise registration or payments. |
 | Teacher wish lists & Saints Network | School/PTL; no approved live source supplied | Confirm owner and canonical source before adding links | A collapsed note preserves the concepts without publishing fictional listings or membership prices. |
+| Powered by Seagull footer | Seagull product owner | Maintain platform attribution in app/school-data.mjs | Discreet footer link; school branding remains primary. |
 | Navigation, preview labels and destination URLs | App maintainer | Update app/school-data.mjs or page copy in an isolated branch; test; review | Preview review first. Production changes require explicit approval. |
 | Logo | School website asset | Reuse official supplied logo; don't redraw branding | Local public/stjohn-logo.png avoids an external-image dependency. |
 

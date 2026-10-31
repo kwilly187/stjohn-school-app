@@ -14,4 +14,6 @@ test('school ownership and admin acceptance journey are documented without claim
 
 test('calendar selection is reflected in URL for refresh, sharing and browser history',async()=>{const view=await source('app/calendar/view.tsx');assert.match(view,/router.push/);assert.match(view,/source=\$\{nextSource\}/);assert.match(view,/view=\$\{nextMode\}/);});
 
-test('contact choices use public school destinations without an in-app messaging system',async()=>{const updates=await source('app/updates/page.tsx');for(const text of ['mailto:aly.kirby@stjohnocala.org','mailto:bobby.anderson@stjohnocala.org','Find a teacher','No message is sent by this app'])assert.ok(updates.includes(text));});
+test('contact choices use public school destinations without an in-app messaging system',async()=>{const updates=await source('app/updates/page.tsx');for(const text of ['school.officeEmail','school.athleticsEmail','Find a teacher','No message is sent by this app'])assert.ok(updates.includes(text));});
+
+test('school identity and contacts are centralized; Seagull attribution is discreet',async()=>{const layout=await source('app/layout.tsx');for(const key of ['name','logo','theme','officeEmail','athleticsEmail','timeZone'])assert.ok(school[key]);assert.match(layout,/school.appName/);assert.match(layout,/Powered by/);assert.doesNotMatch(layout,/ST\. JOHN|stjohn-logo/);});
