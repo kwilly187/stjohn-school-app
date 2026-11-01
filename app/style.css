@@ -251,3 +251,15 @@ body{background:#f0f2f5}.app{background:#fff;box-shadow:none}
  .school-accounts-link{gap:10px}.school-accounts-link>span>span{font-size:12px}.accounts-symbol{width:34px;min-width:34px}.bottom-nav{bottom:max(10px,env(safe-area-inset-bottom));width:calc(100% - 24px);border-radius:18px;padding:6px;gap:2px}.bottom-nav a{min-height:55px;font-size:11px;border-radius:12px}
 }
 @media(max-width:359px){.daily-action:not(.family-action){padding:12px;gap:7px}.daily-action:not(.family-action) .action-symbol{display:none}.companion-essentials h2{font-size:19px}.devotion-campus figcaption{font-size:11px;padding:10px;gap:8px}}
+
+/* Family-first Today: profile and relevant dates read as one calm surface. */
+.today-companion .companion-heading{padding-bottom:20px}
+.family-day{border-top:2px solid var(--navy);padding-top:20px;margin-bottom:26px}
+.family-day-heading{display:flex;align-items:center;gap:16px;min-height:80px;text-decoration:none;color:var(--navy);padding:0 0 18px;border-bottom:1px solid #e3e8ef}
+.family-portrait{display:grid;place-items:center;flex-shrink:0;width:68px;height:68px;border-radius:50%;overflow:hidden;background:#edf1f7;color:var(--navy)}
+.family-portrait img{width:100%;height:100%;object-fit:cover}.family-portrait svg{width:30px;height:30px}
+.family-day-copy{display:flex;flex-direction:column;gap:3px}.family-day-copy .eyebrow{font-size:11px;letter-spacing:1.2px;color:#626f84;margin:0}.family-day-copy strong{font-size:25px;line-height:1.25;letter-spacing:-.6px}.family-day-copy>span:last-child{font-size:14px;color:#647187}
+.family-day-open{display:flex;align-items:center;gap:14px;margin-left:auto;min-height:44px;font-size:14px;font-weight:650;color:var(--blue)}.family-day-open>span{font-size:22px}.family-day-heading:hover .family-day-open{text-decoration:underline;text-underline-offset:4px}
+.family-dates-loading{min-height:180px;padding:24px 0;color:var(--muted)}
+.schedule-actions{grid-template-columns:1fr 1fr;margin:26px 0 32px;gap:16px}.schedule-actions .daily-action{min-height:94px;padding:20px;border-radius:12px}.schedule-actions .daily-action .action-arrow{display:block}.schedule-actions .athletics-action{background:var(--navy);border-color:var(--navy);color:white}.schedule-actions .athletics-action:hover{background:#203c68}.athletics-action .action-copy>span{color:#d5dfed}.athletics-action .action-arrow{color:#e7c57c}.athletics-crest{width:46px;height:54px;object-fit:contain;flex-shrink:0}
+@media(max-width:680px){.family-day{padding-top:17px;margin-bottom:24px}.family-day-heading{gap:13px;padding-bottom:17px}.family-portrait{width:60px;height:60px}.family-day-copy strong{font-size:23px}.family-day-copy .eyebrow{font-size:10px}.family-day-open{font-size:13px;gap:9px}.schedule-actions{gap:10px;margin:24px 0 28px}.schedule-actions .daily-action{min-height:88px;padding:14px;gap:10px}.schedule-actions .daily-action .action-arrow{display:none}.athletics-crest{width:34px;height:43px}.schedule-actions .action-copy>span{font-size:12px}.schedule-actions .action-copy strong{font-size:16px}}
