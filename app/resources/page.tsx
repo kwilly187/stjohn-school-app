@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import storeStyles from './store.module.css';
 import helpStyles from '../updates/help.module.css';
-import {Heading,HelpCard,ResourceCard,ExternalLink,Icon} from '../components';
+import {Heading,ResourceCard,ExternalLink,Icon} from '../components';
 import {resources,resourceGroups} from '../school-data.mjs';
 export const metadata={title:'Resources'};
 function SchoolStore(){
@@ -20,5 +20,5 @@ function SchoolStore(){
   </article>
  </div>;
 }
-export default function Resources(){return <div className="resources-page"><Heading eyebrow="ONE PLACE TO START" title="Family resources">School information, everyday essentials and your school accounts.</Heading><div className={helpStyles.resourceHelp}><span>Questions about school life?</span><Link href="/updates#help-tasks">Find the right help →</Link></div>{resourceGroups.map(group=><section className="resource-section" key={group} id={group==='School store'?'school-store':group==='School accounts'?'school-accounts':undefined}><h2>{group}</h2>{group==='School accounts'&&<p className="fine-print">These services open outside the app. Sign in with the account you use for each provider.</p>}{group==='School store'?<SchoolStore/>:<div className="resource-grid">{resources.filter(r=>r.group===group).map(resource=><ResourceCard key={resource.id} resource={resource}/>)}</div>}</section>)}<HelpCard/></div>}
+export default function Resources(){return <div className="resources-page"><Heading eyebrow="ONE PLACE TO START" title="Family resources">School information, everyday essentials and your school accounts.</Heading><div className={helpStyles.resourceHelp}><span>Questions about school life?</span><Link href="/updates#help-tasks">Find the right help →</Link></div>{resourceGroups.map(group=><section className="resource-section" key={group} id={group==='School store'?'school-store':group==='School accounts'?'school-accounts':undefined}><h2>{group==='Everyday essentials'?'Meals':group==='School information'?'Prepare for school':group}</h2>{group==='School accounts'&&<p className="fine-print">These services open outside the app. Sign in with the account you use for each provider.</p>}{group==='School store'?<SchoolStore/>:<div className="resource-grid">{resources.filter(r=>r.group===group&&!['meal-info','supplies','staff'].includes(r.id)).map(resource=><ResourceCard key={resource.id} resource={resource.id==='forms'?{...resource,title:'Forms & school supplies',detail:'Ask the office for current forms and supply lists.'}:resource}/>)}</div>}</section> )}</div>}
 

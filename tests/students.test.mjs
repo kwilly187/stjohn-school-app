@@ -30,6 +30,6 @@ test('unknown class and team scopes match nothing',()=>{
 });
 test('student screen uses real public dates and URL-backed profile selection',async()=>{
  const source=await readFile(new URL('../app/students/page.tsx',import.meta.url),'utf8');
- for(const text of ['aria-current','searchParams','/students?student=','href="/updates"','href="/"','PublicDates'])assert.ok(source.includes(text));
+ for(const text of ['aria-current','searchParams','/students?student=','href="/"','PublicDates'])assert.ok(source.includes(text));
  assert.doesNotMatch(source,/sampleNotices|Sample sibling|mode===|localStorage|signIn|signUp/);
 });

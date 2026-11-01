@@ -29,7 +29,7 @@ test('native view has labeled search, keyboard-native filter/reset, live results
 });
 test('directory page has official source provenance, office fallback and no student assignment claims',async()=>{
  const source=await readFile(new URL('../app/staff/page.tsx',import.meta.url),'utf8');
- for(const text of ['school.officeEmail','school.phone','staffSource.url','staffSource.checkedLabel','href="/resources"'])assert.ok(source.includes(text),text);
+ for(const text of ['school.officeEmail','school.phone','staffSource.url','staffSource.checkedLabel','href="/updates"'])assert.ok(source.includes(text),text);
  assert.doesNotMatch(source,/your child.s teacher|assigned teacher|live staff feed is connected/i);
 });
 

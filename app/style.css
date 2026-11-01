@@ -263,3 +263,44 @@ body{background:#f0f2f5}.app{background:#fff;box-shadow:none}
 .family-dates-loading{min-height:180px;padding:24px 0;color:var(--muted)}
 .schedule-actions{grid-template-columns:1fr 1fr;margin:26px 0 32px;gap:16px}.schedule-actions .daily-action{min-height:94px;padding:20px;border-radius:12px}.schedule-actions .daily-action .action-arrow{display:block}.schedule-actions .athletics-action{background:var(--navy);border-color:var(--navy);color:white}.schedule-actions .athletics-action:hover{background:#203c68}.athletics-action .action-copy>span{color:#d5dfed}.athletics-action .action-arrow{color:#e7c57c}.athletics-crest{width:46px;height:54px;object-fit:contain;flex-shrink:0}
 @media(max-width:680px){.family-day{padding-top:17px;margin-bottom:24px}.family-day-heading{gap:13px;padding-bottom:17px}.family-portrait{width:60px;height:60px}.family-day-copy strong{font-size:23px}.family-day-copy .eyebrow{font-size:10px}.family-day-open{font-size:13px;gap:9px}.schedule-actions{gap:10px;margin:24px 0 28px}.schedule-actions .daily-action{min-height:88px;padding:14px;gap:10px}.schedule-actions .daily-action .action-arrow{display:none}.athletics-crest{width:34px;height:43px}.schedule-actions .action-copy>span{font-size:12px}.schedule-actions .action-copy strong{font-size:16px}}
+
+/* Task-first Home: family context, useful actions, then selected public dates. */
+.parent-home .companion-heading{padding-bottom:19px}
+.parent-home .companion-heading h1{font-size:clamp(28px,4vw,38px)}
+.parent-home .home-family{display:flex;align-items:center;gap:14px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-decoration:none;color:var(--navy)}
+.parent-home .family-portrait{width:52px;height:52px}
+.parent-home .home-family-copy{display:flex;flex-direction:column;gap:3px;min-width:0}
+.parent-home .home-family-copy strong{font-size:19px;line-height:1.3}
+.parent-home .home-family-copy>span{font-size:14px;color:var(--muted)}
+.parent-home .home-arrow{margin-left:auto;flex-shrink:0;font-size:22px;font-weight:400}
+.parent-home .home-tasks{margin:26px 0 30px}
+.parent-home .home-tasks>h2{font-size:24px;margin:0 0 16px}
+.parent-home .home-help{display:flex;align-items:center;background:var(--navy);border-radius:12px;padding:0 24px;color:#fff;gap:24px}
+.parent-home .home-help a{color:inherit;text-decoration:none;min-height:48px}
+.parent-home .home-help-main{display:flex;align-items:center;gap:16px;flex:1;padding:22px 0}
+.parent-home .home-help-main>svg{width:27px;height:27px;flex-shrink:0;color:#e4c577}
+.parent-home .home-help-main>span:not(.home-arrow){display:flex;flex-direction:column;gap:5px}
+.parent-home .home-help-main strong{font-size:20px;line-height:1.3}
+.parent-home .home-help-main>span>span{color:#dce4f1;font-size:14px;line-height:1.5}
+.parent-home .home-saved{display:flex;align-items:center;gap:10px;border-left:1px solid #ffffff40;padding-left:24px;font-size:14px;white-space:nowrap}
+.parent-home .home-saved svg{width:19px;height:19px}
+.parent-home .home-task-links{display:grid;grid-template-columns:1fr 1fr;column-gap:32px;margin-top:10px}
+.parent-home .home-task-links>a{display:flex;align-items:center;gap:15px;min-height:88px;padding:17px 0;border-bottom:1px solid var(--line);color:var(--navy);text-decoration:none;min-width:0}
+.parent-home .home-task-links>a>svg{width:25px;height:25px;flex-shrink:0;color:#546783}
+.parent-home .home-task-links>a>span:not(.home-arrow){display:flex;flex-direction:column;gap:4px;min-width:0}
+.parent-home .home-task-links strong{font-size:18px;line-height:1.3}
+.parent-home .home-task-links>a>span>span{font-size:14px;color:var(--muted);line-height:1.5}
+.parent-home .home-help a:hover strong,.parent-home .home-task-links a:hover strong,.parent-home .home-family:hover strong,.parent-home .home-saved:hover{text-decoration:underline;text-underline-offset:4px}
+.parent-home .home-dates{border-top:2px solid #d4b66c;padding-top:2px}
+.parent-home .home-dates h2{font-size:22px}
+.parent-home .home-dates h3 a{color:var(--navy);text-decoration:none}
+.parent-home .home-dates h3 a:hover{text-decoration:underline}
+.parent-home .home-dates-loading{padding:20px 0}
+@media(max-width:680px){
+ .parent-home .companion-heading{padding-bottom:15px}.parent-home .companion-greeting{display:none}
+ .parent-home .home-family{gap:12px;padding:13px 0}.parent-home .home-family-copy>span{font-size:13px}.parent-home .home-family-copy strong{font-size:18px}
+ .parent-home .home-tasks{margin:22px 0 27px}.parent-home .home-tasks>h2{font-size:22px;margin-bottom:14px}
+ .parent-home .home-help{display:block;padding:0 19px}.parent-home .home-help-main{gap:12px;padding:19px 0}.parent-home .home-help-main strong{font-size:18px}.parent-home .home-help-main>span>span{font-size:14px}
+ .parent-home .home-saved{border-left:0;border-top:1px solid #ffffff30;padding:9px 0;min-height:48px}.parent-home .home-saved>span{margin-left:auto}
+ .parent-home .home-task-links{column-gap:22px}.parent-home .home-task-links>a{position:relative;display:block;padding:17px 0;min-height:126px}.parent-home .home-task-links>a>svg{margin-bottom:9px;width:23px;height:23px}.parent-home .home-task-links strong{font-size:17px}.parent-home .home-task-links>a>span>span{font-size:13px}.parent-home .home-task-links .home-arrow{position:absolute;top:13px;right:0;font-size:20px}
+}
