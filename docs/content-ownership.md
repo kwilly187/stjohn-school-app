@@ -64,3 +64,6 @@ Public resource follow-up: Maschio’s school Menu href verified as https://sjlo
 
 Before real family content can replace this demonstration, the school must approve the source and server-side guardian-to-student authorization, including revocation and cross-school isolation. Administrative publishing and real family access remain untested and unconnected. The test-only audience contract remains separate from production authorization.
 
+
+## Presentation cleanup
+The presentation shows real public school dates only. Example notices, fictional siblings, and the unapproved devotional draft are not rendered. The public repository profile configuration is empty; any parent-authorized presentation profile is supplied only in a separate hosting overlay. It is not a verified guardian account. Private student records and staff publishing remain unconnected. Audience matcher fixtures remain test-only, never a rendered feed.

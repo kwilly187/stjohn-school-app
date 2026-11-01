@@ -28,15 +28,8 @@ test('personal targeting takes priority over accidental broad metadata',()=>{
 test('unknown class and team scopes match nothing',()=>{
   for(const audience of [{classIds:['other']},{teamIds:['other']},{grades:[12]}]) assert.deepEqual(sampleFamilyFeed([{...sampleNotices[0],audience}],sampleStudents),[]);
 });
-test('page labels fictional examples and uses URL-backed accessible child links and real return routes',async()=>{
-  const source=await readFile(new URL('../app/students/page.tsx',import.meta.url),'utf8');
-  for(const text of ['Sample notices','Sample sibling','aria-current','searchParams','/students?student=','href="/updates"','href="/"']) assert.ok(source.includes(text),text);
-  assert.doesNotMatch(source,/localStorage|fetch\(|signIn|signUp/);
+test('student screen uses real public dates and URL-backed profile selection',async()=>{
+ const source=await readFile(new URL('../app/students/page.tsx',import.meta.url),'utf8');
+ for(const text of ['aria-current','searchParams','/students?student=','href="/updates"','href="/"','PublicDates'])assert.ok(source.includes(text));
+ assert.doesNotMatch(source,/sampleNotices|Sample sibling|mode===|localStorage|signIn|signUp/);
 });
-
-test('family screen keeps concise sample labels without a development permission banner',async()=>{const page=await readFile(new URL('../app/students/page.tsx',import.meta.url),'utf8');assert.match(page,/Sample notices/);assert.match(page,/Sample sibling/);assert.doesNotMatch(page,/<aside|permission|prototype|not a signed-in account/)});
-
-test('real public dates are default and invented notices require explicit examples mode',async()=>{const page=await readFile(new URL('../app/students/page.tsx',import.meta.url),'utf8');assert.match(page,/mode==='examples'/);assert.match(page,/!examples&&students.length>0&&<Suspense/);assert.match(page,/examples&&<section/);assert.match(page,/grades=\{students.map\(child=>child.grade\)\}/)});
-
-
-test('switching between real dates and examples preserves each selected student',async()=>{const {studentModeHref}=await import('../app/students/student-links.mjs');for(const id of ['jordan-example','taylor-example']){assert.equal(studentModeHref(id,true),`/students?student=${id}&mode=examples`);assert.equal(studentModeHref(id,false),`/students?student=${id}`)}assert.equal(studentModeHref('all',true),'/students?mode=examples');assert.equal(studentModeHref('all',false),'/students');assert.equal(studentModeHref('invalid',true),'/students?student=invalid&mode=examples');const page=await readFile(new URL('../app/students/page.tsx',import.meta.url),'utf8');assert.match(page,/studentModeHref\(selection,true\)/);assert.match(page,/studentModeHref\(selection,false\)/)});
