@@ -4,6 +4,7 @@ import {school} from '../school-data.mjs';
 import {sampleStudents, sampleNotices, selectSampleStudents, sampleFamilyFeed} from './sample-family.mjs';
 import styles from './students.module.css';
 import PublicDates from '../public-dates';
+import {studentModeHref} from './student-links.mjs';
 
 export const metadata = {title:'My Students'};
 type SampleNotice = typeof sampleNotices[number] & {relevantStudents: typeof sampleStudents; schoolwide: boolean};
@@ -43,7 +44,7 @@ export default async function Students({searchParams}:{searchParams:Promise<{stu
         </article>)}</div>
       </> : <div className={styles.empty}><p>That sample student isn’t available. No student updates are shown.</p><Link href="/students">View All My Students →</Link></div>}
     </section>}
-    <p className={styles.feedIntro}>{examples?<Link href="/students">Return to school dates →</Link>:<Link href="/students?mode=examples">View sample announcement examples →</Link>}</p>
+    <p className={styles.feedIntro}>{examples?<Link href={studentModeHref(selection,false)}>Return to school dates →</Link>:<Link href={studentModeHref(selection,true)}>View sample announcement examples →</Link>}</p>
     <div className={styles.closing}><div><h2>School announcements</h2><p>Read current messages from school in {school.portalLabel}.</p></div><Link href="/updates">View school updates →</Link></div>
     <Link className={styles.back} href="/">← Back to Today</Link>
   </div>;
