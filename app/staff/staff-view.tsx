@@ -1,18 +1,24 @@
 'use client';
-import {useMemo,useState} from 'react';
+import {useEffect,useMemo,useState} from 'react';
+import {useSearchParams} from 'next/navigation';
+import {staffFilterState,staffFilterHref} from './staff-state.mjs';
 import {filterStaff} from './staff-data.mjs';
 import Link from 'next/link';
 import styles from './staff.module.css';
 type Staff={id:string;name:string;roles:{role:string;department:string}[];departments:string[];email:string|null;contactNeedsConfirmation:boolean};
 export default function StaffView({staff,departments}:{staff:Staff[];departments:string[]}){
-  const [query,setQuery]=useState('');
-  const [department,setDepartment]=useState('all');
+  const params=useSearchParams();
+  const urlState=staffFilterState({q:params.getAll('q').length===1?params.get('q'):undefined,department:params.getAll('department').length===1?params.get('department'):undefined});
+  const [query,setQuery]=useState(urlState.query);
+  const department=urlState.department;
+  useEffect(()=>setQuery(urlState.query),[urlState.query]);
+  const update=(nextQuery:string,nextDepartment:string)=>{setQuery(nextQuery);window.history.replaceState(null,'',staffFilterHref({query:nextQuery,department:nextDepartment}));};
   const results=useMemo(()=>filterStaff(staff,query,department),[staff,query,department]);
-  const reset=()=>{setQuery('');setDepartment('all');};
+  const reset=()=>{update('','all');document.getElementById('staff-search')?.focus();};
   return <section aria-label="Search the staff directory">
     <div className={styles.controls}>
-      <div className={styles.search}><label htmlFor="staff-search">Search staff</label><input id="staff-search" type="search" value={query} onChange={event=>setQuery(event.target.value)} placeholder="Name or role" autoComplete="off" aria-controls="staff-results"/></div>
-      {departments.length>0 && <div className={styles.department}><label htmlFor="staff-department">Department</label><select id="staff-department" value={department} onChange={event=>setDepartment(event.target.value)} aria-controls="staff-results"><option value="all">All departments</option>{departments.map(item=><option key={item} value={item}>{item}</option>)}</select></div>}
+      <div className={styles.search}><label htmlFor="staff-search">Search staff</label><input id="staff-search" type="search" value={query} maxLength={120} onChange={event=>update(event.target.value,department)} placeholder="Name or role" autoComplete="off" aria-controls="staff-results"/></div>
+      {departments.length>0 && <div className={styles.department}><label htmlFor="staff-department">Department</label><select id="staff-department" value={department} onChange={event=>update(query,event.target.value)} aria-controls="staff-results"><option value="all">All departments</option>{departments.map(item=><option key={item} value={item}>{item}</option>)}</select></div>}
     </div>
     <div className={styles.resultsHeading}><p role="status" aria-live="polite">{results.length} {results.length===1?'staff contact':'staff contacts'}{department!=='all'?` · ${department}`:''}</p>{(query||department!=='all')&&<button onClick={reset} type="button">Clear filters</button>}</div>
     <div id="staff-results" className={styles.list}>

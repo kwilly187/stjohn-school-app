@@ -52,7 +52,7 @@ export const resources = [
   {id:'uniforms',group:'School store',title:'Buy uniforms',detail:'FlynnO’Hara · St. John Lutheran School.',url:'https://flynnohara.com/shop/saint-john-lutheran-school-fl045/',icon:'shirt'},
   {id:'spirit',group:'School store',title:'Spirit wear',detail:'BSN Sports · School spirit wear',url:'https://sideline.bsnsports.com/schools/florida/ocala/saint-john-lutheran-high-school',icon:'shirt'},
   {id:'events',group:school.communityLabel,title:'Events & fundraising',detail:'SaintsSpirit preview · Online giving is not active.',url:'https://saints-spirit-approved-preview.vercel.app/',icon:'heart'},
-  {id:'community',group:school.communityLabel,title:'Parent connection & school support',detail:'Get involved & support classrooms',url:'https://stjohnocala.org/',icon:'people'},
+  {id:'community',appPath:'/updates#contact-heading',group:school.communityLabel,title:'Get involved',detail:'Ask the school office about ways to help.',url:'https://stjohnocala.org/',icon:'people'},
 ];
 
 export const resourceGroups=['Everyday essentials','School accounts','School store','Athletics','School information',school.communityLabel];

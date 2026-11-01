@@ -38,3 +38,14 @@ test('exact-name-and-email normalization preserves every published role and sepa
  for(const listing of staffListings){const person=staffDirectory.find(p=>p.name===listing.name&&p.email===listing.email);assert.ok(person);assert.ok(person.roles.some(role=>role.role===listing.role&&role.department===listing.department));}
  assert.ok(staffDirectory.some(p=>p.roles.length>1));
 });
+
+test('staff filters round-trip through a bounded native URL for reload and return navigation',async()=>{
+ const {staffFilterState,staffFilterHref}=await import('../app/staff/staff-state.mjs');
+ const href=staffFilterHref({query:'Marie Till',department:'Business Office'});const url=new URL(href,'https://example.invalid');
+ assert.equal(url.pathname,'/staff');assert.deepEqual(staffFilterState(Object.fromEntries(url.searchParams)),{query:'Marie Till',department:'Business Office'});
+ assert.equal(staffFilterHref({query:'',department:'all'}),'/staff');
+ assert.deepEqual(staffFilterState({q:['two','values'],department:'unpublished'}),{query:'',department:'all'});
+ assert.equal(staffFilterState({q:'x'.repeat(200)}).query.length,120);
+ const encoded=new URL(staffFilterHref({query:'<x>&from=//example.invalid'}),'https://example.invalid');assert.equal(encoded.pathname,'/staff');assert.equal(encoded.searchParams.get('from'),null);
+ const view=await readFile(new URL('../app/staff/staff-view.tsx',import.meta.url),'utf8');assert.match(view,/useSearchParams/);assert.match(view,/history.replaceState/);assert.match(view,/setQuery\(urlState.query\)/);
+});

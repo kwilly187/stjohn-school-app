@@ -19,3 +19,13 @@ test('public information routes stay native and office/meal support are availabl
  assert.equal(school.mealHelpEmail,'jstonecypher@maschiofood.com');assert.match(school.officeHours,/7:30 am–3:30 pm/);
  const updates=await readFile(new URL('../app/updates/page.tsx',import.meta.url),'utf8');assert.match(updates,/href="\/staff"/);assert.match(updates,/school.officeHours/);
 });
+
+test('getting involved opens existing native office help instead of a generic homepage',async()=>{
+ const {resources}=await import('../app/school-data.mjs');const item=resources.find(item=>item.id==='community');assert.equal(item.appPath,'/updates#contact-heading');assert.equal(item.title,'Get involved');assert.match(item.detail,/school office/);
+});
+
+test('closing calendar details and clearing staff results restore useful keyboard focus',async()=>{
+ const view=await readFile(new URL('../app/calendar/view.tsx',import.meta.url),'utf8'),staff=await readFile(new URL('../app/staff/staff-view.tsx',import.meta.url),'utf8');
+ assert.match(view,/restoreEventFocus/);assert.match(view,/calendar-period-heading/);assert.match(view,/eventOrigin.current/);assert.match(view,/click.currentTarget.id/);
+ assert.match(staff,/getElementById\('staff-search'\)\?\.focus\(\)/);
+});
