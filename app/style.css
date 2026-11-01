@@ -187,3 +187,67 @@ body{background:#f0f2f5}.app{background:#fff;box-shadow:none}
 .updates-links h2{font-size:24px}.updates-links p{font-size:15px}
 .family-shortcut>span{font-size:18px;background:none;padding:0;color:var(--navy);font-weight:400}
 @media(max-width:680px){.resources-page .resource-section{margin:26px 0 31px}.resources-page .resource-section>h2{font-size:25px}.resources-page .resource-card{padding:18px 0}.lunch-menu-card{padding:23px 21px}.lunch-menu-card h2{font-size:27px}.lunch-support{gap:7px}.updates-links{grid-template-columns:1fr;gap:14px}.updates-links .card{padding:22px}}
+
+/* Saints daily companion: compact native actions, one devotional feature, quiet utility. */
+.app{padding-bottom:115px}.topbar{height:80px}.brand img{width:44px;height:44px}.brand strong{font-size:20px}.brand span{font-size:9px;letter-spacing:1.4px}.preview-label{font-size:10px;background:#f4f6f9}
+.companion-heading{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:27px 0 23px}
+.companion-heading .eyebrow{font-size:10px;letter-spacing:1.7px;color:#6c7890;margin:0 0 5px}
+.companion-heading h1{font-family:Manrope,Arial,sans-serif;font-size:36px;letter-spacing:-1.5px;line-height:1.2;margin:0;font-weight:800}
+.companion-greeting{font-size:15px;color:#69758a}
+.daily-actions{display:grid;grid-template-columns:1.35fr 1fr 1fr;gap:13px;margin-bottom:27px}
+.daily-action{display:flex;align-items:center;gap:14px;min-height:103px;padding:20px;text-decoration:none;border:1px solid #e2e8ef;border-radius:14px;color:var(--navy);background:#fff;transition:background .15s,border-color .15s}
+.daily-action:hover{background:#f6f8fb;border-color:#a8b9d3}
+.action-symbol{display:grid;place-items:center;flex-shrink:0;width:40px;height:40px;color:var(--blue)}
+.action-symbol svg{width:27px;height:27px;stroke-width:1.7}
+.action-copy{min-width:0}.action-copy strong{display:block;font-size:17px;font-weight:700;line-height:1.35;letter-spacing:-.3px}.action-copy>span{display:block;font-size:13px;line-height:1.4;color:#65748a;margin-top:5px}
+.action-arrow{font-size:21px;line-height:1;margin-left:auto;flex-shrink:0}
+.family-action{background:var(--navy);border-color:var(--navy);color:#fff}
+.family-action:hover{background:#203c68;border-color:#203c68}
+.family-action .action-symbol{color:#e7c57c;background:#ffffff0c;border-radius:50%}
+.family-action .action-copy>span{color:#d1dcee}.family-action .action-arrow{color:#e7c57c}
+.daily-action:not(.family-action) .action-arrow{display:none}
+.devotion-feature{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);border:1px solid #eee9df;border-radius:17px;overflow:hidden;background:#faf8f2;margin:0 0 31px}
+.today-companion .devotion-card{padding:25px 28px;background:transparent;border:0;border-radius:0;margin:0}
+.today-companion .devotion-top{margin-bottom:13px}.today-companion .devotion-top h2{font-size:11px;color:#796439;letter-spacing:1.5px;margin-bottom:4px}
+.today-companion .devotion-status{font-size:11px;color:#766b57}
+.today-companion .devotion-title h3{font-size:29px;letter-spacing:-.8px;margin-bottom:4px}
+.today-companion .devotion-title>span{font-size:13px;color:#737b88}
+.today-companion .devotion-card p{font-size:15px;line-height:1.65;color:#4a5667;margin-bottom:12px}
+.today-companion .devotion-card .devotion-prayer{font-size:14px;line-height:1.6;margin-bottom:0}
+.devotion-campus{position:relative;margin:0;min-width:0;display:flex;flex-direction:column;background:#eef2f3}
+.devotion-campus>img{display:block;width:100%;height:0;min-height:180px;flex:1;object-fit:cover;object-position:53% center}
+.devotion-campus figcaption{display:flex;align-items:center;gap:14px;padding:16px 20px;background:#fff;color:var(--navy);font-size:13px;font-weight:600;line-height:1.4}
+.devotion-campus figcaption img{width:15px;height:44px;object-fit:contain}
+.companion-essentials .section-heading{margin:0 0 12px}.companion-essentials h2{font-family:Manrope,Arial,sans-serif;font-size:22px;letter-spacing:-.6px}.companion-essentials .section-heading .text-link{font-size:14px}
+.companion-public-links{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.companion-public-links .resource-card{border:1px solid #e4e9f0;border-radius:13px;padding:19px;align-items:center;gap:13px}
+.companion-public-links .icon-tile{background:#f1f4f8;border-radius:12px;color:var(--navy)}
+.companion-public-links .resource-card strong{font-size:16px}.companion-public-links .resource-detail{font-size:13px}
+.school-accounts-link{display:flex;align-items:center;gap:15px;min-height:82px;padding:19px 2px;text-decoration:none;color:var(--navy);border-bottom:1px solid #e5e9ef;margin-top:7px}
+.school-accounts-link:hover{background:#fafbfc}.accounts-symbol{display:grid;place-items:center;width:44px;min-width:44px;height:44px;color:#71809a}
+.school-accounts-link strong{display:block;font-size:15px}.school-accounts-link>span>span{display:block;font-size:13px;line-height:1.5;color:#6c788c;margin-top:3px}
+.school-accounts-link .action-arrow{color:#6b7891}
+.today-companion .help-card{margin-top:25px;border-bottom:0}.today-companion .help-card h2{font-family:Manrope,Arial,sans-serif;font-size:20px;font-weight:700;letter-spacing:-.5px}
+.bottom-nav{bottom:12px;width:calc(100% - 28px);max-width:640px;border:1px solid #e4e9f0;border-radius:20px;padding:7px;background:#fff;box-shadow:0 8px 30px #12274b17;gap:5px}
+.bottom-nav a{border-radius:13px;min-height:57px;gap:4px;font-size:12px;font-weight:600;color:#6d7b90}
+.bottom-nav a[aria-current=page]{background:var(--navy);color:#fff}
+.bottom-nav a[aria-current=page]:before{display:none}.bottom-nav a:hover{background:#eef2f7}.bottom-nav a[aria-current=page]:hover{background:#203c68}
+@media(max-width:800px) and (min-width:681px){.daily-action{padding:15px;gap:8px}.action-symbol{width:30px}.action-copy strong{font-size:15px}.action-copy>span{font-size:12px}}
+@media(max-width:680px){
+ .app{padding-bottom:110px}.topbar{height:76px}.brand strong{font-size:19px}.brand img{width:42px;height:42px}
+ .companion-heading{padding:23px 0 18px;gap:12px}.companion-heading h1{font-size:32px}.companion-heading .eyebrow{font-size:9px;letter-spacing:1.3px}.companion-greeting{font-size:13px;max-width:125px;text-align:right;line-height:1.5}
+ .daily-actions{grid-template-columns:1fr 1fr;gap:10px;margin-bottom:23px}
+ .daily-action{min-height:83px;padding:15px;gap:10px;border-radius:13px}
+ .family-action{grid-column:1/-1;min-height:78px;padding:16px 18px}.family-action .action-symbol{width:42px;height:42px}.family-action .action-copy strong{font-size:18px}.family-action .action-copy>span{margin-top:3px}
+ .daily-action:not(.family-action) .action-symbol{width:26px;height:32px}.daily-action:not(.family-action) .action-symbol svg{width:24px;height:24px}
+ .action-copy strong{font-size:16px}.action-copy>span{font-size:12px;margin-top:3px}
+ .devotion-feature{grid-template-columns:1fr;margin-bottom:26px;border-radius:15px}
+ .today-companion .devotion-card{padding:22px}.today-companion .devotion-title h3{font-size:27px}.today-companion .devotion-card p{font-size:15px;line-height:1.65}
+ .devotion-campus{display:grid;grid-template-columns:1.2fr 1fr;height:105px;background:#fff}
+ .devotion-campus>img{height:105px;min-height:0;object-position:center 59%}
+ .devotion-campus figcaption{font-size:12px;padding:14px;gap:10px}.devotion-campus figcaption img{width:13px;height:38px}
+ .companion-essentials h2{font-size:21px}.companion-essentials .section-heading .text-link{font-size:13px;gap:7px}
+ .companion-public-links{gap:10px}.companion-public-links .resource-card{display:block;padding:15px;position:relative}.companion-public-links .icon-tile{width:38px;min-width:38px;height:38px;margin-bottom:13px}.companion-public-links .resource-card strong{font-size:16px}.companion-public-links .resource-detail{font-size:12px;line-height:1.5}.companion-public-links .external-arrow{position:absolute;right:15px;top:21px;width:17px}
+ .school-accounts-link{gap:10px}.school-accounts-link>span>span{font-size:12px}.accounts-symbol{width:34px;min-width:34px}.bottom-nav{bottom:max(10px,env(safe-area-inset-bottom));width:calc(100% - 24px);border-radius:18px;padding:6px;gap:2px}.bottom-nav a{min-height:55px;font-size:11px;border-radius:12px}
+}
+@media(max-width:359px){.daily-action:not(.family-action){padding:12px;gap:7px}.daily-action:not(.family-action) .action-symbol{display:none}.companion-essentials h2{font-size:19px}.devotion-campus figcaption{font-size:11px;padding:10px;gap:8px}}

@@ -36,12 +36,12 @@ export function calendarUrl(source = 'activities', mode = 'AGENDA') {
 }
 export const resources = [
   {id:'athletics',group:'Athletics',title:'Teams & participation',detail:'School athletics · Teams & requirements. Use Calendar for current dates.',url:school.athletics,icon:'people'},
-  {id:'alma',group:'Everyday essentials',title:'Grades & attendance',detail:'Alma · Student information & messages.',url:school.portal,icon:'book'},
+  {id:'alma',group:'School accounts',title:'Grades & attendance',detail:'Alma · Sign-in required',url:school.portal,icon:'book'},
   {id:'lunch',appPath:'/lunch',group:'Everyday essentials',title:'Lunch menu',detail:'Nutrislice · School lunch menus',url:'https://sjlof.nutrislice.com/',icon:'lunch'},
   {id:'meal-info',group:'Everyday essentials',title:'Meal program information',detail:'Maschio’s · Food service & account help',url:'https://maschiofood.com/stjohnlutheran/',icon:'lunch'},
-  {id:'lunch-account',group:'Everyday essentials',title:'Lunch account',detail:'PaySchools Central',url:'https://payschoolscentral.com/',icon:'wallet'},
-  {id:'tuition',group:'Everyday essentials',title:'Tuition & school fees',detail:'Blackbaud · School “Smartcart”',url:'https://parent.blackbaud.school/Login.aspx',icon:'wallet'},
-  {id:'aftercare',group:'Everyday essentials',title:'Aftercare signup',detail:'Brightwheel · Aftercare enrollment',url:'https://schools.mybrightwheel.com/sign-in?redirect_path=%2Fadmissions%2Fpacket%2F1bf8a8d3-a105-4322-b65a-f46977903ad5%2Ffill%3Fschool_id%3Da2cb0179-7e6a-4435-bd66-fa3b9340b80a',icon:'clock'},
+  {id:'lunch-account',group:'School accounts',title:'Lunch account',detail:'PaySchools · Sign-in required',url:'https://payschoolscentral.com/',icon:'wallet'},
+  {id:'tuition',group:'School accounts',title:'Tuition & school fees',detail:'Blackbaud (Smartcart) · Sign-in required',url:'https://parent.blackbaud.school/Login.aspx',icon:'wallet'},
+  {id:'aftercare',group:'School accounts',title:'Aftercare signup',detail:'Brightwheel · Sign-in required',url:'https://schools.mybrightwheel.com/sign-in?redirect_path=%2Fadmissions%2Fpacket%2F1bf8a8d3-a105-4322-b65a-f46977903ad5%2Ffill%3Fschool_id%3Da2cb0179-7e6a-4435-bd66-fa3b9340b80a',icon:'clock'},
   {id:'staff',group:'School information',title:'Staff directory',detail:'Teachers & school staff',url:school.staff,icon:'people'},
   {id:'supplies',group:'School information',title:'School supply information',detail:'School lists · Confirm the current year with the office.',url:'https://stjohnocala.org/for-parents/school-supplies/',icon:'book'},
   {id:'forms',group:'School information',title:'Forms & parent information',detail:'Parent page · Ask the office for other forms.',url:school.parents,icon:'file'},
@@ -52,4 +52,4 @@ export const resources = [
   {id:'community',group:school.communityLabel,title:'Parent connection & school support',detail:'Get involved & support classrooms',url:'https://stjohnocala.org/',icon:'people'},
 ];
 
-export const resourceGroups=['Everyday essentials','School store','Athletics','School information',school.communityLabel];
+export const resourceGroups=['Everyday essentials','School accounts','School store','Athletics','School information',school.communityLabel];
