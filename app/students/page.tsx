@@ -18,20 +18,16 @@ export default async function Students({searchParams}:{searchParams:Promise<{stu
       <h1>My Students</h1>
       <p>One family view. The updates that belong to each child, together or on their own.</p>
     </header>
-    <aside className={styles.sample} aria-label="Sample family disclosure">
-      <strong>Sample family • fictional students and notices</strong>
-      <p>This is a family-view prototype, not a signed-in account. School-approved student access and real messages are not connected.</p>
-    </aside>
     <nav className={styles.selector} aria-label="Choose a sample student">
       <Link href="/students" scroll={false} aria-current={selection === 'all' ? 'page' : undefined} className={styles.choice}>
         <span className={styles.avatar} aria-hidden="true">2</span><span><strong>All My Students</strong><span>Both children, one view</span></span>
       </Link>
       {sampleStudents.map(child => <Link key={child.id} href={`/students?student=${child.id}`} scroll={false} aria-current={selection === child.id ? 'page' : undefined} className={styles.choice}>
-        <span className={styles.avatar} aria-hidden="true">{child.name[0]}</span><span><strong>{child.name}</strong><span>Grade {child.grade}</span></span>
+        <span className={styles.avatar} aria-hidden="true">{child.name[0]}</span><span><strong>{child.name}</strong><span>Grade {child.grade}{child.id === 'taylor-example' ? ' · Sample sibling' : ''}</span></span>
       </Link>)}
     </nav>
     <section aria-labelledby="family-feed-heading">
-      <div className={styles.feedHeading}><div><span className={styles.eyebrow}>EXAMPLE UPDATES</span><h2 id="family-feed-heading">{selected ? `For ${selected.name}` : students.length ? 'For your sample family' : 'Choose a sample student'}</h2></div>{students.length > 0 && <span className={styles.count}>{notices.length} examples</span>}</div>
+      <div className={styles.feedHeading}><div><span className={styles.eyebrow}>Sample notices</span><h2 id="family-feed-heading">{selected ? `For ${selected.name}` : students.length ? 'For your sample family' : 'Choose a sample student'}</h2></div>{students.length > 0 && <span className={styles.count}>{notices.length} examples</span>}</div>
       {students.length > 0 ? <>
         <p className={styles.feedIntro}>{selected ? `Schoolwide, grade and group updates relevant to ${selected.name}, plus any notes addressed just to this student.` : 'Schoolwide updates appear once. Each example is labeled so you can see who it belongs to.'}</p>
         <div className={styles.feed}>{notices.map((notice:SampleNotice) => <article className={styles.notice} key={notice.id}>

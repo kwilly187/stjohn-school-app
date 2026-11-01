@@ -30,6 +30,6 @@ test('unknown class and team scopes match nothing',()=>{
 });
 test('page labels fictional examples and uses URL-backed accessible child links and real return routes',async()=>{
   const source=await readFile(new URL('../app/students/page.tsx',import.meta.url),'utf8');
-  for(const text of ['Sample family • fictional students and notices','not a signed-in account','aria-current','searchParams','/students?student=','href="/updates"','href="/"']) assert.ok(source.includes(text),text);
+  for(const text of ['Sample notices','Sample sibling','aria-current','searchParams','/students?student=','href="/updates"','href="/"']) assert.ok(source.includes(text),text);
   assert.doesNotMatch(source,/localStorage|fetch\(|signIn|signUp/);
 });
