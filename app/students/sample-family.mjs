@@ -1,6 +1,6 @@
 /** Fictional UI demo only. Not identity, authorization, or a live school feed. */
 export const sampleStudents = [
-  {id:'jordan-example', name:'Jordan Example', grade:6, classIds:['sample-science-6'], teamIds:[]},
+  {id:'jordan-example', name:'Jordan Example', grade:6, classIds:['sample-science-6'], teamIds:['sample-middle-school-team']},
   {id:'taylor-example', name:'Taylor Example', grade:9, classIds:[], teamIds:['sample-cross-country']},
 ];
 export const sampleNow = '2026-01-15T12:00:00Z';
@@ -11,6 +11,7 @@ export const sampleNotices = [
   {...base,id:'grade-nine',category:'Grade 9',title:'Getting settled in high school',body:'An example ninth-grade note about finding a rhythm in high school.',audience:{grades:[9]}},
   {...base,id:'science',category:'Science class',title:'Exploring the natural world',body:'An example classroom update about a science project. No supplies or action are needed.',audience:{classIds:['sample-science-6']}},
   {...base,id:'team',category:'Cross-country team',title:'Building team spirit',body:'An example team note about encouragement and teamwork, not a practice or event announcement.',audience:{teamIds:['sample-cross-country']}},
+  {...base,id:'middle-school-team',category:'Sample athletics team',title:'Encouragement for our team',body:'A fictional athletics update for Jordan’s sample team, about supporting teammates. This is not a real team assignment, schedule or action request.',audience:{teamIds:['sample-middle-school-team']}},
   {...base,id:'personal',category:'Student-specific',title:'A note for Jordan’s family',body:'An example of a note addressed only to this fictional student’s family. It is not a real student message.',audience:{studentIds:['jordan-example']}},
 ];
 
