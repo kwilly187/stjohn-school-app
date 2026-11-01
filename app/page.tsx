@@ -9,13 +9,13 @@ import {resources,school} from './school-data.mjs';
 export default async function Today(){return <div className="today-page today-companion">
   <header className="companion-heading"><div><span className="eyebrow">{school.brandName}</span><h1>Today</h1></div><span className="companion-greeting">Hello, {school.mascot} families.</span></header>
   <nav className="daily-actions" aria-label="Your school day">
-    <Link href="/students" className="daily-action family-action"><span className="action-symbol"><Icon name="people"/></span><span className="action-copy"><strong>My students</strong><span>Your family, together</span></span><span className="action-arrow" aria-hidden="true">→</span></Link>
+    <Link href="/students" className="daily-action family-action"><span className="action-symbol"><Icon name="people"/></span><span className="action-copy"><strong>My students</strong><span>School & grade-level dates</span></span><span className="action-arrow" aria-hidden="true">→</span></Link>
     <Link href="/calendar" className="daily-action"><span className="action-symbol"><Icon name="calendar"/></span><span className="action-copy"><strong>Calendar</strong><span>School & activities</span></span><span className="action-arrow" aria-hidden="true">→</span></Link>
-    <Link href="/calendar?source=athletics" className="daily-action"><span className="action-symbol"><Icon name="shirt"/></span><span className="action-copy"><strong>Athletics</strong><span>Go {school.mascot}!</span></span><span className="action-arrow" aria-hidden="true">→</span></Link>
+    <Link href="/calendar?source=athletics" className="daily-action"><span className="action-symbol"><Icon name="shirt"/></span><span className="action-copy"><strong>Athletics</strong><span>Game schedules</span></span><span className="action-arrow" aria-hidden="true">→</span></Link>
   </nav>
 
   <Suspense fallback={<p role="status">Loading school dates…</p>}><PublicDates grades={profiles.map(profile=>profile.grade)} limit={3}/></Suspense>
-  <section className="companion-essentials" aria-labelledby="quick-heading"><div className="section-heading"><h2 id="quick-heading">For your school day</h2><Link href="/resources" className="text-link">All resources <span aria-hidden="true">→</span></Link></div><div className="companion-public-links">{['lunch','spirit'].map(id=><ResourceCard compact key={id} resource={{...resources.find(r=>r.id===id)!,...(id==='spirit'?{title:'School store'}:{})}}/>)}</div>
+  <section className="companion-essentials" aria-labelledby="quick-heading"><div className="section-heading"><h2 id="quick-heading">For your school day</h2><Link href="/resources" className="text-link">All resources <span aria-hidden="true">→</span></Link></div><div className="companion-public-links">{['lunch','spirit'].map(id=><ResourceCard compact key={id} resource={{...resources.find(r=>r.id===id)!,...(id==='spirit'?{title:'School store',detail:'Spirit wear & uniforms',appPath:'/resources#school-store'}:{})}}/>)}</div>
     <Link href="/resources#school-accounts" className="school-accounts-link"><span className="accounts-symbol"><Icon name="wallet"/></span><span><strong>School accounts</strong><span>Grades, payments & aftercare · Provider sign-in required</span></span><span className="action-arrow" aria-hidden="true">→</span></Link>
   </section>
   <HelpCard/>

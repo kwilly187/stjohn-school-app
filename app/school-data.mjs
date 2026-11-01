@@ -39,7 +39,7 @@ export function calendarUrl(source = 'activities', mode = 'AGENDA') {
 }
 export const resources = [
   {id:'athletics',appPath:'/athletics',group:'Athletics',title:'Teams & participation',detail:'School athletics · Teams & requirements. Use Calendar for current dates.',url:school.athletics,icon:'people'},
-  {id:'alma',group:'School accounts',title:'Grades & attendance',detail:'Alma · Sign-in required',url:school.portal,icon:'book'},
+  {id:'alma',group:'School accounts',title:'Grades, attendance & school updates',detail:'Alma · Sign-in required',url:school.portal,icon:'book'},
   {id:'lunch',appPath:'/lunch',group:'Everyday essentials',title:'Lunch menu',detail:'Nutrislice · School lunch menus',url:'https://sjlof.nutrislice.com/',icon:'lunch'},
   {id:'meal-info',appPath:'/lunch#meal-help',group:'Everyday essentials',title:'Meal program information',detail:'Maschio’s · Food service & account help',url:'https://maschiofood.com/stjohnlutheran/',icon:'lunch'},
   {id:'lunch-account',group:'School accounts',title:'Lunch account',detail:'PaySchools · Sign-in required',url:'https://payschoolscentral.com/',icon:'wallet'},
