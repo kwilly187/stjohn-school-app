@@ -1,5 +1,10 @@
-import {Heading,ExternalLink} from '../components';
+import {Heading} from '../components';
 import CalendarView from './view';
-import {school} from '../school-data.mjs';
+import {calendarState} from './calendar-state.mjs';
+import {getCalendarFeed} from './calendar-feed.mjs';
 export const metadata={title:'Calendar'};
-export default async function Calendar({searchParams}:{searchParams:Promise<{source?:string,view?:string}>}){const params=await searchParams;return <><Heading eyebrow="MAKE ROOM FOR WHAT MATTERS" title="School calendar">Activities and athletics, maintained by the school.</Heading><CalendarView initialSource={params.source==='athletics'?'athletics':'activities'} initialMode={params.view==='MONTH'?'MONTH':'AGENDA'}/>{params.source==='athletics'&&<section className="athletics-help"><h2>Athletics</h2><p>Open an event for game details and locations. Contact athletics for team questions.</p><div className="calendar-fallback"><ExternalLink href={school.athletics} className="text-link">Teams & participation requirements</ExternalLink><a href={`mailto:${school.athleticsEmail}`} className="text-link">Ask athletics a question</a></div><p className="fine-print">The athletics website also lists older schedule PDFs. Use the school’s Google Calendar for current dates.</p></section>}<div className="calendar-note"><p>Published by {school.name} · {school.timeZoneLabel}</p><ExternalLink href={school.calendar} className="text-link">Open the school calendar page</ExternalLink></div></>}
+export default async function Calendar({searchParams}:{searchParams:Promise<Record<string,string|string[]|undefined>>}){
+ const state=calendarState(await searchParams);
+ const result=await getCalendarFeed({source:state.source,month:state.month,view:state.view});
+ return <><Heading eyebrow="YOUR SCHOOL SCHEDULE" title="School calendar">School activities and athletics, together in your app.</Heading><CalendarView state={state} result={result}/></>;
+}

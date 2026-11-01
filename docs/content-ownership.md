@@ -9,7 +9,7 @@ No duplicate entry: staff keep using their existing school systems. This app is 
 | --- | --- | --- | --- |
 | Daily devotion | School-selected theological reviewer and content owner; currently a labeled original draft only | Approve/publish content in an existing approved source and schedule overrides through a future adapter; no working staff editor is present | Today displays preview status. Approved-and-published gate, local-date rotation and dated override behavior are tested; no real approved content is seeded. See devotion-content-contract.md. |
 | Native upcoming public dates | School Activities public Google Calendar | Edit the existing calendar once; bounded public-feed refresh, no duplicate entry | Today shows explicit schoolwide dates; My Students adds explicit grade eligibility. Last successful retrieval is shown. See public-calendar.md. |
-| School & activities calendar | School's existing Google Calendar | Use the school's existing calendar editor and account; update the same event there | Calendar → School & activities. Verify title/time in Agenda and Month, and on the official school calendar page. No app redeployment for event edits. |
+| School & activities calendar | School's existing Google Calendar | Use the school's existing calendar editor and account; update the same event there | Calendar → School & activities. Verify title/time in the native Agenda, Month and event detail, and on the official school calendar page. No app redeployment for event edits. |
 | Athletics information and contact | School athletics page / athletics office | Maintain the existing https://stjohnocala.org/home-2/ page and school contact | Parents use current Google Calendar for dates; older 2025 PDFs are not imported. Contact email is school-published. |
 | Athletics calendar | Athletics staff's existing Google Calendar | Update the existing athletics calendar, not a duplicate app calendar | Calendar → Athletics. Verify Eastern Time and the correct event on the school's page. |
 | Important notices and Updates | School/teachers in Alma and existing school communication channels | Publish through the existing approved Alma workflow | Parents open Alma from Today or Updates; the public app does not show or count private messages. No claim that announcements are synced here. |
@@ -30,7 +30,7 @@ No duplicate entry: staff keep using their existing school systems. This app is 
 
 ## Parent acceptance journey
 1. Open Today on a phone without logging in. Find important notice guidance, upcoming dates, daily links and office help.
-2. Open Calendar; switch School & activities / Athletics and Agenda / Month. Follow the direct link if Google is blocked or blank. Never infer that a blank embed means no events.
+2. Open Calendar; switch School & activities / Athletics and Agenda / Month. Use the official-source fallback if public-feed retrieval fails; unavailable is not no events. Calendar now uses native views, not an embedded Google interface.
 3. Go to Updates and open Alma. Confirm the actual school-message source is clear. My Students separately shows labeled sample notices and synthetic relevance filters, not connected school records.
 4. Open each resource. Verify provider identity, and return with browser Back. Use browser Forward and direct route reloads.
 5. Find aftercare signup (not pickup changes), uniforms, staff contacts and the separate SaintsSpirit site. Do not enter student or payment data in testing.
@@ -38,7 +38,7 @@ No duplicate entry: staff keep using their existing school systems. This app is 
 
 ## School administrator acceptance journey
 1. Identify the owner and source for each row above before introducing this app to families.
-2. In an authorized school test account, update a non-sensitive calendar test event, confirm the public embed and official school page match, then remove the test event.
+2. In an authorized school test account, update a non-sensitive calendar test event, confirm the native public calendar and official school page match, then remove the test event.
 3. Using approved school test identities, publish a test Alma notice and verify its recipient access. It will appear in Alma, not this public app.
 4. Confirm current resource URLs and office contact with their owners. Check any changed destination from Resources.
 5. Review the separate event website wording with its owner. Do not enable payments here.
@@ -47,7 +47,7 @@ No duplicate entry: staff keep using their existing school systems. This app is 
 
 ## Launch prerequisites
 - School confirms the source owners, office contact and provider destinations.
-- School confirms the actual calendar contents and public visibility; an iframe load event alone cannot prove Google returned events.
+- School confirms calendar contents and public visibility; retrieval time is not a guarantee that an event has not changed. See native-calendar.md.
 - School decides whether a public announcement source is needed. Reuse an approved existing feed if available; do not build a second staff publishing system without approval.
 - Confirm the final SaintsSpirit URL when its project owner approves launch.
 - Review preview and explicitly authorize production release.
@@ -63,3 +63,4 @@ Public resource follow-up: Maschio’s school Menu href verified as https://sjlo
 `/students` is reachable from Today and Updates. Its default view shows public school-calendar dates with conservative grade eligibility. The separate `?mode=examples` view is an explicitly labeled fictional announcement demonstration. Its sample students and notices are maintained in the repository solely to demonstrate All my students versus individual-student relevance. They are not school announcements, real deadlines, verified enrollment, authenticated records or a connected Alma feed. Selecting a demo child is a presentation filter, never an access grant. No user messages are sent or records written.
 
 Before real family content can replace this demonstration, the school must approve the source and server-side guardian-to-student authorization, including revocation and cross-school isolation. Administrative publishing and real family access remain untested and unconnected. The test-only audience contract remains separate from production authorization.
+
