@@ -35,3 +35,5 @@ test('page labels fictional examples and uses URL-backed accessible child links 
 });
 
 test('family screen keeps concise sample labels without a development permission banner',async()=>{const page=await readFile(new URL('../app/students/page.tsx',import.meta.url),'utf8');assert.match(page,/Sample notices/);assert.match(page,/Sample sibling/);assert.doesNotMatch(page,/<aside|permission|prototype|not a signed-in account/)});
+
+test('real public dates are default and invented notices require explicit examples mode',async()=>{const page=await readFile(new URL('../app/students/page.tsx',import.meta.url),'utf8');assert.match(page,/mode==='examples'/);assert.match(page,/!examples&&students.length>0&&<Suspense/);assert.match(page,/examples&&<section/);assert.match(page,/grades=\{students.map\(child=>child.grade\)\}/)});
