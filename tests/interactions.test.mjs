@@ -37,3 +37,5 @@ test('curated dates open native details without raw-feed exits and Updates has n
  assert.match(dates,/<Link href={publicEventHref\(event,/);assert.doesNotMatch(dates,/href={event.sourceUrl}|href={result.sourceUrl}/);
  assert.equal((updates.match(/href={school.portal}/g)||[]).length,0);
 });
+
+test('student Updates handoff describes available dates and contacts, not a connected announcement feed',async()=>{const page=await source('app/students/page.tsx');assert.match(page,/School dates and contacts\./);assert.doesNotMatch(page,/Announcements and school contacts/)});
