@@ -3,3 +3,5 @@
 .monthScroll{width:100%;max-width:100%;min-width:0;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}.monthScroll:focus-visible{outline:3px solid #a76c00;outline-offset:3px}.monthCanvas{min-width:630px}.scrollHint{display:none;font-size:13px;line-height:1.5;color:#66758a;margin:0 0 12px}@media(max-width:680px){.scrollHint{display:block}}
 
 .detail{scroll-margin-top:16px;scroll-margin-bottom:110px}
+
+.saveEvent{display:flex;align-items:center;flex-wrap:wrap;gap:10px 16px;margin-top:20px}.saveEvent button{background:#12274b;color:white;border-color:#12274b}.saveEvent span{font-size:13px;color:#66758a}.saveEvent p{flex-basis:100%;margin:0;color:#8b2727}

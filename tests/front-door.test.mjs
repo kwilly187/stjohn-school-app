@@ -9,7 +9,7 @@ test('native front door names the actual tasks without replacing provider accoun
  assert.match(today,/Game schedules/);assert.match(today,/appPath:'\/resources#school-store'/);assert.match(today,/href="\/resources#school-accounts"/);
  assert.match(nav,/href:'\/updates',label:'Contacts'/);assert.equal((nav.match(/href:'/g)||[]).length,4);
  assert.match(contacts,/title="School contacts"/);assert.match(students,/Contact the school →/);
- assert.doesNotMatch(contacts,/href={school.portal}/);
+ assert.match(contacts,/Alma · External sign-in/);assert.ok(contacts.indexOf('styles.secondary')<contacts.indexOf('href={school.portal}'));
  assert.match(resources.find(x=>x.id==='alma').title,/school updates/);assert.match(resources.find(x=>x.id==='alma').detail,/Sign-in required/);
 });
 test('provider help distinguishes separate accounts and does not imply native balances',async()=>{
