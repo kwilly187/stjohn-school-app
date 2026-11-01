@@ -80,3 +80,8 @@ test('athletics card startText does not imply the structured end is every team e
  const text=cal([event(['UID:synthetic-start','DTSTART:20261110T210000Z','DTEND:20261110T213000Z','SUMMARY:MS Basketball at DCA'])]);
  const [e]=parseCalendarFeed(text,{...opts,source:'athletics'});assert.match(e.startText,/4:00 PM EST/);assert.doesNotMatch(e.startText,/4:30/);assert.match(e.dateText,/4:30 PM EST/);assert.equal(e.sourceUrl,'https://stjohnocala.org/calendar/');
 });
+
+test('date-only early release never implies an all-day closure',()=>{
+ const [e]=parseCalendarFeed(cal([event(['UID:early','DTSTART;VALUE=DATE:20261111','DTEND;VALUE=DATE:20261112','SUMMARY:Early Release- All grades'])]),opts);
+ assert.match(e.dateText,/Nov 11/);assert.doesNotMatch(e.dateText,/All day/);assert.equal(e.allDay,true);
+});

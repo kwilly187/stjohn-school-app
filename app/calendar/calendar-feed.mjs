@@ -119,7 +119,8 @@ export function parseCalendarFeed(text,{source='activities',month,view='MONTH',n
     const result={id:`${source}:${event.uid}/${recurrenceId||start}`,title:(event.summary||'Untitled calendar event').trim(),start,end,allDay,location:event.location?.trim()||null,startDay,endDay,dayKeys};
     const verified=source==='athletics'?verifiedAthleticsLinks[event.uid]:null;
     const sourceUrl=verified?.title===result.title&&verified.date===startDay?verified.url:'https://stjohnocala.org/calendar/';
-    output.set(result.id,{...result,dateText:formatEventDate(result),startText:formatCalendarStart(result),sourceUrl});
+    const dateText=formatEventDate(result).replace(allDay&&/early release/i.test(result.title)?/ · All day$/:/$^/,'');
+    output.set(result.id,{...result,dateText,startText:formatCalendarStart(result),sourceUrl});
     if(output.size>2000)throw new Error('Calendar output limit exceeded');
   };
   for(const component of components) {
