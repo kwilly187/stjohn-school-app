@@ -31,3 +31,9 @@ test('Updates prioritizes usable destinations without oversized development noti
 
 test('private school services disclose sign-in and are grouped separately from public resources',async()=>{for(const id of ['alma','tuition','lunch-account','aftercare']){const item=resources.find(r=>r.id===id);assert.equal(item.group,'School accounts');assert.match(item.detail,/Sign-in required/)}for(const id of ['lunch','spirit','uniforms'])assert.notEqual(resources.find(r=>r.id===id).group,'School accounts');const page=await source('app/resources/page.tsx');assert.match(page,/school-accounts/);assert.match(page,/open outside the app/);const updates=await source('app/updates/page.tsx'),lunch=await source('app/lunch/page.tsx');assert.match(updates,/Open \{school.portalLabel\} · Sign-in required/);assert.match(lunch,/Open PaySchools · Sign-in required/)});
 
+
+test('curated dates open native details without raw-feed exits and Updates has one Alma action',async()=>{
+ const dates=await source('app/public-dates.tsx'),updates=await source('app/updates/page.tsx');
+ assert.match(dates,/<Link href={publicEventHref\(event\)}/);assert.doesNotMatch(dates,/href={event.sourceUrl}|href={result.sourceUrl}/);
+ assert.equal((updates.match(/href={school.portal}/g)||[]).length,1);
+});

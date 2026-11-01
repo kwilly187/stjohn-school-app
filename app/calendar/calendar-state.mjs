@@ -15,3 +15,8 @@ export function calendarState(params={},now=new Date()){
 }
 export function calendarHref(state,patch={}){const next={...state,...patch};const query=new URLSearchParams({source:next.source,view:next.view,month:next.month});if(next.event)query.set('event',next.event);return '/calendar?'+query.toString()}
 export function monthCells(month){const [year,value]=month.split('-').map(Number);const first=new Date(Date.UTC(year,value-1,1));const days=new Date(Date.UTC(year,value,0)).getUTCDate();return [...Array(first.getUTCDay()).fill(null),...Array.from({length:days},(_,i)=>`${month}-${String(i+1).padStart(2,'0')}`)]}
+
+export function publicEventHref(event){
+ const month=event.allDay?event.start.slice(0,7):schoolMonth(new Date(event.start));
+ return calendarHref({source:'activities',view:'MONTH',month,event:`activities:${event.id}`});
+}
