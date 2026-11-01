@@ -67,3 +67,6 @@ Before real family content can replace this demonstration, the school must appro
 
 ## Presentation cleanup
 The presentation shows real public school dates only. Example notices, fictional siblings, and the unapproved devotional draft are not rendered. The public repository profile configuration is empty; any parent-authorized presentation profile is supplied only in a separate hosting overlay. It is not a verified guardian account. Private student records and staff publishing remain unconnected. Audience matcher fixtures remain test-only, never a rendered feed.
+
+## Native public information
+Staff directory: 70 contacts representing 82 published role listings across eight school departments, checked November 1, 2026. Exact name/email matches combine roles; conflicting Marie Tillis/Tills addresses are not offered as email actions. Office contact provides the fallback. Staff, athletics program and dress-code content are checked public snapshots, not a live CMS connection; refresh from their official sources when the school changes them. No child teacher assignment is inferred. Athletics GA4/course links returned 404, so the app directs parents to athletics for current copies; EL2/EL3 PDFs were verified. Supplies remain office help because the public list is labeled 2024–25. Private accounts/transactions and email sending remain with their actual providers.

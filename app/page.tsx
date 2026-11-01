@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import {Suspense} from 'react';
 import PublicDates from './public-dates';
+import {profiles} from './students/profile-config.mjs';
 export const dynamic='force-dynamic';
 import {HelpCard,Icon,ResourceCard} from './components';
 import {resources,school} from './school-data.mjs';
@@ -13,7 +14,7 @@ export default async function Today(){return <div className="today-page today-co
     <Link href="/calendar?source=athletics" className="daily-action"><span className="action-symbol"><Icon name="shirt"/></span><span className="action-copy"><strong>Athletics</strong><span>Go {school.mascot}!</span></span><span className="action-arrow" aria-hidden="true">→</span></Link>
   </nav>
 
-  <Suspense fallback={<p role="status">Loading school dates…</p>}><PublicDates limit={3}/></Suspense>
+  <Suspense fallback={<p role="status">Loading school dates…</p>}><PublicDates grades={profiles.map(profile=>profile.grade)} limit={3}/></Suspense>
   <section className="companion-essentials" aria-labelledby="quick-heading"><div className="section-heading"><h2 id="quick-heading">For your school day</h2><Link href="/resources" className="text-link">All resources <span aria-hidden="true">→</span></Link></div><div className="companion-public-links">{['lunch','spirit'].map(id=><ResourceCard compact key={id} resource={{...resources.find(r=>r.id===id)!,...(id==='spirit'?{title:'School store'}:{})}}/>)}</div>
     <Link href="/resources#school-accounts" className="school-accounts-link"><span className="accounts-symbol"><Icon name="wallet"/></span><span><strong>School accounts</strong><span>Grades, payments & aftercare · Provider sign-in required</span></span><span className="action-arrow" aria-hidden="true">→</span></Link>
   </section>

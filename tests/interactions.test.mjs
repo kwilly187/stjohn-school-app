@@ -22,7 +22,7 @@ test('school store separates real spirit wear and uniforms with provider checkou
 
 test('lunch points to the school-linked menu app and keeps provider information secondary',()=>{assert.equal(resources.find(item=>item.id==='lunch').url,'https://sjlof.nutrislice.com/');assert.equal(resources.find(item=>item.id==='meal-info').url,'https://maschiofood.com/stjohnlutheran/');assert.match(resources.find(item=>item.id==='supplies').detail,/Confirm the current year/);});
 
-test('lunch keeps clear official-menu and account links without an unverified blank embed',async()=>{assert.equal(resources.find(item=>item.id==='lunch').appPath,'/lunch');const page=await source('app/lunch/page.tsx');for(const text of ['Open official menu','Open PaySchools','Meal program information','Opens Nutrislice in a new tab.'])assert.ok(page.includes(text));assert.doesNotMatch(page,/<iframe/);const nav=await source('app/navigation.tsx');assert.match(nav,/pathname==='\/lunch'/)});
+test('lunch keeps clear official-menu and account links without an unverified blank embed',async()=>{assert.equal(resources.find(item=>item.id==='lunch').appPath,'/lunch');const page=await source('app/lunch/page.tsx');for(const text of ['Open official menu','Open PaySchools','Meal program information','Opens Nutrislice in a new tab.'])assert.ok(page.includes(text));assert.doesNotMatch(page,/<iframe/);const nav=await source('app/navigation.tsx');assert.match(nav,/\['\/lunch','\/staff','\/athletics','\/dress-code'\].includes\(pathname\)/)});
 
 test('sample family has a visible Updates entry and keeps the four-tab navigation',async()=>{const page=await source('app/updates/page.tsx'),nav=await source('app/navigation.tsx');assert.match(page,/href="\/students"/);assert.match(page,/Public school calendar dates/);assert.match(nav,/pathname==='\/students'/);assert.equal((nav.match(/href:'/g)||[]).length,4)});
 
@@ -34,6 +34,6 @@ test('private school services disclose sign-in and are grouped separately from p
 
 test('curated dates open native details without raw-feed exits and Updates has one Alma action',async()=>{
  const dates=await source('app/public-dates.tsx'),updates=await source('app/updates/page.tsx');
- assert.match(dates,/<Link href={publicEventHref\(event\)}/);assert.doesNotMatch(dates,/href={event.sourceUrl}|href={result.sourceUrl}/);
+ assert.match(dates,/<Link href={publicEventHref\(event,/);assert.doesNotMatch(dates,/href={event.sourceUrl}|href={result.sourceUrl}/);
  assert.equal((updates.match(/href={school.portal}/g)||[]).length,1);
 });

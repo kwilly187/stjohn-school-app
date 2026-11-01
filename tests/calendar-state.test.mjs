@@ -16,3 +16,14 @@ test('curated event links retain exact occurrence IDs in native source/month det
  }
  const url=new URL(publicEventHref({id:'timed/instance',start:'2026-11-01T01:00:00Z',allDay:false}),'https://example.invalid');assert.equal(url.searchParams.get('month'),'2026-10');
 });
+
+test('event return context accepts only internal parent destinations and safe student IDs',async()=>{
+ const {publicEventHref,calendarReturnHref}=await import('../app/calendar/calendar-state.mjs');
+ const event={id:'synthetic/2026-11-07',start:'2026-11-07',allDay:true};
+ const url=new URL(publicEventHref(event,{from:'students',returnStudent:'student-1'}),'https://example.invalid');
+ const state=calendarState(Object.fromEntries(url.searchParams),now);
+ assert.equal(calendarReturnHref(state),'/students?student=student-1');assert.match(calendarHref(state,{view:'AGENDA'}),/returnStudent=student-1/);
+ assert.equal(calendarReturnHref(calendarState({from:'today'},now)),'/');
+ for(const from of ['https://example.invalid','//example.invalid',['students']])assert.equal(calendarReturnHref(calendarState({from,returnStudent:'student-1'},now)),null);
+ for(const returnStudent of ['//example.invalid','x&from=https://bad','', ['student-1']])assert.equal(calendarReturnHref(calendarState({from:'students',returnStudent},now)),'/students');
+});
