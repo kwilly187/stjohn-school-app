@@ -56,3 +56,9 @@ Public link map checked October 31, 2026 against https://stjohnocala.org/for-par
 Official logo downloaded from https://stjohnocala.org/wp-content/uploads/2025/01/80137d10ddb323d6c10bef428e05a2d3.png and visually verified. No newly generated branding.
 
 Public resource follow-up: Maschio’s school Menu href verified as https://sjlof.nutrislice.com/. School supply page currently includes 2024–2025 labels, so the resource asks parents to confirm current-year lists with the office.
+
+## My students demonstration
+
+`/students` is an explicitly labeled, fictional sample-family demonstration, reachable from Today and Updates. Its sample students and notices are maintained in the repository solely to demonstrate All my students versus individual-student relevance. They are not school announcements, real deadlines, verified enrollment, authenticated records or a connected Alma feed. Selecting a demo child is a presentation filter, never an access grant. No user messages are sent or records written.
+
+Before real family content can replace this demonstration, the school must approve the source and server-side guardian-to-student authorization, including revocation and cross-school isolation. Administrative publishing and real family access remain untested and unconnected. The test-only audience contract remains separate from production authorization.
