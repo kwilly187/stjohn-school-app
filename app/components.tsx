@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import {resources, school, sourceChecked} from './school-data.mjs';
+import {resources, school} from './school-data.mjs';
 export type IconName = 'home'|'calendar'|'updates'|'resources'|'book'|'lunch'|'wallet'|'clock'|'people'|'file'|'shirt'|'heart';
 export function Icon({name}:{name:string}) {
  const paths: Record<string, React.ReactNode> = {
@@ -22,5 +22,5 @@ export function ExternalLink({href,children,className=''}:{href:string,children:
 export function Heading({eyebrow,title,children}:{eyebrow:string,title:string,children:React.ReactNode}) {return <header className="page-heading"><span className="eyebrow">{eyebrow}</span><h1>{title}</h1><p>{children}</p></header>}
 export function ResourceCard({resource,compact=false}:{resource:typeof resources[number],compact?:boolean}) {const content=<><span className="icon-tile"><Icon name={resource.icon}/></span><span><strong>{resource.title}</strong><span className="resource-detail">{resource.detail}</span></span></>;const className=`resource-card ${compact?'compact':''}`;return resource.appPath?<Link href={resource.appPath} className={className}>{content}<span aria-hidden="true" className="external-arrow">→</span></Link>:<ExternalLink href={resource.url} className={className}>{content}</ExternalLink>}
 export function HelpCard(){return <aside className="help-card"><div><span className="eyebrow">A REAL PERSON CAN HELP</span><h2>Not sure where to go?</h2><p>Start with the school office.</p></div><div className="help-actions"><a className="button" href={school.phone}>Call {school.phoneDisplay}</a><ExternalLink href={school.contact} className="text-link">Contact details</ExternalLink></div></aside>}
-export function SourceNote(){return <p className="source-note"><strong>About this preview:</strong> School calendars are live. Private messages and accounts aren’t connected here; use the school’s existing services. <a href={school.parents}>School resource links</a> checked {sourceChecked}.</p>}
+export function SourceNote(){return <p className="source-note">Private messages and accounts aren’t connected here; use the school’s existing services. <a href={school.parents}>Official school resources</a>.</p>}
 export function NextDates(){return <section className="card dates-card"><div className="section-top"><span className="icon-tile"><Icon name="calendar"/></span><span className="eyebrow">SCHOOL DATES</span></div><h2>Calendar</h2><p>School dates & activities.</p><Link href="/calendar" className="button">View calendar</Link></section>}

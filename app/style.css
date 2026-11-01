@@ -154,9 +154,36 @@ body{background:#f0f2f5}.app{background:#fff;box-shadow:none}
 }
 @media(max-width:390px){.today-welcome{gap:15px}.today-welcome h1{font-size:28px}.welcome-campus{width:100px}.welcome-campus img{height:140px}.today-welcome p{font-size:13px}.welcome-campus figcaption{font-size:10px;max-width:108px}.school-day{column-gap:21px}.day-description{font-size:13px}.today-page .devotion-card{padding:19px}}
 .family-shortcut{display:inline-flex;align-items:center;gap:12px;min-height:44px;color:var(--navy);font-size:14px;font-weight:700;text-decoration:none;margin-top:10px}
-.family-shortcut>span:first-child{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;padding:2px 6px;background:#f1f3f7;color:#59677b;border-radius:3px}
+
 .family-shortcut:hover{text-decoration:underline}
 @media(max-width:390px){.family-shortcut{gap:8px;font-size:13px;margin-top:5px}}
-@media(max-width:390px){.family-shortcut{gap:6px}.family-shortcut>span:last-child{display:none}.family-shortcut>span:first-child{font-size:9px;letter-spacing:.3px;padding:2px 4px}}
-.family-shortcut>span:first-child{font-size:11px;text-transform:none;letter-spacing:0}
-@media(max-width:390px){.family-shortcut>span:first-child{font-size:10px;letter-spacing:0}}
+@media(max-width:390px){.family-shortcut{gap:6px}}
+
+
+
+/* Finished public-resource surfaces: clear groups, quiet provider handoffs. */
+.resources-page .resource-section{margin:29px 0 35px}
+.resources-page .resource-section>h2{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:26px;letter-spacing:-.5px;margin-bottom:9px}
+.resources-page .resource-grid{column-gap:34px;row-gap:0}
+.resources-page .resource-card{border:0;border-bottom:1px solid #e6e9ed;border-radius:0;padding:20px 0;align-items:center;gap:15px}
+.resources-page .resource-card:hover{background:#fafbfc}
+.resources-page .resource-card .icon-tile{border-radius:50%;background:#f3f5f8;color:var(--navy)}
+.resources-page .resource-card strong{font-size:16px;margin-bottom:4px}
+.resources-page .resource-detail{font-size:14px}
+.resources-page #school-store{border-top:2px solid var(--gold);padding-top:23px}
+.resources-page .help-card{background:#faf9f5;border-radius:2px}
+.lunch-menu-card{background:#faf9f5;color:var(--ink);border-radius:2px;border-left:2px solid var(--gold);padding:26px 28px}
+.lunch-menu-card>.icon-tile{background:transparent;color:#7b6532}
+.lunch-menu-card h2{color:var(--navy);font-family:Georgia,'Times New Roman',serif;font-size:29px;font-weight:400;letter-spacing:-.5px;margin-bottom:10px}
+.lunch-menu-card .eyebrow{color:#7b6532}.lunch-menu-card p{color:var(--muted);margin-bottom:18px}
+.lunch-menu-card .button{background:var(--navy);color:#fff;min-height:48px}
+.lunch-menu-card .lunch-preview-note{color:#626b79;font-size:13px;margin-top:11px}
+.lunch-support{gap:32px}
+.lunch-support .card{border:0;border-bottom:1px solid #e6e9ed;border-radius:0;padding:20px 0 23px}
+.lunch-support h2{font-size:22px;margin-bottom:11px}
+.lunch-support p{margin-bottom:10px}
+.updates-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:24px 0}
+.updates-links .card{margin:0;border-radius:3px;padding:25px}
+.updates-links h2{font-size:24px}.updates-links p{font-size:15px}
+.family-shortcut>span{font-size:18px;background:none;padding:0;color:var(--navy);font-weight:400}
+@media(max-width:680px){.resources-page .resource-section{margin:26px 0 31px}.resources-page .resource-section>h2{font-size:25px}.resources-page .resource-card{padding:18px 0}.lunch-menu-card{padding:23px 21px}.lunch-menu-card h2{font-size:27px}.lunch-support{gap:7px}.updates-links{grid-template-columns:1fr;gap:14px}.updates-links .card{padding:22px}}

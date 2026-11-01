@@ -41,7 +41,7 @@ export const resources = [
   {id:'meal-info',group:'Everyday essentials',title:'Meal program information',detail:'Maschio’s · Food service & account help',url:'https://maschiofood.com/stjohnlutheran/',icon:'lunch'},
   {id:'lunch-account',group:'Everyday essentials',title:'Lunch account',detail:'PaySchools Central',url:'https://payschoolscentral.com/',icon:'wallet'},
   {id:'tuition',group:'Everyday essentials',title:'Tuition & school fees',detail:'Blackbaud · School “Smartcart”',url:'https://parent.blackbaud.school/Login.aspx',icon:'wallet'},
-  {id:'aftercare',group:'Everyday essentials',title:'Aftercare signup',detail:'Brightwheel · Enrollment form, not pickup changes.',url:'https://schools.mybrightwheel.com/sign-in?redirect_path=%2Fadmissions%2Fpacket%2F1bf8a8d3-a105-4322-b65a-f46977903ad5%2Ffill%3Fschool_id%3Da2cb0179-7e6a-4435-bd66-fa3b9340b80a',icon:'clock'},
+  {id:'aftercare',group:'Everyday essentials',title:'Aftercare signup',detail:'Brightwheel · Aftercare enrollment',url:'https://schools.mybrightwheel.com/sign-in?redirect_path=%2Fadmissions%2Fpacket%2F1bf8a8d3-a105-4322-b65a-f46977903ad5%2Ffill%3Fschool_id%3Da2cb0179-7e6a-4435-bd66-fa3b9340b80a',icon:'clock'},
   {id:'staff',group:'School information',title:'Staff directory',detail:'Teachers & school staff',url:school.staff,icon:'people'},
   {id:'supplies',group:'School information',title:'School supply information',detail:'School lists · Confirm the current year with the office.',url:'https://stjohnocala.org/for-parents/school-supplies/',icon:'book'},
   {id:'forms',group:'School information',title:'Forms & parent information',detail:'Parent page · Ask the office for other forms.',url:school.parents,icon:'file'},

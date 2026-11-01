@@ -33,3 +33,5 @@ test('page labels fictional examples and uses URL-backed accessible child links 
   for(const text of ['Sample notices','Sample sibling','aria-current','searchParams','/students?student=','href="/updates"','href="/"']) assert.ok(source.includes(text),text);
   assert.doesNotMatch(source,/localStorage|fetch\(|signIn|signUp/);
 });
+
+test('family screen keeps concise sample labels without a development permission banner',async()=>{const page=await readFile(new URL('../app/students/page.tsx',import.meta.url),'utf8');assert.match(page,/Sample notices/);assert.match(page,/Sample sibling/);assert.doesNotMatch(page,/<aside|permission|prototype|not a signed-in account/)});

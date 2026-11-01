@@ -22,7 +22,7 @@ No duplicate entry: staff keep using their existing school systems. This app is 
 | Staff directory, contact and school office | School website owner / office | Update school website contact/directory pages | Resource links open current source. Hard-coded phone must also be updated in app if it changes. |
 | Uniforms and spirit wear | School-approved FlynnO'Hara and BSN stores | Vendors manage products, prices, stock and checkout | Links open vendor stores. No demo cart or inventory in the app. |
 | Events & fundraising | Separate SaintsSpirit project owner | Update the separate event site | Resources opens its approved preview URL. Online giving is not active; app does not promise registration or payments. |
-| Teacher wish lists & Saints Network | School/PTL; no approved live source supplied | Confirm owner and canonical source before adding links | A collapsed note preserves the concepts without publishing fictional listings or membership prices. |
+| Teacher wish lists & Saints Network | School/PTL; no approved live source supplied | Confirm owner and canonical source before adding links | Not displayed until an approved source is available; no fictional listings or membership prices are published. |
 | Powered by Seagull footer | Seagull product owner | Maintain platform attribution in app/school-data.mjs | Discreet footer link; school branding remains primary. |
 | Navigation, preview labels and destination URLs | App maintainer | Update app/school-data.mjs or page copy in an isolated branch; test; review | Preview review first. Production changes require explicit approval. |
 | Logo | School website asset | Reuse official supplied logo; don't redraw branding | Local public/stjohn-logo.png avoids an external-image dependency. |
@@ -30,7 +30,7 @@ No duplicate entry: staff keep using their existing school systems. This app is 
 ## Parent acceptance journey
 1. Open Today on a phone without logging in. Find important notice guidance, upcoming dates, daily links and office help.
 2. Open Calendar; switch School & activities / Athletics and Agenda / Month. Follow the direct link if Google is blocked or blank. Never infer that a blank embed means no events.
-3. Go to Updates and open Alma. Confirm private-message source is clear and there are no fabricated notices, notification counts or grade filters.
+3. Go to Updates and open Alma. Confirm the actual school-message source is clear. My Students separately shows labeled sample notices and synthetic relevance filters, not connected school records.
 4. Open each resource. Verify provider identity, and return with browser Back. Use browser Forward and direct route reloads.
 5. Find aftercare signup (not pickup changes), uniforms, staff contacts and the separate SaintsSpirit site. Do not enter student or payment data in testing.
 6. At small screen widths and keyboard-only, verify no hidden actions, horizontal app overflow or inaccessible navigation.

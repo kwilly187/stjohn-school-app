@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import {school} from '../school-data.mjs';
 import {sampleStudents, sampleNotices, selectSampleStudents, sampleFamilyFeed} from './sample-family.mjs';
 import styles from './students.module.css';
 
@@ -16,7 +17,7 @@ export default async function Students({searchParams}:{searchParams:Promise<{stu
     <header className={styles.heading}>
       <span className={styles.eyebrow}>YOUR FAMILY, AT A GLANCE</span>
       <h1>My Students</h1>
-      <p>One family view. The updates that belong to each child, together or on their own.</p>
+      <p>Updates for your children, together or one at a time.</p>
     </header>
     <nav className={styles.selector} aria-label="Choose a sample student">
       <Link href="/students" scroll={false} aria-current={selection === 'all' ? 'page' : undefined} className={styles.choice}>
@@ -27,7 +28,7 @@ export default async function Students({searchParams}:{searchParams:Promise<{stu
       </Link>)}
     </nav>
     <section aria-labelledby="family-feed-heading">
-      <div className={styles.feedHeading}><div><span className={styles.eyebrow}>Sample notices</span><h2 id="family-feed-heading">{selected ? `For ${selected.name}` : students.length ? 'For your sample family' : 'Choose a sample student'}</h2></div>{students.length > 0 && <span className={styles.count}>{notices.length} examples</span>}</div>
+      <div className={styles.feedHeading}><div><span className={styles.eyebrow}>Sample notices</span><h2 id="family-feed-heading">{selected ? `For ${selected.name}` : students.length ? 'For your family' : 'Choose a sample student'}</h2></div>{students.length > 0 && <span className={styles.count}>{notices.length} examples</span>}</div>
       {students.length > 0 ? <>
         <p className={styles.feedIntro}>{selected ? `Schoolwide, grade and group updates relevant to ${selected.name}, plus any notes addressed just to this student.` : 'Schoolwide updates appear once. Each example is labeled so you can see who it belongs to.'}</p>
         <div className={styles.feed}>{notices.map((notice:SampleNotice) => <article className={styles.notice} key={notice.id}>
@@ -37,7 +38,7 @@ export default async function Students({searchParams}:{searchParams:Promise<{stu
         </article>)}</div>
       </> : <div className={styles.empty}><p>That sample student isn’t available. No student updates are shown.</p><Link href="/students">View All My Students →</Link></div>}
     </section>
-    <div className={styles.closing}><div><h2>Looking for actual school messages?</h2><p>Use the school’s current communication channels. These examples do not require any action.</p></div><Link href="/updates">Go to school updates →</Link></div>
+    <div className={styles.closing}><div><h2>School announcements</h2><p>Read current messages from school in {school.portalLabel}.</p></div><Link href="/updates">View school updates →</Link></div>
     <Link className={styles.back} href="/">← Back to Today</Link>
   </div>;
 }

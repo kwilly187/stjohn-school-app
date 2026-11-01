@@ -6,7 +6,7 @@ import {resources,school} from './school-data.mjs';
 
 export default function Today(){return <div className="today-page">
   <header className="today-welcome">
-    <div><span className="eyebrow">HOME OF THE {school.mascot.toUpperCase()}</span><h1>Hello, {school.mascot} families.</h1><p>Your school day, simplified.</p><Link href="/students" className="family-shortcut" aria-label="My students — fictional family demo">My students <span>Demo family</span><span aria-hidden="true">→</span></Link></div>
+    <div><span className="eyebrow">HOME OF THE {school.mascot.toUpperCase()}</span><h1>Hello, {school.mascot} families.</h1><p>Your school day, simplified.</p><Link href="/students" className="family-shortcut" aria-label="My students">My students <span aria-hidden="true">→</span></Link></div>
     <figure className="welcome-campus"><img src="/stjohn-church.png" alt="St. John Lutheran church on the school campus" width="414" height="276"/><figcaption>Our school. Our community.</figcaption></figure>
   </header>
   <div className="today-overview">
