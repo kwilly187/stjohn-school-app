@@ -41,11 +41,21 @@ test('exact-name-and-email normalization preserves every published role and sepa
 
 test('staff filters round-trip through a bounded native URL for reload and return navigation',async()=>{
  const {staffFilterState,staffFilterHref}=await import('../app/staff/staff-state.mjs');
- const href=staffFilterHref({query:'Marie Till',department:'Business Office'});const url=new URL(href,'https://example.invalid');
- assert.equal(url.pathname,'/staff');assert.deepEqual(staffFilterState(Object.fromEntries(url.searchParams)),{query:'Marie Till',department:'Business Office'});
+ const href=staffFilterHref({query:'Marie Till',department:'Business Office',page:1});const url=new URL(href,'https://example.invalid');
+ assert.equal(url.pathname,'/staff');assert.deepEqual(staffFilterState(Object.fromEntries(url.searchParams)),{query:'Marie Till',department:'Business Office',page:1});
  assert.equal(staffFilterHref({query:'',department:'all'}),'/staff');
- assert.deepEqual(staffFilterState({q:['two','values'],department:'unpublished'}),{query:'',department:'all'});
+ assert.deepEqual(staffFilterState({q:['two','values'],department:'unpublished'}),{query:'',department:'all',page:1});
  assert.equal(staffFilterState({q:'x'.repeat(200)}).query.length,120);
  const encoded=new URL(staffFilterHref({query:'<x>&from=//example.invalid'}),'https://example.invalid');assert.equal(encoded.pathname,'/staff');assert.equal(encoded.searchParams.get('from'),null);
  const view=await readFile(new URL('../app/staff/staff-view.tsx',import.meta.url),'utf8');assert.match(view,/useSearchParams/);assert.match(view,/history.replaceState/);assert.match(view,/setQuery\(urlState.query\)/);
+});
+
+test('staff pagination limits cards without losing full-dataset search or roles',async()=>{
+ const {staffPage,staffFilterState,staffFilterHref}=await import('../app/staff/staff-state.mjs');
+ assert.deepEqual(staffPage(70,1),{page:1,pages:12,start:0,end:6});assert.deepEqual(staffPage(70,12),{page:12,pages:12,start:66,end:70});
+ assert.equal(staffPage(70,999).page,12);assert.equal(staffPage(0,8).page,1);
+ for(const page of ['0','-1','abc','1.5',['2','3']])assert.equal(staffFilterState({page}).page,1);
+ const url=new URL(staffFilterHref({query:'Marie',department:'Support Specialists',page:2}),'https://example.test');assert.equal(url.searchParams.get('page'),'2');assert.equal(url.searchParams.get('q'),'Marie');
+ const all=[];for(let page=1;page<=12;page++){const p=staffPage(staffDirectory.length,page);all.push(...staffDirectory.slice(p.start,p.end));}assert.deepEqual(all,staffDirectory);
+ const view=await readFile(new URL('../app/staff/staff-view.tsx',import.meta.url),'utf8');assert.match(view,/visible.map/);assert.match(view,/history.pushState/);assert.match(view,/staff-result-heading/);
 });
