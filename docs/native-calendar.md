@@ -1,0 +1,11 @@
+# Native public Calendar
+
+Calendar now renders school-published Activities and Athletics directly as agenda, complete month and event details. Only two configured public Google iCal feeds are fetched server-side; there is no arbitrary URL proxy, OAuth, private account access or database. Title, structured date/time and published location are the only source fields displayed. Descriptions, attendees and raw feeds are not exposed or committed.
+
+Month covers every day of the selected month, including past days and overlapping multiday events. Agenda uses a distinct 45-day calendar-date range: today for the current school-local month, otherwise the first of the selected month. Navigation is limited to 12 months in either direction. URL state stores source, view, month and selected event; invalid values recover visibly. New York timezone, DST, exclusive all-day ends, recurrence exceptions, cancellations, source isolation and parsing limits have synthetic regression tests. Fetch/parse failure is unavailable, never a successful empty or partial schedule.
+
+School staff edit their existing Google Calendar once. Page requests check the public source with a five-minute process cache and show retrieval time. No staff editor, notification service or private enrollment mapping is implied. Today and My Students retain their separate conservative three-title relevance adapter unchanged.
+
+Source quality: November 2026 Activities yielded 12 events and Athletics 17 during verification. Three selected school dates and five Athletics fixtures were independently compared with actual official Google UI. Some athletics descriptions list later team start times beyond the structured event end. The native card therefore shows published start only; detail labels Calendar start/end, warns about team-specific timing, and offers the exact verified source detail link for those five fixtures. Other source links return to the official school calendar. No end time is silently corrected and no child is assigned to a team.
+
+The official calendar remains a secondary fallback. Source unavailability and account-based services remain external dependencies. Authenticated staff writes, logins, orders and messages were not tested.

@@ -1,0 +1,29 @@
+.back {display:inline-flex;align-items:center;min-height:44px;margin-bottom:18px;color:var(--blue);font-weight:650;text-decoration:none;}
+.lead {display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 28px;background:#f7f8fb;border-left:3px solid var(--gold);margin:24px 0 36px;}
+.lead h2,.section h2 {margin:0 0 12px;font-size:23px;letter-spacing:-.4px;}
+.lead p {margin:0;color:#526077;line-height:1.6;}
+.lead a {flex-shrink:0;}
+.seasons {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin:24px 0 40px;}
+.season {border-top:2px solid #d4a746;padding-top:18px;}
+.season h3 {font-size:20px;margin:0 0 14px;}
+.season ul {padding:0;margin:0;list-style:none;}
+.season li {padding:6px 0;line-height:1.5;}
+.section {margin:32px 0;}
+.section p {line-height:1.7;max-width:70ch;}
+.steps {padding-left:24px;line-height:1.7;}
+.steps li {padding:5px 0;}
+.forms {display:flex;gap:16px;flex-wrap:wrap;margin:20px 0;}
+.forms a {display:inline-flex;align-items:center;gap:12px;min-height:48px;border:1px solid #dce1e9;border-radius:8px;padding:10px 16px;font-weight:650;text-decoration:none;color:var(--blue);}
+.forms small {font-size:12px;font-weight:500;color:#526077;}
+.contact {display:flex;align-items:center;justify-content:space-between;gap:20px;border-top:1px solid #dce1e9;padding-top:24px;margin-top:32px;}
+.contact h2 {font-size:21px;margin:0 0 8px;}
+.contact p {margin:0;line-height:1.6;color:#526077;}
+.contact a {flex-shrink:0;}
+.rules {margin:24px 0 32px;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;column-gap:40px;}
+.rules li {padding:22px 0;border-top:1px solid #dce1e9;}
+.rules h2 {font-size:19px;margin:0 0 9px;}
+.rules p {margin:0;line-height:1.65;color:#46546b;}
+.source {border-top:1px solid #dce1e9;padding-top:20px;margin-top:32px;font-size:13px;line-height:1.7;color:#5c687b;}
+.source a {color:var(--blue);text-underline-offset:3px;}
+@media(max-width:700px){.lead,.contact{align-items:flex-start;flex-direction:column;gap:18px;}.lead{padding:22px;margin:20px 0 28px;}.seasons{grid-template-columns:1fr;gap:24px;}.season ul{display:grid;grid-template-columns:1fr 1fr;gap:0 20px;}.rules{grid-template-columns:1fr;}.forms{flex-direction:column;}.forms a{justify-content:space-between;}.section h2,.lead h2{font-size:22px;}}
+@media(max-width:390px){.season ul{grid-template-columns:1fr;}}
