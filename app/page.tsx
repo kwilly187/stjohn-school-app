@@ -25,6 +25,7 @@ export default async function Today(){return <div className="today-page today-co
       <Link href="/resources#school-store"><Icon name="heart"/><span><strong>School store</strong><span>Spirit wear & uniforms</span></span><span className="home-arrow" aria-hidden="true">→</span></Link>
       <Link href="/resources"><Icon name="resources"/><span><strong>School essentials</strong><span>Dress code, accounts & resources</span></span><span className="home-arrow" aria-hidden="true">→</span></Link>
     </nav>
+    <Link href="/pickup" className="text-link">Pickup <small>Proposed connection</small><span aria-hidden="true">→</span></Link>
   </section>
   <div className="home-dates"><Suspense fallback={<p className="home-dates-loading" role="status">Loading school dates…</p>}><PublicDates grades={profiles.map(profile=>profile.grade)} limit={2} title="Key school dates"/></Suspense></div>
 </div>}

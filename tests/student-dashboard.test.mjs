@@ -39,8 +39,9 @@ test('sections and empty item arrays are fresh per call, never shared across chi
 test('student dashboard keeps source availability separate from public calendar facts',async()=>{
  const {readFile}=await import('node:fs/promises');
  const page=await readFile(new URL('../app/students/page.tsx',import.meta.url),'utf8');
- for(const label of ['Upcoming assignments','Current grades','Teams & activities','School updates','Not connected'])assert.ok(page.includes(label));
- assert.ok(page.indexOf('styles.dashboard')<page.indexOf('<PublicDates'));
- assert.match(page,/valid&&<div/);assert.match(page,/valid\?<Suspense/);
+ const renderer=await readFile(new URL('../app/students/student-records.tsx',import.meta.url),'utf8');
+ for(const label of ['Assignments','Current grades','Teams & activities','School updates','Not connected'])assert.ok(renderer.includes(label));
+ assert.ok(page.indexOf('<StudentRecords')<page.indexOf('<PublicDates'));
+ assert.match(page,/valid&&<StudentRecords/);assert.match(page,/valid\?<Suspense/);
  assert.doesNotMatch(page,/No assignments|No grades|No teams|sampleNotices|fetch\(|localStorage|PhotoPreview/);
 });
