@@ -1,0 +1,77 @@
+.page { padding:30px 0 10px; }
+.header { display:flex;justify-content:space-between;align-items:flex-start;gap:24px;margin-bottom:28px; }
+.header h1 { font-size:clamp(29px,4vw,38px);letter-spacing:-1.1px;margin:7px 0 10px; }
+.header p { font-size:16px;line-height:1.6;max-width:630px;margin:0; }
+.eyebrow { display:block;color:#6b5b36;font-size:12px;line-height:1.5;font-weight:700;letter-spacing:1.2px;text-transform:uppercase; }
+.status { display:inline-flex;align-items:center;flex-shrink:0;max-width:100%;padding:6px 11px;border:1px solid #d9c997;border-radius:6px;background:#fcf9ef;color:#69542a;font-size:13px;line-height:1.5;font-weight:650; }
+.tabs { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:5px;background:#f1f4f8;border-radius:12px;margin:0 0 30px; }
+.tabs button,.tabs a { min-height:52px;padding:12px 16px;border:0;border-radius:8px;background:transparent;color:#4e607b;font-weight:650;font-size:15px;line-height:1.4; }
+.tabs button[aria-selected='true'],.tabs button[aria-pressed='true'],.tabs a[aria-current='page'] { background:var(--navy);color:white;box-shadow:0 2px 5px #12274b12; }
+.tabs button:hover:not([aria-selected='true']):not([aria-pressed='true']),.tabs a:hover:not([aria-current='page']) { background:#e5ebf3;color:var(--navy); }
+.tabs a { display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none; }
+a.step { text-decoration:none; }
+.panel { min-width:0; }
+.panelHeading { display:flex;justify-content:space-between;align-items:flex-start;gap:22px;margin-bottom:20px; }
+.panelHeading h2 { font-size:25px;line-height:1.25;margin:0 0 9px;letter-spacing:-.6px; }
+.panelHeading p { margin:0;max-width:690px;font-size:16px; }
+.taskGrid { display:grid;grid-template-columns:1fr 1fr;gap:0 32px;margin:12px 0 24px; }
+.task { display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:21px 0;min-height:96px;min-width:0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--navy); }
+.task>svg { flex-shrink:0;width:25px;height:25px;color:#536b8a; }
+.task>div,.task>span:not(:last-child) { min-width:0; }
+.task strong,.task h3 { display:block;font-size:18px;line-height:1.35;margin:0 0 5px;font-weight:750; }
+.task p { color:var(--muted);font-size:14px;line-height:1.55;margin:0; }
+.task:hover strong,.task:hover h3 { text-decoration:underline;text-underline-offset:4px; }
+.sourceList { border-top:2px solid #c7ac66;margin:22px 0; }
+.sourceRow { display:grid;grid-template-columns:minmax(180px,.8fr) minmax(0,1.5fr);gap:22px;padding:21px 0;border-bottom:1px solid var(--line); }
+.sourceTitle { font-size:17px;line-height:1.5;font-weight:700;color:var(--navy);margin:0; }
+.sourceMeta { color:var(--muted);font-size:15px;line-height:1.65;min-width:0;overflow-wrap:anywhere; }
+.sourceMeta p { margin:0 0 7px; }
+.sourceMeta p:last-child { margin-bottom:0; }
+.sourceMeta a { display:inline-flex;align-items:center;min-height:44px;gap:7px;font-weight:600; }
+.proposal { padding:25px 27px;background:#fcfaf4;border:1px solid #e8dfc6;border-left:3px solid var(--gold);border-radius:10px;margin:20px 0; }
+.proposal h3 { font-size:21px;margin:0 0 10px; }
+.proposal p { margin:0 0 12px;font-size:16px;line-height:1.65; }
+.proposal p:last-child { margin-bottom:0; }
+.steps { display:grid;grid-template-columns:repeat(4,minmax(0,1fr));list-style:none;gap:12px;margin:23px 0;padding:0; }
+.step { display:flex;align-items:center;gap:10px;min-height:60px;padding:12px;color:#5b687b;background:#f4f6f9;border-radius:8px;font-size:14px;line-height:1.4; }
+button.step { width:100%;text-align:left; }
+.step[aria-current='step'] { color:var(--navy);background:#f5eedb;box-shadow:inset 0 -2px #ba963c;font-weight:700; }
+.stepNumber { display:grid;place-items:center;flex-shrink:0;width:29px;height:29px;border:1px solid #c8d1de;border-radius:50%;font-size:14px;font-weight:700;background:#fff;color:var(--navy); }
+.step[aria-current='step'] .stepNumber { border-color:var(--navy);background:var(--navy);color:white; }
+.stepBody { padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:0 0 20px; }
+.stepBody h3 { font-size:23px;margin:0 0 12px; }
+.stepBody p,.stepBody li { font-size:16px;line-height:1.7; }
+.stepBody p { max-width:750px;margin:0 0 12px; }
+.stepBody ul { padding-left:22px;margin:12px 0 0; }
+.actions { display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin:22px 0 16px; }
+.primaryButton,.secondaryButton { display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:11px 19px;border-radius:8px;font-size:15px;font-weight:700;line-height:1.5;text-decoration:none; }
+.primaryButton { border:1px solid var(--navy);color:#fff;background:var(--navy); }
+.secondaryButton { border:1px solid #c9d3e0;color:var(--navy);background:#fff; }
+.primaryButton:hover:not(:disabled) { background:#23416f; }
+.secondaryButton:hover:not(:disabled) { background:#f1f4f8; }
+.primaryButton:disabled,.secondaryButton:disabled { opacity:.5;cursor:not-allowed; }
+.note { color:#626f82;font-size:14px;line-height:1.65;margin:16px 0;max-width:780px; }
+.page button:focus-visible,.page a:focus-visible { outline:3px solid #a76c00;outline-offset:4px; }
+@media(max-width:680px){
+ .page{padding-top:24px}.header{flex-direction:column;gap:14px;margin-bottom:23px}.header h1{font-size:29px}.header p{font-size:15px}
+ .tabs{gap:3px;padding:4px;margin-bottom:25px}.tabs button,.tabs a{font-size:14px;min-height:64px;padding:10px 7px}
+ .panelHeading{flex-direction:column;gap:12px}.panelHeading h2{font-size:23px}.panelHeading p{font-size:15px}
+ .taskGrid{grid-template-columns:1fr;gap:0}.task{padding:18px 0;min-height:88px}.task strong,.task h3{font-size:17px}
+ .sourceRow{grid-template-columns:1fr;gap:7px;padding:18px 0}.sourceMeta{font-size:15px}
+ .proposal{padding:21px 19px}.proposal p{font-size:15px}.steps{grid-template-columns:1fr;gap:8px}.step{min-height:51px;padding:10px 12px}
+ .stepBody{padding:20px 0}.stepBody h3{font-size:21px}.actions{gap:10px}.actions>*{flex:1}.note{font-size:14px}
+}
+/* Match review-route semantic markup: each task is a single descriptive link. */
+.page>.secondaryButton { margin-bottom:23px; }
+.task { flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:5px; }
+.task>h3 { margin:0; }
+.task>p { flex:1; }
+.task>strong { font-size:14px;line-height:1.5;color:var(--blue);margin:8px 0 0; }
+.sourceTitle h3 { font-size:18px;line-height:1.4;margin:0 0 10px; }
+.sourceTitle .sourceMeta { margin:10px 0 0;font-weight:400;font-size:14px; }
+.sourceRow>div:last-child p { font-size:15px;line-height:1.65;margin:0 0 12px; }
+.sourceRow>div:last-child p:last-child { margin-bottom:0; }
+.stepBody h4 { font-size:16px;line-height:1.4;margin:0 0 8px;color:var(--navy); }
+.proposal ul { margin:12px 0 0;padding-left:22px;font-size:15px;line-height:1.7;color:var(--muted); }
+.proposal li+li { margin-top:7px; }
+@media(max-width:680px){.header .status,.panelHeading .status{white-space:normal}.stepBody .taskGrid{gap:20px}}
