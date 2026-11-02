@@ -2,3 +2,15 @@
 
 
 .avatar img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 30%;border-radius:50%}
+
+/* Student dashboard: honest source states, not empty data visualizations. */
+.dashboard{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:34px;margin:8px 0 34px;border-top:2px solid #c8aa63}
+.section{min-width:0;padding:23px 0 20px;border-bottom:1px solid #e0e5ec;display:flex;flex-direction:column;align-items:flex-start}
+.sectionTop{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 16px;width:100%;margin-bottom:12px}
+.sectionLabel{color:#66748a;font-size:12px;line-height:1.5;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.availability{color:#705e37;font-size:13px;line-height:1.5;font-weight:600}
+.sectionTitle{font-size:22px;line-height:1.3;letter-spacing:-.4px;margin:0 0 10px;color:var(--navy)}
+.sectionCopy{font-size:16px;line-height:1.65;color:var(--muted);margin:0 0 12px;max-width:540px}
+.secondaryLink{display:inline-flex;align-items:center;gap:10px;min-height:44px;font-size:16px;line-height:1.5;font-weight:650;text-decoration:none;color:var(--blue);margin-top:auto;padding:5px 0}
+.secondaryLink:hover{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:760px){.dashboard{grid-template-columns:1fr;margin-bottom:28px}.section{padding:21px 0 17px}.sectionTitle{font-size:21px}.sectionTop{margin-bottom:10px}.sectionCopy{font-size:15px}}

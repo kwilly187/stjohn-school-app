@@ -10,7 +10,7 @@ export default async function Today(){return <div className="today-page today-co
   <header className="companion-heading"><div><span className="eyebrow">{school.brandName}</span><h1>Your school day</h1></div><span className="companion-greeting">Hello, {school.mascot} families.</span></header>
   <Link href="/students" className="home-family">
     <span className="family-portrait" aria-hidden="true">{profiles.length===1?(profiles[0].photo?<img src={profiles[0].photo} alt="" width="52" height="52"/>:profiles[0].name[0]):<Icon name="people"/>}</span>
-    <span className="home-family-copy"><strong>{profiles.length===1?profiles[0].name:'My students'}</strong><span>{profiles.length===1?`Grade ${profiles[0].grade} · School & grade-level dates`:'School & grade-level dates'}</span></span>
+    <span className="home-family-copy"><strong>{profiles.length===1?profiles[0].name:'My students'}</strong><span>{profiles.length===1?`Grade ${profiles[0].grade} · Student overview`:'Student overview'}</span></span>
     <span className="home-arrow" aria-hidden="true">→</span>
   </Link>
   <section className="home-tasks" aria-labelledby="home-tasks-heading">

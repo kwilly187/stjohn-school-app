@@ -12,7 +12,7 @@ export default function Updates(){return <>
   </div>
   <section className={styles.tasks} aria-labelledby="help-tasks"><h2 id="help-tasks">What do you need help with?</h2><div className={styles.taskGrid}>
     <Link href="#contact-heading" className={styles.task}><Icon name="clock"/><span><strong>Attendance questions</strong><span>Ask the school office</span></span><span aria-hidden="true">→</span></Link>
-    <Link href="#contact-heading" className={styles.task}><Icon name="file"/><span><strong>Forms & paperwork</strong><span>Find the form or person you need</span></span><span aria-hidden="true">→</span></Link>
+    <Link href="#contact-heading" className={styles.task}><Icon name="file"/><span><strong>Forms & paperwork</strong><span>Ask the office for the right form</span></span><span aria-hidden="true">→</span></Link>
     <Link href="/athletics" className={styles.task}><Icon name="shirt"/><span><strong>Athletics</strong><span>Teams, requirements & contact</span></span><span aria-hidden="true">→</span></Link>
     <Link href="/lunch#meal-help" className={styles.task}><Icon name="lunch"/><span><strong>Lunch & meal help</strong><span>Food-service contact & meal accounts</span></span><span aria-hidden="true">→</span></Link>
   </div></section>

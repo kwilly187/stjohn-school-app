@@ -5,7 +5,7 @@ import {resources} from '../app/school-data.mjs';
 const read=path=>readFile(new URL('../'+path,import.meta.url),'utf8');
 test('native front door names the actual tasks without replacing provider accounts',async()=>{
  const today=await read('app/page.tsx'),nav=await read('app/navigation.tsx'),contacts=await read('app/updates/page.tsx'),students=await read('app/students/page.tsx');
- assert.match(today,/My students/);assert.match(today,/School & grade-level dates/);
+ assert.match(today,/My students/);assert.match(today,/Student overview/);
  assert.match(today,/Sports, forms & participation/);assert.match(today,/href="\/resources#school-store"/);assert.match(today,/href="\/resources"/);
  assert.match(nav,/href:'\/updates',label:'Contacts'/);assert.equal((nav.match(/href:'/g)||[]).length,4);
  assert.match(contacts,/title="School contacts"/);assert.match(students,/← Home/);
