@@ -13,7 +13,7 @@ export default async function Today(){return <div className={styles.home}>
  <FamilyNotices/>
  <div className={styles.overview}>
   <div className={styles.dates}><Suspense fallback={<p className={styles.loading} role="status">Loading school dates…</p>}><PublicDates grades={profiles.map(profile=>profile.grade)} limit={2} title="Upcoming at St. John" featured/></Suspense></div>
-  <aside className={styles.actions} aria-label="Parent actions"><h2>Parent actions</h2><Link href="/parent-actions" className={styles.actionPrimary}><Icon name="file"/><span>Parent actions<small>Payments, forms & registration</small></span></Link><Link href="/staff?contacts=saved"><Icon name="people"/><span>Saved contacts</span></Link><Link href="/faq" className={styles.faq}><Icon name="book"/><span>Parent FAQ</span></Link></aside>
+  <aside className={styles.actions} aria-label="Parent actions"><h2>Parent actions</h2><Link href="/parent-actions" className={styles.actionPrimary}><Icon name="file"/><span>Payments, forms & registration</span></Link><Link href="/staff?contacts=saved"><Icon name="people"/><span>Saved contacts</span></Link><Link href="/faq" className={styles.faq}><Icon name="book"/><span>Parent FAQ</span></Link></aside>
  </div>
  <section className={styles.tasks} aria-labelledby="home-tasks-heading"><div className={styles.sectionHeading}><h2 id="home-tasks-heading">Everyday essentials</h2></div>
  <nav className={styles.taskGrid} aria-label="Everyday school tasks">

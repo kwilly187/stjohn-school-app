@@ -11,10 +11,10 @@ test('Home keeps family data configured and real school calendar intact',async()
 });
 test('Home has school color hierarchy and accessible phone control sizing',async()=>{
  const css=await read('app/home.module.css');
- assert.match(css,/background:var\(--blue\)/);
+ assert.match(css,/color:#2a3695/);
  assert.match(css,/border-bottom:3px solid var\(--gold\)/);
  assert.match(css,/\.faq\{display:inline-flex;min-height:44px/);
- assert.match(css,/\.actions a\{[^}]*min-height:49px/);
+ assert.match(css,/\.actions a\{[^}]*min-height:58px/);
  assert.match(css,/@media\(prefers-reduced-motion:reduce\)/);
  assert.match(css,/\.taskGrid a>span>span\{font-size:14px/);
 });
@@ -40,3 +40,5 @@ test('school screenshot styling retains readable interface type and uses existin
  assert.match(scripture,/stjohn-fleur-divider.png/);
  assert.match(global,/--font-school:'Inter'/);
 });
+
+test('Home actions use high contrast neutral rows without a decorative blue block',async()=>{const css=await read('app/home.module.css'),page=await read('app/page.tsx');assert.match(css,/\.actions\{background:#fff/);assert.doesNotMatch(css,/color:#ffe490/);assert.doesNotMatch(page,/HOW CAN WE HELP|A few things/);assert.match(page,/<span>Payments, forms & registration<\/span>/);});
