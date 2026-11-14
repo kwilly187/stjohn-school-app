@@ -1,0 +1,2 @@
+import styles from './section-banner.module.css';
+export default function SectionBanner({title,description,image}:{title:string,description:string,image:string}){return <header className={styles.banner}><img className={styles.photo} src={image} alt="" width="438" height="288"/><div className={styles.content}><img className={styles.crest} src="/stjohn-logo.png" alt="" width="76" height="76"/><div><h1>{title}</h1><p>{description}</p></div></div></header>}
