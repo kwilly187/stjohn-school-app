@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-import {navigateCalendarOnce} from '../app/calendar/navigation-lock.mjs';
+import {navigateCalendarOnce,navigateCalendarTo} from '../app/calendar/navigation-lock.mjs';
 import {calendarHref,calendarState} from '../app/calendar/calendar-state.mjs';
 test('rapid Month then Next cannot queue a URL from stale Agenda state',()=>{
  const lock={current:false},urls=[];
@@ -17,5 +17,26 @@ test('failed navigation releases guard and React transition owns completion',asy
  const lock={current:false};assert.throws(()=>navigateCalendarOnce(lock,()=>{throw new Error('failure')}));assert.equal(lock.current,false);
  const view=await readFile(new URL('../app/calendar/view.tsx',import.meta.url),'utf8');
  assert.match(view,/if\(!pending\)navigationLock.current=false/);assert.match(view,/navigateCalendarOnce\(navigationLock/);
- assert.match(view,/disabled=\{pending\|\|state.month>=state.max\}/);assert.match(view,/key=\{view\} disabled=\{pending\}/);assert.match(view,/navigate\(\(\)=>router.refresh\(\)\)/);
+ assert.match(view,/disabled=\{pending\|\|state.month>=state.max\}/);assert.match(view,/key=\{view\} disabled=\{pending\}/);assert.match(view,/startTransition\(\(\)=>router.refresh\(\)\)/);
+});
+
+test('repeated selected source, view and Today never lock later Previous or Next',()=>{
+ const now=new Date('2026-11-14T17:00:00Z');
+ const state=calendarState({source:'athletics',view:'AGENDA',month:'2026-11'},now);
+ const current=calendarHref(state),lock={current:false},urls=[];
+ for(const patch of [{source:'athletics'},{view:'AGENDA'},{month:state.current}]){
+  assert.equal(navigateCalendarTo(lock,current,calendarHref(state,patch),()=>urls.push('unexpected')),false);
+  assert.equal(lock.current,false);
+ }
+ const next=calendarHref(state,{month:'2026-12'});
+ assert.equal(navigateCalendarTo(lock,current,next,()=>urls.push(next)),true);
+ assert.deepEqual(urls,[next]);
+});
+test('Today from another month and closing a selected event remain real navigations',()=>{
+ const now=new Date('2026-11-14T17:00:00Z');
+ for(const params of [{source:'athletics',view:'AGENDA',month:'2026-12'}, {source:'athletics',view:'AGENDA',month:'2026-11',event:'athletics:example'}]){
+  const state=calendarState(params,now),lock={current:false};let navigated=false;
+  assert.equal(navigateCalendarTo(lock,calendarHref(state),calendarHref(state,{month:state.current,event:null}),()=>{navigated=true}),true);
+  assert.equal(navigated,true);
+ }
 });
