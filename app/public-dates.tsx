@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import CalendarTransfer from './calendar/calendar-transfer';
+import CalendarTransfer from './calendar/calendar-transfer-panel';
 import {getPublicCalendar} from './public-calendar.mjs';
 import styles from './public-dates.module.css';
 import {publicEventHref} from './calendar/calendar-state.mjs';

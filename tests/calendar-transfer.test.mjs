@@ -11,6 +11,12 @@ test('bulk export is a valid calendar with all selected public dates and stable 
 });
 test('bulk export rejects empty or invalid snapshots instead of generating incomplete files',()=>{assert.throws(()=>calendarSnapshot([]));assert.throws(()=>calendarSnapshot([{...events[0],end:'bad'}]));});
 test('parent UI distinguishes full subscription from snapshot and child-specific data',()=>{
- const ui=readFileSync(new URL('../app/calendar/calendar-transfer.tsx',import.meta.url),'utf8');for(const label of ['not a child-specific schedule','One-time copy','will not sync','Copy subscription link','readOnly value={subscription.https}'])assert.ok(ui.includes(label));
+ const ui=readFileSync(new URL('../app/calendar/calendar-transfer-panel.tsx',import.meta.url),'utf8');for(const label of ['not a child-specific schedule','One-time copy','will not sync','Copy subscription link','readOnly value={subscription.https}'])assert.ok(ui.includes(label));
  const studentDates=readFileSync(new URL('../app/public-dates.tsx',import.meta.url),'utf8');assert.ok(studentDates.includes("origin==='students'&&<CalendarTransfer events={result.events}"));
+});
+test('calendar UI imports an unambiguous component module',()=>{
+ for(const file of ['../app/calendar/view.tsx','../app/public-dates.tsx']) {
+  const source=readFileSync(new URL(file,import.meta.url),'utf8');
+  assert.ok(source.includes('calendar-transfer-panel'));
+ }
 });

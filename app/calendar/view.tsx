@@ -7,7 +7,7 @@ import {navigateCalendarOnce} from './navigation-lock.mjs';
 import Link from 'next/link';
 import styles from './calendar.module.css';
 import SaveEvent from './save-event';
-import CalendarTransfer from './calendar-transfer';
+import CalendarTransfer from './calendar-transfer-panel';
 import {filterCalendarEvents} from './event-search.mjs';
 type Event={id:string,title:string,start:string,end:string,allDay:boolean,dateText:string,location:string|null,dayKeys:string[],startText?:string,sourceUrl?:string};
 type State={source:string,view:string,month:string,current:string,min:string,max:string,event:string|null,warning:boolean,from:string|null,returnStudent:string|null};
