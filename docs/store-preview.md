@@ -8,3 +8,9 @@ Working: search, collection filters, color/size selection, duplicate-safe in-pag
 Each concept has its own design highlights and use context. A native modal supports keyboard containment, Escape, backdrop close and focus return. Saving requires an explicit size selection; color changes update the illustrated concept. Materials, fit, actual measurements and availability remain unconfirmed and are not invented. Product options are concept planning options, not manufacturer specifications.
 
 Senior Athlete Crewneck is a commemorative limited-edition design concept, not a released limited-stock offer. No year, student name, team membership, price, quantity or purchase availability is invented. It is separated from the core Everyday/Sideline/Accessories collection. Hero text retains literal spaces around responsive-hidden line breaks.
+
+## Color correction
+Royal #2a3695 and gold #edbc0d are sampled from the authentic supplied school crest, not an invented brand guide. The prior navy garment direction was removed. All selectable product colors now match the royal-blue concept imagery; unpictured white/natural variants are not offered. Shop controls use royal blue. The rest of the parent portal palette is unchanged.
+
+### Superseding senior direction
+Kyle clarified the special collection is a Senior Design Contest open to all seniors. Removed the predetermined Senior Athlete product from the catalog. The store now presents a coming-soon contest section; no winning design, actual entry form, deadlines, prizes or selection rules are invented. Earlier athlete concept notes above are historical and superseded.

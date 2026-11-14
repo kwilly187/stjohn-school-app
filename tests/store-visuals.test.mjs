@@ -8,4 +8,5 @@ test('Store visual controls provide touch targets and clear keyboard focus',()=>
 
 test('Store uses editorial concept imagery and progressive product details',()=>{const ui=readFileSync(new URL('../app/store/store.tsx',import.meta.url),'utf8');assert.match(ui,/saints-editorial\.webp/);assert.match(ui,/Images are illustrative mockups/);assert.match(ui,/<ProductDetail/);assert.match(art,/saints-collection\.webp/);});
 
-test('Senior athlete has its own full front/back concept artwork',()=>{assert.match(art,/senior-athlete\.webp/);assert.match(art,/senior-crewneck/);});
+
+test('Store imagery describes only the pictured Royal variant',()=>{assert.match(art,/Royal concept shown/);assert.doesNotMatch(art,/Navy|Natural|senior-athlete/);});
