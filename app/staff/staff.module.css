@@ -22,3 +22,6 @@
 .saveButton[aria-pressed=true]{background:#f0f3fb;border-color:#8d9fc4;color:var(--blue)}
 .email{font-size:15px;line-height:1.5;margin-top:7px}.pager{padding-top:17px;border-top:1px solid var(--line)}
 @media(max-width:680px){.controls{gap:15px;padding:17px 0}.controls label{margin-bottom:6px}.person{padding:21px 0}.person h2{font-size:23px}.savedNote{font-size:14px;line-height:1.5}.personHeading{gap:15px}.email{font-size:14px}.pager{gap:8px}.pager span{font-size:14px}.pager button{padding:8px 12px}}
+
+/* Consistent grouped surfaces, readable rows and comfortable controls. */
+ .controls{background:white;border:1px solid #e0e5ed;border-radius:12px;padding:20px;gap:20px}.list{gap:16px}.person{background:white;border:1px solid #e0e5ed;border-radius:12px;padding:20px}.person h2{font-size:21px;font-weight:600;letter-spacing:-.3px}.person .group{letter-spacing:0;text-transform:none;font-size:14px}.office{background:white;border:1px solid #e0e5ed;border-radius:12px;padding:22px;margin-top:24px}.office h2{font-size:21px;font-weight:600}@media(max-width:680px){.controls,.person,.office{padding:18px}.list{gap:12px}.person h2{font-size:21px}}

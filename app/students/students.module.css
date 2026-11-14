@@ -31,3 +31,6 @@
 .portalAccess h2{font-size:22px;font-weight:500}.portalAccess p{font-size:15px}.portalAccess>a{border-radius:6px;min-height:50px;font-size:14px}
 .sectionTitle{font-size:21px;font-weight:500;letter-spacing:0}.sectionCopy{font-size:15px}.dashboard{border-top-color:var(--blue)}
 @media(max-width:680px){.heading{padding:14px 0 21px;margin-bottom:21px}.heading h1{font-size:30px}.heading p{font-size:15px}.portalAccess{padding:21px 20px;gap:16px}.portalAccess>a{align-self:stretch}.portalAccess h2{font-size:21px}.selector{margin-bottom:21px}.choice{min-height:72px}}
+
+/* Consistent grouped surfaces, readable rows and comfortable controls. */
+ .portalAccess{background:white;border:1px solid #e0e5ed;border-radius:12px;padding:23px;margin-bottom:24px}.portalAccess h2{font-size:22px;font-weight:600}.portalAccess p{font-size:16px;line-height:1.6}.choice{background:white;border-radius:10px;border:1px solid #dce3ed}.choice strong{font-size:16px}.sectionTitle{font-size:22px;font-weight:600}.dashboard{border:1px solid #e0e5ed;border-radius:12px;background:white;padding:20px}.heading{margin-bottom:0}.heading h1{font-weight:600}@media(max-width:680px){.portalAccess{padding:19px}.portalAccess h2{font-size:21px}.dashboard{padding:17px}}

@@ -12,3 +12,6 @@
 .card a:hover{background:#edf1f8;border-color:#9aaecb}
 .filters{gap:7px;margin:17px 0 0}.filters button{font-size:14px;padding:8px 12px}.note{padding:11px 0;margin:0;font-size:14px;line-height:1.6}
 @media(max-width:680px){.card{grid-template-columns:minmax(0,1fr);padding:18px 0;gap:0}.card h2{font-size:17px}.card p{font-size:14px;margin-bottom:9px}.card a{grid-column:1;grid-row:auto;justify-self:start;max-width:100%;padding:9px 13px;min-height:44px}.filters{gap:6px}.filters button{padding:8px 10px;font-size:14px}.search{margin-top:14px}}
+
+/* Consistent grouped surfaces, readable rows and comfortable controls. */
+ .grid{background:white;border:1px solid #e0e5ed;border-radius:12px;padding:0 21px;overflow:hidden}.card{padding:19px 0;gap:0 22px}.card:last-child{border-bottom:0}.card>span{letter-spacing:0;text-transform:none;font-size:14px}.card h2{font-size:18px;font-weight:600}.card a{border-radius:8px;border:1px solid #d7dfeb;color:#2a3695;min-height:46px}.filters button{border-radius:8px;min-height:44px}@media(max-width:680px){.grid{padding:0 17px}.card{padding:18px 0}.card h2{font-size:17px}.card a{justify-self:stretch;max-width:none;min-height:46px;margin-top:5px}}
