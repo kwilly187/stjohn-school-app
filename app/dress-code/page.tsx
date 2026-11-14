@@ -5,7 +5,7 @@ import {dressCodeRules, publicInfoChecked, publicInfoSources} from '../public-in
 import styles from '../school-info.module.css';
 export const metadata = {title:'Dress code'};
 export default function DressCode(){const uniforms=resources.find(resource=>resource.id==='uniforms')!;return <>
-  <Link href="/resources" className={styles.back}>← All resources</Link>
+  <Link href="/resources" className={styles.back}>All resources</Link>
   <Heading eyebrow="READY FOR SCHOOL" title="Dress code">An everyday checklist from the school’s published policy.</Heading>
   <ul className={styles.rules}>{dressCodeRules.map(rule=><li key={rule.title}><h2>{rule.title}</h2><p>{rule.detail}</p></li>)}</ul>
   <section className={styles.lead}><div><h2>School uniforms</h2><p>Shop the school’s uniform provider, FlynnO’Hara.</p></div><ExternalLink href={uniforms.url} className="button">Buy uniforms</ExternalLink></section>

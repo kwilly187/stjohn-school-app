@@ -12,7 +12,7 @@ No fake student records are displayed in the public preview.
 | Student overview | Profile selector, explicit source availability, separate real public dates | Private source authorization, real family identity, guardian/student mapping and source adapters; presentation profiles grant no access |
 | Student record display | Typed normalized renderers for assignments, grades, memberships and announcements; empty/unavailable/freshness states and synthetic server-render tests | Verify vendor fields, permissions, actual course/assignment/grade semantics, freshness and integration behavior before activation |
 | Announcements | Planned normalized read-only student view | Vendor feed/audience guarantees, corrections/expiry, source attribution; replies and notification delivery remain separate work |
-| Pickup | Discoverable proposed parent walkthrough, navigation only | School chooses/confirms vendor; supported arrival mechanism, identity/restrictions, school policy, staff flow and fallback must be verified. A generic release system is not being built |
+| Pickup | Pickup help with school-office contact; no simulated arrival controls | School chooses/confirms vendor; supported arrival mechanism, identity/restrictions, school policy, staff flow and fallback must be verified. A generic release system is not being built |
 | Sign-in | Public tasks need no app sign-in | Approved authentication/session design, account recovery, verified family grants and provider-supported SSO; not universal or implemented |
 | Integration setup | Configuration readiness contract and approval/test/activation checklist, not wired | School/vendor permission, supported endpoints, secure credentials, real authorization, adapter implementation, acceptance and rollout |
 

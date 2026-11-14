@@ -1,6 +1,6 @@
 # St. John Saints Parent
 
-A public, mobile-first school resource hub with Today, Calendar, Updates and Resources. Existing school/provider systems remain authoritative. No authentication, student database, custom admin platform or payment handling is added.
+A public, mobile-first school resource hub with Home, Calendar, Contacts and Resources. Existing school/provider systems remain authoritative. No authentication, student database, custom admin platform or payment handling is added.
 
 ## Run and check
 
@@ -16,3 +16,7 @@ Production release is approval-gated. Develop on isolated branches and review pr
 ## Reuse for another school
 
 School identity, colors, contacts, calendars and resource URLs are centralized in `app/school-data.mjs`. See [school configuration](docs/school-configuration.md). Start with separate reviewed deployments, not a shared student-data platform.
+
+## School handoff
+
+See [handoff checklist](docs/school-handoff.md) for completed public features, school decisions and release acceptance checks.

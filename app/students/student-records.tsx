@@ -2,10 +2,10 @@ import Link from 'next/link';
 import type {NormalizedStudentSection as StudentSection} from './student-records.types';
 import styles from './students.module.css';
 const content={
- assignments:{title:'Assignments',disconnected:'Assignments and due dates aren’t connected yet.',empty:'No assignments shared for this selection.'},
- grades:{title:'Current grades',disconnected:'Class grades aren’t connected yet.',empty:'No class grades shared for this selection.'},
- teams:{title:'Teams & activities',disconnected:'Student team and activity memberships aren’t connected yet.',empty:'No memberships shared for this selection.'},
- announcements:{title:'School updates',disconnected:'Student-specific announcements aren’t connected yet.',empty:'No current updates shared for this selection.'}
+ assignments:{title:'Assignments',disconnected:'Assignments and due dates are available through your school account.',empty:'No assignments shared for this selection.'},
+ grades:{title:'Current grades',disconnected:'Class grades are available through your school account.',empty:'No class grades shared for this selection.'},
+ teams:{title:'Teams & activities',disconnected:'Student team and activity memberships are available through your school account.',empty:'No memberships shared for this selection.'},
+ announcements:{title:'School updates',disconnected:'Student-specific announcements are available through your school account.',empty:'No current updates shared for this selection.'}
 };
 function dateText(value:string){
  const dateOnly=/^\d{4}-\d{2}-\d{2}$/.test(value);
@@ -15,7 +15,7 @@ function dateText(value:string){
 export default function StudentRecords({sections,studentNames}:{sections:StudentSection[],studentNames:Record<string,string>}){
  const childLabel=(id:string)=>Object.keys(studentNames).length>1?<span className={styles.recordChild}>{studentNames[id]}</span>:null;
  return <div className={styles.dashboard} aria-label="Student overview">{sections.map(section=><section key={section.key} className={styles.section} aria-labelledby={`student-${section.key}`}>
- <div className={styles.sectionTop}><span className={styles.availability}>{section.status==='ready'?'School information':section.status==='unavailable'?'Unavailable':'Not connected'}</span></div>
+ <div className={styles.sectionTop}><span className={styles.availability}>{section.status==='ready'?'School information':section.status==='unavailable'?'Unavailable':'School account'}</span></div>
  <h2 id={`student-${section.key}`} className={styles.sectionTitle}>{content[section.key].title}</h2>
  {section.status!=='ready'?<p className={styles.sectionCopy}>{section.status==='not-connected'?content[section.key].disconnected:'This information couldn’t be loaded. Try again later.'}</p>:<>
  {section.items.length===0?<p className={styles.sectionCopy}>{content[section.key].empty}</p>:<ul className={styles.records}>

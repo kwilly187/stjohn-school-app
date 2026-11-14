@@ -24,7 +24,7 @@ test('selected child rendering never displays another selected-out child record 
  const html=render(payload,['one']);assert.ok(html.includes('Synthetic science task'));assert.ok(!html.includes('Synthetic activity'));assert.ok(!html.includes('Example Two'));assert.ok(html.includes('No memberships shared for this selection.'));
 });
 test('disconnected, unavailable and successful empty states remain distinct without false values',()=>{
- const disconnected=render({});assert.equal((disconnected.match(/Not connected/g)||[]).length,4);assert.ok(!disconnected.includes('No assignments shared'));
+ const disconnected=render({});assert.equal((disconnected.match(/School account/g)||[]).length,4);assert.ok(!disconnected.includes('No assignments shared'));
  const unavailable=render({assignments:{status:'unavailable'}});assert.ok(unavailable.includes('couldn’t be loaded'));assert.ok(!unavailable.includes('No assignments shared'));
  const empty=render({assignments:section([])});assert.ok(empty.includes('No assignments shared for this selection.'));assert.ok(empty.includes('Checked'));
 });

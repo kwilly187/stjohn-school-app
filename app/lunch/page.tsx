@@ -8,7 +8,7 @@ export default function Lunch(){
  const information=resources.find(resource=>resource.id==='meal-info')!;
  const account=resources.find(resource=>resource.id==='lunch-account')!;
  return <>
-  <Link href="/resources" className="text-link lunch-back">← All resources</Link>
+  <Link href="/resources" className="text-link lunch-back">All resources</Link>
   <Heading eyebrow="LUNCH AT SCHOOL" title="What’s for lunch?">Menu, meal account and a little help when you need it.</Heading>
   <section className={styles.menu}>
    <div className={styles.menuTitle}><Icon name="lunch"/><div><h2>School lunch menu</h2><p>View the menu on Nutrislice.</p></div></div>

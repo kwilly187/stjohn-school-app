@@ -4,7 +4,7 @@
 .lead p {margin:0;color:#526077;line-height:1.6;}
 .lead a {flex-shrink:0;}
 .seasons {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin:24px 0 40px;}
-.season {border-top:2px solid #d4a746;padding-top:18px;}
+.season {border-top:2px solid var(--gold);padding-top:18px;}
 .season h3 {font-size:20px;margin:0 0 14px;}
 .season ul {padding:0;margin:0;list-style:none;}
 .season li {padding:6px 0;line-height:1.5;}

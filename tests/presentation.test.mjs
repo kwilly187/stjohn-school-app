@@ -21,7 +21,7 @@ test('public information routes stay native and office/meal support are availabl
 });
 
 test('getting involved opens existing native office help instead of a generic homepage',async()=>{
- const {resources}=await import('../app/school-data.mjs');const item=resources.find(item=>item.id==='community');assert.equal(item.appPath,'/updates#contact-heading');assert.equal(item.title,'Get involved');assert.match(item.detail,/school office/);
+ const {resources}=await import('../app/school-data.mjs');const item=resources.find(item=>item.id==='events');assert.equal(item.appPath,'/updates#contact-heading');assert.equal(item.title,'Events & volunteering');assert.match(item.detail,/school office/);
 });
 
 test('closing calendar details and clearing staff results restore useful keyboard focus',async()=>{

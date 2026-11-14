@@ -12,3 +12,14 @@ test('unknown status, duplicate IDs, invalid expiry and future grades are unavai
 test('date-only and timezone-aware due dates preserved, extra fields stripped',()=>{const p=payload();p.assignments.items[0].dueAt='2026-11-04T16:00:00-05:00';p.assignments.items[0].secret='not rendered';const result=normalizeStudentSections(p,['child-a'],now)[0].items[0];assert.equal(result.dueAt,'2026-11-04T16:00:00-05:00');assert.equal('secret' in result,false);});
 
 test('unidentifiable record is unavailable rather than a false successful empty result',()=>{for(const record of [null,{},'bad']){const p=payload();p.assignments.items=[record];assert.equal(normalizeStudentSections(p,['child-a'],now)[0].status,'unavailable');}});
+
+test('parent work and updates have predictable useful order without changing source data',()=>{
+ const now='2026-11-14T12:00:00Z';
+ const task=(id,dueAt)=>({id,studentId:'one',status:'active',title:id,course:'Math',dueAt});
+ const news=(id,publishedAt)=>({id,studentId:'one',status:'published',title:id,body:'School notice',publishedAt});
+ const input={assignments:{status:'ready',retrievedAt:now,items:[task('later','2026-11-20'),task('earlier','2026-11-15')]},announcements:{status:'ready',retrievedAt:now,items:[news('older','2026-11-12T12:00:00Z'),news('newer','2026-11-13T12:00:00Z')]}};
+ const before=JSON.stringify(input);const sections=normalizeStudentSections(input,['one'],now);
+ assert.deepEqual(sections.find(s=>s.key==='assignments').items.map(i=>i.id),['earlier','later']);
+ assert.deepEqual(sections.find(s=>s.key==='announcements').items.map(i=>i.id),['newer','older']);
+ assert.equal(JSON.stringify(input),before);
+});

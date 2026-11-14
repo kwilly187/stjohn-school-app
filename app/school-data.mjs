@@ -12,7 +12,7 @@ export const school = {
   communityLabel:'Saints community',
   networkName:'Saints Network',
   portalLabel:'Alma',
-  officeEmail:'aly.kirby@stjohnocala.org',
+  officeEmail:'lynnette.narbonne@stjohnocala.org',
   address:'1915 SE Lake Weir Avenue, Ocala, FL 34471',
   officeHours:'Monday–Friday · August–May: 7:30 am–3:30 pm · June–July: 9 am–2 pm',
   mealHelpEmail:'jstonecypher@maschiofood.com',
@@ -22,7 +22,7 @@ export const school = {
   athletics:'https://stjohnocala.org/home-2/',
   timeZone:'America/New_York',
   timeZoneLabel:'Eastern Time',
-  theme:{'--blue':'#173e93','--navy':'#12274b','--gold':'#d4a746'},
+  theme:{'--blue':'#2a3695','--navy':'#12274b','--gold':'#edbc0d'},
   parents: 'https://stjohnocala.org/for-parents/',
   calendar: 'https://stjohnocala.org/calendar/',
   portal: 'https://stjohnocala.getalma.com/',
@@ -51,8 +51,7 @@ export const resources = [
   {id:'dress-code',appPath:'/dress-code',group:'School information',title:'Dress code',detail:'School uniform requirements',url:'https://stjohnocala.org/for-parents/school-uniform/',icon:'shirt'},
   {id:'uniforms',group:'School store',title:'Buy uniforms',detail:'FlynnO’Hara · St. John Lutheran School.',url:'https://flynnohara.com/shop/saint-john-lutheran-school-fl045/',icon:'shirt'},
   {id:'spirit',group:'School store',title:'Spirit wear',detail:'BSN Sports · School spirit wear',url:'https://sideline.bsnsports.com/schools/florida/ocala/saint-john-lutheran-high-school',icon:'shirt'},
-  {id:'events',group:school.communityLabel,title:'Events & fundraising',detail:'SaintsSpirit preview · Online giving is not active.',url:'https://saints-spirit-approved-preview.vercel.app/',icon:'heart'},
-  {id:'community',appPath:'/updates#contact-heading',group:school.communityLabel,title:'Get involved',detail:'Ask the school office about ways to help.',url:'https://stjohnocala.org/',icon:'people'},
+  {id:'events',appPath:'/updates#contact-heading',group:school.communityLabel,title:'Events & volunteering',detail:'Ask the school office about upcoming events and ways to help.',url:school.contact,icon:'heart'},
 ];
 
 export const resourceGroups=['Everyday essentials','School accounts','School store','Athletics','School information',school.communityLabel];

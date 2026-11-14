@@ -12,10 +12,10 @@ test('staff belongs to Contacts and student context belongs to Home',async()=>{
  assert.ok(nav.includes("tab.href==='/updates'&&pathname==='/staff'"));
  assert.ok(nav.includes("tab.href==='/'&&['/students','/pickup'].includes(pathname)"));
  assert.doesNotMatch(nav,/\['\/lunch','\/staff'/);
- assert.ok(nav.includes("['/lunch','/athletics','/dress-code']"));
+ assert.ok(nav.includes("['/lunch','/athletics','/dress-code','/faq']"));
 });
 test('staff return link returns to Contacts without changing saved-contact tools',async()=>{
- const page=await source('app/staff/page.tsx');assert.match(page,/href="\/updates" className=\{styles.back\}>← Contacts/);assert.match(page,/<StaffView staff=\{staffDirectory\} departments=\{staffDepartments\}/);
+ const page=await source('app/staff/page.tsx');assert.match(page,/href="\/updates" className=\{styles.back\}>Contacts/);assert.match(page,/<StaffView staff=\{staffDirectory\} departments=\{staffDepartments\}/);
 });
 
 test('brand accessible label matches the Home destination',async()=>{

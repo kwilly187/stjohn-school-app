@@ -59,6 +59,8 @@ export function normalizeStudentSections(payload,selectedIds,now=new Date()){
    const normalized=record(key,item,at);if(normalized===false)continue;if(!normalized)return empty('unavailable');
    const identity=normalized.studentId+'\u0000'+normalized.id;if(seen.has(identity))return empty('unavailable');seen.add(identity);items.push(normalized);
   }
+  // Predictable parent reading order: earliest work, latest updates, named classes/teams.
+  items.sort((a,b)=>key==='assignments'?Date.parse(a.dueAt)-Date.parse(b.dueAt):key==='announcements'?Date.parse(b.publishedAt)-Date.parse(a.publishedAt):String(a.course??a.name).localeCompare(String(b.course??b.name),'en'));
   return {key,status:'ready',retrievedAt:section.retrievedAt,items};
  });
 }

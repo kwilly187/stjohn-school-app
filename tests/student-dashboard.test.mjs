@@ -40,8 +40,8 @@ test('student dashboard keeps source availability separate from public calendar 
  const {readFile}=await import('node:fs/promises');
  const page=await readFile(new URL('../app/students/page.tsx',import.meta.url),'utf8');
  const renderer=await readFile(new URL('../app/students/student-records.tsx',import.meta.url),'utf8');
- for(const label of ['Assignments','Current grades','Teams & activities','School updates','Not connected'])assert.ok(renderer.includes(label));
+ for(const label of ['Assignments','Current grades','Teams & activities','School updates','School account'])assert.ok(renderer.includes(label));
  assert.ok(page.indexOf('<StudentRecords')<page.indexOf('<PublicDates'));
- assert.match(page,/valid&&<StudentRecords/);assert.match(page,/valid\?<Suspense/);
+ assert.match(page,/valid&&sections.some\(section=>section.status!=='not-connected'\)&&<StudentRecords/);assert.match(page,/valid\?<Suspense/);
  assert.doesNotMatch(page,/No assignments|No grades|No teams|sampleNotices|fetch\(|localStorage|PhotoPreview/);
 });
