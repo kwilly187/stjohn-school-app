@@ -5,7 +5,7 @@ const read=p=>readFile(new URL('../'+p,import.meta.url),'utf8');
 test('Home keeps family data configured and real school calendar intact',async()=>{
  const page=await read('app/page.tsx');
  assert.match(page,/profiles\.map\(profile=>profile.grade\)/);
- assert.match(page,/limit=\{2\} title="Key school dates" featured/);
+ assert.match(page,/limit=\{2\} title="Upcoming at St. John" featured/);
  for(const destination of ['/faq','/students','/pickup','/staff?contacts=saved','/lunch','/athletics','/resources#school-store','/resources','/updates'])assert.ok(page.includes('href="'+destination+'"'));
  assert.doesNotMatch(page,/mock|demo student|John Doe|→/i);
 });

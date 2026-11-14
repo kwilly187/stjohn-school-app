@@ -8,9 +8,9 @@ import DailyScriptureCard from './daily-scripture-card';
 export const dynamic='force-dynamic';
 
 export default async function Today(){return <div className={styles.home}>
-  <header className={styles.heading}><div><span className={styles.kicker}>ST. JOHN LUTHERAN SCHOOL</span><h1>Welcome, Saints families.</h1><p>Stay connected to school life.</p></div><Link href="/faq" className={styles.faq}>Parent FAQ</Link></header>
+  <header className={styles.heading}><div><span className={styles.kicker}>ST. JOHN LUTHERAN SCHOOL</span><h1>St. John Parent Portal</h1><p>Calendars, school accounts and contacts for St. John families.</p></div><Link href="/faq" className={styles.faq}>Parent FAQ</Link></header>
   <div className={styles.overview}>
-    <div className={styles.dates}><Suspense fallback={<p className={styles.loading} role="status">Loading school dates…</p>}><PublicDates grades={profiles.map(profile=>profile.grade)} limit={2} title="Key school dates" featured/></Suspense></div>
+    <div className={styles.dates}><Suspense fallback={<p className={styles.loading} role="status">Loading school dates…</p>}><PublicDates grades={profiles.map(profile=>profile.grade)} limit={2} title="Upcoming at St. John" featured/></Suspense></div>
     <aside className={styles.familyPanel}><h2 className={styles.familyTitle}>Your family</h2>
       <Link href="/students" className="home-family">
         <span className={styles.portrait} aria-hidden="true">{profiles.length===1?(profiles[0].photo?<img src={profiles[0].photo} alt="" width="44" height="44"/>:profiles[0].name[0]):<Icon name="people"/>}</span>
@@ -21,13 +21,13 @@ export default async function Today(){return <div className={styles.home}>
   </div>
   <DailyScriptureCard initialDate={new Date().toISOString()}/>
   <section className={styles.tasks} aria-labelledby="home-tasks-heading">
-    <div className={styles.sectionHeading}><h2 id="home-tasks-heading">School essentials</h2><span>The everyday, made easy</span></div>
+    <div className={styles.sectionHeading}><h2 id="home-tasks-heading">Parent quick links</h2></div>
     <nav className={styles.taskGrid} aria-label="Everyday school tasks">
-      <Link href="/lunch"><span className={styles.taskIcon}><Icon name="lunch"/></span><span><strong>Lunch</strong><span>Menu & meal account</span></span></Link>
-      <Link href="/athletics"><span className={styles.taskIcon}><Icon name="shirt"/></span><span><strong>Athletics</strong><span>Sports, forms & participation</span></span></Link>
-      <Link href="/resources#school-store"><span className={styles.taskIcon}><Icon name="shirt"/></span><span><strong>School store</strong><span>Spirit wear & uniforms</span></span></Link>
-      <Link href="/resources"><span className={styles.taskIcon}><Icon name="resources"/></span><span><strong>Resources</strong><span>Accounts, forms & dress code</span></span></Link>
+      <Link href="/lunch"><span className={styles.taskIcon}><Icon name="lunch"/></span><span><strong>Lunch</strong><span>Nutrislice & PaySchools</span></span></Link>
+      <Link href="/athletics"><span className={styles.taskIcon}><Icon name="shirt"/></span><span><strong>Athletics</strong><span>Saints teams & eligibility forms</span></span></Link>
+      <Link href="/resources#school-store"><span className={styles.taskIcon}><Icon name="shirt"/></span><span><strong>School store</strong><span>BSN spirit wear & FlynnO’Hara uniforms</span></span></Link>
+      <Link href="/resources"><span className={styles.taskIcon}><Icon name="resources"/></span><span><strong>Resources</strong><span>Tuition, aftercare & school forms</span></span></Link>
     </nav>
   </section>
-  <section className={styles.contact} aria-label="School contacts"><div><Icon name="people"/><div><h2>Stay in touch</h2><p>Find a teacher or reach the school office.</p></div></div><Link href="/updates">School contacts</Link></section>
+  <section className={styles.contact} aria-label="School contacts"><div><Icon name="people"/><div><h2>St. John contacts</h2><p>Teachers, staff and the school office.</p></div></div><Link href="/updates">School contacts</Link></section>
 </div>}

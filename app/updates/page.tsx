@@ -4,7 +4,7 @@ import {school} from '../school-data.mjs';
 import styles from './help.module.css';
 export const metadata={title:'School contacts'};
 export default function Updates(){return <>
-  <Heading eyebrow="HERE TO HELP" title="School contacts">Find the right person. Get the help you need.</Heading>
+  <Heading eyebrow="ST. JOHN LUTHERAN SCHOOL" title="School contacts">Teacher directory, school office and department contacts.</Heading>
   <div className={styles.savedAccess}><Link href="/staff?contacts=saved">Saved contacts </Link></div>
   <div className={styles.primary}>
     <Link href="/staff" className={styles.teacher}><span className={styles.symbol}><Icon name="people"/></span><span><strong>Find & email a teacher</strong><span>Search the staff directory</span></span></Link>
@@ -16,7 +16,7 @@ export default function Updates(){return <>
     <Link href="/athletics" className={styles.task}><Icon name="shirt"/><span><strong>Athletics</strong><span>Teams, requirements & contact</span></span></Link>
     <Link href="/lunch#meal-help" className={styles.task}><Icon name="lunch"/><span><strong>Lunch & meal help</strong><span>Food-service contact & meal accounts</span></span></Link>
   </div></section>
-  <section className={styles.office} aria-labelledby="contact-heading"><div><span className="eyebrow">SCHOOL OFFICE</span><h2 id="contact-heading">A person who can help</h2><p>For attendance questions, forms or help finding the right person.</p><div className={styles.officeActions}><a className="button" href={`mailto:${school.officeEmail}`}>Email the office</a><a className="text-link" href={school.phone}>Call {school.phoneDisplay}</a></div></div><div className={styles.officeDetails}><p>{school.address}</p><p>{school.officeHours}</p></div></section>
+  <section className={styles.office} aria-labelledby="contact-heading"><div><span className="eyebrow">SCHOOL OFFICE</span><h2 id="contact-heading">St. John school office</h2><p>For attendance questions, forms or help finding the right person.</p><div className={styles.officeActions}><a className="button" href={`mailto:${school.officeEmail}`}>Email the office</a><a className="text-link" href={school.phone}>Call {school.phoneDisplay}</a></div></div><div className={styles.officeDetails}><p>{school.address}</p><p>{school.officeHours}</p></div></section>
   <div className={styles.secondary}><a href={`mailto:${school.athleticsEmail}`}>Email athletics</a><ExternalLink href={school.portal}>Alma · External sign-in</ExternalLink></div>
   <p className={styles.note}>Email opens in your email app. For a time-sensitive question, call the school office.</p>
 </>}
