@@ -10,3 +10,7 @@ Design inspiration: the official site's blue headings, gold fleur-de-lis and cre
 
 ## November 14 reference refinement
 The owner supplied three mobile screenshots of the official website and one of the earlier app. The website screenshots show neutral sans-serif text, regular-weight royal-blue headings, open white sections, and a faint gold fleur-de-lis motif. The app reflects that hierarchy using locally licensed Inter, not an unverified claim of an exact school font match. The earlier geometric Josefin app styling is intentionally not restored. Allura remains restricted to the Daily Scripture title. No promotional statistics or identifiable student photos were added.
+
+## Saints Store merchandise concepts
+- `public/store/saints-editorial.webp` and `saints-collection.webp`: original AI-generated concept mockups using the existing authentic St. John crest as a visual reference, created November 14, 2026. Not actual product photographs, inventory, approved uniforms or school-approved designs. Rendered interface clearly identifies concepts; navy/natural images are not claimed to match alternative selected colors.
+- Product images use CSS viewport positions on the original six-panel image. No student likenesses or third-party merchandise photos.
