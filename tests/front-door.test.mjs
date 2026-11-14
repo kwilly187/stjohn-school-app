@@ -5,7 +5,7 @@ import {resources} from '../app/school-data.mjs';
 const read=path=>readFile(new URL('../'+path,import.meta.url),'utf8');
 test('native front door names the actual tasks without replacing provider accounts',async()=>{
  const today=await read('app/page.tsx'),nav=await read('app/navigation.tsx'),contacts=await read('app/updates/page.tsx'),students=await read('app/students/page.tsx');
- assert.match(today,/My students/);assert.match(today,/Student overview/);
+ const menu=await read('app/student-menu.tsx');assert.match(menu,/My Students/);assert.match(menu,/Student overview/);
  assert.match(today,/Saints teams & eligibility forms/);assert.match(today,/href="\/resources#school-store"/);assert.match(today,/href="\/resources"/);
  assert.match(nav,/href:'\/updates',label:'Contacts'/);assert.equal((nav.match(/href:'/g)||[]).length,4);
  assert.match(contacts,/title="School contacts"/);assert.match(students,/Home/);
@@ -20,7 +20,7 @@ test('provider help distinguishes separate accounts and does not imply native ba
 
 test('Home prioritizes real school dates with compact configured identity and task cards',async()=>{
  const today=await read('app/page.tsx'),dates=await read('app/public-dates.tsx'),profile=await read('app/students/profile-config.mjs');
- assert.match(today,/className="home-family"/);assert.match(today,/profiles\[0\]\.photo/);assert.match(today,/profiles\[0\]\.name/);
+ assert.doesNotMatch(today,/className="home-family"/);
  assert.match(today,/limit=\{2\}/);assert.ok(today.indexOf('home-tasks')<today.indexOf('<PublicDates'));assert.match(today,/title="Upcoming at St. John" featured/);
  assert.match(today,/href="\/athletics"/);assert.match(today,/href="\/staff\?contacts=saved"/);
  assert.match(profile,/profiles=\[\]/);assert.doesNotMatch(today,/Aubrey|test-profile\.jpeg/);

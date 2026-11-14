@@ -355,3 +355,16 @@ body{font-size:16px;line-height:1.6}.brand strong{font-size:22px;font-weight:600
 /* The official-site reference uses restrained royal-blue headings, not display lettering. */
 .page-heading h1{color:var(--blue);font-weight:400;letter-spacing:-.6px}.page-heading p{color:#4b5360}
 .brand strong{color:var(--blue)}
+
+/* Student navigation stays at the top right on every screen. */
+.topbar{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:14px}
+.student-menu{position:relative;justify-self:end;z-index:30}
+.student-menu-trigger{display:flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 13px;border:1px solid #cbd5e4;border-radius:6px;background:#fff;color:var(--blue);font-size:13px;font-weight:600;white-space:nowrap}
+.student-menu-trigger svg{width:20px;height:20px}.student-menu-symbol{font-size:19px;font-weight:400;line-height:1;width:12px}
+.student-menu-trigger[aria-expanded=true]{background:#edf1f8;border-color:#9aaace}
+.student-menu-panel{position:absolute;top:calc(100% + 8px);right:0;width:260px;max-width:calc(100vw - 44px);background:white;border:1px solid #d5deea;border-radius:8px;padding:7px;box-shadow:0 12px 35px #12274b20}
+.student-menu-panel a{display:flex;flex-direction:column;justify-content:center;gap:4px;padding:12px 13px;min-height:48px;color:var(--navy);text-decoration:none;border-radius:4px}
+.student-menu-panel a+a{border-top:1px solid var(--line)}.student-menu-panel strong{font-size:14px;font-weight:600}.student-menu-panel a>span{font-size:12px;color:var(--muted)}
+.student-menu-panel a:hover,.student-menu-panel a:focus-visible{background:#f1f4f9;color:var(--blue)}
+@media(max-width:680px){.topbar{grid-template-columns:minmax(0,1fr) auto;gap:12px 10px;padding-top:13px}.topbar .brand{grid-column:1;grid-row:1;gap:8px}.topbar .brand img{width:40px;height:44px}.topbar .brand strong{font-size:17px}.topbar .brand span{font-size:7px;letter-spacing:.8px}.student-menu{grid-column:2;grid-row:1}.student-menu-trigger{font-size:12px;padding:9px 10px;gap:6px}.student-menu-trigger svg{width:18px;height:18px}.header-actions{grid-column:1/-1;grid-row:2}.student-menu-panel{top:calc(100% + 10px)}}
+@media(max-width:359px){.student-menu-trigger svg{display:none}.student-menu-trigger{padding:9px 8px}.topbar .brand strong{font-size:15px}.topbar .brand span{font-size:6px}.topbar .brand img{width:35px}}

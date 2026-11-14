@@ -20,14 +20,8 @@ export default async function Today(){return <div className={styles.home}>
   </section>
   <div className={styles.overview}>
     <div className={styles.dates}><Suspense fallback={<p className={styles.loading} role="status">Loading school dates…</p>}><PublicDates grades={profiles.map(profile=>profile.grade)} limit={2} title="Upcoming at St. John" featured/></Suspense></div>
-    <aside className={styles.familyPanel}><h2 className={styles.familyTitle}>Your family</h2>
-      <Link href="/students" className="home-family">
-        <span className={styles.portrait} aria-hidden="true">{profiles.length===1?(profiles[0].photo?<img src={profiles[0].photo} alt="" width="44" height="44"/>:profiles[0].name[0]):<Icon name="people"/>}</span>
-        <span><strong>{profiles.length===1?profiles[0].name:'My students'}</strong><span>{profiles.length===1?`Grade ${profiles[0].grade} · Student overview`:'Student overview'}</span></span>
-      </Link>
-      <div className={styles.familyLinks}><Link href="/pickup"><Icon name="clock"/>Pickup help</Link><Link href="/staff?contacts=saved"><Icon name="updates"/>Saved contacts</Link></div>
-    </aside>
+
   </div>
   <DailyScriptureCard initialDate={new Date().toISOString()}/>
-  <section className={styles.contact} aria-label="School contacts"><div><Icon name="people"/><div><h2>St. John contacts</h2><p>Teachers, staff and the school office.</p></div></div><Link href="/updates">School contacts</Link></section>
+  <section className={styles.contact} aria-label="School contacts"><div><Icon name="people"/><div><h2>St. John contacts</h2><p>Teachers, staff and the school office.</p></div></div><div className={styles.contactLinks}><Link href="/staff?contacts=saved">Saved contacts</Link><Link href="/updates">School contacts</Link></div></section>
 </div>}
