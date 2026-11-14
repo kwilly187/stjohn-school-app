@@ -42,3 +42,5 @@ test('school screenshot styling retains readable interface type and uses existin
 });
 
 test('Home actions use high contrast neutral rows without a decorative blue block',async()=>{const css=await read('app/home.module.css'),page=await read('app/page.tsx');assert.match(css,/\.actions\{background:#fff/);assert.doesNotMatch(css,/color:#ffe490/);assert.doesNotMatch(page,/HOW CAN WE HELP|A few things/);assert.match(page,/<span>Payments, forms & registration<\/span>/);});
+
+test('Saints Community is a first-screen hub with real event, involvement and store destinations',async()=>{const page=await read('app/page.tsx'),css=await read('app/home.module.css');assert.ok(page.indexOf('id="community-heading"')<page.indexOf('<FamilyNotices'));assert.match(page,/href="\/parent-actions\?category=Get%20involved"/);assert.equal((page.match(/href="\/store"/g)||[]).length,1);assert.match(page,/href="\/pickup"/);assert.match(css,/\.communityLinks a\{[^}]*min-height:91px/);assert.match(css,/\.communityLinks\{grid-template-columns:1fr\}/);});

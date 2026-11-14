@@ -15,3 +15,12 @@ test('all native parent action and resource destinations resolve to real pages',
   assert.ok(existsSync(`app${route}/page.tsx`),href);
  }
 });
+
+test('community category has a safe shareable destination',async()=>{
+ const {parentActionCategory,parentActionHref,filterParentActions}=await import('../app/parent-actions/actions.mjs');
+ assert.equal(parentActionCategory('Get involved'),'Get involved');
+ assert.equal(parentActionHref('Get involved'),'/parent-actions?category=Get%20involved');
+ assert.equal(filterParentActions('Get involved').length,2);
+ for(const invalid of [null,[],{},'javascript:alert(1)','Unknown'])assert.equal(parentActionCategory(invalid),'All');
+ assert.equal(parentActionHref('bad'),'/parent-actions');
+});

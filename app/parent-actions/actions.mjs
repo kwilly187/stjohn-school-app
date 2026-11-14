@@ -18,3 +18,7 @@ export function filterParentActions(category='All',query=''){
  const search=String(query).trim().toLowerCase();
  return parentActions.filter(action=>(category==='All'||action.category===category)&&(!search||[action.title,action.detail,action.category,action.label].join(' ').toLowerCase().includes(search)));
 }
+
+export const actionCategories=['All','Payments','Registration','Forms','Messages','Get involved'];
+export function parentActionCategory(value){return typeof value==='string'&&actionCategories.includes(value)?value:'All'}
+export function parentActionHref(category){const safe=parentActionCategory(category);return safe==='All'?'/parent-actions':`/parent-actions?category=${encodeURIComponent(safe)}`}
