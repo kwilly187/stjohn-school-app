@@ -23,3 +23,5 @@ test('calendar and pickup help searches stay in the app with truthful labels',()
  assert.equal(searchResources(entries,'calendar').find(item=>item.id==='calendar').appPath,'/calendar');
  const pickup=searchResources(entries,'pickup')[0];assert.equal(pickup.appPath,'/pickup');assert.match(pickup.detail,/School office/);
 });
+
+test('store search uses native parent portal navigation',()=>{const result=searchResources(resources,'store').find(item=>item.id==='spirit');assert.equal(result.appPath,'/store');assert.equal(result.url,'/store')});

@@ -1,34 +1,7 @@
-.page :global(.page-heading){padding:24px 0 14px}.page :global(.page-heading .eyebrow){display:none}.page :global(.page-heading h1){font-size:30px;margin-bottom:6px}.page :global(.page-heading p){font-size:14px}
-.groups{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start;margin:18px 0 28px}
-.groups :global(.resource-section){margin:0;padding:18px;border:1px solid var(--line);border-radius:12px;min-width:0}
-.groups :global(.resource-section h2){font-family:var(--font-school);font-size:19px;letter-spacing:-.3px;margin:0 0 10px}
-.groups :global(.resource-section:first-child){order:5}
-.groups :global(#school-accounts){grid-column:1/-1;order:-2}
-.groups :global(#school-store){grid-column:1/-1}
-.groups :global(.resource-grid){grid-template-columns:1fr;gap:8px}
-.groups :global(#school-accounts .resource-grid){grid-template-columns:1fr 1fr}
-.groups :global(.resource-card){padding:10px 0;min-height:64px;border:0;box-shadow:none;background:transparent}
-.groups :global(.resource-card .icon-tile){width:36px;min-width:36px;height:36px}
-.groups :global(.resource-card strong){font-size:15px}.groups :global(.resource-detail){font-size:14px}
-.groups :global(.fine-print){font-size:14px;margin:0 0 8px}.groups :global(.text-link){min-height:44px;display:inline-flex;align-items:center}
-@media(max-width:600px){.page :global(.page-heading){padding:18px 0 12px}.page :global(.page-heading h1){font-size:27px}.groups{grid-template-columns:1fr;gap:12px}.groups :global(#school-accounts .resource-grid){grid-template-columns:1fr}.groups :global(.resource-section){padding:16px}}
-
-.help{display:flex;align-items:center;flex-wrap:wrap;gap:6px 20px;font-size:14px;margin:0 0 10px}.help>span{margin-right:auto;color:var(--muted)}.help a{min-height:44px;display:inline-flex;align-items:center;font-weight:650}@media(max-width:600px){.help>span{display:none}.help{gap:20px;margin:0}}
-
-/* Open, grouped directory: the same calm rhythm as the parent home. */
-.page :global(.page-heading){padding:30px 0 23px;margin-bottom:20px}
-.page :global(.page-heading h1){font-size:34px}
-.page :global(.page-heading p){font-size:16px;max-width:520px}
-.groups{gap:30px 36px;margin:26px 0 30px}
-.groups :global(.resource-section){padding:0;border:0;border-radius:0;border-top:2px solid var(--blue);padding-top:18px}
-.groups :global(.resource-section h2){font-size:22px;margin-bottom:13px;letter-spacing:0}
-.groups :global(.resource-card){padding:15px 0;gap:14px;border-radius:0;border-bottom:1px solid var(--line);align-items:center}
-.groups :global(.resource-card:last-child){border-bottom:0}
-.groups :global(.resource-card .icon-tile){width:40px;min-width:40px;height:40px;border-radius:50%;background:#f0f3fb}
-.groups :global(.resource-card strong){font-size:17px;margin:0 0 4px}
-.groups :global(.resource-detail){font-size:14px;line-height:1.5}
-.groups :global(#school-accounts){background:#f5f7fb;border:0;border-radius:7px;padding:22px 24px}
-.groups :global(#school-accounts .resource-grid){gap:0 28px}
-.groups :global(.fine-print){font-size:14px;line-height:1.5;margin-bottom:7px}
-.help{border-top:1px solid var(--line);padding-top:9px;margin-top:0}
-@media(max-width:600px){.page :global(.page-heading){padding:25px 0 20px}.page :global(.page-heading h1){font-size:30px}.page :global(.page-heading p){font-size:15px}.groups{gap:26px;margin-top:20px}.groups :global(#school-accounts){padding:20px}.groups :global(.resource-section h2){font-size:21px}.groups :global(.resource-card){padding:14px 0}}
+.page{padding-bottom:20px}.page :global(.page-heading){padding:28px 0 20px;margin:0}.page :global(.page-heading h1){font-size:32px;letter-spacing:-.7px;font-weight:600;margin:0 0 9px}.page :global(.page-heading p){font-size:16px;line-height:1.6;max-width:620px;margin:0}
+.help{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:0 0 23px}.help a{display:flex;align-items:center;justify-content:center;min-height:46px;padding:10px 12px;border:1px solid #dbe2ec;background:#fff;border-radius:8px;font-size:14px;font-weight:500;line-height:1.4;color:#2a3695;text-decoration:none;text-align:center}.help a:hover{background:#edf1f9;border-color:#bbc8e0}
+.groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:start;margin:22px 0 30px}.page .groups :global(.resource-section){min-width:0;padding:19px 20px 7px;margin:0;border:1px solid #e0e5ed;border-radius:12px;background:white;box-shadow:0 2px 6px #172a4a03}.page .groups :global(.resource-section h2){font-family:var(--font-school);font-size:20px;font-weight:600;letter-spacing:-.3px;line-height:1.3;color:#223956;margin:0 0 7px}
+.page .groups :global(#school-accounts){grid-column:1/-1}.page .groups :global(.resource-grid){display:grid;grid-template-columns:1fr;gap:0}.page .groups :global(#school-accounts .resource-grid){grid-template-columns:repeat(2,minmax(0,1fr));gap:0 25px}.page .groups :global(.resource-card){display:flex;align-items:center;gap:13px;min-height:76px;padding:16px 0;margin:0;border:0;border-bottom:1px solid #e9edf2;border-radius:0;box-shadow:none;background:transparent;text-decoration:none}.page .groups :global(.resource-card:last-child){border-bottom:0}.page .groups :global(.resource-card:hover){background:#f6f8fc}.page .groups :global(.resource-card .icon-tile){display:flex;align-items:center;justify-content:center;flex-shrink:0;width:38px;min-width:38px;height:38px;border-radius:9px;background:#eef2fa;color:#2a3695}.page .groups :global(.resource-card .icon-tile svg){width:21px;height:21px}.page .groups :global(.resource-card strong){display:block;font-size:16px;font-weight:550;line-height:1.4;color:#253b58;margin:0 0 4px}.page .groups :global(.resource-detail){display:block;font-size:14px;line-height:1.5;color:#637187}.page .groups :global(.fine-print){font-size:14px;line-height:1.5;color:#637187;margin:0 0 5px}.page .groups :global(.text-link){min-height:44px;font-size:14px}.page :global(#resource-results>section>.resource-grid){gap:12px}.page :global(#resource-results>section>.resource-grid .resource-card){border:1px solid #e0e5ed;background:white;border-radius:10px;padding:18px}
+@media(max-width:680px){.page :global(.page-heading){padding:23px 0 18px}.page :global(.page-heading h1){font-size:29px}.help{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:20px}.groups{grid-template-columns:1fr;gap:16px;margin-top:18px}.page .groups :global(.resource-section){padding:18px 17px 5px}.page .groups :global(.resource-section h2){font-size:20px}.page .groups :global(#school-accounts .resource-grid){grid-template-columns:1fr;gap:0}.page .groups :global(.resource-card){min-height:74px;padding:14px 0}.page .groups :global(.resource-card strong){font-size:16px}.page .groups :global(.resource-card .icon-tile){width:36px;min-width:36px;height:36px}.page .groups :global(.resource-detail){font-size:14px}}
+.page .groups :global(#school-store){border:1px solid #e0e5ed;padding-top:19px}
+@media(max-width:680px){.page .groups :global(#school-store){padding-top:18px}}
