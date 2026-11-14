@@ -70,19 +70,12 @@
 .communityIntro p{max-width:none}
 @media(max-width:680px){.communityIntro{display:block;min-height:0}.communityIntro>div:first-child{padding:20px 18px}}
 
-/* Familiar real school spaces enrich useful destinations, without decorative galleries. */
-.taskGrid{grid-template-columns:repeat(2,minmax(0,1fr))}
-.taskGrid a{display:flex;flex-direction:row;align-items:center;gap:15px;min-height:112px;padding:18px}
-.taskGrid .taskIcon{width:38px;flex-shrink:0}
-.taskGrid .photoTask{padding:0;overflow:hidden;gap:18px}
-.photoTask img{display:block;width:130px;height:124px;object-fit:cover;flex-shrink:0}
-.taskGrid .photoTask>span{padding:15px 18px 15px 0}
+/* Everyday essentials share a quiet, consistent icon-first treatment. */
+.taskGrid{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.taskGrid a{display:flex;flex-direction:column;align-items:flex-start;gap:15px;min-height:158px;padding:20px;border-radius:12px}
+.taskGrid .taskIcon{width:38px;height:38px;flex-shrink:0;border-radius:10px;background:#f1f3fb;align-items:center;color:#2a3695}
+.taskGrid .taskIcon svg{width:24px;height:24px}
+.taskGrid a>span>span{font-size:14px;line-height:1.5}
 .communityPhoto{display:block;width:100%;height:174px;object-fit:cover;object-position:center 50%;border-bottom:1px solid #e0e5ed}
-@media(max-width:680px){
- .taskGrid{grid-template-columns:1fr 1fr;gap:12px}
- .taskGrid a{flex-direction:column;align-items:flex-start;gap:10px;padding:17px;min-height:130px}
- .taskGrid .photoTask{gap:0;padding:0}
- .photoTask img{width:100%;height:100px}
- .taskGrid .photoTask>span{padding:14px 15px 16px}
- .communityPhoto{height:130px;object-position:center 48%}
-}
+@media(max-width:900px){.taskGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.taskGrid{gap:12px}.taskGrid a{padding:17px;min-height:154px;gap:13px}.communityPhoto{height:130px;object-position:center 48%}}
