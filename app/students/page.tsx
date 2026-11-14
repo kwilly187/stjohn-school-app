@@ -15,7 +15,6 @@ export default async function Students({searchParams}:{searchParams:Promise<{stu
  // No private source is connected. Only an authorized server adapter may replace this empty input.
  const sections=normalizeStudentSections({},selected.map(child=>child.id));
  return <div className={styles.page}>
- <Link className={styles.back} href="/">Home</Link>
  <header className={styles.heading}><h1>My Students</h1><p>Access St. John student records in Alma and upcoming school dates.</p></header>
  {profiles.length>0&&<nav className={styles.selector} aria-label="Choose a student">
  {profiles.length>1&&<Link href="/students" scroll={false} className={styles.choice} aria-current={selection==='all'?'page':undefined}><span className={styles.avatar} aria-hidden="true">{profiles.length}</span><span><strong>All My Students</strong><span>All students</span></span></Link>}

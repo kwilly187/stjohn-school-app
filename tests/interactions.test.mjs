@@ -38,4 +38,4 @@ test('curated dates open native details without raw-feed exits and Contacts keep
  assert.equal((updates.match(/href={school.portal}/g)||[]).length,1);
 });
 
-test('student context returns Home and does not promote a duplicate contact dashboard',async()=>{const page=await source('app/students/page.tsx');assert.match(page,/href="\/">Home/);assert.match(page,/Access St. John student records in Alma/);assert.doesNotMatch(page,/styles.closing|Announcements and school contacts/)});
+test('student context returns Home and does not promote a duplicate contact dashboard',async()=>{const page=await source('app/students/page.tsx');assert.match(await source('app/navigation.tsx'),/label:'Home'/);assert.match(page,/Access St. John student records in Alma/);assert.doesNotMatch(page,/styles.closing|Announcements and school contacts/)});

@@ -17,7 +17,7 @@ const payload={
 };
 const render=(input,ids=['one','two'])=>renderToStaticMarkup(React.createElement(StudentRecords,{sections:normalizeStudentSections(input,ids,now),studentNames:Object.fromEntries(ids.map(id=>[id,id==='one'?'Example One':'Example Two']))}));
 test('normalized authorized-data display renders all four types with child labels and correct date-only semantics',()=>{
- const html=render(payload);for(const text of ['Synthetic science task','Science','Nov 3, 2026','Synthetic math','B+','Synthetic activity','Autumn','Synthetic update','Example One','Example Two','Checked'])assert.ok(html.includes(text));
+ const html=render(payload);for(const text of ['Synthetic science task','Science','Nov 3, 2026','Synthetic math','B+','Synthetic activity','Autumn','Synthetic update','Example One','Example Two'])assert.ok(html.includes(text));
  assert.ok(html.includes('&lt;script&gt;not executable&lt;/script&gt;'));assert.ok(!html.includes('<script>'));
 });
 test('selected child rendering never displays another selected-out child record or label',()=>{
@@ -26,7 +26,7 @@ test('selected child rendering never displays another selected-out child record 
 test('disconnected, unavailable and successful empty states remain distinct without false values',()=>{
  const disconnected=render({});assert.equal((disconnected.match(/School account/g)||[]).length,4);assert.ok(!disconnected.includes('No assignments shared'));
  const unavailable=render({assignments:{status:'unavailable'}});assert.ok(unavailable.includes('couldn’t be loaded'));assert.ok(!unavailable.includes('No assignments shared'));
- const empty=render({assignments:section([])});assert.ok(empty.includes('No assignments shared for this selection.'));assert.ok(empty.includes('Checked'));
+ const empty=render({assignments:section([])});assert.ok(empty.includes('No assignments shared for this selection.'));assert.ok(!empty.includes('Checked'));
 });
 
 test('overdue active work is retained under an honest Assignments heading',()=>{

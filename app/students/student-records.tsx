@@ -25,7 +25,6 @@ export default function StudentRecords({sections,studentNames}:{sections:Student
  {section.key==='teams'&&section.items.map(item=><li key={`${item.studentId}:${item.id}`}>{childLabel(item.studentId)}<strong>{item.name}</strong>{item.season&&<span>{item.season}</span>}</li>)}
  {section.key==='announcements'&&section.items.map(item=><li key={`${item.studentId}:${item.id}`}>{childLabel(item.studentId)}<strong>{item.title}</strong><p className={styles.recordBody}>{item.body}</p><span><time dateTime={item.publishedAt}>{dateText(item.publishedAt)}</time></span></li>)}
  </ul>}
- {section.retrievedAt&&<p className={styles.recordFreshness}>Checked <time dateTime={section.retrievedAt}>{dateText(section.retrievedAt)}</time></p>}
  </>}
  {section.key==='teams'&&<Link className={styles.secondaryLink} href="/athletics">Explore school sports</Link>}
  {section.key==='announcements'&&<Link className={styles.secondaryLink} href="/updates">Contact the school</Link>}
