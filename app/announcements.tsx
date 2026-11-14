@@ -1,9 +1,11 @@
+import StudentAnnouncements from './student-announcements';
 import {school} from './school-data.mjs';
 import {announcementFeed,selectAnnouncements} from './announcements-data.mjs';
 import styles from './announcements.module.css';
 export default function Announcements({scope='school',grades=[]}:{scope?:'school'|'grades',grades?:number[]}){
- const {status,items}=selectAnnouncements(announcementFeed,{scope,grades});
- const title=scope==='school'?'Important announcements':'Grade announcements';
+ const {status,items}=selectAnnouncements(announcementFeed,{scope:scope==='grades'?'student':scope,grades});
+ if(scope==='grades')return <StudentAnnouncements status={status} items={items}/>;
+ const title='Important announcements';
  return <section className={styles.section} aria-labelledby={`${scope}-announcements`}>
   <div className={styles.heading}><h2 id={`${scope}-announcements`}>{title}</h2><a href={school.portal}>Open Alma</a></div>
   {status!=='connected'?<p className={styles.empty}>Read {scope==='school'?'school announcements':'your student’s grade announcements'} in your school account.</p>:items.length?items.map((item:{id:string,title:string,body:string,publishedAt:string,important?:boolean})=><article className={styles.notice} key={item.id}>

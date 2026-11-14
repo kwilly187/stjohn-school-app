@@ -7,3 +7,6 @@ Home renders important school-wide announcements; My Students renders grade noti
 A real school feed needs school/provider approval and authenticated guardian scope for private messages. Private announcements must come from a separately authorized server adapter; do not expose them through this public feed or static profile configuration. There is no staff editor, message ingestion, push notification system or automatic Alma sync implemented by this change.
 
 Tests use synthetic notices only; none ship in the feed.
+
+## Student categories
+My Students now has All, School, Classroom, Assignments, Grades, Sports and Clubs filters. Text search appears when a feed is connected. The view includes public schoolwide notices, matching-grade notices and explicit supplied group memberships. Grade alone never implies team/club membership. Runtime profiles have no memberships and the feed remains unconnected, so the preview has no actual student announcements. A category is navigation, not proof that its source is connected. Private assignments, grades and group messages require scoped server integration before they can appear. The filters do not grant authorization.
