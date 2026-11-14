@@ -1,7 +1,9 @@
 /** Normalized display data only. A server adapter must authorize every record first. */
 export type StudentSectionKey='assignments'|'grades'|'teams'|'announcements';
 export type StudentRecordBase={id:string;studentId:string};
-export type StudentAssignment=StudentRecordBase&{title:string;course:string;dueAt:string};
+export type AssignmentCompletionStatus='not-started'|'in-progress'|'submitted'|'returned'|'completed'|'excused'|'unknown';
+// Separate from the source record lifecycle status (active, withdrawn, deleted).
+export type StudentAssignment=StudentRecordBase&{title:string;course:string;dueAt:string;completionStatus:AssignmentCompletionStatus;sourceUrl?:string};
 export type StudentGrade=StudentRecordBase&{course:string;value:string;reportedAt:string};
 export type StudentTeam=StudentRecordBase&{name:string;season?:string};
 export type StudentAnnouncement=StudentRecordBase&{title:string;body:string;publishedAt:string;expiresAt?:string};

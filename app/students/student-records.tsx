@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type {NormalizedStudentSection as StudentSection} from './student-records.types';
 import styles from './students.module.css';
+const completionLabels={'not-started':'Not started','in-progress':'In progress',submitted:'Submitted',returned:'Returned',completed:'Completed',excused:'Excused',unknown:'Status not provided'};
 const content={
  assignments:{title:'Assignments',disconnected:'Assignments and due dates are available through your school account.',empty:'No assignments shared for this selection.'},
  grades:{title:'Current grades',disconnected:'Class grades are available through your school account.',empty:'No class grades shared for this selection.'},
@@ -19,7 +20,7 @@ export default function StudentRecords({sections,studentNames}:{sections:Student
  <h2 id={`student-${section.key}`} className={styles.sectionTitle}>{content[section.key].title}</h2>
  {section.status!=='ready'?<p className={styles.sectionCopy}>{section.status==='not-connected'?content[section.key].disconnected:'This information couldn’t be loaded. Try again later.'}</p>:<>
  {section.items.length===0?<p className={styles.sectionCopy}>{content[section.key].empty}</p>:<ul className={styles.records}>
- {section.key==='assignments'&&section.items.map(item=><li key={`${item.studentId}:${item.id}`}>{childLabel(item.studentId)}<strong>{item.title}</strong><span>{item.course}</span><span>Due <time dateTime={item.dueAt}>{dateText(item.dueAt)}</time></span></li>)}
+ {section.key==='assignments'&&section.items.map(item=><li key={`${item.studentId}:${item.id}`}>{childLabel(item.studentId)}<strong>{item.title}</strong><span>{item.course}</span><span>Due <time dateTime={item.dueAt}>{dateText(item.dueAt)}</time></span><span>{completionLabels[item.completionStatus]}</span>{item.sourceUrl&&<a href={item.sourceUrl} className={styles.secondaryLink}>Open assignment</a>}</li>)}
  {section.key==='grades'&&section.items.map(item=><li key={`${item.studentId}:${item.id}`}>{childLabel(item.studentId)}<strong>{item.course}</strong><span className={styles.gradeValue}>{item.value}</span><span>Reported <time dateTime={item.reportedAt}>{dateText(item.reportedAt)}</time></span></li>)}
  {section.key==='teams'&&section.items.map(item=><li key={`${item.studentId}:${item.id}`}>{childLabel(item.studentId)}<strong>{item.name}</strong>{item.season&&<span>{item.season}</span>}</li>)}
  {section.key==='announcements'&&section.items.map(item=><li key={`${item.studentId}:${item.id}`}>{childLabel(item.studentId)}<strong>{item.title}</strong><p className={styles.recordBody}>{item.body}</p><span><time dateTime={item.publishedAt}>{dateText(item.publishedAt)}</time></span></li>)}

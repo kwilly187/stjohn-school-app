@@ -1,5 +1,15 @@
+import {school} from '../school-data.mjs';
 const keys=['assignments','grades','teams','announcements'];
 const inactive=new Set(['draft','withdrawn','deleted','inactive','completed']);
+const completionStates=new Set(['not-started','in-progress','submitted','returned','completed','excused','unknown']);
+// Exact configured school provider only; not a live endpoint/permission check.
+function assignmentSourceUrl(value){
+ if(typeof value!=='string'||value.length>2048||value!==value.trim()||/[\\\u0000-\u0020\u007f]/.test(value))return null;
+ try{const url=new URL(value),provider=new URL(school.portal);
+  if(url.protocol!=='https:'||url.origin!==provider.origin||url.username||url.password)return null;
+  return url.href;
+ }catch{return null;}
+}
 const object=value=>value!==null&&typeof value==='object'&&!Array.isArray(value);
 const text=(value,max=200)=>typeof value==='string'&&value.trim().length>0&&value.length<=max?value.trim():null;
 function dateOnly(value){
@@ -17,7 +27,11 @@ function record(key,item,now){
  const base={id,studentId};
  if(key==='assignments'){
   const title=text(item.title),course=text(item.course);if(!title||!course||(!dateOnly(item.dueAt)&&!instant(item.dueAt)))return null;
-  return {...base,title,course,dueAt:item.dueAt};
+  const completionStatus=item.completionStatus===undefined?'unknown':item.completionStatus;
+  if(!completionStates.has(completionStatus))return null;
+  const sourceUrl=item.sourceUrl===undefined?undefined:assignmentSourceUrl(item.sourceUrl);
+  if(sourceUrl===null)return null;
+  return {...base,title,course,dueAt:item.dueAt,completionStatus,...(sourceUrl?{sourceUrl}:{})};
  }
  if(key==='grades'){
   const course=text(item.course),value=text(item.value,80);if(!course||!value||!instant(item.reportedAt)||Date.parse(item.reportedAt)>now)return null;

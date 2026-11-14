@@ -23,3 +23,23 @@ test('parent work and updates have predictable useful order without changing sou
  assert.deepEqual(sections.find(s=>s.key==='announcements').items.map(i=>i.id),['newer','older']);
  assert.equal(JSON.stringify(input),before);
 });
+
+test('assignment completion state is distinct from active source lifecycle and never inferred from due date',()=>{
+ for(const completionStatus of ['not-started','in-progress','submitted','returned','completed','excused','unknown']){
+  const p=payload();Object.assign(p.assignments.items[0],{completionStatus,dueAt:'2026-10-01'});
+  const section=normalizeStudentSections(p,['child-a'],now)[0];
+  assert.equal(section.status,'ready');assert.equal(section.items[0].completionStatus,completionStatus);
+ }
+ const p=payload();assert.equal(normalizeStudentSections(p,['child-a'],now)[0].items[0].completionStatus,'unknown');
+ for(const completionStatus of [null,'late','active',{},42]){p.assignments.items[0].completionStatus=completionStatus;assert.equal(normalizeStudentSections(p,['child-a'],now)[0].status,'unavailable');}
+ p.assignments.items[0]={...items.assignments,status:'withdrawn',completionStatus:'submitted'};
+ assert.deepEqual(normalizeStudentSections(p,['child-a'],now)[0].items,[]);
+});
+test('assignment source URL preserves a trusted school-provider deep link only',()=>{
+ const p=payload();p.assignments.items[0].sourceUrl='https://stjohnocala.getalma.com/assignments/synthetic-fixture';
+ const result=normalizeStudentSections(p,['child-a'],now)[0];assert.equal(result.status,'ready');assert.equal(result.items[0].sourceUrl,p.assignments.items[0].sourceUrl);
+ delete p.assignments.items[0].sourceUrl;assert.equal('sourceUrl' in normalizeStudentSections(p,['child-a'],now)[0].items[0],false);
+ for(const sourceUrl of ['javascript:alert(1)','data:text/html,test','http://stjohnocala.getalma.com/task','//stjohnocala.getalma.com/task','/task','https://other.getalma.com/task','https://stjohnocala.getalma.com.evil.example/task','https://stjohnocala.getalma.com:444/task','https://person:secret@stjohnocala.getalma.com/task','https://stjohnocala.getalma.com\\@evil.example/task',' https://stjohnocala.getalma.com/task','https://stjohnocala.getalma.com/\ntask',null,42]){
+  p.assignments.items[0].sourceUrl=sourceUrl;assert.equal(normalizeStudentSections(p,['child-a'],now)[0].status,'unavailable',String(sourceUrl));
+ }
+});
