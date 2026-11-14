@@ -14,3 +14,10 @@ test('resource headings and Scripture use the shared school font',async()=>{
   const css=await read(file);assert.match(css,/var\(--font-school\)/);assert.doesNotMatch(css,/Manrope|Georgia/);
  }
 });
+test('licensed script is restricted to Scripture heading, not the verse',async()=>{
+ const css=await read('app/daily-scripture.module.css');
+ assert.match(css,/\.heading h2\{font-family:'Allura',cursive/);
+ assert.match(css,/\.card blockquote\{[^}]*font-family:var\(--font-school\)/);
+ assert.match(await read('public/fonts/OFL-Allura.txt'),/SIL OPEN FONT LICENSE/);
+ assert.ok((await stat(new URL('../public/fonts/allura-latin-400-normal.woff2',import.meta.url))).size>1000);
+});
