@@ -25,8 +25,10 @@ export default async function Today(){return <div className={styles.home}>
  <Link href="/resources"><span className={styles.taskIcon}><Icon name="resources"/></span><span><strong>Resources</strong><span>Tuition, aftercare & school forms</span></span></Link>
  </nav></section>
  <section className={styles.community} aria-labelledby="community-heading">
-  <img className={styles.communityPhoto} src="/campus/courtyard.webp" alt="The landscaped middle school courtyard at St. John" width="438" height="288" loading="lazy"/>
-  <div className={styles.communityIntro}><div><h2 id="community-heading">Saints Community</h2><p>Stay connected. Get involved. Show your school spirit.</p></div></div>
+  <div className={styles.communityBanner}>
+   <img className={styles.communityPhoto} src="/campus/courtyard.webp" alt="" width="438" height="288" loading="lazy"/>
+   <div className={styles.communityIntro}><img className={styles.communityCrest} src="/stjohn-logo.png" alt="" width="80" height="80"/><div><h2 id="community-heading">Saints Community</h2><p>Stay connected. Get involved. Show your school spirit.</p></div></div>
+  </div>
   <nav className={styles.communityLinks} aria-label="Saints Community">
    <Link href="/calendar"><Icon name="calendar"/><span><strong>School events</strong><span>See what's coming up</span></span></Link>
    <Link href="/parent-actions?category=Get%20involved"><Icon name="heart"/><span><strong>Get involved</strong><span>Volunteer & support St. John</span></span></Link>
