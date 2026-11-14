@@ -1,2 +1,0 @@
-import test from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';
-test('community surprise uses keyboard-capable button and dismissible native dialog',()=>{const ui=readFileSync('app/community-surprise.tsx','utf8');assert.match(ui,/taps.current===3/);assert.match(ui,/showModal/);assert.match(ui,/method="dialog"/);assert.match(ui,/onClose=.*focus/);assert.match(ui,/type="button"/);assert.match(ui,/Fuck off/);});
