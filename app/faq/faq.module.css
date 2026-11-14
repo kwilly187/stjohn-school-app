@@ -20,3 +20,17 @@
 
 /* Consistent grouped surfaces, readable rows and comfortable controls. */
  .results{background:white;border:1px solid #e0e5ed;border-radius:12px;padding:0 21px;overflow:hidden}.item{background:transparent}.item:last-child{border-bottom:0}.item summary{font-size:17px;font-weight:550;padding:19px 0;gap:18px}.answer{padding-right:20px}.answer p{font-size:16px;line-height:1.6}.help{background:white;border:1px solid #e0e5ed;border-radius:12px;padding:22px;margin-top:22px}.help h2{font-size:20px;font-weight:600}.categories button{min-height:44px;border-radius:8px;font-size:14px}@media(max-width:600px){.results{padding:0 17px}.item summary{font-size:17px;padding:17px 0}.answer{padding-right:0}.help{padding:18px}}
+
+/* A deeper knowledge base stays approachable: topics first, individual answers on demand. */
+.topicResults{background:#fff;border:1px solid #e0e5ed;border-radius:12px;overflow:hidden}
+.topic+.topic{border-top:1px solid #e0e5ed}
+.topic>summary{list-style:none;display:flex;align-items:center;gap:16px;padding:20px 22px;min-height:68px;font-size:17px;font-weight:600;color:#24345b;cursor:pointer}
+.topic>summary::-webkit-details-marker{display:none}
+.topic>summary>span:first-child{flex:1}
+.topicCount{font-size:14px;font-weight:400;color:#596579;white-space:nowrap}
+.topic[open]>summary{background:#f5f7fc;border-bottom:1px solid #e0e5ed}
+.topic[open]>summary>.indicator:after{display:none}
+.topicQuestions{padding:0 22px}
+.topicQuestions .item summary{font-weight:500;font-size:16px}
+.topic>summary:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
+@media(max-width:600px){.topic>summary{padding:18px 17px;gap:12px}.topicQuestions{padding:0 17px}.topicCount{font-size:14px}.categories{max-height:none}}
