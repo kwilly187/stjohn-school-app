@@ -26,3 +26,11 @@
 .compact a{min-height:44px;font-size:14px}
 .compact:before{background-position:97% 16px;background-size:60px auto;opacity:.06}
 @media(max-width:680px){.compact{padding:16px 18px;margin-bottom:18px}.compact .heading h2{font-size:29px}.compact blockquote{font-size:16px;line-height:1.6}}
+
+/* Small reading strip: full verse, inline reference, no separate attribution row. */
+.compact{padding:12px 16px;margin-bottom:16px;border-radius:10px}
+.compact .heading h2{font-size:26px;line-height:1.1}
+.compact blockquote{margin:5px 0 0;font-size:16px;line-height:1.45}
+.compact blockquote a{display:inline;min-height:0;font-size:14px;white-space:nowrap}
+.compact:before{display:none}
+@media(max-width:680px){.compact{padding:10px 12px;margin-bottom:14px}.compact .heading h2{font-size:25px}.compact blockquote{font-size:16px;line-height:1.45}}
