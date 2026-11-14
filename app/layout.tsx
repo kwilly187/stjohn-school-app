@@ -10,8 +10,8 @@ export const metadata = {
  title:{default:`${school.appName} | ${school.name}`,template:`%s | ${school.appName}`},
  description:'St. John school calendars, family resources and everyday parent essentials in one place.',
  applicationName:'Saints Parent',
- openGraph:{type:'website',locale:'en_US',siteName:'Saints Parent',title:'Saints Parent | St. John Lutheran School',description:'School dates, family resources and everyday essentials for St. John parents.',images:[{url:'/brand/saints-parent-share.png',width:1200,height:630,alt:'Saints Parent — St. John Lutheran School, Ocala'}]},
- twitter:{card:'summary_large_image',title:'Saints Parent | St. John Lutheran School',description:'School dates, family resources and everyday essentials for St. John parents.',images:['/brand/saints-parent-share.png']},
+ openGraph:{type:'website',locale:'en_US',siteName:'Saints Parent',title:'Saints Parent',description:'School dates, family resources and everyday essentials for St. John parents.',images:[{url:'/brand/saints-parent-share.png',width:1200,height:630,alt:'Saints Parent — St. John Lutheran School, Ocala'}]},
+ twitter:{card:'summary_large_image',title:'Saints Parent',description:'School dates, family resources and everyday essentials for St. John parents.',images:['/brand/saints-parent-share.png']},
  icons:{icon:[{url:'/brand/favicon-32.png',sizes:'32x32',type:'image/png'},{url:'/brand/saints-parent-192.png',sizes:'192x192',type:'image/png'}],apple:[{url:'/brand/saints-parent-180.png',sizes:'180x180',type:'image/png'}]},
  appleWebApp:{capable:true,title:'Saints Parent',statusBarStyle:'default'},
  manifest:'/manifest.webmanifest'
