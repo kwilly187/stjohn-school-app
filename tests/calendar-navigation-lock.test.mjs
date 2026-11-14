@@ -40,3 +40,11 @@ test('Today from another month and closing a selected event remain real navigati
   assert.equal(navigated,true);
  }
 });
+
+test('Today visibly reflects current month and resets search when returning',async()=>{
+ const view=await readFile(new URL('../app/calendar/view.tsx',import.meta.url),'utf8');
+ assert.match(view,/disabled=\{pending\|\|\(state.month===state.current&&!selectedEventId&&!search\)\}/);
+ assert.match(view,/Showing the current month/);
+ assert.match(view,/setSearch\(''\);move\(\{month:state.current\}\)/);
+ assert.doesNotMatch(view,/45-day range/);
+});

@@ -45,3 +45,6 @@ Update centralized public configuration in `app/school-data.mjs`. Calendar parsi
 ### Publication candidate
 
 Parent pages now omit development badges and simulated pickup steps. Pickup provides real office-help actions, and the historical review URL opens Home. Unapproved devotion content is hidden. Parent FAQ adds 11 official-source questions with search and categories. School phone, seasonal hours and account destinations were rechecked against the official parents/contact pages; the office email now uses the published contact-page address.
+
+## School website entry point
+Kyle's intended long-term placement is a link from the school's own website to this parent portal. No school domain or DNS changes have been made. The current stable preview remains on Seagull's Vercel account. At school handoff, agree the school-controlled URL and ownership first; then update canonical/social metadata and test sign-in callbacks and deep links. A link to a hosted portal needs no application path rewrite. Hosting under a nested path would require a deliberate base-path, asset, API, manifest and callback migration, not merely changing the public link.

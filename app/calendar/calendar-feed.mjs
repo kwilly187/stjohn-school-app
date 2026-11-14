@@ -53,11 +53,7 @@ export function calendarFeedRange({source='activities',month,view='MONTH',now=ne
   const window=validate(source,month);
   if(!['MONTH','AGENDA'].includes(view))throw new Error('Invalid calendar view');
   if(!Number.isFinite(now.getTime()))throw new Error('Invalid calendar reference time');
-  if(view==='AGENDA') {
-    const today=localDay(now);
-    window.start=today.startsWith(month)?today:window.start;
-    let end=window.start;for(let i=0;i<45;i++)end=addDay(end);window.end=end;
-  }
+  // Agenda and Month are two presentations of the same selected calendar month.
   return window;
 }
 export function formatCalendarStart(event) {

@@ -16,7 +16,7 @@ test('timed midnight endings exclude following school day and UTC renders Easter
 });
 test('school-time recurrence keeps local hour through DST',()=>{
  const text=cal([tz,event(['UID:dst','DTSTART;TZID=America/New_York:20261031T090000','DTEND;TZID=America/New_York:20261031T100000','RRULE:FREQ=DAILY;COUNT=3','SUMMARY:Test recurring event'])]);
- const values=parseCalendarFeed(text,{...opts,month:'2026-10',view:'AGENDA',now:new Date('2026-10-31T12:00:00Z')});
+ const values=['2026-10','2026-11'].flatMap(month=>parseCalendarFeed(text,{...opts,month,view:'AGENDA',now:new Date('2026-10-31T12:00:00Z')}));
  assert.deepEqual(values.map(e=>e.start),['2026-10-31T13:00:00.000Z','2026-11-01T14:00:00.000Z','2026-11-02T14:00:00.000Z']);
 });
 test('EXDATE, moved override and cancelled override do not duplicate original occurrences',()=>{
@@ -39,9 +39,9 @@ test('source-isolated IDs, duplicates/revisions and minimal fields',()=>{
  assert.notEqual(a.id,b.id);assert.equal(a.location,'Main gym');assert.equal(parseCalendarFeed(text,opts).length,1);
  assert.deepEqual(Object.keys(a).sort(),['allDay','dateText','dayKeys','end','endDay','id','location','start','startDay','title','startText','sourceUrl'].sort());
 });
-test('Agenda begins school-local today in current month and covers 45 calendar days',()=>{
- assert.deepEqual(calendarFeedRange({...opts,month:'2026-10',view:'AGENDA',now:new Date('2026-11-01T01:00:00Z')}),{start:'2026-10-31',end:'2026-12-15'});
- assert.deepEqual(calendarFeedRange({...opts,month:'2026-12',view:'AGENDA'}),{start:'2026-12-01',end:'2027-01-15'});
+test('Agenda and Month share exact selected month with no overlapping navigation windows',()=>{
+ assert.deepEqual(calendarFeedRange({...opts,month:'2026-10',view:'AGENDA',now:new Date('2026-11-01T01:00:00Z')}),{start:'2026-10-01',end:'2026-11-01'});
+ assert.deepEqual(calendarFeedRange({...opts,month:'2026-12',view:'AGENDA'}),{start:'2026-12-01',end:'2027-01-01'});
  assert.deepEqual(calendarFeedRange(opts),{start:'2026-11-01',end:'2026-12-01'});
 });
 test('unknown source/month/view, malformed source, byte and recurrence bounds fail explicitly',()=>{
@@ -84,4 +84,13 @@ test('athletics card startText does not imply the structured end is every team e
 test('date-only early release never implies an all-day closure',()=>{
  const [e]=parseCalendarFeed(cal([event(['UID:early','DTSTART;VALUE=DATE:20261111','DTEND;VALUE=DATE:20261112','SUMMARY:Early Release- All grades'])]),opts);
  assert.match(e.dateText,/Nov 11/);assert.doesNotMatch(e.dateText,/All day/);assert.equal(e.allDay,true);
+});
+
+test('Agenda retains earlier current-month events and excludes following-month events',()=>{
+ const text=cal([base(),event(['UID:following','DTSTART;VALUE=DATE:20261201','DTEND;VALUE=DATE:20261202','SUMMARY:December event'])]);
+ const nov=parseCalendarFeed(text,{...opts,view:'AGENDA',now:new Date('2026-11-14T17:00:00Z')});
+ const dec=parseCalendarFeed(text,{...opts,view:'AGENDA',month:'2026-12'});
+ assert.equal(nov.length,1);assert.equal(dec.length,1);assert.equal(dec[0].title,'December event');
+ assert.notEqual(nov[0].id,dec[0].id);
+ for(const view of ['MONTH','AGENDA'])assert.deepEqual(calendarFeedRange({...opts,month:'2028-02',view}),{start:'2028-02-01',end:'2028-03-01'});
 });
