@@ -33,3 +33,10 @@ test('Home uses the real campus photo and an open editorial layout',async()=>{
  assert.match(css,/\.familyPanel\{[^}]*border-left:1px solid var\(--line\)/);
  assert.ok(page.indexOf('home-tasks')<page.indexOf('<PublicDates'));
 });
+
+test('school screenshot styling retains readable interface type and uses existing school fleur',async()=>{
+ const home=await read('app/home.module.css'),scripture=await read('app/daily-scripture.module.css'),global=await read('app/style.css');
+ assert.match(home,/heading h1\{color:var\(--blue\);font-weight:400/);
+ assert.match(scripture,/stjohn-fleur-divider.png/);
+ assert.match(global,/--font-school:'Inter'/);
+});

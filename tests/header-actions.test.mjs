@@ -1,0 +1,3 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';
+const read=p=>readFileSync(new URL('../'+p,import.meta.url),'utf8');
+test('communication controls are available in the global header without invented unread badges',()=>{const page=read('app/header-actions.tsx'),layout=read('app/layout.tsx');assert.match(layout,/<HeaderActions\/>/);for(const route of ['/messages','/notifications'])assert.ok(page.includes(`href="${route}"`));assert.doesNotMatch(page,/badge|unread|notificationCount/);assert.match(page,/aria-current/);assert.match(page,/aria-hidden="true"/);});

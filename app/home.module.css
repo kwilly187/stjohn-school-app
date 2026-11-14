@@ -77,3 +77,11 @@
 }
 @media(max-width:359px){.heading{grid-template-columns:1fr}.campus{display:none}.heading h1{font-size:34px}.heading p{max-width:none}.taskGrid{gap:17px 10px}.taskGrid a{gap:8px}}
 @media(prefers-reduced-motion:reduce){.taskGrid a{transition:none}}
+.heading h1{font-weight:600;font-size:42px;letter-spacing:-1.2px}.heading p{font-size:15px}.taskGrid strong{font-size:16px}.kicker{font-size:10px}.familyPanel :global(.home-family) strong{font-size:17px}
+@media(max-width:680px){.heading h1{font-size:28px;letter-spacing:-.7px}.heading p{font-size:13px;line-height:1.6}.taskGrid strong{font-size:15px}.taskGrid a>span>span{font-size:12px;line-height:1.5}.kicker{font-size:9px}.sectionHeading h2,.dates h2,.familyTitle{font-size:19px!important}}
+
+/* Reference the school's clear blue headings and white campus-led sections. */
+.heading{position:relative}.heading h1{color:var(--blue);font-weight:400;letter-spacing:-1px}.heading p{color:#484f5a}.kicker{letter-spacing:1.25px;color:var(--blue)}
+.campus{border-radius:46px 5px 5px 5px;border-bottom-width:3px}
+.sectionHeading h2,.familyTitle,.dates h2{color:var(--blue);font-weight:500}
+@media(max-width:680px){.heading h1{font-size:29px;line-height:1.15;font-weight:400}.campus{border-radius:42px 4px 4px 4px}.heading p{font-size:14px;line-height:1.55}.kicker{letter-spacing:.9px}.sectionHeading h2,.familyTitle,.dates h2{font-size:20px!important}}

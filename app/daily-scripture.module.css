@@ -7,3 +7,12 @@
 .card a:hover{text-decoration:underline}
 .card a:focus-visible{outline:3px solid #edbc0d;outline-offset:3px}
 @media(max-width:680px){.card{padding:24px 23px}.heading{display:block}.heading h2{font-size:34px;margin-bottom:5px}.card blockquote{font-size:21px;line-height:1.55}}
+
+/* Quiet school fleur detail, inspired by the white faith sections on the school site. */
+.card{overflow:hidden;background:#fffdf5;color:var(--navy);border-radius:0;border-top:1px solid #e9dcae;border-bottom:1px solid #e9dcae;text-align:center;padding:30px 35px}
+.card:before{content:'';position:absolute;inset:0;pointer-events:none;background:url('/stjohn-fleur-divider.png') no-repeat 97% 22px;background-size:86px auto;opacity:.12}
+.card>*{position:relative}
+.heading{justify-content:center;display:block}.heading h2{color:var(--blue);font-size:38px}.heading span{display:block;margin-top:5px;color:#6b6659;font-size:11px;letter-spacing:.3px}
+.card blockquote{color:#333e4c;margin:18px auto 7px;font-size:23px;line-height:1.65;max-width:760px;font-weight:400}
+.card a{color:var(--blue);font-weight:500}
+@media(max-width:680px){.card{padding:26px 22px}.heading h2{font-size:36px}.card blockquote{font-size:19px;line-height:1.7}.card:before{background-position:95% 20px;background-size:70px auto}}
