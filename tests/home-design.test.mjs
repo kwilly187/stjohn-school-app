@@ -12,7 +12,7 @@ test('Home keeps family data configured and real school calendar intact',async()
 test('Home has school color hierarchy and accessible phone control sizing',async()=>{
  const css=await read('app/home.module.css');
  assert.match(css,/background:var\(--blue\)/);
- assert.match(css,/color:var\(--gold\)/);
+ assert.match(css,/border-bottom:5px solid var\(--gold\)/);
  assert.match(css,/\.faq\{display:inline-flex;min-height:44px/);
  assert.match(css,/\.familyLinks a\{min-height:44px/);
  assert.match(css,/@media\(prefers-reduced-motion:reduce\)/);
@@ -24,4 +24,12 @@ test('Home avoids mismatched icon highlights and keeps featured ranges next to e
  assert.doesNotMatch(css,/nth-child/);
  assert.match(dates,/featured&&<p className=\{styles.eventRange\}/);
  assert.match(css,/article h3 a\{text-decoration:none\}/);
+});
+
+test('Home uses the real campus photo and an open editorial layout',async()=>{
+ const page=await read('app/page.tsx'),css=await read('app/home.module.css');
+ assert.match(page,/src="\/stjohn-church.png"/);
+ assert.match(page,/alt="St. John church on the school campus"/);
+ assert.match(css,/\.familyPanel\{[^}]*border-left:1px solid var\(--line\)/);
+ assert.ok(page.indexOf('home-tasks')<page.indexOf('<PublicDates'));
 });

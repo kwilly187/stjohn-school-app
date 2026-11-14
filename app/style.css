@@ -325,3 +325,17 @@ button,input,select,textarea{font-family:var(--font-school)}
 .resource-card strong{font-weight:600}
 @media(max-width:680px){body{font-size:16px}.brand strong{font-size:24px}.bottom-nav a{font-size:13px}}
 @font-face{font-family:'Allura';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/allura-latin-400-normal.woff2') format('woff2')}
+
+/* A consistent, quiet frame lets school content lead on every screen. */
+body{background:#f0f2f6}.app{background:#fff;max-width:1120px;box-shadow:0 0 45px #12274b06}
+.topbar{height:94px;padding-top:15px;padding-bottom:15px;border-top:3px solid var(--blue);border-bottom:1px solid var(--line)}
+.brand img{width:54px;height:54px}.brand strong{font-size:24px;font-weight:500;letter-spacing:0}.brand span{font-size:10px;letter-spacing:1.2px}
+.page-heading{padding-top:32px;border-bottom:1px solid var(--line)}
+.page-heading h1{font-size:35px;font-weight:500;letter-spacing:-.4px}
+.card,.resource-card,.help-card,.notice-card{box-shadow:none;border-radius:8px}
+.resource-card .icon-tile{border-radius:50%;background:#f0f3fb;color:var(--blue)}
+.bottom-nav{max-width:1120px;border-radius:0;bottom:0;padding:7px 12px max(7px,env(safe-area-inset-bottom));background:#fff;border:0;border-top:1px solid var(--line);box-shadow:0 -4px 16px #12274b06}
+.bottom-nav a{border-radius:0;min-height:55px;font-size:13px;font-weight:500;gap:4px}.bottom-nav a[aria-current=page]{background:transparent;color:var(--blue)}
+.bottom-nav a[aria-current=page]:before{height:3px;background:var(--blue);left:35%;right:35%;top:-7px;border-radius:0 0 3px 3px}
+.footer{border-top:1px solid var(--line);margin-top:12px;padding-top:20px}
+@media(max-width:680px){main{padding-left:22px;padding-right:22px}.topbar{height:87px;padding-left:22px;padding-right:22px}.brand img{width:48px;height:48px}.brand strong{font-size:23px}.page-heading h1{font-size:30px}.bottom-nav{width:100%;left:50%}.app{padding-bottom:87px}}

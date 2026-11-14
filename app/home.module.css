@@ -1,91 +1,79 @@
-.home{padding:22px 0 10px}
-.heading{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 26px;margin-bottom:22px;background:var(--blue);border-bottom:4px solid var(--gold);border-radius:12px;color:white}
-.kicker{display:block;color:var(--gold);font-size:10px;letter-spacing:1.7px;font-weight:800;margin-bottom:9px}
-.heading h1{color:white;font-size:30px;letter-spacing:-.8px;margin:0 0 6px;line-height:1.2}
-.heading p{color:#edf0ff;font-size:14px;margin:0}
-.faq{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 15px;color:white;border:1px solid #ffffff65;border-radius:7px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap}
-.faq:hover{background:#ffffff15}
-.overview{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(250px,1fr);gap:20px;align-items:start}
-.dates{background:white;border:1px solid var(--line);border-radius:12px;padding:0 20px 14px;overflow:hidden}
-.dates section{margin:0;padding-top:13px}
-.dates h2{font-size:20px!important}
-.dates article{padding:19px 0!important;grid-template-columns:64px minmax(0,1fr)!important;gap:17px!important;align-items:center}
-.dates article h3{font-size:22px!important;line-height:1.3!important;letter-spacing:-.5px}
+.home{padding:0 0 12px}
+.heading{display:grid;grid-template-columns:1.15fr 1fr;align-items:center;gap:42px;padding:38px 0 34px;border-bottom:1px solid var(--line)}
+.kicker{display:block;color:var(--blue);font-size:11px;letter-spacing:1.5px;font-weight:600;margin-bottom:16px}
+.heading h1{font-size:46px;font-weight:500;letter-spacing:-1px;line-height:1.08;margin:0 0 16px;color:var(--navy)}
+.heading p{font-size:16px;line-height:1.5;margin:0 0 18px;max-width:320px}
+.faq{display:inline-flex;min-height:44px;align-items:center;justify-content:center;background:var(--blue);color:white;font-weight:600;padding:9px 20px;text-decoration:none;border-radius:6px}
+.faq:hover{background:var(--navy)}
+.campus{height:275px;border-radius:80px 8px 8px 8px;overflow:hidden;position:relative;border-bottom:5px solid var(--gold)}
+.campus img{width:100%;height:100%;object-fit:cover;object-position:50% 55%;display:block}
+.tasks{padding:25px 0 28px;border-bottom:1px solid var(--line)}
+.sectionHeading{margin-bottom:17px}
+.sectionHeading h2{font-size:20px;font-weight:600;margin:0}
+.taskGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.taskGrid a{display:flex;align-items:flex-start;gap:12px;min-height:64px;text-decoration:none;color:var(--navy)}
+.taskGrid a>span{display:flex;flex-direction:column;gap:4px}
+.taskGrid a>span.taskIcon{display:grid;place-items:center;width:40px;height:40px;flex-shrink:0;border-radius:50%;background:#f0f3fb;color:var(--blue)}
+.taskIcon svg{width:21px;height:21px}
+.taskGrid strong{font-size:17px;font-weight:600;line-height:1.3}
+.taskGrid a>span>span{font-size:13px;line-height:1.4;color:var(--muted)}
+.taskGrid a:hover strong{text-decoration:underline}
+.overview{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(235px,1fr);gap:36px;padding:28px 0 30px;align-items:start}
+.dates{min-width:0}
+.dates section{margin:0;padding:0}
+.dates h2{font-size:21px!important;margin:0}
+.dates article{padding:19px 0!important;grid-template-columns:55px minmax(0,1fr)!important;gap:17px!important;align-items:center}
+.dates article h3{font-size:21px!important;line-height:1.3!important;font-weight:600;letter-spacing:0}
 .dates article h3 a{text-decoration:none}
 .dates article h3 a:hover{text-decoration:underline}
-.dates article>div:first-child>span{width:62px;height:72px;margin:0;background:#f2f4fb;border:1px solid #dce2f3;border-top:4px solid var(--gold);border-radius:8px;box-shadow:none}
-.dates article>div:first-child>span strong{font-size:29px}
-.dates article>div:first-child>span span{font-size:10px}
-.dates p{font-size:12px;line-height:1.5}
-.loading{min-height:180px;padding:20px 0;font-size:14px!important}
-.familyPanel{background:#f5f7fb;border:1px solid var(--line);border-radius:12px;padding:17px 18px 8px}
-.familyTitle{font-size:14px;color:var(--muted);margin:0 0 11px}
-.familyPanel :global(.home-family){display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--navy);padding:14px 12px;background:white;border:1px solid var(--line);border-radius:8px}
-.familyPanel :global(.home-family)>span:last-child{display:flex;flex-direction:column;gap:3px;min-width:0}
-.familyPanel :global(.home-family) strong{font-size:17px;line-height:1.3}
-.familyPanel :global(.home-family)>span>span{font-size:13px;color:var(--muted)}
-.portrait{display:grid;place-items:center;width:42px;height:42px;flex-shrink:0;border-radius:9px;background:#edf1fb;color:var(--blue);overflow:hidden}
+.dates article>div:first-child>span{width:53px;height:62px;margin:0;background:white;border:1px solid #dce2ef;border-top:3px solid var(--blue);border-radius:5px;box-shadow:none}
+.dates article>div:first-child>span strong{font-size:25px}
+.dates article>div:first-child>span span{font-size:11px}
+.dates p{font-size:13px;line-height:1.5}
+.loading{min-height:160px;padding:20px 0}
+.familyPanel{padding:0 0 0 28px;border-left:1px solid var(--line)}
+.familyTitle{font-size:21px;margin:0 0 19px}
+.familyPanel :global(.home-family){display:flex;gap:12px;align-items:center;text-decoration:none;color:var(--navy);min-height:62px;padding-bottom:16px}
+.familyPanel :global(.home-family)>span:last-child{display:flex;flex-direction:column;gap:3px}
+.familyPanel :global(.home-family) strong{font-size:18px}
+.familyPanel :global(.home-family)>span>span{font-size:14px;color:var(--muted)}
+.portrait{width:43px;height:43px;display:grid;place-items:center;background:#f0f3fb;border-radius:50%;color:var(--blue);flex-shrink:0;overflow:hidden}
 .portrait img{width:100%;height:100%;object-fit:cover}
-.familyLinks{display:grid;padding:5px 0 0}
-.familyLinks a{display:flex;align-items:center;gap:10px;min-height:46px;font-size:14px;font-weight:600;color:var(--navy);text-decoration:none}
-.familyLinks a+a{border-top:1px solid var(--line)}
+.familyLinks{display:grid;border-top:1px solid var(--line);padding-top:7px}
+.familyLinks a{min-height:44px;display:flex;align-items:center;gap:10px;font-size:15px;font-weight:500;text-decoration:none;color:var(--navy)}
 .familyLinks svg{width:19px;height:19px;color:var(--blue)}
-.familyPanel a:hover strong,.familyLinks a:hover{text-decoration:underline}
-.tasks{margin:26px 0}
-.sectionHeading{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:14px}
-.sectionHeading h2{font-size:21px;margin:0}
-.sectionHeading>span{font-size:12px;color:var(--muted)}
-.taskGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-.taskGrid a{display:flex;flex-direction:column;gap:13px;background:white;border:1px solid var(--line);border-radius:12px;padding:18px;color:var(--navy);text-decoration:none;min-width:0;transition:background .15s,border-color .15s}
-.taskGrid a:hover{background:#f7f9fd;border-color:#9baed0}
-.taskGrid a>span{display:flex;flex-direction:column;gap:4px}
-.taskGrid a>span.taskIcon{display:grid;place-items:center;width:42px;height:42px;border-radius:9px;background:#edf1fb;color:var(--blue)}
-.taskGrid .taskIcon svg{width:23px;height:23px;color:inherit}
-.taskGrid strong{font-size:16px;line-height:1.3}
-.taskGrid a>span>span{font-size:13px;line-height:1.45;color:var(--muted)}
-.contact{display:flex;align-items:center;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding:22px 0 8px}
-.contact>div{display:flex;align-items:center;gap:12px}
-.contact svg{color:var(--blue);width:25px;height:25px;flex-shrink:0}
-.contact h2{font-size:17px;margin:0 0 4px}
-.contact p{font-size:13px;line-height:1.5;margin:0}
-.contact>a{display:flex;align-items:center;justify-content:center;min-height:44px;padding:9px 15px;border:1px solid #b6c4d9;color:var(--navy);background:white;border-radius:7px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap}
-.contact>a:hover{background:#edf1fb}
+.familyLinks a:hover,.familyPanel a:hover strong{text-decoration:underline}
+.contact{padding:24px 0;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.contact>div{display:flex;align-items:center;gap:14px}
+.contact svg{width:27px;height:27px;color:var(--blue);flex-shrink:0}
+.contact h2{font-size:19px;margin:0 0 4px}
+.contact p{font-size:14px;margin:0}
+.contact>a{min-height:44px;display:flex;align-items:center;justify-content:center;padding:8px 17px;border:1px solid #bcc8db;border-radius:6px;text-decoration:none;white-space:nowrap;font-weight:600;font-size:14px}
 @media(max-width:680px){
- .home{padding-top:16px}
- .heading{display:block;padding:20px;margin-bottom:18px}
- .heading h1{font-size:26px;max-width:none}
- .heading p{font-size:13px}
- .kicker{font-size:9px;letter-spacing:1.4px}
- .faq{display:inline-flex;min-height:44px;margin-top:14px;padding:8px 14px}
- .overview{grid-template-columns:1fr;gap:15px}
- .dates{padding:0 16px 12px}
- .dates article{grid-template-columns:55px minmax(0,1fr)!important;gap:13px!important;padding:17px 0!important}
- .dates article>div:first-child>span{width:54px;height:65px}
- .dates article>div:first-child>span strong{font-size:27px}
- .dates article h3{font-size:20px!important}
- .familyPanel{padding:15px}
- .familyLinks{grid-template-columns:1fr 1fr;gap:9px;padding-top:8px}
- .familyLinks a{min-height:44px;font-size:13px;gap:7px;justify-content:center}
- .familyLinks a+a{border:0}
- .familyLinks svg{width:18px;height:18px}
- .tasks{margin:24px 0 20px}
- .sectionHeading h2{font-size:20px}
- .sectionHeading>span{display:none}
- .taskGrid{grid-template-columns:1fr 1fr;gap:11px}
- .taskGrid a{padding:15px;gap:11px;min-height:143px}
+ .heading{grid-template-columns:1.25fr 1fr;gap:16px;padding:27px 0 24px}
+ .kicker{font-size:9px;letter-spacing:1px;line-height:1.5;margin-bottom:12px}
+ .heading h1{font-size:30px;letter-spacing:-.7px;margin-bottom:12px;line-height:1.13}
+ .heading p{font-size:14px;margin-bottom:12px;line-height:1.45}
+ .faq{font-size:14px;padding:8px 16px}
+ .campus{height:236px;border-radius:58px 5px 5px 5px;border-bottom-width:4px}
+ .campus img{object-position:54% 50%}
+ .tasks{padding:22px 0}
+ .sectionHeading{margin-bottom:17px}.sectionHeading h2{font-size:20px}
+ .taskGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 16px}
+ .taskGrid a{gap:10px;min-height:62px}
+ .taskGrid a>span.taskIcon{width:35px;height:35px}
+ .taskIcon svg{width:19px;height:19px}
+ .taskGrid strong{font-size:17px}
  .taskGrid a>span>span{font-size:13px}
- .taskGrid strong{font-size:16px}
- .contact{flex-wrap:wrap;gap:14px;padding-top:20px}
- .contact>a{width:100%}
+ .overview{grid-template-columns:1fr;gap:25px;padding:25px 0}
+ .familyPanel{padding:20px 0 0;border-left:0;border-top:1px solid var(--line)}
+ .familyTitle{font-size:20px;margin-bottom:13px}
+ .familyPanel :global(.home-family){padding-bottom:10px}
+ .familyLinks{grid-template-columns:1fr 1fr;gap:15px;padding-top:5px;border-top:0}
+ .familyLinks a{font-size:14px}
+ .dates article{padding:17px 0!important;gap:13px!important}
+ .dates article h3{font-size:20px!important}
+ .contact{flex-wrap:wrap;padding:22px 0;gap:14px}.contact>a{width:100%}
 }
+@media(max-width:359px){.heading{grid-template-columns:1fr}.campus{display:none}.heading h1{font-size:34px}.heading p{max-width:none}.taskGrid{gap:17px 10px}.taskGrid a{gap:8px}}
 @media(prefers-reduced-motion:reduce){.taskGrid a{transition:none}}
-
-/* Use the school typeface without compressed geometric headline spacing. */
-.heading h1{font-weight:600;letter-spacing:0;font-size:32px;line-height:1.2}
-.dates article h3{font-weight:600;letter-spacing:0}
-.dates h2,.sectionHeading h2{font-weight:600;letter-spacing:0}
-.taskGrid strong,.familyPanel :global(.home-family) strong{font-family:var(--font-school);font-weight:600;font-size:18px}
-.heading p,.taskGrid a>span>span,.familyLinks a{font-size:15px}
-.familyPanel :global(.home-family)>span>span{font-size:14px}
-.kicker{font-weight:600;letter-spacing:1.4px}
-@media(max-width:680px){.heading h1{font-size:29px}.heading p{font-size:14px}.taskGrid a>span>span{font-size:14px}.taskGrid strong{font-size:18px}.familyLinks a{font-size:14px}.dates article h3{font-size:22px!important}}
