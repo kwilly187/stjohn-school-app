@@ -11,10 +11,17 @@ test('Home keeps family data configured and real school calendar intact',async()
 });
 test('Home has school color hierarchy and accessible phone control sizing',async()=>{
  const css=await read('app/home.module.css');
- assert.match(css,/background:var\(--navy\)/);
+ assert.match(css,/background:var\(--blue\)/);
  assert.match(css,/color:var\(--gold\)/);
  assert.match(css,/\.faq\{display:inline-flex;min-height:44px/);
  assert.match(css,/\.familyLinks a\{min-height:44px/);
  assert.match(css,/@media\(prefers-reduced-motion:reduce\)/);
  assert.match(css,/\.taskGrid a>span>span\{font-size:13px\}/);
+});
+
+test('Home avoids mismatched icon highlights and keeps featured ranges next to event titles',async()=>{
+ const css=await read('app/home.module.css'), dates=await read('app/public-dates.tsx');
+ assert.doesNotMatch(css,/nth-child/);
+ assert.match(dates,/featured&&<p className=\{styles.eventRange\}/);
+ assert.match(css,/article h3 a\{text-decoration:none\}/);
 });
