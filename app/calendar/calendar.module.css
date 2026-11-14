@@ -24,3 +24,23 @@
 .tools{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.75fr);gap:16px;align-items:start;margin:10px 0 16px}
 .tools .searchPanel{margin:0}.tools .searchPanel label{margin:0 0 4px;font-size:12px}.tools>details{margin:22px 0 0}.tools>details[open]{grid-column:1/-1;margin:0}
 @media(max-width:680px){.page :global(.page-heading){padding:18px 0 12px}.page :global(.page-heading h1){font-size:27px}.calendar :global(.calendar-controls){gap:8px}.monthBar>div{order:-1;flex-basis:100%;display:flex;gap:10px;align-items:baseline;justify-content:space-between}.monthBar>div span{font-size:11px}.sourceLine>span{width:auto;min-width:0;flex:1;font-size:11px}.sourceLine a{display:none}.tools{grid-template-columns:1fr;gap:8px;margin:6px 0 12px}.tools>details{margin:0}.tools .searchPanel label{display:none}}
+
+/* The date list leads; controls share one compact visual language. */
+.page :global(.page-heading){padding:30px 0 23px;margin-bottom:20px}
+.page :global(.page-heading h1){font-size:34px}.page :global(.page-heading p){font-size:16px}
+.calendar :global(.segmented){border:0;padding:4px;background:#f0f3f8;border-radius:7px}
+.calendar :global(.segmented button){font-size:14px;font-weight:500;border-radius:5px}
+.monthBar{margin:24px 0 7px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.monthBar h2{font-size:25px}.monthBar>button{border-radius:5px;background:white;font-size:14px}
+.sourceLine{font-size:12px;margin-bottom:17px}.sourceLine button,.sourceLine a{min-height:44px}
+.tools{margin:0 0 21px;gap:16px}.tools .searchPanel label{font-size:13px;margin-bottom:7px}
+.searchRow input,.searchRow button{border-radius:6px;border-color:#cbd4e0}.searchRow input{background:#fff}
+.agenda{border-top:2px solid var(--blue)}
+.eventRow{padding:21px 6px;grid-template-columns:175px minmax(0,1fr);gap:5px 25px;transition:background .15s}
+.eventRow strong{font-size:19px;font-weight:600;line-height:1.35}
+.eventRow>span:first-child{font-size:14px;color:var(--blue);font-weight:500}
+.eventRow small{font-size:14px;line-height:1.5}.detailsHint{font-size:13px}
+.detail{border:1px solid #d8e1ee;border-left:3px solid var(--blue);background:#f5f7fb;border-radius:7px;padding:26px}
+.detailTop{color:var(--muted);font-size:12px;letter-spacing:.5px}.detail h2{font-size:27px}
+@media(max-width:680px){.page :global(.page-heading){padding:25px 0 20px}.page :global(.page-heading h1){font-size:30px}.page :global(.page-heading p){font-size:15px}.monthBar{margin-top:19px;gap:9px}.monthBar>div{margin-bottom:5px}.monthBar h2{font-size:23px}.monthBar>div span{font-size:12px}.sourceLine>span{font-size:12px;line-height:1.5}.tools{margin-bottom:20px}.eventRow{grid-template-columns:1fr;padding:19px 0;gap:7px}.eventRow>span:first-child{font-size:13px}.eventRow strong{font-size:19px}.detail{padding:20px}.detail h2{font-size:24px}}
+@media(prefers-reduced-motion:reduce){.eventRow{transition:none}}

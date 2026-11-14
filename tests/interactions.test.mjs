@@ -12,7 +12,7 @@ test('Today and Updates disclose missing live information, not zero notices',asy
 test('calendar has reload, source selection, load/error handling and a persistent direct fallback',async()=>{const view=await source('app/calendar/view.tsx');for(const text of ['aria-pressed','aria-live','Reload calendar','Official calendar','result.status','Calendar unavailable'])assert.ok(view.includes(text))});
 test('school ownership and admin acceptance journey are documented without claiming authenticated testing',async()=>{const doc=await source('docs/content-ownership.md');for(const text of ['Google Calendar','Alma','Not performed','No duplicate entry','Production'])assert.ok(doc.includes(text))});
 
-test('calendar selection is reflected in URL for refresh, sharing and browser history',async()=>{const view=await source('app/calendar/view.tsx');assert.match(view,/router.push/);assert.match(view,/calendarHref/);assert.match(view,/router.replace/);});
+test('calendar selection is reflected in URL for refresh, sharing and browser history',async()=>{const view=await source('app/calendar/view.tsx');assert.match(view,/router.push/);assert.match(view,/calendarHref/);assert.match(view,/window.history.replaceState/);});
 
 test('contact choices use public school destinations without an in-app messaging system',async()=>{const updates=await source('app/updates/page.tsx');for(const text of ['school.officeEmail','school.athleticsEmail','Find & email a teacher','Email opens in your email app'])assert.ok(updates.includes(text));});
 
