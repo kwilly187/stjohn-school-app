@@ -78,3 +78,11 @@ test('RDATE is included and unknown TZID fails instead of silently shifting time
   const bad=calendar([event(['UID:unknown-zone','DTSTART;TZID=Unknown/Zone:20261102T090000','DTEND;TZID=Unknown/Zone:20261102T100000',`SUMMARY:${title}`])]);
   assert.throws(()=>parsePublicCalendar(bad,opts),/time zone/);
 });
+
+test('Home public calendar includes all upcoming school events without assigning student audiences',()=>{
+ const text=calendar([event(['UID:shadow','DTSTART;VALUE=DATE:20261117','DTEND;VALUE=DATE:20261118','SUMMARY:Shadow Day']),event(['UID:aftercare','DTSTART;VALUE=DATE:20261120','DTEND;VALUE=DATE:20261121','SUMMARY:No Aftercare']),event(['UID:break','DTSTART;VALUE=DATE:20261123','DTEND;VALUE=DATE:20261128','SUMMARY:Thanksgiving Break | No School'])]);
+ const now=new Date('2026-11-14T12:00:00Z');
+ assert.deepEqual(parsePublicCalendar(text,{now,allPublic:true}).map(e=>e.start),['2026-11-17','2026-11-20','2026-11-23']);
+ assert.ok(parsePublicCalendar(text,{now,allPublic:true}).every(e=>e.scope==='School calendar'));
+ assert.equal(parsePublicCalendar(text,{now}).length,1);
+});

@@ -47,9 +47,9 @@ export function formatEventDate(event) {
 
 /** Pure parser for synthetic tests and read-only server use; throws rather than fabricating zero results.
  * @param {string} text
- * @param {{grades?: number[], now?: Date}} [options]
+ * @param {{grades?: number[], allPublic?: boolean, now?: Date}} [options]
  */
-export function parsePublicCalendar(text, {grades = [], now = new Date()} = {}) {
+export function parsePublicCalendar(text, {grades = [], allPublic = false, now = new Date()} = {}) {
   const instant = new Date(now);
   if (!Number.isFinite(instant.getTime())) throw new Error('Invalid calendar reference time');
   if (Buffer.byteLength(text,'utf8') > MAX_BYTES) throw new Error('Calendar exceeds size limit');
@@ -89,7 +89,7 @@ export function parsePublicCalendar(text, {grades = [], now = new Date()} = {}) 
   const emit = (event, startTime, endTime, recurrenceId) => {
     if (event.component.getFirstPropertyValue('status') === 'CANCELLED') return;
     const title=(event.summary || '').trim();
-    const scope=publicEventScope(title);
+    const scope=allPublic ? 'School calendar' : publicEventScope(title);
     if (!scope || (scope === 'Grades 6–8' && !grades.some(grade=>[6,7,8].includes(grade)))) return;
     for (const property of ['dtstart','dtend']) {
       const tzid=event.component.getFirstProperty(property)?.getParameter('tzid');
@@ -115,7 +115,7 @@ export function parsePublicCalendar(text, {grades = [], now = new Date()} = {}) 
       continue;
     }
     // No reason to expand a wholly unrelated public series.
-    if (!publicEventScope(event.summary || '')) continue;
+    if (!allPublic && !publicEventScope(event.summary || '')) continue;
     if (!event.startDate) throw new Error('Calendar event missing start');
     for(const rule of component.getAllProperties('rrule')) {
       if (['SECONDLY','MINUTELY','HOURLY'].includes(rule.getFirstValue().freq)) throw new Error('Calendar recurrence frequency exceeds limit');
@@ -152,14 +152,14 @@ async function retrieve(fetchImpl) {
 }
 
 /** Five-minute process cache; unavailable is distinct from a successful empty window.
- * @param {{grades?: number[], now?: Date, fetchImpl?: typeof fetch}} [options]
+ * @param {{grades?: number[], allPublic?: boolean, now?: Date, fetchImpl?: typeof fetch}} [options]
  */
-export async function getPublicCalendar({grades = [], now = new Date(), fetchImpl = fetch} = {}) {
+export async function getPublicCalendar({grades = [], allPublic = false, now = new Date(), fetchImpl = fetch} = {}) {
   try {
     let source=cached;
     // Test fetch functions do not populate or read the live cache.
     if (fetchImpl !== fetch || !source || Date.now()-Date.parse(source.retrievedAt)>=CACHE_MS) source=await retrieve(fetchImpl);
-    const events=parsePublicCalendar(source.text,{grades,now});
+    const events=parsePublicCalendar(source.text,{grades,allPublic,now});
     if (fetchImpl === fetch) cached=source;
     return {status:'ok',retrievedAt:source.retrievedAt,sourceUrl:PUBLIC_CALENDAR_URL,events};
   } catch(error) {
