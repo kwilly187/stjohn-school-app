@@ -12,11 +12,11 @@ test('Home keeps family data configured and real school calendar intact',async()
 test('Home has school color hierarchy and accessible phone control sizing',async()=>{
  const css=await read('app/home.module.css');
  assert.match(css,/background:var\(--blue\)/);
- assert.match(css,/border-bottom:5px solid var\(--gold\)/);
+ assert.match(css,/border-bottom:3px solid var\(--gold\)/);
  assert.match(css,/\.faq\{display:inline-flex;min-height:44px/);
- assert.match(css,/\.familyLinks a\{min-height:44px/);
+ assert.match(css,/\.actions a\{[^}]*min-height:49px/);
  assert.match(css,/@media\(prefers-reduced-motion:reduce\)/);
- assert.match(css,/\.taskGrid a>span>span\{font-size:13px\}/);
+ assert.match(css,/\.taskGrid a>span>span\{font-size:13px/);
 });
 
 test('Home avoids mismatched icon highlights and keeps featured ranges next to event titles',async()=>{
@@ -30,8 +30,8 @@ test('Home uses the real campus photo and an open editorial layout',async()=>{
  const page=await read('app/page.tsx'),css=await read('app/home.module.css');
  assert.match(page,/src="\/stjohn-church.png"/);
  assert.match(page,/alt="St. John church on the school campus"/);
- assert.match(css,/\.familyPanel\{[^}]*border-left:1px solid var\(--line\)/);
- assert.ok(page.indexOf('home-tasks')<page.indexOf('<PublicDates'));
+ assert.match(css,/\.overview\{display:grid/);
+ assert.ok(page.indexOf('<PublicDates')<page.indexOf('home-tasks'));
 });
 
 test('school screenshot styling retains readable interface type and uses existing school fleur',async()=>{

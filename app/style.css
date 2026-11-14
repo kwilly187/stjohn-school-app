@@ -368,3 +368,17 @@ body{font-size:16px;line-height:1.6}.brand strong{font-size:22px;font-weight:600
 .student-menu-panel a:hover,.student-menu-panel a:focus-visible{background:#f1f4f9;color:var(--blue)}
 @media(max-width:680px){.topbar{grid-template-columns:minmax(0,1fr) auto;gap:12px 10px;padding-top:13px}.topbar .brand{grid-column:1;grid-row:1;gap:8px}.topbar .brand img{width:40px;height:44px}.topbar .brand strong{font-size:17px}.topbar .brand span{font-size:7px;letter-spacing:.8px}.student-menu{grid-column:2;grid-row:1}.student-menu-trigger{font-size:12px;padding:9px 10px;gap:6px}.student-menu-trigger svg{width:18px;height:18px}.header-actions{grid-column:1/-1;grid-row:2}.student-menu-panel{top:calc(100% + 10px)}}
 @media(max-width:359px){.student-menu-trigger svg{display:none}.student-menu-trigger{padding:9px 8px}.topbar .brand strong{font-size:15px}.topbar .brand span{font-size:6px}.topbar .brand img{width:35px}}
+
+/* A true parent workspace: permanent desktop navigation, familiar mobile tabs. */
+.school-identity{display:none}
+@media(min-width:1000px){
+ .app{position:relative;max-width:1440px;min-height:100vh;display:grid;grid-template-columns:215px minmax(0,1fr);grid-template-rows:90px 1fr auto;padding-bottom:0;background:linear-gradient(to right,#142c50 215px,#f7f9fc 215px);box-shadow:none}
+ .school-identity{display:block;position:absolute;left:25px;top:28px;width:165px;text-align:center;z-index:12;color:#cbd6e9}.school-identity a{display:flex;flex-direction:column;align-items:center;text-decoration:none;color:white}.school-identity img{width:81px;height:81px;object-fit:contain;margin-bottom:15px}.school-identity span{font-size:9px;letter-spacing:1px;color:#d9c37d}.school-identity strong{font-size:21px;font-weight:500;margin-top:7px}.school-identity p{font-size:11px;color:#bdc9dc;margin-top:10px}
+ .topbar{grid-column:2;grid-row:1;display:flex;justify-content:flex-end;height:90px;padding:20px 38px;background:white;border-top:0;border-bottom:1px solid #e1e6ef;gap:23px}.topbar .brand{display:none}.header-actions{margin-right:auto}
+ main{grid-column:2;grid-row:2;padding:0 38px;min-width:0}.footer{grid-column:2;grid-row:3;margin:8px 38px 0;padding:23px 0;background:transparent}
+ .bottom-nav{position:sticky;grid-column:1;grid-row:1/4;align-self:start;top:0;left:auto;bottom:auto;transform:none;width:215px;max-width:none;height:100vh;display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;padding:260px 17px 25px;background:transparent;border:0;box-shadow:none;gap:7px;z-index:10}
+ .bottom-nav a{flex:none;flex-direction:row;justify-content:flex-start;gap:13px;min-height:49px;font-size:14px;border-radius:6px;color:#d1dced;padding:13px 16px}.bottom-nav a svg{width:21px;height:21px}.bottom-nav a:hover{background:#ffffff12;color:white}.bottom-nav a[aria-current=page],.bottom-nav a[aria-current=page]:hover,.bottom-nav a[aria-current=page]:focus-visible{background:white!important;color:var(--blue)!important}.bottom-nav a[aria-current=page]:before{display:none!important}
+ .page-heading{padding-top:31px;margin-top:0}.card,.resource-section,.help-card,.notice-card{background:white}
+}
+@media(max-width:999px){.app{background:#f9fafc}.topbar{background:white}main{padding-left:24px;padding-right:24px}.footer{background:transparent}.bottom-nav{background:white}.page-heading{padding-top:26px}}
+@media(max-width:680px){main{padding-left:20px;padding-right:20px}.topbar{padding-left:20px;padding-right:20px}.header-actions a{min-height:45px}.app{padding-bottom:85px}}

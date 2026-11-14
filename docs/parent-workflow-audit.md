@@ -25,3 +25,10 @@ School-authorized identity/guardian scope, private SIS and communication data, f
 
 ## Verification boundary
 Automated tests cover source contracts, parsing and synthetic policies; production build validates compilation. Hosted browser checks cover selected real navigation and filters, not every external authenticated provider transaction. No payments, registrations, signatures or messages were submitted.
+
+## Second pass
+Hosted route checks confirmed every public page renders and historical review redirects to Home. Browser interface does not expose mobile viewport emulation; responsive CSS is reviewed, not device-certified.
+
+Added unified parent search across real public staff, FAQ answers, resource links and action destinations. Searches stay in the page rather than being sent to an AI or third-party search service. No private student data is indexed. Search result links preserve original school-provider destinations. Resources and Home expose search.
+
+Fixed Resources navigation context for Parent actions/Search, and reset calendar transfer feedback when the source or event selection changes so a prior copy/download success does not describe a different calendar.
