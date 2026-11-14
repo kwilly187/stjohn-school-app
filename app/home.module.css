@@ -63,3 +63,9 @@
 .actions{margin-bottom:20px;display:grid;grid-template-columns:1fr 1fr;column-gap:26px}
 .actions h2{grid-column:1/-1}
 @media(max-width:680px){.actions{grid-template-columns:1fr}.overview{margin-bottom:24px}.communityIntro{min-height:130px}.community .campus{min-height:130px}}
+
+/* Campus identity lives in the quiet application background, not a repeated photo tile. */
+.communityIntro{display:block;min-height:0}
+.communityIntro>div:first-child{padding:22px 24px}
+.communityIntro p{max-width:none}
+@media(max-width:680px){.communityIntro{display:block;min-height:0}.communityIntro>div:first-child{padding:20px 18px}}

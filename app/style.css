@@ -392,3 +392,10 @@ button,select{min-height:44px}
 summary{min-height:44px;line-height:1.5}
 p,li{line-height:1.6}
 @media(max-width:680px){.header-actions a{font-size:14px}.students-trigger{white-space:normal}.page-heading h1{line-height:1.18}.page-heading p{max-width:100%}}
+
+/* The real campus photograph quietly anchors the workspace without competing with content. */
+main{position:relative;isolation:isolate}
+main::before{content:'';position:absolute;z-index:-1;pointer-events:none;top:0;right:0;width:min(100%,760px);height:520px;background-image:linear-gradient(180deg,transparent 15%,#f7f9fc 96%),url('/stjohn-church.png');background-size:100% 100%,cover;background-position:center,center 48%;background-repeat:no-repeat;opacity:.085}
+@media(max-width:999px){main::before{width:100%;height:420px;opacity:.065;background-image:linear-gradient(180deg,transparent 8%,#f9fafc 96%),url('/stjohn-church.png')}}
+@media(prefers-contrast:more){main::before{display:none}}
+@media print{main::before{display:none}}

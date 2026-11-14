@@ -26,10 +26,10 @@ test('Home avoids mismatched icon highlights and keeps featured ranges next to e
  assert.match(css,/article h3 a\{text-decoration:none\}/);
 });
 
-test('Home uses the real campus photo and an open editorial layout',async()=>{
+test('Home uses a quiet campus background rather than a repeated photo tile',async()=>{
  const page=await read('app/page.tsx'),css=await read('app/home.module.css');
- assert.match(page,/src="\/stjohn-church.png"/);
- assert.match(page,/alt="St. John church on the school campus"/);
+ assert.doesNotMatch(page,/className=\{styles.campus\}/);
+ assert.match(await read('app/style.css'),/url\('\/stjohn-church.png'\)/);
  assert.match(css,/\.overview\{display:grid/);
  assert.ok(page.indexOf('<PublicDates')<page.indexOf('home-tasks'));
 });

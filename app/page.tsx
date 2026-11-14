@@ -25,7 +25,7 @@ export default async function Today(){return <div className={styles.home}>
  <Link href="/resources"><span className={styles.taskIcon}><Icon name="resources"/></span><span><strong>Resources</strong><span>Tuition, aftercare & school forms</span></span></Link>
  </nav></section>
  <section className={styles.community} aria-labelledby="community-heading">
-  <div className={styles.communityIntro}><div><h2 id="community-heading">Saints Community</h2><p>Stay connected. Get involved. Show your school spirit.</p></div><div className={styles.campus}><img src="/stjohn-church.png" alt="St. John church on the school campus" width="414" height="276"/></div></div>
+  <div className={styles.communityIntro}><div><h2 id="community-heading">Saints Community</h2><p>Stay connected. Get involved. Show your school spirit.</p></div></div>
   <nav className={styles.communityLinks} aria-label="Saints Community">
    <Link href="/calendar"><Icon name="calendar"/><span><strong>School events</strong><span>See what's coming up</span></span></Link>
    <Link href="/parent-actions?category=Get%20involved"><Icon name="heart"/><span><strong>Get involved</strong><span>Volunteer & support St. John</span></span></Link>

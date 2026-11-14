@@ -5,3 +5,9 @@
 @media(max-width:680px){.page :global(.page-heading){padding:23px 0 18px}.page :global(.page-heading h1){font-size:29px}.help{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:20px}.groups{grid-template-columns:1fr;gap:16px;margin-top:18px}.page .groups :global(.resource-section){padding:18px 17px 5px}.page .groups :global(.resource-section h2){font-size:20px}.page .groups :global(#school-accounts .resource-grid){grid-template-columns:1fr;gap:0}.page .groups :global(.resource-card){min-height:74px;padding:14px 0}.page .groups :global(.resource-card strong){font-size:16px}.page .groups :global(.resource-card .icon-tile){width:36px;min-width:36px;height:36px}.page .groups :global(.resource-detail){font-size:14px}}
 .page .groups :global(#school-store){border:1px solid #e0e5ed;padding-top:19px}
 @media(max-width:680px){.page .groups :global(#school-store){padding-top:18px}}
+
+/* A single authentic campus detail supports a useful parent destination. */
+.campusRow{display:grid;grid-template-columns:180px minmax(0,1fr);gap:22px;align-items:center;margin:24px 0;background:#fff;border:1px solid #e0e5ed;border-radius:12px;overflow:hidden}
+.campusRow img{display:block;width:180px;height:150px;object-fit:cover}
+.campusRow>div{padding:16px 20px 16px 0}.campusRow h2{font-size:20px;line-height:1.3;margin:0 0 6px;color:#24345b}.campusRow p{font-size:14px;line-height:1.5;margin:0;color:#596579}.campusRow a{display:inline-flex;align-items:center;min-height:44px;font-size:14px;font-weight:600;color:#2a3695;text-underline-offset:3px}
+@media(max-width:680px){.campusRow{grid-template-columns:100px minmax(0,1fr);gap:15px}.campusRow img{width:100px;height:100%;min-height:160px}.campusRow>div{padding:15px 15px 15px 0}.campusRow h2{font-size:18px}.campusRow a{font-size:14px}}
