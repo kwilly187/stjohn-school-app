@@ -19,7 +19,7 @@ export default async function Today(){return <div className={styles.home}>
  <nav className={styles.taskGrid} aria-label="Everyday school tasks">
  <Link href="/lunch"><span className={styles.taskIcon}><Icon name="lunch"/></span><span><strong>Lunch</strong><span>Nutrislice & PaySchools</span></span></Link>
  <Link href="/athletics"><span className={styles.taskIcon}><Icon name="shirt"/></span><span><strong>Athletics</strong><span>Saints teams & eligibility forms</span></span></Link>
- <Link href="/resources#school-store"><span className={styles.taskIcon}><Icon name="shirt"/></span><span><strong>School store</strong><span>BSN spirit wear & FlynnO’Hara uniforms</span></span></Link>
+ <Link href="/store"><span className={styles.taskIcon}><Icon name="shirt"/></span><span><strong>School store</strong><span>Saints spirit wear & family essentials</span></span></Link>
  <Link href="/resources"><span className={styles.taskIcon}><Icon name="resources"/></span><span><strong>Resources</strong><span>Tuition, aftercare & school forms</span></span></Link>
  </nav></section>
  <DailyScriptureCard initialDate={new Date().toISOString()}/>

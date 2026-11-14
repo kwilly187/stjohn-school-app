@@ -47,10 +47,9 @@ export const resources = [
   {id:'aftercare',group:'School accounts',title:'Aftercare signup',detail:'Brightwheel · Sign-in required',url:'https://schools.mybrightwheel.com/sign-in?redirect_path=%2Fadmissions%2Fpacket%2F1bf8a8d3-a105-4322-b65a-f46977903ad5%2Ffill%3Fschool_id%3Da2cb0179-7e6a-4435-bd66-fa3b9340b80a',icon:'clock'},
   {id:'staff',appPath:'/staff',group:'School information',title:'Staff directory',detail:'Teachers & school staff',url:school.staff,icon:'people'},
   {id:'supplies',appPath:'/updates#contact-heading',group:'School information',title:'School supplies help',detail:'Confirm the current year’s list with the school office.',url:'https://stjohnocala.org/for-parents/school-supplies/',icon:'book'},
+  {id:'spirit',group:'School store',title:'The Saints Store',detail:'Original St. John spirit-wear collection preview.',url:'/store',icon:'shirt'},
   {id:'forms',appPath:'/updates#contact-heading',group:'School information',title:'Forms & office help',detail:'Ask the school office for the form you need.',url:school.parents,icon:'file'},
   {id:'dress-code',appPath:'/dress-code',group:'School information',title:'Dress code',detail:'School uniform requirements',url:'https://stjohnocala.org/for-parents/school-uniform/',icon:'shirt'},
-  {id:'uniforms',group:'School store',title:'Buy uniforms',detail:'FlynnO’Hara · St. John Lutheran School.',url:'https://flynnohara.com/shop/saint-john-lutheran-school-fl045/',icon:'shirt'},
-  {id:'spirit',group:'School store',title:'Spirit wear',detail:'BSN Sports · School spirit wear',url:'https://sideline.bsnsports.com/schools/florida/ocala/saint-john-lutheran-high-school',icon:'shirt'},
   {id:'events',appPath:'/updates#contact-heading',group:school.communityLabel,title:'Events & volunteering',detail:'Ask the school office about upcoming events and ways to help.',url:school.contact,icon:'heart'},
 ];
 

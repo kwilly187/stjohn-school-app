@@ -6,7 +6,7 @@ const read=path=>readFile(new URL('../'+path,import.meta.url),'utf8');
 test('native front door names the actual tasks without replacing provider accounts',async()=>{
  const today=await read('app/page.tsx'),nav=await read('app/navigation.tsx'),contacts=await read('app/updates/page.tsx'),students=await read('app/students/page.tsx');
  const menu=await read('app/student-menu.tsx');assert.match(menu,/My Students/);assert.match(menu,/Student overview/);
- assert.match(today,/Saints teams & eligibility forms/);assert.match(today,/href="\/resources#school-store"/);assert.match(today,/href="\/resources"/);
+ assert.match(today,/Saints teams & eligibility forms/);assert.match(today,/href="\/store"/);assert.match(today,/href="\/resources"/);
  assert.match(nav,/href:'\/updates',label:'Contacts'/);assert.equal((nav.match(/href:'/g)||[]).length,4);
  assert.match(contacts,/title="School contacts"/);assert.match(students,/Home/);
  assert.match(contacts,/Alma · External sign-in/);assert.ok(contacts.indexOf('styles.secondary')<contacts.indexOf('href={school.portal}'));

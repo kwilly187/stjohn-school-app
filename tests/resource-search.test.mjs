@@ -7,7 +7,7 @@ test('parents can find provider destinations using everyday tasks',()=>{
  for(const [term,id] of [['homework','alma'],['teacher','staff'],['after school','aftercare'],['supply list','supplies'],['clothing rules','dress-code'],['food payment','lunch-account']])assert.ok(searchResources(resources,term).some(item=>item.id===id),term);
 });
 test('resource search is case-insensitive, handles provider punctuation and returns no invented links',()=>{
- assert.ok(searchResources(resources,'FLYNNOHARA').some(item=>item.id==='uniforms'));
+ assert.ok(searchResources(resources,'SAINTS').some(item=>item.id==='spirit'));
  assert.deepEqual(searchResources(resources,'imaginary destination'),[]);
  assert.equal(searchResources(resources,'  '),resources);
  const before=JSON.stringify(resources);searchResources(resources,'school');assert.equal(JSON.stringify(resources),before);
