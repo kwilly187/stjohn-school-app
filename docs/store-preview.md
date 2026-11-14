@@ -6,3 +6,5 @@ Working: search, collection filters, color/size selection, duplicate-safe in-pag
 
 ## Product detail workflow
 Each concept has its own design highlights and use context. A native modal supports keyboard containment, Escape, backdrop close and focus return. Saving requires an explicit size selection; color changes update the illustrated concept. Materials, fit, actual measurements and availability remain unconfirmed and are not invented. Product options are concept planning options, not manufacturer specifications.
+
+Senior Athlete Crewneck is a commemorative limited-edition design concept, not a released limited-stock offer. No year, student name, team membership, price, quantity or purchase availability is invented. It is separated from the core Everyday/Sideline/Accessories collection. Hero text retains literal spaces around responsive-hidden line breaks.

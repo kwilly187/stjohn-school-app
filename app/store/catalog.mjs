@@ -1,5 +1,6 @@
-export const collections=['All','Everyday','Sideline','Accessories'];
+export const collections=['All','Everyday','Sideline','Accessories','Limited edition'];
 export const products=[
+{id:'senior-athlete',name:'Senior Athlete Crewneck',kind:'senior-crewneck',collection:'Limited edition',description:'A commemorative Saints design celebrating the senior athlete chapter.',sizes:['Adult S','Adult M','Adult L','Adult XL','Adult 2XL'],colors:['Navy']},
 {id:'saints-tee',name:'Saints Everyday Tee',kind:'tee',collection:'Everyday',description:'A clean school-crest tee for the whole family.',sizes:['Youth S','Youth M','Youth L','Adult S','Adult M','Adult L','Adult XL','Adult 2XL'],colors:['Navy','Royal','White']},
 {id:'crest-polo',name:'St. John Crest Polo',kind:'polo',collection:'Everyday',description:'A simple crest-led polo for school events and family gatherings.',sizes:['Adult S','Adult M','Adult L','Adult XL','Adult 2XL'],colors:['Navy','White']},
 {id:'saints-hoodie',name:'Saints Sideline Hoodie',kind:'hoodie',collection:'Sideline',description:'A school-spirit layer for cooler evenings and game days.',sizes:['Youth M','Youth L','Adult S','Adult M','Adult L','Adult XL'],colors:['Navy','Royal']},
@@ -10,6 +11,7 @@ export const products=[
 export const colors={Navy:'#152d50',Royal:'#2a3695',White:'#ffffff',Natural:'#e7ddc9'};
 export function findProducts(query='',collection='All'){const terms=query.toLowerCase().trim().split(/\s+/).filter(Boolean);return products.filter(p=>(collection==='All'||p.collection===collection)&&terms.every(t=>`${p.name} ${p.description} ${p.collection}`.toLowerCase().includes(t)));}
 export const productDetails={
+ 'senior-athlete':{headline:'Leave your mark. Carry the Saints with you.',details:['Commemorative senior-athlete design concept','St. John crest on the front with a bold back design','Navy with school-inspired gold and cream details'],occasion:'Senior recognition and team celebrations'},
  'saints-tee':{headline:'A little Saints pride, every day.',details:['St. John crest positioned at the chest','Three school-inspired color options','Youth and adult size selections'],occasion:'School events, weekends and family outings'},
  'crest-polo':{headline:'A polished way to show up for St. John.',details:['Clean collar and button-front concept','Small chest crest, without oversized graphics','Navy or white color direction'],occasion:'Family events and school celebrations'},
  'saints-hoodie':{headline:'Made for the sidelines in spirit.',details:['Pullover silhouette with front pocket','School crest at the chest','Navy and royal blue color directions'],occasion:'Game nights and cooler school mornings'},

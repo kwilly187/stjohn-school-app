@@ -14,3 +14,4 @@ The owner supplied three mobile screenshots of the official website and one of t
 ## Saints Store merchandise concepts
 - `public/store/saints-editorial.webp` and `saints-collection.webp`: original AI-generated concept mockups using the existing authentic St. John crest as a visual reference, created November 14, 2026. Not actual product photographs, inventory, approved uniforms or school-approved designs. Rendered interface clearly identifies concepts; navy/natural images are not claimed to match alternative selected colors.
 - Product images use CSS viewport positions on the original six-panel image. No student likenesses or third-party merchandise photos.
+- `public/store/senior-athlete.webp`: original generated navy senior-athlete crewneck front/back concept, authentic crest reference on front, cream/gold collegiate lettering on back. No year, named athlete, real edition quantity or availability claim. November 14, 2026.
