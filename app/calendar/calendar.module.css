@@ -12,3 +12,15 @@
 .shareStatus:empty{display:none}.saveEvent .shareStatus{font-size:13px;color:var(--blue)}.copyLink{display:block;width:100%;font-size:13px;font-weight:600}.copyLink input{display:block;width:100%;min-height:44px;margin-top:6px;padding:10px;border:1px solid #c7d3e2;border-radius:8px;background:#fff;color:#12274b;font:inherit}.copyLink input:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
 
 .saveEvent .shareAction{background:#fff;color:#12274b;border-color:#c7d3e2}.shareAction:disabled{opacity:.5;cursor:wait}
+
+/* Keep dates, rather than controls, in the first screen. */
+.page :global(.page-heading){padding:24px 0 14px}
+.page :global(.page-heading .eyebrow){display:none}
+.page :global(.page-heading h1){font-size:30px;margin-bottom:6px}
+.page :global(.page-heading p){font-size:14px}
+.calendar :global(.calendar-controls){margin:0;gap:12px;justify-content:space-between}
+.monthBar{margin:12px 0 4px;gap:10px}.monthBar h2{font-size:21px}
+.sourceLine{margin:0 0 10px;gap:8px 14px}.sourceLine button{min-height:36px;padding:4px 8px}.sourceLine a{min-height:36px}
+.tools{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.75fr);gap:16px;align-items:start;margin:10px 0 16px}
+.tools .searchPanel{margin:0}.tools .searchPanel label{margin:0 0 4px;font-size:12px}.tools>details{margin:22px 0 0}.tools>details[open]{grid-column:1/-1;margin:0}
+@media(max-width:680px){.page :global(.page-heading){padding:18px 0 12px}.page :global(.page-heading h1){font-size:27px}.calendar :global(.calendar-controls){gap:8px}.monthBar>div{order:-1;flex-basis:100%;display:flex;gap:10px;align-items:baseline;justify-content:space-between}.monthBar>div span{font-size:11px}.sourceLine>span{width:auto;min-width:0;flex:1;font-size:11px}.sourceLine a{display:none}.tools{grid-template-columns:1fr;gap:8px;margin:6px 0 12px}.tools>details{margin:0}.tools .searchPanel label{display:none}}

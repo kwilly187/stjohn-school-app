@@ -18,10 +18,10 @@ test('provider help distinguishes separate accounts and does not imply native ba
  assert.equal(resources.some(x=>x.id==='ptl'),false);
 });
 
-test('Home prioritizes tasks with compact configured identity and subordinate real dates',async()=>{
+test('Home prioritizes real school dates with compact configured identity and task cards',async()=>{
  const today=await read('app/page.tsx'),dates=await read('app/public-dates.tsx'),profile=await read('app/students/profile-config.mjs');
  assert.match(today,/className="home-family"/);assert.match(today,/profiles\[0\]\.photo/);assert.match(today,/profiles\[0\]\.name/);
- assert.match(today,/limit=\{2\}/);assert.ok(today.indexOf('home-tasks')<today.indexOf('home-dates'));assert.doesNotMatch(today,/<PublicDates[^>]+featured/);
+ assert.match(today,/limit=\{2\}/);assert.ok(today.indexOf('<PublicDates')<today.indexOf('home-tasks'));assert.match(today,/title="Key school dates" featured/);
  assert.match(today,/href="\/athletics"/);assert.match(today,/href="\/staff\?contacts=saved"/);
  assert.match(profile,/profiles=\[\]/);assert.doesNotMatch(today,/Aubrey|test-profile\.jpeg/);
  assert.match(dates,/featured&&index===0/);assert.match(dates,/participation is not confirmed/);assert.match(dates,/Dismissal time is not listed/);assert.match(dates,/publicEventHref/);

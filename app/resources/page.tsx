@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import ResourceFinder from './resource-finder';
 import storeStyles from './store.module.css';
-import helpStyles from '../updates/help.module.css';
+import styles from './resources.module.css';
 import {Heading,ResourceCard,ExternalLink,Icon} from '../components';
 import {resources,resourceGroups} from '../school-data.mjs';
 export const metadata={title:'Resources'};
@@ -10,7 +10,7 @@ function SchoolStore(){
  const uniforms=resources.find(resource=>resource.id==='uniforms')!;
  return <div className={storeStyles.store}>
   <article className={`${storeStyles.option} ${storeStyles.spirit}`}>
-   <div className={storeStyles.heading}><Icon name="heart"/><div><h3>Spirit wear</h3><span className={storeStyles.provider}>BSN Sports</span></div></div>
+   <div className={storeStyles.heading}><Icon name="shirt"/><div><h3>Spirit wear</h3><span className={storeStyles.provider}>BSN Sports</span></div></div>
    <p>Show your Saints spirit.</p>
    <div className={storeStyles.links}><ExternalLink href={spirit.url} className="text-link">Shop spirit wear</ExternalLink></div>
   </article>
@@ -21,5 +21,5 @@ function SchoolStore(){
   </article>
  </div>;
 }
-export default function Resources(){return <div className="resources-page"><Heading eyebrow="ONE PLACE TO START" title="Family resources">School information, everyday essentials and your school accounts.</Heading><div className={helpStyles.resourceHelp}><span>Questions about school life?</span><Link href="/faq">Parent FAQ</Link><Link href="/updates#help-tasks">Contact & help</Link></div><ResourceFinder><section className="resource-section" aria-labelledby="pickup-resource"><h2 id="pickup-resource">Pickup</h2><Link href="/pickup" className="text-link">Pickup & dismissal help</Link></section>{resourceGroups.map(group=><section className="resource-section" key={group} id={group==='School store'?'school-store':group==='School accounts'?'school-accounts':undefined}><h2>{group==='Everyday essentials'?'Meals':group==='School information'?'Prepare for school':group}</h2>{group==='School accounts'&&<p className="fine-print">These services open outside the app. Sign in with the account you use for each provider.</p>}{group==='School store'?<SchoolStore/>:<div className="resource-grid">{resources.filter(r=>r.group===group&&!['meal-info','supplies','staff'].includes(r.id)).map(resource=><ResourceCard key={resource.id} resource={resource.id==='forms'?{...resource,title:'Forms & school supplies',detail:'Ask the office for current forms and supply lists.'}:resource}/>)}</div>}</section> )}</ResourceFinder></div>}
+export default function Resources(){return <div className={`resources-page ${styles.page}`}><Heading eyebrow="ONE PLACE TO START" title="Family resources">School information, everyday essentials and your school accounts.</Heading><div className={styles.help}><span>Questions about school life?</span><Link href="/faq">Parent FAQ</Link><Link href="/updates#help-tasks">Contact & help</Link></div><ResourceFinder><div className={styles.groups}><section className="resource-section" aria-labelledby="pickup-resource"><h2 id="pickup-resource">Pickup</h2><Link href="/pickup" className="text-link">Pickup & dismissal help</Link></section>{['School accounts',...resourceGroups.filter(group=>group!=='School accounts')].map(group=><section className="resource-section" key={group} id={group==='School store'?'school-store':group==='School accounts'?'school-accounts':undefined}><h2>{group==='Everyday essentials'?'Meals':group==='School information'?'Prepare for school':group}</h2>{group==='School accounts'&&<p className="fine-print">These services open outside the app. Sign in with the account you use for each provider.</p>}{group==='School store'?<SchoolStore/>:<div className="resource-grid">{resources.filter(r=>r.group===group&&!['meal-info','supplies','staff'].includes(r.id)).map(resource=><ResourceCard key={resource.id} resource={resource.id==='forms'?{...resource,title:'Forms & school supplies',detail:'Ask the office for current forms and supply lists.'}:resource}/>)}</div>}</section> )}</div></ResourceFinder></div>}
 
