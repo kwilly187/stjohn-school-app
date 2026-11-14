@@ -15,3 +15,6 @@
 
 /* Consistent grouped surfaces, readable rows and comfortable controls. */
  .grid{background:white;border:1px solid #e0e5ed;border-radius:12px;padding:0 21px;overflow:hidden}.card{padding:19px 0;gap:0 22px}.card:last-child{border-bottom:0}.card>span{letter-spacing:0;text-transform:none;font-size:14px}.card h2{font-size:18px;font-weight:600}.card a{border-radius:8px;border:1px solid #d7dfeb;color:#2a3695;min-height:46px}.filters button{border-radius:8px;min-height:44px}@media(max-width:680px){.grid{padding:0 17px}.card{padding:18px 0}.card h2{font-size:17px}.card a{justify-self:stretch;max-width:none;min-height:46px;margin-top:5px}}
+
+/* Keep touch keyboards from zooming the page when searching. */
+.search input{font-size:16px;line-height:1.5}

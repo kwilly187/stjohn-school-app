@@ -6,3 +6,6 @@
 .content h1{color:white;font-size:30px;font-weight:600;letter-spacing:-.5px;line-height:1.2;margin:0 0 9px}
 .content p{color:white;font-size:16px;line-height:1.5;max-width:540px;margin:0}
 @media(max-width:680px){.banner{margin:20px 0;border-radius:12px}.content{padding:21px 18px;gap:15px;min-height:156px}.crest{width:62px;height:62px}.content h1{font-size:25px}.content p{font-size:14px;line-height:1.5}}
+
+/* Headings remain within the banner at narrow widths and increased text sizes. */
+.content>div{min-width:0;overflow-wrap:anywhere}

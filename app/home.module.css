@@ -91,3 +91,6 @@
 .communityBanner .communityIntro h2{color:#fff;font-size:30px;margin:0 0 9px;line-height:1.2}
 .communityBanner .communityIntro p{color:#fff;font-size:16px;line-height:1.5;max-width:430px;margin:0}
 @media(max-width:680px){.communityBanner .communityIntro{min-height:166px;padding:22px 18px;gap:16px}.communityBanner .communityCrest{width:65px;height:65px}.communityBanner .communityIntro h2{font-size:25px}.communityBanner .communityIntro p{font-size:14px;line-height:1.5}}
+
+/* Allow the community title to reflow rather than push past its crest. */
+.communityBanner .communityIntro>div{min-width:0;overflow-wrap:anywhere}

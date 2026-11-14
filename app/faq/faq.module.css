@@ -34,3 +34,8 @@
 .topicQuestions .item summary{font-weight:500;font-size:16px}
 .topic>summary:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
 @media(max-width:600px){.topic>summary{padding:18px 17px;gap:12px}.topicQuestions{padding:0 17px}.topicCount{font-size:14px}.categories{max-height:none}}
+
+/* Preserve visible keyboard focus inside clipped accordion surfaces. */
+.item summary:focus-visible{outline-offset:-3px}
+.searchRow button{flex-shrink:0;white-space:nowrap}
+@media(max-width:380px){.searchRow{flex-wrap:wrap}.searchRow input{flex-basis:100%}.searchRow button{min-height:44px}}
