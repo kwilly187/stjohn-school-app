@@ -9,3 +9,4 @@ test('Two authentic lightweight campus photos support specific parent actions',(
  for(const file of ['gym','library'])assert.ok(statSync(new URL('../public/campus/'+file+'.webp',import.meta.url)).size<100000);
  for(const source of [athletics,resources])assert.match(source,/loading="lazy"/);
 });
+test('Home gives authentic school places meaningful visible destinations without student portraits',()=>{const home=read('app/page.tsx');for(const file of ['gym','library','courtyard'])assert.match(home,new RegExp('/campus/'+file+'\\.webp'));assert.match(home,/className=\{styles.communityPhoto\}/);assert.match(home,/href="\/athletics" className=\{styles.photoTask\}/);assert.match(home,/href="\/resources" className=\{styles.photoTask\}/);assert.ok(statSync(new URL('../public/campus/courtyard.webp',import.meta.url)).size<100000);});

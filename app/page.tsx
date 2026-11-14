@@ -20,11 +20,12 @@ export default async function Today(){return <div className={styles.home}>
  <section className={styles.tasks} aria-labelledby="home-tasks-heading"><div className={styles.sectionHeading}><h2 id="home-tasks-heading">Everyday essentials</h2></div>
  <nav className={styles.taskGrid} aria-label="Everyday school tasks">
  <Link href="/lunch"><span className={styles.taskIcon}><Icon name="lunch"/></span><span><strong>Lunch</strong><span>Nutrislice & PaySchools</span></span></Link>
- <Link href="/athletics"><span className={styles.taskIcon}><Icon name="shirt"/></span><span><strong>Athletics</strong><span>Saints teams & eligibility forms</span></span></Link>
+ <Link href="/athletics" className={styles.photoTask}><img src="/campus/gym.webp" alt="St. John Saints gymnasium" width="429" height="286" loading="lazy"/><span><strong>Athletics</strong><span>Saints teams & eligibility forms</span></span></Link>
  <Link href="/pickup"><span className={styles.taskIcon}><Icon name="clock"/></span><span><strong>Pickup</strong><span>Dismissal & transportation help</span></span></Link>
- <Link href="/resources"><span className={styles.taskIcon}><Icon name="resources"/></span><span><strong>Resources</strong><span>Tuition, aftercare & school forms</span></span></Link>
+ <Link href="/resources" className={styles.photoTask}><img src="/campus/library.webp" alt="St. John school library" width="428" height="285" loading="lazy"/><span><strong>Resources</strong><span>Tuition, aftercare & school forms</span></span></Link>
  </nav></section>
  <section className={styles.community} aria-labelledby="community-heading">
+  <img className={styles.communityPhoto} src="/campus/courtyard.webp" alt="The landscaped middle school courtyard at St. John" width="438" height="288" loading="lazy"/>
   <div className={styles.communityIntro}><div><h2 id="community-heading">Saints Community</h2><p>Stay connected. Get involved. Show your school spirit.</p></div></div>
   <nav className={styles.communityLinks} aria-label="Saints Community">
    <Link href="/calendar"><Icon name="calendar"/><span><strong>School events</strong><span>See what's coming up</span></span></Link>
