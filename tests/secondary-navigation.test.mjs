@@ -10,3 +10,5 @@ test('Secondary pages omit redundant Home links while retaining accessible globa
  assert.match(read('style.css'),/:focus-visible/);
  for(const page of ['error.tsx','not-found.tsx'])assert.match(read(page),/Back to home/);
 });
+
+test('Resources and Contacts remain in persistent navigation instead of repeated page-top links',()=>{for(const page of ['dress-code/page.tsx','athletics/page.tsx','lunch/page.tsx','faq/page.tsx','staff/page.tsx'])assert.doesNotMatch(read(page),/<Link[^>]+href="\/(resources|updates)"[^>]*>(All resources|Resources|Contacts)<\/Link>/);assert.match(read('navigation.tsx'),/label:'Resources'/);assert.match(read('navigation.tsx'),/label:'Contacts'/);});

@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import {Heading,ExternalLink,Icon} from '../components';
 import {resources,school} from '../school-data.mjs';
 import styles from './lunch.module.css';
@@ -8,7 +7,7 @@ export default function Lunch(){
  const information=resources.find(resource=>resource.id==='meal-info')!;
  const account=resources.find(resource=>resource.id==='lunch-account')!;
  return <>
-  <Link href="/resources" className="text-link lunch-back">All resources</Link>
+  
   <Heading eyebrow="LUNCH AT SCHOOL" title="What’s for lunch?">St. John menus, PaySchools and Maschio’s food service.</Heading>
   <section className={styles.menu}>
    <div className={styles.menuTitle}><Icon name="lunch"/><div><h2>School lunch menu</h2><p>View the menu on Nutrislice.</p></div></div>
