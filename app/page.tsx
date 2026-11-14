@@ -9,7 +9,7 @@ import DailyScriptureCard from './daily-scripture-card';
 export const dynamic='force-dynamic';
 
 export default async function Today(){return <div className={styles.home}>
-  <header className={styles.heading}><div><span className={styles.kicker}>ST. JOHN LUTHERAN SCHOOL</span><h1>St. John Parent Portal</h1><p>Calendars, school accounts and contacts for St. John families.</p><Link href="/faq" className={styles.faq}>Parent FAQ</Link></div><div className={styles.campus}><img src="/stjohn-church.png" alt="St. John church on the school campus" width="414" height="276"/></div></header>
+  <header className={styles.heading}><div><span className={styles.kicker}>ST. JOHN LUTHERAN SCHOOL</span><h1>St. John Parent Portal</h1><p>Calendars, school accounts and contacts for St. John families.</p><Link href="/parent-actions" className={styles.faq}>Parent actions</Link><Link href="/faq" className={styles.faq}>Parent FAQ</Link></div><div className={styles.campus}><img src="/stjohn-church.png" alt="St. John church on the school campus" width="414" height="276"/></div></header>
   <Announcements/>
   <section className={styles.tasks} aria-labelledby="home-tasks-heading">
     <div className={styles.sectionHeading}><h2 id="home-tasks-heading">Everyday essentials</h2></div>

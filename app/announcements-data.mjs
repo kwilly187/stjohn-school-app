@@ -1,7 +1,7 @@
 /** Public, school-approved announcements only. Never place private student data here. */
 export const announcementFeed = {status:'not-connected',items:[]};
 /** Select explicitly published public notices. Presentation grades are not authorization.
- * @param {{status:string,items:Array<{id:string,title:string,body:string,status:string,visibility:string,audience:string,important?:boolean,publishedAt:string,expiresAt?:string,grades?:number[],groupIds?:string[],category?:string}>}} feed
+ * @param {{status:string,items:Array<{id:string,title:string,body:string,status:string,visibility:string,audience:string,important?:boolean,publishedAt:string,expiresAt?:string,grades?:number[],groupIds?:string[],category?:string,actionId?:string}>}} feed
  * @param {{scope?:string,grades?:number[],groupIds?:string[],now?:Date|string}} options
  */
 export function selectAnnouncements(feed,{scope='school',grades=[],groupIds=[],now=new Date()}={}){
