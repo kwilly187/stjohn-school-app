@@ -27,3 +27,15 @@
 .source a {color:var(--blue);text-underline-offset:3px;}
 @media(max-width:700px){.lead,.contact{align-items:flex-start;flex-direction:column;gap:18px;}.lead{padding:22px;margin:20px 0 28px;}.seasons{grid-template-columns:1fr;gap:24px;}.season ul{display:grid;grid-template-columns:1fr 1fr;gap:0 20px;}.rules{grid-template-columns:1fr;}.forms{flex-direction:column;}.forms a{justify-content:space-between;}.section h2,.lead h2{font-size:22px;}}
 @media(max-width:390px){.season ul{grid-template-columns:1fr;}}
+
+/* Shared school information pages: open sections and consistent actionable rows. */
+.back{font-size:14px;margin-bottom:0;padding-top:8px}
+.section{margin:27px 0}.section h2,.lead h2{font-size:22px;font-weight:500;letter-spacing:0;color:var(--navy)}
+.section p{font-size:15px;line-height:1.7}.steps{font-size:15px;line-height:1.7;margin:15px 0;padding-left:22px}.steps li{padding:5px 0 5px 4px}
+.forms{gap:12px;margin:22px 0}.forms a{border-radius:6px;font-size:14px;font-weight:500;border-color:#cbd6e5;padding:13px 16px;min-height:48px;background:#fff}.forms a:hover{background:#f3f6fb}
+.forms small{background:#edf1f8;border-radius:3px;padding:2px 5px;font-size:10px;letter-spacing:.5px}
+.rules{gap:0 35px;margin:25px 0}.rules li{padding:23px 0}.rules h2{font-size:19px;font-weight:500}.rules p{font-size:15px;line-height:1.7}
+.lead{background:#f4f6fb;border:0;border-top:2px solid var(--blue);border-radius:0 0 7px 7px;padding:24px;margin:25px 0}.lead p{font-size:15px}
+.contact{padding-top:24px;margin-top:26px}.contact h2{font-size:21px;font-weight:500}.contact p{font-size:15px}.contact a{font-size:14px;min-height:44px}
+.source{font-size:12px;line-height:1.7;margin-top:25px;padding-top:17px}
+@media(max-width:680px){.section{margin:24px 0}.section h2,.lead h2{font-size:21px}.forms{gap:10px}.forms a{width:100%;justify-content:space-between}.lead{padding:21px 20px}.lead a{width:100%;font-size:14px}.rules li{padding:21px 0}.contact{gap:16px}.contact :global(.button){width:100%;justify-content:center}}

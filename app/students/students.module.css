@@ -17,3 +17,17 @@
 .records{list-style:none;padding:0;margin:0;width:100%}.records li{padding:14px 0;border-bottom:1px solid #e0e5ec;overflow-wrap:anywhere}.records li:first-child{padding-top:0}.records li:last-child{border-bottom:0}.records strong,.records li>span{display:block}.records strong{font-size:17px;line-height:1.5;color:var(--navy)}.records li>span{font-size:15px;color:var(--muted);margin-top:4px}.records .recordChild{font-size:13px;font-weight:700;color:#705e37;margin:0 0 5px}.records .gradeValue{font-size:23px;font-weight:700;color:var(--navy)}.recordBody{font-size:16px;white-space:pre-wrap;margin:8px 0}.recordFreshness{font-size:13px;color:var(--muted);margin:13px 0 0}
 
 .portalAccess{display:flex;align-items:center;justify-content:space-between;gap:24px;background:#f3f6fa;border:1px solid #dce3ed;border-radius:8px;padding:22px 24px;margin:0 0 26px}.portalAccess h2{font-size:21px;margin:0 0 7px}.portalAccess p{font-size:15px;line-height:1.6;max-width:510px;margin:0}.portalAccess>a{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:3px;padding:12px 20px}.portalHint{font-size:12px;font-weight:400;opacity:.9}@media(max-width:600px){.portalAccess{align-items:stretch;flex-direction:column;padding:20px;gap:16px}.portalAccess>a{align-self:flex-start;min-width:150px}}
+
+/* The student workspace shares the calm hierarchy of the main parent pages. */
+.page{padding-top:8px}.back{font-size:14px}.heading{padding:16px 0 24px;margin-bottom:23px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:10px;font-weight:500;color:var(--blue);letter-spacing:1.2px;margin-bottom:10px}
+.heading h1{font-size:34px;font-weight:400;color:var(--blue);letter-spacing:-.6px;margin:0 0 10px}
+.heading p{font-size:15px;line-height:1.6;max-width:560px}
+.selector{margin:0 0 24px;gap:10px}.choice{min-height:78px;border-radius:6px;padding:14px 16px}
+.choice[aria-current=page]{background:#edf1f9;color:var(--navy);border-color:#9aaed0;box-shadow:none}
+.choice[aria-current=page] span span{color:var(--muted)}.choice[aria-current=page] .avatar{background:#fff;color:var(--blue)}
+.choice strong{font-size:15px}.choice span span{font-size:13px}.avatar{width:39px;height:39px}
+.portalAccess{padding:24px;background:#f4f6fb;border:0;border-top:2px solid var(--blue);border-radius:0 0 7px 7px;margin-bottom:29px}
+.portalAccess h2{font-size:22px;font-weight:500}.portalAccess p{font-size:15px}.portalAccess>a{border-radius:6px;min-height:50px;font-size:14px}
+.sectionTitle{font-size:21px;font-weight:500;letter-spacing:0}.sectionCopy{font-size:15px}.dashboard{border-top-color:var(--blue)}
+@media(max-width:680px){.heading{padding:14px 0 21px;margin-bottom:21px}.heading h1{font-size:30px}.heading p{font-size:15px}.portalAccess{padding:21px 20px;gap:16px}.portalAccess>a{align-self:stretch}.portalAccess h2{font-size:21px}.selector{margin-bottom:21px}.choice{min-height:72px}}
