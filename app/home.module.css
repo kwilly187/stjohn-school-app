@@ -79,3 +79,13 @@
  .contact>a{width:100%}
 }
 @media(prefers-reduced-motion:reduce){.taskGrid a{transition:none}}
+
+/* Use the school typeface without compressed geometric headline spacing. */
+.heading h1{font-weight:600;letter-spacing:0;font-size:32px;line-height:1.2}
+.dates article h3{font-weight:600;letter-spacing:0}
+.dates h2,.sectionHeading h2{font-weight:600;letter-spacing:0}
+.taskGrid strong,.familyPanel :global(.home-family) strong{font-family:var(--font-school);font-weight:600;font-size:18px}
+.heading p,.taskGrid a>span>span,.familyLinks a{font-size:15px}
+.familyPanel :global(.home-family)>span>span{font-size:14px}
+.kicker{font-weight:600;letter-spacing:1.4px}
+@media(max-width:680px){.heading h1{font-size:29px}.heading p{font-size:14px}.taskGrid a>span>span{font-size:14px}.taskGrid strong{font-size:18px}.familyLinks a{font-size:14px}.dates article h3{font-size:22px!important}}

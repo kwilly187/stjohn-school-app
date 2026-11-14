@@ -1,7 +1,7 @@
 .page :global(.page-heading){padding:24px 0 14px}.page :global(.page-heading .eyebrow){display:none}.page :global(.page-heading h1){font-size:30px;margin-bottom:6px}.page :global(.page-heading p){font-size:14px}
 .groups{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start;margin:18px 0 28px}
 .groups :global(.resource-section){margin:0;padding:18px;border:1px solid var(--line);border-radius:12px;min-width:0}
-.groups :global(.resource-section h2){font-family:Manrope,Arial,sans-serif;font-size:19px;letter-spacing:-.3px;margin:0 0 10px}
+.groups :global(.resource-section h2){font-family:var(--font-school);font-size:19px;letter-spacing:-.3px;margin:0 0 10px}
 .groups :global(.resource-section:first-child){order:5}
 .groups :global(#school-accounts){grid-column:1/-1;order:-2}
 .groups :global(#school-store){grid-column:1/-1}
