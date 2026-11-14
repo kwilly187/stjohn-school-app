@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Announcements from './announcements';
 import {Suspense} from 'react';
 import PublicDates from './public-dates';
 import {profiles} from './students/profile-config.mjs';
@@ -9,6 +10,7 @@ export const dynamic='force-dynamic';
 
 export default async function Today(){return <div className={styles.home}>
   <header className={styles.heading}><div><span className={styles.kicker}>ST. JOHN LUTHERAN SCHOOL</span><h1>St. John Parent Portal</h1><p>Calendars, school accounts and contacts for St. John families.</p><Link href="/faq" className={styles.faq}>Parent FAQ</Link></div><div className={styles.campus}><img src="/stjohn-church.png" alt="St. John church on the school campus" width="414" height="276"/></div></header>
+  <Announcements/>
   <section className={styles.tasks} aria-labelledby="home-tasks-heading">
     <div className={styles.sectionHeading}><h2 id="home-tasks-heading">Everyday essentials</h2></div>
     <nav className={styles.taskGrid} aria-label="Everyday school tasks">
