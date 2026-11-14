@@ -1,11 +1,13 @@
 'use client';
-import {useRef,useState} from 'react';
+import {useRef} from 'react';
+import {useSearchParams} from 'next/navigation';
+import {portalSearchState,portalSearchHref} from './search-state.mjs';
 import Link from 'next/link';
 import {searchKinds,searchParentPortal} from './search-data.mjs';
 import styles from './search.module.css';
 export default function ParentSearch(){
- const [query,setQuery]=useState('');const [kind,setKind]=useState('All');const input=useRef<HTMLInputElement>(null);
- const matches=searchParentPortal(query,kind);const clear=()=>{setQuery('');setKind('All');input.current?.focus()};
+ const params=useSearchParams();const {query,kind}=portalSearchState(params.getAll('q').length===1?params.get('q'):null,params.getAll('kind').length===1?params.get('kind'):null);const input=useRef<HTMLInputElement>(null);const update=(q:string,k:string)=>window.history.replaceState(null,'',portalSearchHref(q,k));const setQuery=(q:string)=>update(q,kind);const setKind=(k:string)=>update(query,k);
+ const matches=searchParentPortal(query,kind);const clear=()=>{update('','All');input.current?.focus()};
  return <section aria-label="Search the parent portal">
  <div className={styles.search}><label htmlFor="parent-search">What do you need?</label><div><input ref={input} id="parent-search" type="search" value={query} onChange={e=>setQuery(e.target.value)} maxLength={120} autoComplete="off" placeholder="Lunch, tuition, a teacher’s name…" aria-controls="parent-search-results"/>{query&&<button type="button" onClick={clear}>Clear</button>}</div></div>
  {!query.trim()?<div className={styles.topics}><h2>Common needs</h2>{['Lunch','Tuition','Uniforms','Aftercare','Sports','Forms','Volunteering'].map(topic=><button key={topic} type="button" onClick={()=>{setQuery(topic);input.current?.focus()}}>{topic}</button>)}</div>:<>

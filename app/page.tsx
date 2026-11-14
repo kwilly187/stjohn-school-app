@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import HomeSearch from './search/home-search';
 import FamilyNotices from './family-notices';
 import {Suspense} from 'react';
 import PublicDates from './public-dates';
@@ -9,19 +10,12 @@ import DailyScriptureCard from './daily-scripture-card';
 export const dynamic='force-dynamic';
 export default async function Today(){return <div className={styles.home}>
  <header className={styles.heading}><div><h1>St. John Parent Portal</h1><p>Your school day, in one place.</p></div></header>
- <Link href="/search" className={styles.search}><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 6 6"/></svg><span>Find what you need</span><span>Search</span></Link>
- <section className={styles.community} aria-labelledby="community-heading">
-  <div className={styles.communityIntro}><div><h2 id="community-heading">Saints Community</h2><p>Stay connected. Get involved. Show your school spirit.</p></div><div className={styles.campus}><img src="/stjohn-church.png" alt="St. John church on the school campus" width="414" height="276"/></div></div>
-  <nav className={styles.communityLinks} aria-label="Saints Community">
-   <Link href="/calendar"><Icon name="calendar"/><span><strong>School events</strong><span>See what's coming up</span></span></Link>
-   <Link href="/parent-actions?category=Get%20involved"><Icon name="heart"/><span><strong>Get involved</strong><span>Volunteer & support St. John</span></span></Link>
-   <Link href="/store"><Icon name="shirt"/><span><strong>The Saints Store</strong><span>Explore school spirit wear</span></span></Link>
-  </nav>
- </section>
+ <HomeSearch/>
+ <DailyScriptureCard initialDate={new Date().toISOString()} compact/>
  <FamilyNotices/>
  <div className={styles.overview}>
   <div className={styles.dates}><Suspense fallback={<p className={styles.loading} role="status">Loading school dates…</p>}><PublicDates grades={profiles.map(profile=>profile.grade)} limit={2} title="Upcoming at St. John" featured/></Suspense></div>
-  <aside className={styles.actions} aria-label="Parent actions"><h2>Parent actions</h2><Link href="/parent-actions" className={styles.actionPrimary}><Icon name="file"/><span>Payments, forms & registration</span></Link><Link href="/staff?contacts=saved"><Icon name="people"/><span>Saved contacts</span></Link><Link href="/faq" className={styles.faq}><Icon name="book"/><span>Parent FAQ</span></Link></aside>
+
  </div>
  <section className={styles.tasks} aria-labelledby="home-tasks-heading"><div className={styles.sectionHeading}><h2 id="home-tasks-heading">Everyday essentials</h2></div>
  <nav className={styles.taskGrid} aria-label="Everyday school tasks">
@@ -30,6 +24,13 @@ export default async function Today(){return <div className={styles.home}>
  <Link href="/pickup"><span className={styles.taskIcon}><Icon name="clock"/></span><span><strong>Pickup</strong><span>Dismissal & transportation help</span></span></Link>
  <Link href="/resources"><span className={styles.taskIcon}><Icon name="resources"/></span><span><strong>Resources</strong><span>Tuition, aftercare & school forms</span></span></Link>
  </nav></section>
- <DailyScriptureCard initialDate={new Date().toISOString()}/>
- <section className={styles.contact} aria-label="School contacts"><div><Icon name="people"/><div><h2>St. John contacts</h2><p>Teachers, staff and the school office.</p></div></div><Link href="/updates">School contacts</Link></section>
+ <section className={styles.community} aria-labelledby="community-heading">
+  <div className={styles.communityIntro}><div><h2 id="community-heading">Saints Community</h2><p>Stay connected. Get involved. Show your school spirit.</p></div><div className={styles.campus}><img src="/stjohn-church.png" alt="St. John church on the school campus" width="414" height="276"/></div></div>
+  <nav className={styles.communityLinks} aria-label="Saints Community">
+   <Link href="/calendar"><Icon name="calendar"/><span><strong>School events</strong><span>See what's coming up</span></span></Link>
+   <Link href="/parent-actions?category=Get%20involved"><Icon name="heart"/><span><strong>Get involved</strong><span>Volunteer & support St. John</span></span></Link>
+   <Link href="/store"><Icon name="shirt"/><span><strong>The Saints Store</strong><span>Explore school spirit wear</span></span></Link>
+  </nav>
+ </section>
+ <aside className={styles.actions} aria-label="Parent actions"><h2>Parent actions</h2><Link href="/parent-actions" className={styles.actionPrimary}><Icon name="file"/><span>Payments, forms & registration</span></Link><Link href="/staff?contacts=saved"><Icon name="people"/><span>Saved contacts</span></Link><Link href="/faq" className={styles.faq}><Icon name="book"/><span>Parent FAQ</span></Link><Link href="/updates"><Icon name="people"/><span>School contacts</span></Link></aside>
  </div>}
