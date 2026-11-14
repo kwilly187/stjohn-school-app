@@ -43,7 +43,7 @@
 .taskGrid a>span.taskIcon{width:46px;height:46px;display:grid;place-items:center;border-radius:13px;background:#edf1fc;color:var(--blue)}
 .taskGrid a:nth-child(2)>span.taskIcon{background:#fff5cb;color:#806000}
 .taskGrid a:nth-child(3)>span.taskIcon{background:#e9f1f5;color:#24516c}
-.taskGrid a:nth-child(4)>span.taskIcon{background:#f0edf7;color:#51417b}
+.taskGrid a:nth-child(4)>span.taskIcon{background:#edf2f8;color:#314b68}
 .taskGrid .taskIcon svg{color:inherit;width:24px;height:24px}
 .taskGrid strong{font-size:17px}
 .taskGrid a>span>span{font-size:13px;line-height:1.45}
