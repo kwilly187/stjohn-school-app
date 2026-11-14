@@ -16,7 +16,7 @@ test('Home has school color hierarchy and accessible phone control sizing',async
  assert.match(css,/\.faq\{display:inline-flex;min-height:44px/);
  assert.match(css,/\.actions a\{[^}]*min-height:49px/);
  assert.match(css,/@media\(prefers-reduced-motion:reduce\)/);
- assert.match(css,/\.taskGrid a>span>span\{font-size:13px/);
+ assert.match(css,/\.taskGrid a>span>span\{font-size:14px/);
 });
 
 test('Home avoids mismatched icon highlights and keeps featured ranges next to event titles',async()=>{

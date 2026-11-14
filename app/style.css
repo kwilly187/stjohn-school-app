@@ -3,27 +3,27 @@
 @font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/inter-latin-600-normal.woff2') format('woff2')}
 @font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/inter-latin-700-normal.woff2') format('woff2')}
 :root{--font-school:'Inter',Arial,sans-serif}
-:root{--blue:#2a3695;--navy:#12274b;--gold:#edbc0d;--ink:#192b46;--muted:#56667e;--line:#e2e8f0;--soft:#f4f7fb}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#edf1f6;color:var(--ink);font-family:var(--font-school);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}button,input,select{font:inherit}button,a{-webkit-tap-highlight-color:transparent}a{color:var(--blue);text-underline-offset:4px}button{cursor:pointer}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #a76c00;outline-offset:4px;border-radius:4px}h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:var(--font-school);line-height:1.25;color:var(--navy)}h1{font-size:clamp(30px,4.5vw,43px);letter-spacing:-1.5px;font-weight:800;margin-bottom:12px}h2{font-size:23px;letter-spacing:-.6px;font-weight:800;margin-bottom:12px}p{color:var(--muted);margin-bottom:18px}button{border:0}.app{max-width:1080px;margin:auto;min-height:100vh;background:white;padding-bottom:94px;box-shadow:0 0 65px #20305209}.topbar{height:94px;display:flex;align-items:center;justify-content:space-between;padding:15px clamp(20px,5vw,54px);border-bottom:1px solid var(--line);gap:15px}.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--navy)}.brand img{object-fit:contain;flex-shrink:0}.brand span{font-size:10px;letter-spacing:1.6px;font-weight:700;line-height:1.5}.brand strong{display:block;letter-spacing:-.6px;font-family:var(--font-school);font-size:22px;font-weight:800}.preview-label{font-size:10px;letter-spacing:1.4px;color:#57657a;border:1px solid var(--line);padding:5px 9px;border-radius:20px;font-weight:700}main{padding:0 clamp(20px,5vw,54px)}.page-heading{padding:35px 0 27px}.eyebrow{display:block;font-size:11px;font-weight:800;letter-spacing:1.6px;color:#546582;margin-bottom:10px}.page-heading p{margin:0;max-width:600px}.notice-card{display:flex;gap:18px;background:#f7f8fc;border:1px solid #dce3f0;border-left:4px solid var(--gold);border-radius:14px;padding:22px 25px}.notice-card h2{font-size:18px;margin-bottom:6px}.notice-card p{font-size:16px;margin-bottom:5px}.notice-symbol{color:var(--blue);padding-top:3px}.text-link{display:inline-flex;align-items:center;gap:12px;font-weight:700;text-decoration:none;min-height:44px;background:none;padding:4px 0;text-align:left;color:var(--blue)}.text-link:hover{text-decoration:underline}.external-arrow{margin-left:auto;font-size:22px;font-weight:400;flex-shrink:0}.text-link .external-arrow{margin-left:4px;font-size:19px}.today-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:20px;margin:24px 0 32px}.card{padding:27px;border:1px solid var(--line);border-radius:16px;margin-bottom:20px}.today-grid .card{margin:0}.dates-card{background:var(--navy);border:0;color:white}.dates-card h2{color:white;margin-top:14px}.dates-card p{color:#e0e6f1}.dates-card .eyebrow{color:#e8c77c;margin:0}.section-top{display:flex;align-items:center;gap:12px}.icon-tile{width:44px;height:44px;min-width:44px;display:grid;place-items:center;background:#edf2fb;color:var(--blue);border-radius:12px}.dates-card .icon-tile{background:#ffffff12;color:#e8c77c}.button{min-height:48px;border-radius:8px;background:var(--blue);color:white;display:inline-flex;align-items:center;justify-content:center;gap:15px;padding:11px 18px;font-weight:700;text-decoration:none;line-height:1.5}.button:hover{filter:brightness(1.15)}.dates-card .button{background:#fff;color:var(--navy)}.fine-print{font-size:13px;line-height:1.65;margin:16px 0 0}.action-card{background:#fafbfd;display:flex;flex-direction:column;justify-content:center}.action-card .text-link{margin-top:auto}.section-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:14px 0}.section-heading h2{margin:0}.resource-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.resource-card{display:flex;align-items:flex-start;gap:15px;border:1px solid var(--line);border-radius:12px;padding:20px;text-decoration:none;color:var(--ink);min-width:0;transition:background .15s,border-color .15s}.resource-card:hover{background:var(--soft);border-color:#afbfda}.resource-card strong{display:block;font-size:17px;line-height:1.4;margin:1px 0 5px}.resource-detail{display:block;font-size:15px;line-height:1.55;color:var(--muted)}.resource-card .external-arrow{color:#687c9c;line-height:1.2}.resource-section{margin:30px 0}.help-card{display:flex;justify-content:space-between;align-items:center;gap:25px;background:#f5f7fa;border-radius:14px;padding:25px;margin:32px 0 24px}.help-card h2{font-size:22px;margin-bottom:6px}.help-card p{margin:0}.help-card .eyebrow{font-size:10px}.help-actions{display:flex;flex-direction:column;align-items:flex-start;gap:4px}.source-note{font-size:13px;line-height:1.7;margin:25px 0}.footer{font-size:12px;color:#63728a;text-align:center;padding:16px 20px 20px}.footer span{padding:0 5px}.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:1080px;z-index:10;display:flex;background:#fff;border-top:1px solid var(--line);padding:8px 12px max(8px,env(safe-area-inset-bottom));box-shadow:0 -5px 22px #102b4909}.bottom-nav a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:57px;text-decoration:none;font-size:13px;font-weight:700;color:#586981;border-radius:9px}.bottom-nav a[aria-current=page]{background:#edf2fb;color:var(--blue)}.bottom-nav a:hover{background:#f4f7fb}.quiet-banner{background:var(--soft);padding:16px 20px;border-radius:10px;font-size:15px}.updates-empty{text-align:center;padding:38px 28px;background:#f7f9fc}.updates-empty p{max-width:620px;margin:0 auto 22px}.large-icon{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:#e8eef9;color:var(--blue);margin:0 auto 20px}.community-note{border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-top:24px}.community-note summary{cursor:pointer;min-height:36px;font-weight:700;color:var(--navy)}.community-note p{margin:12px 0 4px}.calendar-controls{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}.segmented{display:flex;gap:4px;padding:4px;background:var(--soft);border:1px solid var(--line);border-radius:10px}.segmented button{min-height:44px;padding:8px 15px;border-radius:7px;background:transparent;color:#4b5e7c;font-size:15px;font-weight:700}.segmented button[aria-pressed=true]{background:var(--blue);color:white}.calendar-status{font-size:13px;color:var(--muted);min-height:52px;padding:14px 0}.calendar-frame{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fafbfd}.calendar-frame iframe{border:0;display:block;width:100%;height:620px}.calendar-fallback{display:flex;justify-content:space-between;gap:12px;padding:8px 0;flex-wrap:wrap}.calendar-note{margin-top:20px;border-top:1px solid var(--line);padding-top:24px}.calendar-note p{margin:8px 0}.skip-link{position:fixed;left:16px;top:-100px;background:var(--navy);color:#fff;padding:12px;z-index:99}.skip-link:focus{top:12px}@media(max-width:680px){.app{padding-bottom:90px}.topbar{height:82px;padding:12px 20px}.brand{gap:10px}.brand img{width:44px;height:44px}.brand span{font-size:9px;letter-spacing:1.1px}.brand strong{font-size:20px}.page-heading{padding:28px 0 23px}h1{font-size:30px;letter-spacing:-1.2px}.eyebrow{font-size:10px;letter-spacing:1.4px}.notice-card{padding:18px 17px;gap:13px}.notice-symbol{display:none}.today-grid{grid-template-columns:1fr;gap:14px;margin:20px 0 28px}.card{padding:22px}.dates-card h2{margin-top:12px}.action-card h2{font-size:22px}.resource-grid{grid-template-columns:1fr}.resource-card{padding:18px;gap:13px}.help-card{flex-direction:column;align-items:flex-start;padding:22px;gap:16px}.help-actions{width:100%}.help-actions .button{width:100%}.section-heading h2{font-size:21px}.section-heading .text-link{font-size:14px;white-space:nowrap}.calendar-frame iframe{height:570px}.calendar-controls{gap:10px}.calendar-controls .segmented:first-child{width:100%}.calendar-controls .segmented:first-child button{flex:1}.calendar-status{min-height:65px}.source-note{font-size:13px}.footer{font-size:11px}.updates-empty{padding:30px 20px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+:root{--blue:#2a3695;--navy:#12274b;--gold:#edbc0d;--ink:#192b46;--muted:#56667e;--line:#e2e8f0;--soft:#f4f7fb}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#edf1f6;color:var(--ink);font-family:var(--font-school);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}button,input,select{font:inherit}button,a{-webkit-tap-highlight-color:transparent}a{color:var(--blue);text-underline-offset:4px}button{cursor:pointer}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #a76c00;outline-offset:4px;border-radius:4px}h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:var(--font-school);line-height:1.25;color:var(--navy)}h1{font-size:clamp(30px,4.5vw,43px);letter-spacing:-1.5px;font-weight:800;margin-bottom:12px}h2{font-size:23px;letter-spacing:-.6px;font-weight:800;margin-bottom:12px}p{color:var(--muted);margin-bottom:18px}button{border:0}.app{max-width:1080px;margin:auto;min-height:100vh;background:white;padding-bottom:94px;box-shadow:0 0 65px #20305209}.topbar{height:94px;display:flex;align-items:center;justify-content:space-between;padding:15px clamp(20px,5vw,54px);border-bottom:1px solid var(--line);gap:15px}.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--navy)}.brand img{object-fit:contain;flex-shrink:0}.brand span{font-size:14px;letter-spacing:1.6px;font-weight:700;line-height:1.5}.brand strong{display:block;letter-spacing:-.6px;font-family:var(--font-school);font-size:22px;font-weight:800}.preview-label{font-size:14px;letter-spacing:1.4px;color:#57657a;border:1px solid var(--line);padding:5px 9px;border-radius:20px;font-weight:700}main{padding:0 clamp(20px,5vw,54px)}.page-heading{padding:35px 0 27px}.eyebrow{display:block;font-size:14px;font-weight:800;letter-spacing:1.6px;color:#546582;margin-bottom:10px}.page-heading p{margin:0;max-width:600px}.notice-card{display:flex;gap:18px;background:#f7f8fc;border:1px solid #dce3f0;border-left:4px solid var(--gold);border-radius:14px;padding:22px 25px}.notice-card h2{font-size:18px;margin-bottom:6px}.notice-card p{font-size:16px;margin-bottom:5px}.notice-symbol{color:var(--blue);padding-top:3px}.text-link{display:inline-flex;align-items:center;gap:12px;font-weight:700;text-decoration:none;min-height:44px;background:none;padding:4px 0;text-align:left;color:var(--blue)}.text-link:hover{text-decoration:underline}.external-arrow{margin-left:auto;font-size:22px;font-weight:400;flex-shrink:0}.text-link .external-arrow{margin-left:4px;font-size:19px}.today-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:20px;margin:24px 0 32px}.card{padding:27px;border:1px solid var(--line);border-radius:16px;margin-bottom:20px}.today-grid .card{margin:0}.dates-card{background:var(--navy);border:0;color:white}.dates-card h2{color:white;margin-top:14px}.dates-card p{color:#e0e6f1}.dates-card .eyebrow{color:#e8c77c;margin:0}.section-top{display:flex;align-items:center;gap:12px}.icon-tile{width:44px;height:44px;min-width:44px;display:grid;place-items:center;background:#edf2fb;color:var(--blue);border-radius:12px}.dates-card .icon-tile{background:#ffffff12;color:#e8c77c}.button{min-height:48px;border-radius:8px;background:var(--blue);color:white;display:inline-flex;align-items:center;justify-content:center;gap:15px;padding:11px 18px;font-weight:700;text-decoration:none;line-height:1.5}.button:hover{filter:brightness(1.15)}.dates-card .button{background:#fff;color:var(--navy)}.fine-print{font-size:14px;line-height:1.65;margin:16px 0 0}.action-card{background:#fafbfd;display:flex;flex-direction:column;justify-content:center}.action-card .text-link{margin-top:auto}.section-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:14px 0}.section-heading h2{margin:0}.resource-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.resource-card{display:flex;align-items:flex-start;gap:15px;border:1px solid var(--line);border-radius:12px;padding:20px;text-decoration:none;color:var(--ink);min-width:0;transition:background .15s,border-color .15s}.resource-card:hover{background:var(--soft);border-color:#afbfda}.resource-card strong{display:block;font-size:17px;line-height:1.4;margin:1px 0 5px}.resource-detail{display:block;font-size:15px;line-height:1.55;color:var(--muted)}.resource-card .external-arrow{color:#687c9c;line-height:1.2}.resource-section{margin:30px 0}.help-card{display:flex;justify-content:space-between;align-items:center;gap:25px;background:#f5f7fa;border-radius:14px;padding:25px;margin:32px 0 24px}.help-card h2{font-size:22px;margin-bottom:6px}.help-card p{margin:0}.help-card .eyebrow{font-size:14px}.help-actions{display:flex;flex-direction:column;align-items:flex-start;gap:4px}.source-note{font-size:14px;line-height:1.7;margin:25px 0}.footer{font-size:14px;color:#63728a;text-align:center;padding:16px 20px 20px}.footer span{padding:0 5px}.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:1080px;z-index:10;display:flex;background:#fff;border-top:1px solid var(--line);padding:8px 12px max(8px,env(safe-area-inset-bottom));box-shadow:0 -5px 22px #102b4909}.bottom-nav a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:57px;text-decoration:none;font-size:14px;font-weight:700;color:#586981;border-radius:9px}.bottom-nav a[aria-current=page]{background:#edf2fb;color:var(--blue)}.bottom-nav a:hover{background:#f4f7fb}.quiet-banner{background:var(--soft);padding:16px 20px;border-radius:10px;font-size:15px}.updates-empty{text-align:center;padding:38px 28px;background:#f7f9fc}.updates-empty p{max-width:620px;margin:0 auto 22px}.large-icon{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:#e8eef9;color:var(--blue);margin:0 auto 20px}.community-note{border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-top:24px}.community-note summary{cursor:pointer;min-height:36px;font-weight:700;color:var(--navy)}.community-note p{margin:12px 0 4px}.calendar-controls{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}.segmented{display:flex;gap:4px;padding:4px;background:var(--soft);border:1px solid var(--line);border-radius:10px}.segmented button{min-height:44px;padding:8px 15px;border-radius:7px;background:transparent;color:#4b5e7c;font-size:15px;font-weight:700}.segmented button[aria-pressed=true]{background:var(--blue);color:white}.calendar-status{font-size:14px;color:var(--muted);min-height:52px;padding:14px 0}.calendar-frame{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fafbfd}.calendar-frame iframe{border:0;display:block;width:100%;height:620px}.calendar-fallback{display:flex;justify-content:space-between;gap:12px;padding:8px 0;flex-wrap:wrap}.calendar-note{margin-top:20px;border-top:1px solid var(--line);padding-top:24px}.calendar-note p{margin:8px 0}.skip-link{position:fixed;left:16px;top:-100px;background:var(--navy);color:#fff;padding:12px;z-index:99}.skip-link:focus{top:12px}@media(max-width:680px){.app{padding-bottom:90px}.topbar{height:82px;padding:12px 20px}.brand{gap:10px}.brand img{width:44px;height:44px}.brand span{font-size:14px;letter-spacing:1.1px}.brand strong{font-size:20px}.page-heading{padding:28px 0 23px}h1{font-size:30px;letter-spacing:-1.2px}.eyebrow{font-size:14px;letter-spacing:1.4px}.notice-card{padding:18px 17px;gap:13px}.notice-symbol{display:none}.today-grid{grid-template-columns:1fr;gap:14px;margin:20px 0 28px}.card{padding:22px}.dates-card h2{margin-top:12px}.action-card h2{font-size:22px}.resource-grid{grid-template-columns:1fr}.resource-card{padding:18px;gap:13px}.help-card{flex-direction:column;align-items:flex-start;padding:22px;gap:16px}.help-actions{width:100%}.help-actions .button{width:100%}.section-heading h2{font-size:21px}.section-heading .text-link{font-size:14px;white-space:nowrap}.calendar-frame iframe{height:570px}.calendar-controls{gap:10px}.calendar-controls .segmented:first-child{width:100%}.calendar-controls .segmented:first-child button{flex:1}.calendar-status{min-height:65px}.source-note{font-size:14px}.footer{font-size:14px}.updates-empty{padding:30px 20px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 .athletics-card{display:flex;align-items:center;justify-content:space-between;gap:25px;margin:0 0 30px;padding:25px;border:1px solid #d9e2f2;border-top:3px solid var(--gold);border-radius:14px;background:#f7f9fd}.athletics-card h2{margin-bottom:8px}.athletics-card p{margin:0;max-width:530px}.athletics-card .button{flex-shrink:0}.athletics-card .eyebrow{color:var(--blue)}@media(max-width:680px){.athletics-card{flex-direction:column;align-items:flex-start;padding:22px;gap:18px}.athletics-card .button{width:100%}}
 .athletics-help{margin-top:24px;padding:24px;border-radius:14px;background:var(--soft)}.athletics-help p{margin-bottom:8px}.athletics-help .fine-print{margin-top:8px}
 .today-grid .athletics-card{margin:0;flex-direction:column;align-items:flex-start;justify-content:space-between;padding:27px;gap:22px}.today-grid .athletics-card .button{width:100%}@media(max-width:680px){.today-grid .athletics-card{padding:22px}}
 .contact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.contact-grid .card{padding:22px;margin:0;display:flex;align-items:flex-start;flex-direction:column}.contact-grid h3{font-size:19px;margin:16px 0 10px}.contact-grid p{font-size:15px;flex:1}.contact-grid .text-link{font-size:15px;gap:6px}@media(max-width:780px){.contact-grid{grid-template-columns:1fr}.contact-grid .card{padding:22px}}
-.powered-by{display:block;width:max-content;margin:8px auto 0;font-size:12px;color:#586981;text-decoration:none;min-height:44px;padding:11px 8px}.powered-by:hover{text-decoration:underline}
+.powered-by{display:block;width:max-content;margin:8px auto 0;font-size:14px;color:#586981;text-decoration:none;min-height:44px;padding:11px 8px}.powered-by:hover{text-decoration:underline}
 /* Focused parent-first refinement: less explanation, quicker choices. */
-.page-heading{padding:26px 0 20px}.page-heading h1{font-size:clamp(28px,4vw,37px);margin-bottom:7px}.page-heading .eyebrow{margin-bottom:7px}.notice-card{padding:17px 21px}.notice-card h2{margin-bottom:3px}.notice-card p{margin-bottom:0}.notice-card .text-link{min-height:40px}.today-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:20px 0 24px}.today-grid .card,.today-grid .athletics-card{padding:22px;min-width:0;display:flex;flex-direction:column;align-items:stretch;gap:0}.today-grid .athletics-card{justify-content:flex-start}.today-grid h2{margin:15px 0 8px;font-size:24px}.today-grid p{margin:0 0 18px;flex:1}.today-grid .button{width:100%;margin-top:auto;padding:10px;font-size:15px}.today-grid .section-top{gap:9px}.today-grid .section-top .eyebrow{font-size:9px;letter-spacing:1.1px;margin:0}.today-grid .athletics-card .section-top{margin-bottom:0}.resource-detail{font-size:15px}.source-note{font-size:13px;line-height:1.6}.source-note strong{color:var(--ink)}@media(max-width:680px){.page-heading{padding:21px 0 17px}.page-heading h1{font-size:28px}.notice-card{padding:14px 17px}.notice-card .text-link{min-height:40px}.today-grid{gap:12px;margin:18px 0 20px}.today-grid .card,.today-grid .athletics-card{padding:17px}.today-grid .section-top{display:block}.today-grid .section-top .eyebrow{margin-top:9px}.today-grid h2{font-size:21px;margin-top:12px}.today-grid p{font-size:15px;line-height:1.5;min-height:45px;margin-bottom:16px}.today-grid .button{font-size:14px;padding:10px 7px;min-height:44px}.section-heading{margin-top:8px}.resource-card{padding:16px}.help-card{margin-top:25px}}@media(max-width:359px){.today-grid{grid-template-columns:1fr}.today-grid .section-top{display:flex}.today-grid .section-top .eyebrow{margin-top:0}.today-grid p{min-height:0}}
-.devotion-card{border:1px solid #e3dfd3;border-left:3px solid var(--gold);background:#fcfbf7;border-radius:13px;padding:19px 23px;margin-bottom:18px}.devotion-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}.devotion-top h2{font-size:18px;letter-spacing:-.3px;margin:0}.devotion-status{font-size:11px;color:#77613b;line-height:1.4}.devotion-title{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px}.devotion-title h3{font-size:16px;margin:0}.devotion-title>span{font-size:13px;color:#68728a}.devotion-card p{font-size:15px;line-height:1.65;margin:0 0 9px}.devotion-card .devotion-prayer{margin-bottom:0;color:#4e5d73}.devotion-prayer strong{font-size:13px;margin-right:5px;color:var(--navy)}@media(max-width:680px){.devotion-card{padding:16px 17px;margin-bottom:16px}.devotion-top{align-items:flex-start;gap:9px}.devotion-top h2{font-size:17px;white-space:nowrap}.devotion-status{font-size:10px;max-width:140px;text-align:right}.devotion-title{gap:5px 10px}.devotion-card p{font-size:15px;line-height:1.6}}
+.page-heading{padding:26px 0 20px}.page-heading h1{font-size:clamp(28px,4vw,37px);margin-bottom:7px}.page-heading .eyebrow{margin-bottom:7px}.notice-card{padding:17px 21px}.notice-card h2{margin-bottom:3px}.notice-card p{margin-bottom:0}.notice-card .text-link{min-height:40px}.today-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:20px 0 24px}.today-grid .card,.today-grid .athletics-card{padding:22px;min-width:0;display:flex;flex-direction:column;align-items:stretch;gap:0}.today-grid .athletics-card{justify-content:flex-start}.today-grid h2{margin:15px 0 8px;font-size:24px}.today-grid p{margin:0 0 18px;flex:1}.today-grid .button{width:100%;margin-top:auto;padding:10px;font-size:15px}.today-grid .section-top{gap:9px}.today-grid .section-top .eyebrow{font-size:14px;letter-spacing:1.1px;margin:0}.today-grid .athletics-card .section-top{margin-bottom:0}.resource-detail{font-size:15px}.source-note{font-size:14px;line-height:1.6}.source-note strong{color:var(--ink)}@media(max-width:680px){.page-heading{padding:21px 0 17px}.page-heading h1{font-size:28px}.notice-card{padding:14px 17px}.notice-card .text-link{min-height:40px}.today-grid{gap:12px;margin:18px 0 20px}.today-grid .card,.today-grid .athletics-card{padding:17px}.today-grid .section-top{display:block}.today-grid .section-top .eyebrow{margin-top:9px}.today-grid h2{font-size:21px;margin-top:12px}.today-grid p{font-size:15px;line-height:1.5;min-height:45px;margin-bottom:16px}.today-grid .button{font-size:14px;padding:10px 7px;min-height:44px}.section-heading{margin-top:8px}.resource-card{padding:16px}.help-card{margin-top:25px}}@media(max-width:359px){.today-grid{grid-template-columns:1fr}.today-grid .section-top{display:flex}.today-grid .section-top .eyebrow{margin-top:0}.today-grid p{min-height:0}}
+.devotion-card{border:1px solid #e3dfd3;border-left:3px solid var(--gold);background:#fcfbf7;border-radius:13px;padding:19px 23px;margin-bottom:18px}.devotion-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}.devotion-top h2{font-size:18px;letter-spacing:-.3px;margin:0}.devotion-status{font-size:14px;color:#77613b;line-height:1.4}.devotion-title{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px}.devotion-title h3{font-size:16px;margin:0}.devotion-title>span{font-size:14px;color:#68728a}.devotion-card p{font-size:15px;line-height:1.65;margin:0 0 9px}.devotion-card .devotion-prayer{margin-bottom:0;color:#4e5d73}.devotion-prayer strong{font-size:14px;margin-right:5px;color:var(--navy)}@media(max-width:680px){.devotion-card{padding:16px 17px;margin-bottom:16px}.devotion-top{align-items:flex-start;gap:9px}.devotion-top h2{font-size:17px;white-space:nowrap}.devotion-status{font-size:14px;max-width:140px;text-align:right}.devotion-title{gap:5px 10px}.devotion-card p{font-size:15px;line-height:1.6}}
 
 /* Saints visual system: an editorial school-day spread, not a stack of cards. */
 body{background:#e8ecf0}
 .app{background:#fdfcf9}
 .topbar{background:#fff;border-top:4px solid var(--gold);border-bottom:0}
 .brand strong{letter-spacing:-.7px}
-.preview-label{border:0;background:#f1f3f6;color:#536178;font-size:11px;letter-spacing:1px}
+.preview-label{border:0;background:#f1f3f6;color:#536178;font-size:14px;letter-spacing:1px}
 .page-heading{border-bottom:1px solid #dedfdc;margin-bottom:24px;padding-bottom:22px}
 .page-heading h1{letter-spacing:-1.1px}
 .today-welcome{position:relative;overflow:hidden;background:var(--navy);color:#fff;margin:0 calc(-1 * clamp(20px,5vw,54px));padding:26px clamp(20px,5vw,54px) 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .today-welcome h1{font-family:var(--font-school);font-size:clamp(30px,4vw,40px);font-weight:400;letter-spacing:-1.2px;color:#fff;margin:0 0 7px;position:relative;z-index:1}
-.today-welcome .eyebrow{color:#e5c477;font-size:11px;letter-spacing:2px;margin-bottom:9px}
+.today-welcome .eyebrow{color:#e5c477;font-size:14px;letter-spacing:2px;margin-bottom:9px}
 .today-welcome p{font-size:15px;color:#dce3ef;margin:0;position:relative;z-index:1}
 .welcome-mark{display:flex;gap:9px;position:absolute;right:48px;top:-55px;transform:rotate(28deg);height:260px;pointer-events:none}
 .welcome-mark span{display:block;width:24px;height:100%;border:1px solid #ffffff17}
@@ -31,11 +31,11 @@ body{background:#e8ecf0}
 .today-overview{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:30px;padding:28px 0 24px;align-items:stretch}
 .today-page .devotion-card{position:relative;border:0;border-left:2px solid var(--gold);border-radius:0;background:transparent;padding:0 0 0 22px;margin:0}
 .today-page .devotion-top{display:block;margin-bottom:15px}
-.today-page .devotion-top h2{font-family:var(--font-school);font-size:12px;text-transform:uppercase;letter-spacing:1.7px;color:#6d5931;margin:0 0 3px;font-weight:700}
-.today-page .devotion-status{display:block;font-size:12px;color:#74674f;line-height:1.5}
+.today-page .devotion-top h2{font-family:var(--font-school);font-size:14px;text-transform:uppercase;letter-spacing:1.7px;color:#6d5931;margin:0 0 3px;font-weight:700}
+.today-page .devotion-status{display:block;font-size:14px;color:#74674f;line-height:1.5}
 .today-page .devotion-title{display:block;margin-bottom:8px}
 .today-page .devotion-title h3{font-family:var(--font-school);font-size:27px;font-weight:400;letter-spacing:-.6px;margin-bottom:2px}
-.today-page .devotion-title>span{font-size:13px;color:#6b7079}
+.today-page .devotion-title>span{font-size:14px;color:#6b7079}
 .today-page .devotion-card p{font-size:15px;line-height:1.65;color:#4b5665;margin-bottom:10px}
 .today-page .devotion-card .devotion-prayer{font-size:14px;line-height:1.6;margin-bottom:0}
 .school-day{display:flex;flex-direction:column;background:var(--navy);border-radius:4px;overflow:hidden;align-self:stretch}
@@ -43,7 +43,7 @@ body{background:#e8ecf0}
 .day-link:hover{background:#1d365d}
 .day-icon{width:40px;min-width:40px;color:#e2bf6e}
 .day-icon svg{width:31px;height:31px;stroke-width:1.4}
-.day-link .eyebrow{font-size:10px;letter-spacing:1.5px;color:#e2bf6e;margin-bottom:4px}
+.day-link .eyebrow{font-size:14px;letter-spacing:1.5px;color:#e2bf6e;margin-bottom:4px}
 .day-link strong{display:block;font-family:var(--font-school);font-size:24px;font-weight:700;letter-spacing:-.7px;line-height:1.3}
 .day-description{display:block;color:#d2dceb;font-size:14px;margin-top:5px;line-height:1.4}
 .day-arrow{font-size:25px;margin-left:auto;color:#e2bf6e}
@@ -68,18 +68,18 @@ body{background:#e8ecf0}
 .today-page .help-card p{font-size:14px}
 .today-page .help-actions{align-items:flex-end}
 .today-page .help-actions .button{background:transparent;color:var(--navy);border:1px solid #bec7d3;border-radius:4px;font-size:14px}
-.today-page .help-actions .text-link{font-size:13px;min-height:44px}
+.today-page .help-actions .text-link{font-size:14px;min-height:44px}
 .bottom-nav{box-shadow:0 -3px 18px #12274b06}
 .bottom-nav a{border-radius:4px}
 .bottom-nav a[aria-current=page]{background:#f5f3eb;color:var(--navy);position:relative}
 .bottom-nav a[aria-current=page]:before{content:'';position:absolute;top:-8px;left:30%;right:30%;height:3px;background:var(--gold)}
 @media(min-width:681px){.today-page .help-actions{flex-direction:row;align-items:center;gap:20px}.quick-grid .resource-card:nth-last-child(-n+2){border-bottom:0}}
 @media(max-width:680px){
- .topbar{height:82px}.preview-label{font-size:10px;padding:5px 7px}
- .today-welcome{padding-top:21px;padding-bottom:23px}.today-welcome h1{font-size:31px;letter-spacing:-.9px}.today-welcome p{font-size:14px;max-width:280px}.today-welcome .eyebrow{font-size:10px;letter-spacing:1.7px}.welcome-mark{right:0;opacity:.7}
+ .topbar{height:82px}.preview-label{font-size:14px;padding:5px 7px}
+ .today-welcome{padding-top:21px;padding-bottom:23px}.today-welcome h1{font-size:31px;letter-spacing:-.9px}.today-welcome p{font-size:14px;max-width:280px}.today-welcome .eyebrow{font-size:14px;letter-spacing:1.7px}.welcome-mark{right:0;opacity:.7}
  .today-overview{grid-template-columns:1fr;gap:23px;padding:24px 0 20px}
- .today-page .devotion-card{padding-left:17px}.today-page .devotion-top{margin-bottom:12px}.today-page .devotion-title h3{font-size:25px}.today-page .devotion-status{max-width:none;text-align:left;font-size:12px}.today-page .devotion-card p{font-size:15px;line-height:1.6}
- .school-day{flex-direction:row}.day-link{display:block;padding:18px 17px;position:relative}.day-icon{display:none}.day-link .eyebrow{font-size:10px;letter-spacing:1.2px}.day-link strong{font-size:22px}.day-description{font-size:13px;max-width:145px;margin-top:7px;padding-right:10px}.day-arrow{position:absolute;right:15px;top:40px;font-size:21px}.athletics-link{border-top:0;border-left:1px solid #ffffff26}
+ .today-page .devotion-card{padding-left:17px}.today-page .devotion-top{margin-bottom:12px}.today-page .devotion-title h3{font-size:25px}.today-page .devotion-status{max-width:none;text-align:left;font-size:14px}.today-page .devotion-card p{font-size:15px;line-height:1.6}
+ .school-day{flex-direction:row}.day-link{display:block;padding:18px 17px;position:relative}.day-icon{display:none}.day-link .eyebrow{font-size:14px;letter-spacing:1.2px}.day-link strong{font-size:22px}.day-description{font-size:14px;max-width:145px;margin-top:7px;padding-right:10px}.day-arrow{position:absolute;right:15px;top:40px;font-size:21px}.athletics-link{border-top:0;border-left:1px solid #ffffff26}
  .today-page .notice-card{gap:11px;flex-wrap:wrap;padding:13px 0}.today-page .notice-symbol{display:none}.today-page .notice-card>div{flex:1;min-width:180px}.today-page .notice-card h2{font-size:16px}.today-page .notice-card p{font-size:14px}.today-page .notice-card>.text-link{font-size:14px;gap:5px}.today-page .notice-card .external-arrow{width:17px}
  .essentials{margin-top:19px}.essentials h2{font-size:22px}.quick-grid{grid-template-columns:1fr}.quick-grid .resource-card{padding:16px 0}.quick-grid .resource-card:last-child{border-bottom:0}
  .today-page .help-card{align-items:flex-start;flex-direction:row;flex-wrap:wrap;margin-top:24px}.today-page .help-actions{width:auto;align-items:flex-start;gap:0}.today-page .help-actions .button{width:auto}.today-page .help-card h2{font-size:24px}
@@ -92,14 +92,14 @@ body{background:#e8ecf0}
 .school-store-shortcut .resource-card strong{font-size:16px;margin:0 0 2px}
 .school-store-shortcut .resource-detail{font-size:14px;color:#655b46}
 .school-store-shortcut .external-arrow{color:#79602e}
-.lunch-back{margin-top:14px;font-size:14px}.lunch-back+.page-heading{padding-top:12px}.lunch-menu-card{display:flex;align-items:flex-start;gap:22px;padding:28px;background:var(--navy);color:#fff;border-radius:6px;margin-bottom:22px}.lunch-menu-card>.icon-tile{background:#ffffff12;color:#e2bf6e;width:52px;min-width:52px;height:52px}.lunch-menu-card h2{color:#fff;font-size:27px}.lunch-menu-card .eyebrow{color:#e2bf6e}.lunch-menu-card p{color:#dce3ef}.lunch-menu-card .button{background:#fff;color:var(--navy);border-radius:4px}.lunch-menu-card .lunch-preview-note{font-size:13px;line-height:1.6;margin:14px 0 0;color:#dce3ef}.lunch-support{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.lunch-support .card{border-radius:6px;background:#fff;margin:0}.lunch-support h2{font-size:21px}.lunch-support p{font-size:15px}@media(max-width:680px){.lunch-menu-card{padding:22px;gap:16px}.lunch-menu-card>.icon-tile{display:none}.lunch-menu-card h2{font-size:25px}.lunch-support{grid-template-columns:1fr}.lunch-menu-card .button{width:100%}}
+.lunch-back{margin-top:14px;font-size:14px}.lunch-back+.page-heading{padding-top:12px}.lunch-menu-card{display:flex;align-items:flex-start;gap:22px;padding:28px;background:var(--navy);color:#fff;border-radius:6px;margin-bottom:22px}.lunch-menu-card>.icon-tile{background:#ffffff12;color:#e2bf6e;width:52px;min-width:52px;height:52px}.lunch-menu-card h2{color:#fff;font-size:27px}.lunch-menu-card .eyebrow{color:#e2bf6e}.lunch-menu-card p{color:#dce3ef}.lunch-menu-card .button{background:#fff;color:var(--navy);border-radius:4px}.lunch-menu-card .lunch-preview-note{font-size:14px;line-height:1.6;margin:14px 0 0;color:#dce3ef}.lunch-support{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.lunch-support .card{border-radius:6px;background:#fff;margin:0}.lunch-support h2{font-size:21px}.lunch-support p{font-size:15px}@media(max-width:680px){.lunch-menu-card{padding:22px;gap:16px}.lunch-menu-card>.icon-tile{display:none}.lunch-menu-card h2{font-size:25px}.lunch-support{grid-template-columns:1fr}.lunch-menu-card .button{width:100%}}
 
 /* Official-site-inspired whitespace pass: campus architecture and Saints fleur-de-lis. */
 body{background:#f0f2f5}.app{background:#fff;box-shadow:none}
 .topbar{border-top:0;border-bottom:1px solid #edf0f2;height:100px}
 .today-welcome{background:#fff;color:var(--navy);margin:0;padding:34px 0 31px;overflow:visible;gap:34px;align-items:center}
 .today-welcome h1{color:var(--navy);font-size:clamp(32px,4vw,42px);letter-spacing:-1.5px;line-height:1.15;margin-bottom:13px}
-.today-welcome .eyebrow{color:#7b6532;font-size:11px;letter-spacing:2px;margin-bottom:15px}
+.today-welcome .eyebrow{color:#7b6532;font-size:14px;letter-spacing:2px;margin-bottom:15px}
 .today-welcome p{color:#617087;font-size:15px;max-width:330px;line-height:1.7}
 .welcome-campus{margin:0;flex-shrink:0;width:255px;position:relative;padding:0 0 13px}
 .welcome-campus img{display:block;width:100%;height:152px;object-fit:cover;object-position:center 48%;border-radius:2px}
@@ -108,7 +108,7 @@ body{background:#f0f2f5}.app{background:#fff;box-shadow:none}
 .today-overview{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:44px;padding:13px 0 30px;align-items:start}
 .today-page .devotion-card{border-left:0;padding:23px 25px 22px;background:#faf9f5;border-radius:2px}
 .today-page .devotion-top{margin-bottom:16px}
-.today-page .devotion-top h2{font-size:11px;letter-spacing:1.6px}
+.today-page .devotion-top h2{font-size:14px;letter-spacing:1.6px}
 .today-page .devotion-title h3{font-size:28px}
 .today-page .devotion-card p{line-height:1.7}
 .school-day{background:#fff;border-radius:0;overflow:visible;align-self:stretch}
@@ -118,7 +118,7 @@ body{background:#f0f2f5}.app{background:#fff;box-shadow:none}
 .day-link{padding:19px 0;gap:16px;color:var(--navy);border-bottom:1px solid #e6e9ed;min-height:107px}
 .day-link:hover{background:#fafbfc}
 .day-icon{color:#344e87;min-width:35px;width:35px}.day-icon svg{width:28px;height:28px}
-.day-link .eyebrow{color:#79632f;font-size:10px;margin-bottom:3px}
+.day-link .eyebrow{color:#79632f;font-size:14px;margin-bottom:3px}
 .day-link strong{font-size:21px;letter-spacing:-.5px}
 .day-description{color:#617087;font-size:14px;margin-top:5px}
 .day-arrow{color:#8b723b;font-size:23px}
@@ -138,11 +138,11 @@ body{background:#f0f2f5}.app{background:#fff;box-shadow:none}
  .today-welcome{padding:28px 0 29px;gap:20px;align-items:center}
  .today-welcome>div{flex:1;min-width:0}
  .today-welcome h1{font-size:31px;letter-spacing:-1px;line-height:1.14;margin-bottom:10px}
- .today-welcome .eyebrow{font-size:10px;letter-spacing:1.4px;margin-bottom:12px}
+ .today-welcome .eyebrow{font-size:14px;letter-spacing:1.4px;margin-bottom:12px}
  .today-welcome p{font-size:14px;line-height:1.6;max-width:265px}
  .welcome-campus{width:120px;padding-bottom:13px}
  .welcome-campus img{height:146px;object-position:58% center}
- .welcome-campus figcaption{font-size:11px;left:-10px;bottom:23px;padding:5px 7px;max-width:116px}
+ .welcome-campus figcaption{font-size:14px;left:-10px;bottom:23px;padding:5px 7px;max-width:116px}
  .welcome-campus:after{left:12px;width:36px}
  .today-overview{grid-template-columns:1fr;gap:23px;padding:0 0 25px}
  .today-page .devotion-card{padding:20px 21px}.today-page .devotion-title h3{font-size:26px}.today-page .devotion-card p{line-height:1.65}
@@ -156,11 +156,11 @@ body{background:#f0f2f5}.app{background:#fff;box-shadow:none}
  .essentials{margin-top:26px}.essentials .section-heading{margin-bottom:12px}
  .school-store-shortcut .resource-card{padding:16px}.quick-grid .resource-card{padding:19px 0}.today-page .help-card{margin-top:29px}
 }
-@media(max-width:390px){.today-welcome{gap:15px}.today-welcome h1{font-size:28px}.welcome-campus{width:100px}.welcome-campus img{height:140px}.today-welcome p{font-size:13px}.welcome-campus figcaption{font-size:10px;max-width:108px}.school-day{column-gap:21px}.day-description{font-size:13px}.today-page .devotion-card{padding:19px}}
+@media(max-width:390px){.today-welcome{gap:15px}.today-welcome h1{font-size:28px}.welcome-campus{width:100px}.welcome-campus img{height:140px}.today-welcome p{font-size:14px}.welcome-campus figcaption{font-size:14px;max-width:108px}.school-day{column-gap:21px}.day-description{font-size:14px}.today-page .devotion-card{padding:19px}}
 .family-shortcut{display:inline-flex;align-items:center;gap:12px;min-height:44px;color:var(--navy);font-size:14px;font-weight:700;text-decoration:none;margin-top:10px}
 
 .family-shortcut:hover{text-decoration:underline}
-@media(max-width:390px){.family-shortcut{gap:8px;font-size:13px;margin-top:5px}}
+@media(max-width:390px){.family-shortcut{gap:8px;font-size:14px;margin-top:5px}}
 @media(max-width:390px){.family-shortcut{gap:6px}}
 
 
@@ -181,7 +181,7 @@ body{background:#f0f2f5}.app{background:#fff;box-shadow:none}
 .lunch-menu-card h2{color:var(--navy);font-family:var(--font-school);font-size:29px;font-weight:400;letter-spacing:-.5px;margin-bottom:10px}
 .lunch-menu-card .eyebrow{color:#7b6532}.lunch-menu-card p{color:var(--muted);margin-bottom:18px}
 .lunch-menu-card .button{background:var(--navy);color:#fff;min-height:48px}
-.lunch-menu-card .lunch-preview-note{color:#626b79;font-size:13px;margin-top:11px}
+.lunch-menu-card .lunch-preview-note{color:#626b79;font-size:14px;margin-top:11px}
 .lunch-support{gap:32px}
 .lunch-support .card{border:0;border-bottom:1px solid #e6e9ed;border-radius:0;padding:20px 0 23px}
 .lunch-support h2{font-size:22px;margin-bottom:11px}
@@ -193,9 +193,9 @@ body{background:#f0f2f5}.app{background:#fff;box-shadow:none}
 @media(max-width:680px){.resources-page .resource-section{margin:26px 0 31px}.resources-page .resource-section>h2{font-size:25px}.resources-page .resource-card{padding:18px 0}.lunch-menu-card{padding:23px 21px}.lunch-menu-card h2{font-size:27px}.lunch-support{gap:7px}.updates-links{grid-template-columns:1fr;gap:14px}.updates-links .card{padding:22px}}
 
 /* Saints daily companion: compact native actions, one devotional feature, quiet utility. */
-.app{padding-bottom:115px}.topbar{height:80px}.brand img{width:44px;height:44px}.brand strong{font-size:20px}.brand span{font-size:9px;letter-spacing:1.4px}.preview-label{font-size:10px;background:#f4f6f9}
+.app{padding-bottom:115px}.topbar{height:80px}.brand img{width:44px;height:44px}.brand strong{font-size:20px}.brand span{font-size:14px;letter-spacing:1.4px}.preview-label{font-size:14px;background:#f4f6f9}
 .companion-heading{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:27px 0 23px}
-.companion-heading .eyebrow{font-size:10px;letter-spacing:1.7px;color:#6c7890;margin:0 0 5px}
+.companion-heading .eyebrow{font-size:14px;letter-spacing:1.7px;color:#6c7890;margin:0 0 5px}
 .companion-heading h1{font-family:var(--font-school);font-size:36px;letter-spacing:-1.5px;line-height:1.2;margin:0;font-weight:800}
 .companion-greeting{font-size:15px;color:#69758a}
 .daily-actions{display:grid;grid-template-columns:1.35fr 1fr 1fr;gap:13px;margin-bottom:27px}
@@ -203,7 +203,7 @@ body{background:#f0f2f5}.app{background:#fff;box-shadow:none}
 .daily-action:hover{background:#f6f8fb;border-color:#a8b9d3}
 .action-symbol{display:grid;place-items:center;flex-shrink:0;width:40px;height:40px;color:var(--blue)}
 .action-symbol svg{width:27px;height:27px;stroke-width:1.7}
-.action-copy{min-width:0}.action-copy strong{display:block;font-size:17px;font-weight:700;line-height:1.35;letter-spacing:-.3px}.action-copy>span{display:block;font-size:13px;line-height:1.4;color:#65748a;margin-top:5px}
+.action-copy{min-width:0}.action-copy strong{display:block;font-size:17px;font-weight:700;line-height:1.35;letter-spacing:-.3px}.action-copy>span{display:block;font-size:14px;line-height:1.4;color:#65748a;margin-top:5px}
 .action-arrow{font-size:21px;line-height:1;margin-left:auto;flex-shrink:0}
 .family-action{background:var(--navy);border-color:var(--navy);color:#fff}
 .family-action:hover{background:#203c68;border-color:#203c68}
@@ -212,49 +212,49 @@ body{background:#f0f2f5}.app{background:#fff;box-shadow:none}
 .daily-action:not(.family-action) .action-arrow{display:none}
 .devotion-feature{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);border:1px solid #eee9df;border-radius:17px;overflow:hidden;background:#faf8f2;margin:0 0 31px}
 .today-companion .devotion-card{padding:25px 28px;background:transparent;border:0;border-radius:0;margin:0}
-.today-companion .devotion-top{margin-bottom:13px}.today-companion .devotion-top h2{font-size:11px;color:#796439;letter-spacing:1.5px;margin-bottom:4px}
-.today-companion .devotion-status{font-size:11px;color:#766b57}
+.today-companion .devotion-top{margin-bottom:13px}.today-companion .devotion-top h2{font-size:14px;color:#796439;letter-spacing:1.5px;margin-bottom:4px}
+.today-companion .devotion-status{font-size:14px;color:#766b57}
 .today-companion .devotion-title h3{font-size:29px;letter-spacing:-.8px;margin-bottom:4px}
-.today-companion .devotion-title>span{font-size:13px;color:#737b88}
+.today-companion .devotion-title>span{font-size:14px;color:#737b88}
 .today-companion .devotion-card p{font-size:15px;line-height:1.65;color:#4a5667;margin-bottom:12px}
 .today-companion .devotion-card .devotion-prayer{font-size:14px;line-height:1.6;margin-bottom:0}
 .devotion-campus{position:relative;margin:0;min-width:0;display:flex;flex-direction:column;background:#eef2f3}
 .devotion-campus>img{display:block;width:100%;height:0;min-height:180px;flex:1;object-fit:cover;object-position:53% center}
-.devotion-campus figcaption{display:flex;align-items:center;gap:14px;padding:16px 20px;background:#fff;color:var(--navy);font-size:13px;font-weight:600;line-height:1.4}
+.devotion-campus figcaption{display:flex;align-items:center;gap:14px;padding:16px 20px;background:#fff;color:var(--navy);font-size:14px;font-weight:600;line-height:1.4}
 .devotion-campus figcaption img{width:15px;height:44px;object-fit:contain}
 .companion-essentials .section-heading{margin:0 0 12px}.companion-essentials h2{font-family:var(--font-school);font-size:22px;letter-spacing:-.6px}.companion-essentials .section-heading .text-link{font-size:14px}
 .companion-public-links{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .companion-public-links .resource-card{border:1px solid #e4e9f0;border-radius:13px;padding:19px;align-items:center;gap:13px}
 .companion-public-links .icon-tile{background:#f1f4f8;border-radius:12px;color:var(--navy)}
-.companion-public-links .resource-card strong{font-size:16px}.companion-public-links .resource-detail{font-size:13px}
+.companion-public-links .resource-card strong{font-size:16px}.companion-public-links .resource-detail{font-size:14px}
 .school-accounts-link{display:flex;align-items:center;gap:15px;min-height:82px;padding:19px 2px;text-decoration:none;color:var(--navy);border-bottom:1px solid #e5e9ef;margin-top:7px}
 .school-accounts-link:hover{background:#fafbfc}.accounts-symbol{display:grid;place-items:center;width:44px;min-width:44px;height:44px;color:#71809a}
-.school-accounts-link strong{display:block;font-size:15px}.school-accounts-link>span>span{display:block;font-size:13px;line-height:1.5;color:#6c788c;margin-top:3px}
+.school-accounts-link strong{display:block;font-size:15px}.school-accounts-link>span>span{display:block;font-size:14px;line-height:1.5;color:#6c788c;margin-top:3px}
 .school-accounts-link .action-arrow{color:#6b7891}
 .today-companion .help-card{margin-top:25px;border-bottom:0}.today-companion .help-card h2{font-family:var(--font-school);font-size:20px;font-weight:700;letter-spacing:-.5px}
 .bottom-nav{bottom:12px;width:calc(100% - 28px);max-width:640px;border:1px solid #e4e9f0;border-radius:20px;padding:7px;background:#fff;box-shadow:0 8px 30px #12274b17;gap:5px}
-.bottom-nav a{border-radius:13px;min-height:57px;gap:4px;font-size:12px;font-weight:600;color:#6d7b90}
+.bottom-nav a{border-radius:13px;min-height:57px;gap:4px;font-size:14px;font-weight:600;color:#6d7b90}
 .bottom-nav a[aria-current=page]{background:var(--navy);color:#fff}
 .bottom-nav a[aria-current=page]:before{display:none}.bottom-nav a:hover{background:#eef2f7}.bottom-nav a[aria-current=page]:hover{background:#203c68}
-@media(max-width:800px) and (min-width:681px){.daily-action{padding:15px;gap:8px}.action-symbol{width:30px}.action-copy strong{font-size:15px}.action-copy>span{font-size:12px}}
+@media(max-width:800px) and (min-width:681px){.daily-action{padding:15px;gap:8px}.action-symbol{width:30px}.action-copy strong{font-size:15px}.action-copy>span{font-size:14px}}
 @media(max-width:680px){
  .app{padding-bottom:110px}.topbar{height:76px}.brand strong{font-size:19px}.brand img{width:42px;height:42px}
- .companion-heading{padding:23px 0 18px;gap:12px}.companion-heading h1{font-size:32px}.companion-heading .eyebrow{font-size:9px;letter-spacing:1.3px}.companion-greeting{font-size:13px;max-width:125px;text-align:right;line-height:1.5}
+ .companion-heading{padding:23px 0 18px;gap:12px}.companion-heading h1{font-size:32px}.companion-heading .eyebrow{font-size:14px;letter-spacing:1.3px}.companion-greeting{font-size:14px;max-width:125px;text-align:right;line-height:1.5}
  .daily-actions{grid-template-columns:1fr 1fr;gap:10px;margin-bottom:23px}
  .daily-action{min-height:83px;padding:15px;gap:10px;border-radius:13px}
  .family-action{grid-column:1/-1;min-height:78px;padding:16px 18px}.family-action .action-symbol{width:42px;height:42px}.family-action .action-copy strong{font-size:18px}.family-action .action-copy>span{margin-top:3px}
  .daily-action:not(.family-action) .action-symbol{width:26px;height:32px}.daily-action:not(.family-action) .action-symbol svg{width:24px;height:24px}
- .action-copy strong{font-size:16px}.action-copy>span{font-size:12px;margin-top:3px}
+ .action-copy strong{font-size:16px}.action-copy>span{font-size:14px;margin-top:3px}
  .devotion-feature{grid-template-columns:1fr;margin-bottom:26px;border-radius:15px}
  .today-companion .devotion-card{padding:22px}.today-companion .devotion-title h3{font-size:27px}.today-companion .devotion-card p{font-size:15px;line-height:1.65}
  .devotion-campus{display:grid;grid-template-columns:1.2fr 1fr;height:105px;background:#fff}
  .devotion-campus>img{height:105px;min-height:0;object-position:center 59%}
- .devotion-campus figcaption{font-size:12px;padding:14px;gap:10px}.devotion-campus figcaption img{width:13px;height:38px}
- .companion-essentials h2{font-size:21px}.companion-essentials .section-heading .text-link{font-size:13px;gap:7px}
- .companion-public-links{gap:10px}.companion-public-links .resource-card{display:block;padding:15px;position:relative}.companion-public-links .icon-tile{width:38px;min-width:38px;height:38px;margin-bottom:13px}.companion-public-links .resource-card strong{font-size:16px}.companion-public-links .resource-detail{font-size:12px;line-height:1.5}.companion-public-links .external-arrow{position:absolute;right:15px;top:21px;width:17px}
- .school-accounts-link{gap:10px}.school-accounts-link>span>span{font-size:12px}.accounts-symbol{width:34px;min-width:34px}.bottom-nav{bottom:max(10px,env(safe-area-inset-bottom));width:calc(100% - 24px);border-radius:18px;padding:6px;gap:2px}.bottom-nav a{min-height:55px;font-size:11px;border-radius:12px}
+ .devotion-campus figcaption{font-size:14px;padding:14px;gap:10px}.devotion-campus figcaption img{width:13px;height:38px}
+ .companion-essentials h2{font-size:21px}.companion-essentials .section-heading .text-link{font-size:14px;gap:7px}
+ .companion-public-links{gap:10px}.companion-public-links .resource-card{display:block;padding:15px;position:relative}.companion-public-links .icon-tile{width:38px;min-width:38px;height:38px;margin-bottom:13px}.companion-public-links .resource-card strong{font-size:16px}.companion-public-links .resource-detail{font-size:14px;line-height:1.5}.companion-public-links .external-arrow{position:absolute;right:15px;top:21px;width:17px}
+ .school-accounts-link{gap:10px}.school-accounts-link>span>span{font-size:14px}.accounts-symbol{width:34px;min-width:34px}.bottom-nav{bottom:max(10px,env(safe-area-inset-bottom));width:calc(100% - 24px);border-radius:18px;padding:6px;gap:2px}.bottom-nav a{min-height:55px;font-size:14px;border-radius:12px}
 }
-@media(max-width:359px){.daily-action:not(.family-action){padding:12px;gap:7px}.daily-action:not(.family-action) .action-symbol{display:none}.companion-essentials h2{font-size:19px}.devotion-campus figcaption{font-size:11px;padding:10px;gap:8px}}
+@media(max-width:359px){.daily-action:not(.family-action){padding:12px;gap:7px}.daily-action:not(.family-action) .action-symbol{display:none}.companion-essentials h2{font-size:19px}.devotion-campus figcaption{font-size:14px;padding:10px;gap:8px}}
 
 /* Family-first Today: profile and relevant dates read as one calm surface. */
 .today-companion .companion-heading{padding-bottom:20px}
@@ -262,11 +262,11 @@ body{background:#f0f2f5}.app{background:#fff;box-shadow:none}
 .family-day-heading{display:flex;align-items:center;gap:16px;min-height:80px;text-decoration:none;color:var(--navy);padding:0 0 18px;border-bottom:1px solid #e3e8ef}
 .family-portrait{display:grid;place-items:center;flex-shrink:0;width:68px;height:68px;border-radius:50%;overflow:hidden;background:#edf1f7;color:var(--navy)}
 .family-portrait img{width:100%;height:100%;object-fit:cover}.family-portrait svg{width:30px;height:30px}
-.family-day-copy{display:flex;flex-direction:column;gap:3px}.family-day-copy .eyebrow{font-size:11px;letter-spacing:1.2px;color:#626f84;margin:0}.family-day-copy strong{font-size:25px;line-height:1.25;letter-spacing:-.6px}.family-day-copy>span:last-child{font-size:14px;color:#647187}
+.family-day-copy{display:flex;flex-direction:column;gap:3px}.family-day-copy .eyebrow{font-size:14px;letter-spacing:1.2px;color:#626f84;margin:0}.family-day-copy strong{font-size:25px;line-height:1.25;letter-spacing:-.6px}.family-day-copy>span:last-child{font-size:14px;color:#647187}
 .family-day-open{display:flex;align-items:center;gap:14px;margin-left:auto;min-height:44px;font-size:14px;font-weight:650;color:var(--blue)}.family-day-open>span{font-size:22px}.family-day-heading:hover .family-day-open{text-decoration:underline;text-underline-offset:4px}
 .family-dates-loading{min-height:180px;padding:24px 0;color:var(--muted)}
 .schedule-actions{grid-template-columns:1fr 1fr;margin:26px 0 32px;gap:16px}.schedule-actions .daily-action{min-height:94px;padding:20px;border-radius:12px}.schedule-actions .daily-action .action-arrow{display:block}.schedule-actions .athletics-action{background:var(--navy);border-color:var(--navy);color:white}.schedule-actions .athletics-action:hover{background:#203c68}.athletics-action .action-copy>span{color:#d5dfed}.athletics-action .action-arrow{color:#e7c57c}.athletics-crest{width:46px;height:54px;object-fit:contain;flex-shrink:0}
-@media(max-width:680px){.family-day{padding-top:17px;margin-bottom:24px}.family-day-heading{gap:13px;padding-bottom:17px}.family-portrait{width:60px;height:60px}.family-day-copy strong{font-size:23px}.family-day-copy .eyebrow{font-size:10px}.family-day-open{font-size:13px;gap:9px}.schedule-actions{gap:10px;margin:24px 0 28px}.schedule-actions .daily-action{min-height:88px;padding:14px;gap:10px}.schedule-actions .daily-action .action-arrow{display:none}.athletics-crest{width:34px;height:43px}.schedule-actions .action-copy>span{font-size:12px}.schedule-actions .action-copy strong{font-size:16px}}
+@media(max-width:680px){.family-day{padding-top:17px;margin-bottom:24px}.family-day-heading{gap:13px;padding-bottom:17px}.family-portrait{width:60px;height:60px}.family-day-copy strong{font-size:23px}.family-day-copy .eyebrow{font-size:14px}.family-day-open{font-size:14px;gap:9px}.schedule-actions{gap:10px;margin:24px 0 28px}.schedule-actions .daily-action{min-height:88px;padding:14px;gap:10px}.schedule-actions .daily-action .action-arrow{display:none}.athletics-crest{width:34px;height:43px}.schedule-actions .action-copy>span{font-size:14px}.schedule-actions .action-copy strong{font-size:16px}}
 
 /* Task-first Home: family context, useful actions, then selected public dates. */
 .parent-home .companion-heading{padding-bottom:19px}
@@ -302,15 +302,15 @@ body{background:#f0f2f5}.app{background:#fff;box-shadow:none}
 .parent-home .home-dates-loading{padding:20px 0}
 @media(max-width:680px){
  .parent-home .companion-heading{padding-bottom:15px}.parent-home .companion-greeting{display:none}
- .parent-home .home-family{gap:12px;padding:13px 0}.parent-home .home-family-copy>span{font-size:13px}.parent-home .home-family-copy strong{font-size:18px}
+ .parent-home .home-family{gap:12px;padding:13px 0}.parent-home .home-family-copy>span{font-size:14px}.parent-home .home-family-copy strong{font-size:18px}
  .parent-home .home-tasks{margin:22px 0 27px}.parent-home .home-tasks>h2{font-size:22px;margin-bottom:14px}
  .parent-home .home-help{display:block;padding:0 19px}.parent-home .home-help-main{gap:12px;padding:19px 0}.parent-home .home-help-main strong{font-size:18px}.parent-home .home-help-main>span>span{font-size:14px}
  .parent-home .home-saved{border-left:0;border-top:1px solid #ffffff30;padding:9px 0;min-height:48px}.parent-home .home-saved>span{margin-left:auto}
- .parent-home .home-task-links{column-gap:22px}.parent-home .home-task-links>a{position:relative;display:block;padding:17px 0;min-height:126px}.parent-home .home-task-links>a>svg{margin-bottom:9px;width:23px;height:23px}.parent-home .home-task-links strong{font-size:17px}.parent-home .home-task-links>a>span>span{font-size:13px}.parent-home .home-task-links .home-arrow{position:absolute;top:13px;right:0;font-size:20px}
+ .parent-home .home-task-links{column-gap:22px}.parent-home .home-task-links>a{position:relative;display:block;padding:17px 0;min-height:126px}.parent-home .home-task-links>a>svg{margin-bottom:9px;width:23px;height:23px}.parent-home .home-task-links strong{font-size:17px}.parent-home .home-task-links>a>span>span{font-size:14px}.parent-home .home-task-links .home-arrow{position:absolute;top:13px;right:0;font-size:20px}
 }
 
 /* Keep the intricate official crest readable without changing the header layout. */
-.brand img{width:52px;height:52px}.brand span{font-size:10px}@media(max-width:600px){.brand img{width:48px;height:48px}}
+.brand img{width:52px;height:52px}.brand span{font-size:14px}@media(max-width:600px){.brand img{width:48px;height:48px}}
 
 /* Clear, readable interface typography; school identity remains in the crest and colors. */
 body{font-family:var(--font-school);font-size:17px;line-height:1.6}
@@ -323,19 +323,19 @@ button,input,select,textarea{font-family:var(--font-school)}
 .brand span{font-weight:600;letter-spacing:1.2px}
 .bottom-nav a{font-weight:600;font-size:14px}
 .resource-card strong{font-weight:600}
-@media(max-width:680px){body{font-size:16px}.brand strong{font-size:24px}.bottom-nav a{font-size:13px}}
+@media(max-width:680px){body{font-size:16px}.brand strong{font-size:24px}.bottom-nav a{font-size:14px}}
 @font-face{font-family:'Allura';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/allura-latin-400-normal.woff2') format('woff2')}
 
 /* A consistent, quiet frame lets school content lead on every screen. */
 body{background:#f0f2f6}.app{background:#fff;max-width:1120px;box-shadow:0 0 45px #12274b06}
 .topbar{height:94px;padding-top:15px;padding-bottom:15px;border-top:3px solid var(--blue);border-bottom:1px solid var(--line)}
-.brand img{width:54px;height:54px}.brand strong{font-size:24px;font-weight:500;letter-spacing:0}.brand span{font-size:10px;letter-spacing:1.2px}
+.brand img{width:54px;height:54px}.brand strong{font-size:24px;font-weight:500;letter-spacing:0}.brand span{font-size:14px;letter-spacing:1.2px}
 .page-heading{padding-top:32px;border-bottom:1px solid var(--line)}
 .page-heading h1{font-size:35px;font-weight:500;letter-spacing:-.4px}
 .card,.resource-card,.help-card,.notice-card{box-shadow:none;border-radius:8px}
 .resource-card .icon-tile{border-radius:50%;background:#f0f3fb;color:var(--blue)}
 .bottom-nav{max-width:1120px;border-radius:0;bottom:0;padding:7px 12px max(7px,env(safe-area-inset-bottom));background:#fff;border:0;border-top:1px solid var(--line);box-shadow:0 -4px 16px #12274b06}
-.bottom-nav a{border-radius:0;min-height:55px;font-size:13px;font-weight:500;gap:4px}.bottom-nav a[aria-current=page]{background:transparent;color:var(--blue)}
+.bottom-nav a{border-radius:0;min-height:55px;font-size:14px;font-weight:500;gap:4px}.bottom-nav a[aria-current=page]{background:transparent;color:var(--blue)}
 .bottom-nav a[aria-current=page]:before{height:3px;background:var(--blue);left:35%;right:35%;top:-7px;border-radius:0 0 3px 3px}
 .footer{border-top:1px solid var(--line);margin-top:12px;padding-top:20px}
 @media(max-width:680px){main{padding-left:22px;padding-right:22px}.topbar{height:87px;padding-left:22px;padding-right:22px}.brand img{width:48px;height:48px}.brand strong{font-size:23px}.page-heading h1{font-size:30px}.bottom-nav{width:100%;left:50%}.app{padding-bottom:87px}}
@@ -344,13 +344,13 @@ body{background:#f0f2f6}.app{background:#fff;max-width:1120px;box-shadow:0 0 45p
 .bottom-nav a[aria-current=page]:before{display:block}
 
 .header-actions{display:flex;align-items:center;gap:6px;flex-shrink:0}
-.header-actions a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 12px;border-radius:6px;color:var(--navy);font-size:13px;font-weight:500;text-decoration:none}
+.header-actions a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 12px;border-radius:6px;color:var(--navy);font-size:14px;font-weight:500;text-decoration:none}
 .header-actions a:hover,.header-actions a[aria-current=page]{color:var(--blue);background:#edf1f8}
 .header-actions svg{flex-shrink:0}
-@media(max-width:680px){.topbar{height:auto;min-height:87px;flex-wrap:wrap;gap:12px;padding-bottom:0}.header-actions{width:100%;border-top:1px solid var(--line);gap:0}.header-actions a{flex:1;border-radius:0;min-height:48px;padding:9px 6px;font-size:13px;gap:8px}.header-actions a+a{border-left:1px solid var(--line)}.header-actions svg{width:20px;height:20px}}
+@media(max-width:680px){.topbar{height:auto;min-height:87px;flex-wrap:wrap;gap:12px;padding-bottom:0}.header-actions{width:100%;border-top:1px solid var(--line);gap:0}.header-actions a{flex:1;border-radius:0;min-height:48px;padding:9px 6px;font-size:14px;gap:8px}.header-actions a+a{border-left:1px solid var(--line)}.header-actions svg{width:20px;height:20px}}
 /* Inter replaces the geometric display face in the interface, not Scripture's script accent. */
-body{font-size:16px;line-height:1.6}.brand strong{font-size:22px;font-weight:600;line-height:1.2}.brand span{font-size:9px;letter-spacing:1px}.bottom-nav a{font-size:12px}.page-heading h1{font-weight:600}
-@media(max-width:680px){body{font-size:15px}.brand strong{font-size:21px}.brand span{font-size:9px}.bottom-nav a{font-size:12px}}
+body{font-size:16px;line-height:1.6}.brand strong{font-size:22px;font-weight:600;line-height:1.2}.brand span{font-size:14px;letter-spacing:1px}.bottom-nav a{font-size:14px}.page-heading h1{font-weight:600}
+@media(max-width:680px){body{font-size:15px}.brand strong{font-size:21px}.brand span{font-size:14px}.bottom-nav a{font-size:14px}}
 
 /* The official-site reference uses restrained royal-blue headings, not display lettering. */
 .page-heading h1{color:var(--blue);font-weight:400;letter-spacing:-.6px}.page-heading p{color:#4b5360}
@@ -359,21 +359,21 @@ body{font-size:16px;line-height:1.6}.brand strong{font-size:22px;font-weight:600
 /* Student navigation stays at the top right on every screen. */
 .topbar{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:14px}
 .student-menu{position:relative;justify-self:end;z-index:30}
-.student-menu-trigger{display:flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 13px;border:1px solid #cbd5e4;border-radius:6px;background:#fff;color:var(--blue);font-size:13px;font-weight:600;white-space:nowrap}
+.student-menu-trigger{display:flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 13px;border:1px solid #cbd5e4;border-radius:6px;background:#fff;color:var(--blue);font-size:14px;font-weight:600;white-space:nowrap}
 .student-menu-trigger svg{width:20px;height:20px}.student-menu-symbol{font-size:19px;font-weight:400;line-height:1;width:12px}
 .student-menu-trigger[aria-expanded=true]{background:#edf1f8;border-color:#9aaace}
 .student-menu-panel{position:absolute;top:calc(100% + 8px);right:0;width:260px;max-width:calc(100vw - 44px);background:white;border:1px solid #d5deea;border-radius:8px;padding:7px;box-shadow:0 12px 35px #12274b20}
 .student-menu-panel a{display:flex;flex-direction:column;justify-content:center;gap:4px;padding:12px 13px;min-height:48px;color:var(--navy);text-decoration:none;border-radius:4px}
-.student-menu-panel a+a{border-top:1px solid var(--line)}.student-menu-panel strong{font-size:14px;font-weight:600}.student-menu-panel a>span{font-size:12px;color:var(--muted)}
+.student-menu-panel a+a{border-top:1px solid var(--line)}.student-menu-panel strong{font-size:14px;font-weight:600}.student-menu-panel a>span{font-size:14px;color:var(--muted)}
 .student-menu-panel a:hover,.student-menu-panel a:focus-visible{background:#f1f4f9;color:var(--blue)}
-@media(max-width:680px){.topbar{grid-template-columns:minmax(0,1fr) auto;gap:12px 10px;padding-top:13px}.topbar .brand{grid-column:1;grid-row:1;gap:8px}.topbar .brand img{width:40px;height:44px}.topbar .brand strong{font-size:17px}.topbar .brand span{font-size:7px;letter-spacing:.8px}.student-menu{grid-column:2;grid-row:1}.student-menu-trigger{font-size:12px;padding:9px 10px;gap:6px}.student-menu-trigger svg{width:18px;height:18px}.header-actions{grid-column:1/-1;grid-row:2}.student-menu-panel{top:calc(100% + 10px)}}
-@media(max-width:359px){.student-menu-trigger svg{display:none}.student-menu-trigger{padding:9px 8px}.topbar .brand strong{font-size:15px}.topbar .brand span{font-size:6px}.topbar .brand img{width:35px}}
+@media(max-width:680px){.topbar{grid-template-columns:minmax(0,1fr) auto;gap:12px 10px;padding-top:13px}.topbar .brand{grid-column:1;grid-row:1;gap:8px}.topbar .brand img{width:40px;height:44px}.topbar .brand strong{font-size:17px}.topbar .brand span{font-size:14px;letter-spacing:.8px}.student-menu{grid-column:2;grid-row:1}.student-menu-trigger{font-size:14px;padding:9px 10px;gap:6px}.student-menu-trigger svg{width:18px;height:18px}.header-actions{grid-column:1/-1;grid-row:2}.student-menu-panel{top:calc(100% + 10px)}}
+@media(max-width:359px){.student-menu-trigger svg{display:none}.student-menu-trigger{padding:9px 8px}.topbar .brand strong{font-size:15px}.topbar .brand span{font-size:14px}.topbar .brand img{width:35px}}
 
 /* A true parent workspace: permanent desktop navigation, familiar mobile tabs. */
 .school-identity{display:none}
 @media(min-width:1000px){
  .app{position:relative;max-width:1440px;min-height:100vh;display:grid;grid-template-columns:215px minmax(0,1fr);grid-template-rows:90px 1fr auto;padding-bottom:0;background:linear-gradient(to right,#142c50 215px,#f7f9fc 215px);box-shadow:none}
- .school-identity{display:block;position:absolute;left:25px;top:28px;width:165px;text-align:center;z-index:12;color:#cbd6e9}.school-identity a{display:flex;flex-direction:column;align-items:center;text-decoration:none;color:white}.school-identity img{width:81px;height:81px;object-fit:contain;margin-bottom:15px}.school-identity span{font-size:9px;letter-spacing:1px;color:#d9c37d}.school-identity strong{font-size:21px;font-weight:500;margin-top:7px}.school-identity p{font-size:11px;color:#bdc9dc;margin-top:10px}
+ .school-identity{display:block;position:absolute;left:25px;top:28px;width:165px;text-align:center;z-index:12;color:#cbd6e9}.school-identity a{display:flex;flex-direction:column;align-items:center;text-decoration:none;color:white}.school-identity img{width:81px;height:81px;object-fit:contain;margin-bottom:15px}.school-identity span{font-size:14px;letter-spacing:1px;color:#d9c37d}.school-identity strong{font-size:21px;font-weight:500;margin-top:7px}.school-identity p{font-size:14px;color:#bdc9dc;margin-top:10px}
  .topbar{grid-column:2;grid-row:1;display:flex;justify-content:flex-end;height:90px;padding:20px 38px;background:white;border-top:0;border-bottom:1px solid #e1e6ef;gap:23px}.topbar .brand{display:none}.header-actions{margin-right:auto}
  main{grid-column:2;grid-row:2;padding:0 38px;min-width:0}.footer{grid-column:2;grid-row:3;margin:8px 38px 0;padding:23px 0;background:transparent}
  .bottom-nav{position:sticky;grid-column:1;grid-row:1/4;align-self:start;top:0;left:auto;bottom:auto;transform:none;width:215px;max-width:none;height:100vh;display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;padding:260px 17px 25px;background:transparent;border:0;box-shadow:none;gap:7px;z-index:10}
@@ -382,3 +382,13 @@ body{font-size:16px;line-height:1.6}.brand strong{font-size:22px;font-weight:600
 }
 @media(max-width:999px){.app{background:#f9fafc}.topbar{background:white}main{padding-left:24px;padding-right:24px}.footer{background:transparent}.bottom-nav{background:white}.page-heading{padding-top:26px}}
 @media(max-width:680px){main{padding-left:20px;padding-right:20px}.topbar{padding-left:20px;padding-right:20px}.header-actions a{min-height:45px}.app{padding-bottom:85px}}
+
+/* Readable supporting copy and comfortable controls at every viewport. */
+input,select,textarea{font-size:16px!important}
+body small,body figcaption{font-size:14px;line-height:1.5}
+.page-heading{padding-top:28px}.page-heading p{font-size:16px;line-height:1.6}
+@media(max-width:680px){.topbar{height:auto;min-height:94px}.brand span{letter-spacing:.3px}.brand strong{line-height:1.25}.school-identity p{line-height:1.5}nav a{line-height:1.35}}
+button,select{min-height:44px}
+summary{min-height:44px;line-height:1.5}
+p,li{line-height:1.6}
+@media(max-width:680px){.header-actions a{font-size:14px}.students-trigger{white-space:normal}.page-heading h1{line-height:1.18}.page-heading p{max-width:100%}}

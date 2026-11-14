@@ -16,7 +16,7 @@ export default async function Students({searchParams}:{searchParams:Promise<{stu
  const sections=normalizeStudentSections({},selected.map(child=>child.id));
  return <div className={styles.page}>
  <Link className={styles.back} href="/">Home</Link>
- <header className={styles.heading}><span className={styles.eyebrow}>ST. JOHN STUDENTS</span><h1>My Students</h1><p>Access St. John student records in Alma and upcoming school dates.</p></header>
+ <header className={styles.heading}><h1>My Students</h1><p>Access St. John student records in Alma and upcoming school dates.</p></header>
  {profiles.length>0&&<nav className={styles.selector} aria-label="Choose a student">
  {profiles.length>1&&<Link href="/students" scroll={false} className={styles.choice} aria-current={selection==='all'?'page':undefined}><span className={styles.avatar} aria-hidden="true">{profiles.length}</span><span><strong>All My Students</strong><span>All students</span></span></Link>}
  {profiles.map(child=><Link key={child.id} href={`/students?student=${child.id}`} scroll={false} className={styles.choice} aria-current={(selection===child.id||(profiles.length===1&&selection==='all'))?'page':undefined}><span className={styles.avatar} aria-hidden="true">{child.photo?<img src={child.photo} alt=""/>:child.name[0]}</span><span><strong>{child.name}</strong><span>Grade {child.grade}</span></span></Link>)}

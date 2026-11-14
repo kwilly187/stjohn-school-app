@@ -10,3 +10,5 @@ test('Store uses editorial concept imagery and progressive product details',()=>
 
 
 test('Store imagery describes only the pictured Royal variant',()=>{assert.match(art,/Royal concept shown/);assert.doesNotMatch(art,/Navy|Natural|senior-athlete/);});
+
+test('Store supporting typography remains legible at every breakpoint',()=>{assert.doesNotMatch(css,/font-size:(?:[8-9]|1[0-3])px/);assert.doesNotMatch(art,/fontSize:10/);assert.match(css,/font-size:16px/)});

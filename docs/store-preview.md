@@ -14,3 +14,6 @@ Royal #2a3695 and gold #edbc0d are sampled from the authentic supplied school cr
 
 ### Superseding senior direction
 Kyle clarified the special collection is a Senior Design Contest open to all seniors. Removed the predetermined Senior Athlete product from the catalog. The store now presents a coming-soon contest section; no winning design, actual entry form, deadlines, prizes or selection rules are invented. Earlier athlete concept notes above are historical and superseded.
+
+## Example winner merchandise
+Senior Legacy Tee is an illustrative example winning design, not an actual contest winner. It supports the same size selection and per-visit favorites as core concepts. The contest remains open to all seniors in concept, with no entry form or dates invented. Store typography now has a14px support minimum and16px core body text across responsive breakpoints.

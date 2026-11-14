@@ -2,8 +2,8 @@
 .header { display:flex;justify-content:space-between;align-items:flex-start;gap:24px;margin-bottom:28px; }
 .header h1 { font-size:clamp(29px,4vw,38px);letter-spacing:-1.1px;margin:7px 0 10px; }
 .header p { font-size:16px;line-height:1.6;max-width:630px;margin:0; }
-.eyebrow { display:block;color:#6b5b36;font-size:12px;line-height:1.5;font-weight:700;letter-spacing:1.2px;text-transform:uppercase; }
-.status { display:inline-flex;align-items:center;flex-shrink:0;max-width:100%;padding:6px 11px;border:1px solid #d9c997;border-radius:6px;background:#fcf9ef;color:#69542a;font-size:13px;line-height:1.5;font-weight:650; }
+.eyebrow { display:block;color:#6b5b36;font-size:14px;line-height:1.5;font-weight:700;letter-spacing:1.2px;text-transform:uppercase; }
+.status { display:inline-flex;align-items:center;flex-shrink:0;max-width:100%;padding:6px 11px;border:1px solid #d9c997;border-radius:6px;background:#fcf9ef;color:#69542a;font-size:14px;line-height:1.5;font-weight:650; }
 .tabs { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:5px;background:#f1f4f8;border-radius:12px;margin:0 0 30px; }
 .tabs button,.tabs a { min-height:52px;padding:12px 16px;border:0;border-radius:8px;background:transparent;color:#4e607b;font-weight:650;font-size:15px;line-height:1.4; }
 .tabs button[aria-selected='true'],.tabs button[aria-pressed='true'],.tabs a[aria-current='page'] { background:var(--navy);color:white;box-shadow:0 2px 5px #12274b12; }

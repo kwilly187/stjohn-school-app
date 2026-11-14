@@ -6,7 +6,7 @@
 .heading h3 { margin:0;font-size:22px;letter-spacing:-.5px; }
 .heading svg { flex-shrink:0; }
 .option p { margin:0 0 12px;font-size:15px; }
-.provider { display:block;font-size:13px;font-weight:700;color:var(--muted);margin:4px 0 0; }
+.provider { display:block;font-size:14px;font-weight:700;color:var(--muted);margin:4px 0 0; }
 .links { display:flex;flex-wrap:wrap;gap:4px 22px; }
 .links a { min-height:44px; }
 @media(max-width:680px){.store{grid-template-columns:1fr;gap:14px}.option{padding:20px}.heading h3{font-size:21px}}

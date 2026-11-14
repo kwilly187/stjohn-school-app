@@ -1,7 +1,7 @@
 .card{margin:0;padding:28px 32px;background:var(--navy);border:0;border-radius:7px;color:white;position:relative}
 .heading{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .heading h2{font-family:'Allura',cursive;font-size:36px;font-weight:400;line-height:1.2;letter-spacing:0;text-transform:none;color:var(--gold);margin:0}
-.heading span{font-size:12px;color:#d5ddec}
+.heading span{font-size:14px;color:#d5ddec}
 .card blockquote{margin:16px 0 8px;font-family:var(--font-school);font-size:23px;font-weight:400;line-height:1.5;max-width:800px;color:white}
 .card a{display:inline-flex;align-items:center;min-height:44px;color:#f0d17a;font-size:14px;font-weight:600;text-decoration:none}
 .card a:hover{text-decoration:underline}
@@ -12,7 +12,7 @@
 .card{overflow:hidden;background:#fffdf5;color:var(--navy);border-radius:0;border-top:1px solid #e9dcae;border-bottom:1px solid #e9dcae;text-align:center;padding:30px 35px}
 .card:before{content:'';position:absolute;inset:0;pointer-events:none;background:url('/stjohn-fleur-divider.png') no-repeat 97% 22px;background-size:86px auto;opacity:.12}
 .card>*{position:relative}
-.heading{justify-content:center;display:block}.heading h2{color:var(--blue);font-size:38px}.heading span{display:block;margin-top:5px;color:#6b6659;font-size:11px;letter-spacing:.3px}
+.heading{justify-content:center;display:block}.heading h2{color:var(--blue);font-size:38px}.heading span{display:block;margin-top:5px;color:#6b6659;font-size:14px;letter-spacing:.3px}
 .card blockquote{color:#333e4c;margin:18px auto 7px;font-size:23px;line-height:1.65;max-width:760px;font-weight:400}
 .card a{color:var(--blue);font-weight:500}
 @media(max-width:680px){.card{padding:26px 22px}.heading h2{font-size:36px}.card blockquote{font-size:19px;line-height:1.7}.card:before{background-position:95% 20px;background-size:70px auto}}

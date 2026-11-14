@@ -9,8 +9,8 @@
 .groups :global(#school-accounts .resource-grid){grid-template-columns:1fr 1fr}
 .groups :global(.resource-card){padding:10px 0;min-height:64px;border:0;box-shadow:none;background:transparent}
 .groups :global(.resource-card .icon-tile){width:36px;min-width:36px;height:36px}
-.groups :global(.resource-card strong){font-size:15px}.groups :global(.resource-detail){font-size:13px}
-.groups :global(.fine-print){font-size:12px;margin:0 0 8px}.groups :global(.text-link){min-height:44px;display:inline-flex;align-items:center}
+.groups :global(.resource-card strong){font-size:15px}.groups :global(.resource-detail){font-size:14px}
+.groups :global(.fine-print){font-size:14px;margin:0 0 8px}.groups :global(.text-link){min-height:44px;display:inline-flex;align-items:center}
 @media(max-width:600px){.page :global(.page-heading){padding:18px 0 12px}.page :global(.page-heading h1){font-size:27px}.groups{grid-template-columns:1fr;gap:12px}.groups :global(#school-accounts .resource-grid){grid-template-columns:1fr}.groups :global(.resource-section){padding:16px}}
 
 .help{display:flex;align-items:center;flex-wrap:wrap;gap:6px 20px;font-size:14px;margin:0 0 10px}.help>span{margin-right:auto;color:var(--muted)}.help a{min-height:44px;display:inline-flex;align-items:center;font-weight:650}@media(max-width:600px){.help>span{display:none}.help{gap:20px;margin:0}}
@@ -29,6 +29,6 @@
 .groups :global(.resource-detail){font-size:14px;line-height:1.5}
 .groups :global(#school-accounts){background:#f5f7fb;border:0;border-radius:7px;padding:22px 24px}
 .groups :global(#school-accounts .resource-grid){gap:0 28px}
-.groups :global(.fine-print){font-size:13px;line-height:1.5;margin-bottom:7px}
+.groups :global(.fine-print){font-size:14px;line-height:1.5;margin-bottom:7px}
 .help{border-top:1px solid var(--line);padding-top:9px;margin-top:0}
 @media(max-width:600px){.page :global(.page-heading){padding:25px 0 20px}.page :global(.page-heading h1){font-size:30px}.page :global(.page-heading p){font-size:15px}.groups{gap:26px;margin-top:20px}.groups :global(#school-accounts){padding:20px}.groups :global(.resource-section h2){font-size:21px}.groups :global(.resource-card){padding:14px 0}}
