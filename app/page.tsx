@@ -1,3 +1,4 @@
+import CommunitySurprise from './community-surprise';
 import Link from 'next/link';
 import HomeSearch from './search/home-search';
 import FamilyNotices from './family-notices';
@@ -27,7 +28,7 @@ export default async function Today(){return <div className={styles.home}>
  <section className={styles.community} aria-labelledby="community-heading">
   <div className={styles.communityBanner}>
    <img className={styles.communityPhoto} src="/campus/courtyard.webp" alt="" width="438" height="288" loading="lazy"/>
-   <div className={styles.communityIntro}><img className={styles.communityCrest} src="/stjohn-logo.png" alt="" width="80" height="80"/><div><h2 id="community-heading">Saints Community</h2><p>Stay connected. Get involved. Show your school spirit.</p></div></div>
+   <div className={styles.communityIntro}><CommunitySurprise className={styles.communityCrest}/><div><h2 id="community-heading">Saints Community</h2><p>Stay connected. Get involved. Show your school spirit.</p></div></div>
   </div>
   <nav className={styles.communityLinks} aria-label="Saints Community">
    <Link href="/calendar"><Icon name="calendar"/><span><strong>School events</strong><span>See what's coming up</span></span></Link>
