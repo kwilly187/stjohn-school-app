@@ -1,0 +1,45 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {normalizeStudentSections} from '../app/students/student-records-policy.mjs';
+const now='2026-11-02T12:00:00Z',retrievedAt='2026-11-02T11:00:00Z';
+const items={assignments:{id:'a',studentId:'child-a',status:'active',title:'Practice',course:'Math',dueAt:'2026-11-04'},grades:{id:'g',studentId:'child-a',status:'active',course:'Math',value:'A',reportedAt:'2026-11-01T10:00:00Z'},teams:{id:'t',studentId:'child-a',status:'active',name:'Example activity',season:'Fall'},announcements:{id:'n',studentId:'child-a',status:'published',title:'Example notice',body:'Synthetic test text',publishedAt:'2026-11-01T10:00:00Z',expiresAt:'2026-11-03T10:00:00Z'}};
+const payload=()=>Object.fromEntries(Object.entries(items).map(([key,item])=>[key,{status:'ready',retrievedAt,items:[{...item},{...item,id:item.id+'b',studentId:'child-b'}]}]));
+test('four typed sections return only selected children, with no shared mutable results',()=>{const p=payload(),one=normalizeStudentSections(p,['child-a'],now),all=normalizeStudentSections(p,['child-a','child-b'],now);assert.equal(one.length,4);for(const s of one){assert.equal(s.status,'ready');assert.equal(s.items.length,1);assert.equal(s.items[0].studentId,'child-a');assert.ok(!('status' in s.items[0]));}for(const s of all)assert.equal(s.items.length,2);one[0].items[0].title='changed';assert.equal(normalizeStudentSections(p,['child-a'],now)[0].items[0].title,'Practice');});
+test('unknown/empty selection never expands to any child',()=>{for(const ids of [[],['missing'],null])for(const section of normalizeStudentSections(payload(),ids,now))assert.deepEqual(section.items,[]);});
+test('missing, disconnected, source failure and ready-empty remain distinct',()=>{const output=normalizeStudentSections({assignments:{status:'not-connected',items:[items.assignments]},grades:{status:'unavailable'},teams:{status:'ready',retrievedAt,items:[]}},['child-a'],now);assert.deepEqual(output.map(s=>s.status),['not-connected','unavailable','ready','not-connected']);assert.equal(output[1].retrievedAt,null);});
+test('malformed dates and malformed selected records fail whole section closed',()=>{for(const dueAt of ['2026-02-30','tomorrow','2026-11-04T10:00:00','2026-11-04T25:00:00Z']){const p=payload();p.assignments.items[0].dueAt=dueAt;assert.equal(normalizeStudentSections(p,['child-a'],now)[0].status,'unavailable');}for(const patch of [{retrievedAt:'unknown'},{retrievedAt:'2099-01-01T00:00:00Z'},{items:'invalid'}]){const p=payload();Object.assign(p.grades,patch);assert.equal(normalizeStudentSections(p,['child-a'],now)[1].status,'unavailable');}});
+test('inactive and unpublished records never render; future/expired notices are omitted',()=>{for(const status of ['draft','withdrawn','deleted','inactive','completed']){const p=payload();for(const section of Object.values(p))section.items[0].status=status;for(const section of normalizeStudentSections(p,['child-a'],now))assert.deepEqual(section.items,[]);}for(const patch of [{publishedAt:'2026-11-03T00:00:00Z',expiresAt:undefined},{expiresAt:now}]){const p=payload();Object.assign(p.announcements.items[0],patch);assert.deepEqual(normalizeStudentSections(p,['child-a'],now)[3].items,[]);}});
+test('unknown status, duplicate IDs, invalid expiry and future grades are unavailable',()=>{for(const [key,patch] of [['teams',{status:'mystery'}],['announcements',{expiresAt:'2026-10-01T00:00:00Z'}],['grades',{reportedAt:'2099-01-01T00:00:00Z'}]]){const p=payload();Object.assign(p[key].items[0],patch);assert.equal(normalizeStudentSections(p,['child-a'],now).find(s=>s.key===key).status,'unavailable');}const p=payload();p.assignments.items.push({...p.assignments.items[0]});assert.equal(normalizeStudentSections(p,['child-a'],now)[0].status,'unavailable');});
+test('date-only and timezone-aware due dates preserved, extra fields stripped',()=>{const p=payload();p.assignments.items[0].dueAt='2026-11-04T16:00:00-05:00';p.assignments.items[0].secret='not rendered';const result=normalizeStudentSections(p,['child-a'],now)[0].items[0];assert.equal(result.dueAt,'2026-11-04T16:00:00-05:00');assert.equal('secret' in result,false);});
+
+test('unidentifiable record is unavailable rather than a false successful empty result',()=>{for(const record of [null,{},'bad']){const p=payload();p.assignments.items=[record];assert.equal(normalizeStudentSections(p,['child-a'],now)[0].status,'unavailable');}});
+
+test('parent work and updates have predictable useful order without changing source data',()=>{
+ const now='2026-11-14T12:00:00Z';
+ const task=(id,dueAt)=>({id,studentId:'one',status:'active',title:id,course:'Math',dueAt});
+ const news=(id,publishedAt)=>({id,studentId:'one',status:'published',title:id,body:'School notice',publishedAt});
+ const input={assignments:{status:'ready',retrievedAt:now,items:[task('later','2026-11-20'),task('earlier','2026-11-15')]},announcements:{status:'ready',retrievedAt:now,items:[news('older','2026-11-12T12:00:00Z'),news('newer','2026-11-13T12:00:00Z')]}};
+ const before=JSON.stringify(input);const sections=normalizeStudentSections(input,['one'],now);
+ assert.deepEqual(sections.find(s=>s.key==='assignments').items.map(i=>i.id),['earlier','later']);
+ assert.deepEqual(sections.find(s=>s.key==='announcements').items.map(i=>i.id),['newer','older']);
+ assert.equal(JSON.stringify(input),before);
+});
+
+test('assignment completion state is distinct from active source lifecycle and never inferred from due date',()=>{
+ for(const completionStatus of ['not-started','in-progress','submitted','returned','completed','excused','unknown']){
+  const p=payload();Object.assign(p.assignments.items[0],{completionStatus,dueAt:'2026-10-01'});
+  const section=normalizeStudentSections(p,['child-a'],now)[0];
+  assert.equal(section.status,'ready');assert.equal(section.items[0].completionStatus,completionStatus);
+ }
+ const p=payload();assert.equal(normalizeStudentSections(p,['child-a'],now)[0].items[0].completionStatus,'unknown');
+ for(const completionStatus of [null,'late','active',{},42]){p.assignments.items[0].completionStatus=completionStatus;assert.equal(normalizeStudentSections(p,['child-a'],now)[0].status,'unavailable');}
+ p.assignments.items[0]={...items.assignments,status:'withdrawn',completionStatus:'submitted'};
+ assert.deepEqual(normalizeStudentSections(p,['child-a'],now)[0].items,[]);
+});
+test('assignment source URL preserves a trusted school-provider deep link only',()=>{
+ const p=payload();p.assignments.items[0].sourceUrl='https://stjohnocala.getalma.com/assignments/synthetic-fixture';
+ const result=normalizeStudentSections(p,['child-a'],now)[0];assert.equal(result.status,'ready');assert.equal(result.items[0].sourceUrl,p.assignments.items[0].sourceUrl);
+ delete p.assignments.items[0].sourceUrl;assert.equal('sourceUrl' in normalizeStudentSections(p,['child-a'],now)[0].items[0],false);
+ for(const sourceUrl of ['javascript:alert(1)','data:text/html,test','http://stjohnocala.getalma.com/task','//stjohnocala.getalma.com/task','/task','https://other.getalma.com/task','https://stjohnocala.getalma.com.evil.example/task','https://stjohnocala.getalma.com:444/task','https://person:secret@stjohnocala.getalma.com/task','https://stjohnocala.getalma.com\\@evil.example/task',' https://stjohnocala.getalma.com/task','https://stjohnocala.getalma.com/\ntask',null,42]){
+  p.assignments.items[0].sourceUrl=sourceUrl;assert.equal(normalizeStudentSections(p,['child-a'],now)[0].status,'unavailable',String(sourceUrl));
+ }
+});

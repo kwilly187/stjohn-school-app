@@ -1,0 +1,2 @@
+import styles from './home-search.module.css';
+export default function HomeSearch(){return <form action="/search" method="get" role="search" aria-label="Search the parent portal" className={styles.form}><label htmlFor="home-search">Find what you need</label><div><input id="home-search" type="search" name="q" maxLength={120} placeholder="Lunch, tuition, a teacher’s name…" autoComplete="off"/><button type="submit">Search</button></div></form>}

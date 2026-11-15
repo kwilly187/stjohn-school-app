@@ -1,0 +1,2 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';
+test('assignment display uses explicit completion state and optional validated source link',()=>{const s=readFileSync(new URL('../app/students/student-records.tsx',import.meta.url),'utf8');assert.match(s,/completionLabels\[item.completionStatus\]/);assert.match(s,/unknown:'Status not provided'/);assert.match(s,/item.sourceUrl&&<a href=\{item.sourceUrl\}/);assert.doesNotMatch(s,/Date\.now|overdue/i)});

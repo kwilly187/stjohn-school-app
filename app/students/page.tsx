@@ -1,0 +1,29 @@
+import Link from 'next/link';
+import Announcements from '../announcements';
+import {Suspense} from 'react';
+import {school} from '../school-data.mjs';
+import {profiles} from './profile-config.mjs';
+import {resolveDashboardSelection} from './dashboard-data.mjs';
+import styles from './students.module.css';
+import PublicDates from '../public-dates';
+import StudentRecords from './student-records';
+import {normalizeStudentSections} from './student-records-policy.mjs';
+export const metadata={title:'My Students'};
+export default async function Students({searchParams}:{searchParams:Promise<{student?:string|string[],mode?:string|string[]}>}){
+ const {student}=await searchParams;
+ const {selection,selected,valid}=resolveDashboardSelection(profiles,student);
+ // No private source is connected. Only an authorized server adapter may replace this empty input.
+ const sections=normalizeStudentSections({},selected.map(child=>child.id));
+ return <div className={styles.page}>
+ <header className={styles.heading}><h1>My Students</h1><p>Access St. John student records in Alma and upcoming school dates.</p></header>
+ {profiles.length>0&&<nav className={styles.selector} aria-label="Choose a student">
+ {profiles.length>1&&<Link href="/students" scroll={false} className={styles.choice} aria-current={selection==='all'?'page':undefined}><span className={styles.avatar} aria-hidden="true">{profiles.length}</span><span><strong>All My Students</strong><span>All students</span></span></Link>}
+ {profiles.map(child=><Link key={child.id} href={`/students?student=${child.id}`} scroll={false} className={styles.choice} aria-current={(selection===child.id||(profiles.length===1&&selection==='all'))?'page':undefined}><span className={styles.avatar} aria-hidden="true">{child.photo?<img src={child.photo} alt=""/>:child.name[0]}</span><span><strong>{child.name}</strong><span>Grade {child.grade}</span></span></Link>)}
+ </nav>}
+ {valid&&<aside className={styles.portalAccess} aria-label="School account access"><div><h2>Your school account</h2><p>Grades, assignments and school updates are available in Alma.</p></div><a href={school.portal} className="button">Open Alma<span className={styles.portalHint}>School sign-in</span></a></aside>}
+ {valid&&<Announcements scope="grades" grades={selected.map(child=>child.grade)}/>}
+ {valid&&sections.some(section=>section.status!=='not-connected')&&<StudentRecords sections={sections} studentNames={Object.fromEntries(selected.map(child=>[child.id,child.name]))}/>}
+ {valid?<Suspense fallback={<p role="status">Loading school dates…</p>}><PublicDates origin="students" returnStudent={selection==='all'?undefined:selection} grades={selected.map(child=>child.grade)} title={selected.length===1?`School dates for ${selected[0].name}`:'School dates'}/></Suspense>:<p>That student isn’t available. <Link href="/students">Return to My Students</Link></p>}
+
+ </div>;
+}

@@ -1,0 +1,8 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {dailyScripture,scriptureReadings} from '../app/daily-scripture-data.mjs';
+test('daily scripture has seven sourced public-domain readings',()=>{assert.equal(scriptureReadings.length,7);for(const reading of scriptureReadings){assert.match(reading.source,/^https:\/\/ebible.org\/eng-web\/PSA/);assert.ok(reading.text.length>20);assert.ok(reading.reference)}});
+test('daily scripture is stable for school-local day and advances at midnight',()=>{assert.deepEqual(dailyScripture(new Date('2026-11-14T05:00:00Z')),dailyScripture(new Date('2026-11-15T04:59:00Z')));assert.notEqual(dailyScripture(new Date('2026-11-15T04:59:00Z')).reference,dailyScripture(new Date('2026-11-15T05:00:00Z')).reference)});
+test('daily scripture respects spring and fall daylight savings',()=>{assert.equal(dailyScripture(new Date('2026-03-09T03:59:00Z')).dateKey,'2026-03-08');assert.equal(dailyScripture(new Date('2026-03-09T04:00:00Z')).dateKey,'2026-03-09');assert.equal(dailyScripture(new Date('2026-11-02T04:59:00Z')).dateKey,'2026-11-01');assert.equal(dailyScripture(new Date('2026-11-02T05:00:00Z')).dateKey,'2026-11-02')});
+test('daily scripture updates in an open tab without hydration date mismatch',()=>{const component=readFileSync(new URL('../app/daily-scripture-card.tsx',import.meta.url),'utf8');assert.match(component,/new Date\(initialDate\)/);assert.match(component,/setInterval\(refresh,60000\)/);assert.match(component,/removeEventListener/);assert.match(component,/World English Bible/);assert.doesNotMatch(component,/official|approved|lectionary/i)});

@@ -1,0 +1,36 @@
+.card{margin:0;padding:28px 32px;background:var(--navy);border:0;border-radius:7px;color:white;position:relative}
+.heading{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.heading h2{font-family:'Allura',cursive;font-size:36px;font-weight:400;line-height:1.2;letter-spacing:0;text-transform:none;color:var(--gold);margin:0}
+.heading span{font-size:14px;color:#d5ddec}
+.card blockquote{margin:16px 0 8px;font-family:var(--font-school);font-size:23px;font-weight:400;line-height:1.5;max-width:800px;color:white}
+.card a{display:inline-flex;align-items:center;min-height:44px;color:#f0d17a;font-size:14px;font-weight:600;text-decoration:none}
+.card a:hover{text-decoration:underline}
+.card a:focus-visible{outline:3px solid #edbc0d;outline-offset:3px}
+@media(max-width:680px){.card{padding:24px 23px}.heading{display:block}.heading h2{font-size:34px;margin-bottom:5px}.card blockquote{font-size:21px;line-height:1.55}}
+
+/* Quiet school fleur detail, inspired by the white faith sections on the school site. */
+.card{overflow:hidden;background:#fffdf5;color:var(--navy);border-radius:0;border-top:1px solid #e9dcae;border-bottom:1px solid #e9dcae;text-align:center;padding:30px 35px}
+.card:before{content:'';position:absolute;inset:0;pointer-events:none;background:url('/stjohn-fleur-divider.png') no-repeat 97% 22px;background-size:86px auto;opacity:.12}
+.card>*{position:relative}
+.heading{justify-content:center;display:block}.heading h2{color:var(--blue);font-size:38px}.heading span{display:block;margin-top:5px;color:#6b6659;font-size:14px;letter-spacing:.3px}
+.card blockquote{color:#333e4c;margin:18px auto 7px;font-size:23px;line-height:1.65;max-width:760px;font-weight:400}
+.card a{color:var(--blue);font-weight:500}
+@media(max-width:680px){.card{padding:26px 22px}.heading h2{font-size:36px}.card blockquote{font-size:19px;line-height:1.7}.card:before{background-position:95% 20px;background-size:70px auto}}
+
+/* Compact Home reading keeps the full verse and source, without a tall feature panel. */
+.compact{border:1px solid #e6e1d3;border-radius:12px;text-align:left;padding:18px 22px;margin:0 0 22px;background:#fffdf7}
+.compact .heading{display:flex;align-items:baseline;justify-content:space-between;gap:8px 16px;flex-wrap:wrap}
+.compact .heading h2{font-size:30px;line-height:1.1;margin:0}
+.compact .heading span{margin:0;font-size:14px;letter-spacing:0}
+.compact blockquote{font-size:16px;line-height:1.6;margin:10px 0 0;max-width:none}
+.compact a{min-height:44px;font-size:14px}
+.compact:before{background-position:97% 16px;background-size:60px auto;opacity:.06}
+@media(max-width:680px){.compact{padding:16px 18px;margin-bottom:18px}.compact .heading h2{font-size:29px}.compact blockquote{font-size:16px;line-height:1.6}}
+
+/* Small reading strip: full verse, inline reference, no separate attribution row. */
+.compact{padding:12px 16px;margin-bottom:16px;border-radius:10px}
+.compact .heading h2{font-size:26px;line-height:1.1}
+.compact blockquote{margin:5px 0 0;font-size:16px;line-height:1.45}
+.compact blockquote a{display:inline;min-height:0;font-size:14px;white-space:nowrap}
+.compact:before{display:none}
+@media(max-width:680px){.compact{padding:10px 12px;margin-bottom:14px}.compact .heading h2{font-size:25px}.compact blockquote{font-size:16px;line-height:1.45}}
