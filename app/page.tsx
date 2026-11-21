@@ -6,25 +6,31 @@ import Link from 'next/link';
 import HomeSearch from './search/home-search';
 import FamilyNotices from './family-notices';
 import {Suspense} from 'react';
-import PublicDates from './public-dates';
-import {profiles} from './students/profile-config.mjs';
+import SchoolDayPlan from './school-day-plan';
+import {getSchoolDayPlan,schoolHomeCalendar} from './school-day-plan-data.mjs';
+import {getSchoolHeadsUp} from './school-heads-up-data.mjs';
 import {Icon} from './components';
 import styles from './home.module.css';
 import DailyScriptureCard from './daily-scripture-card';
 import PinnedShortcuts from './pinned-shortcuts';
 import {school} from './school-data.mjs';
 export const dynamic='force-dynamic';
-export default async function Today(){return <div className={styles.home}>
- <header className={styles.heading}><div><h1>St. John Parent Portal</h1><div className={styles.schoolDay}><SchoolDayDate initialDate={new Date().toISOString()}/><Suspense fallback={null}><SchoolWeather/></Suspense></div><Suspense fallback={null}><SchoolHeadsUp/></Suspense></div></header>
+export default async function Today(){
+ const now=new Date();
+ const readCalendar=schoolHomeCalendar(now);
+ const headsUp=getSchoolHeadsUp(now,readCalendar);
+ const dayPlan=getSchoolDayPlan(now,readCalendar,headsUp);
+ return <div className={styles.home}>
+ <header className={styles.heading}><div><h1>St. John Parent Portal</h1><div className={styles.schoolDay}><SchoolDayDate initialDate={new Date().toISOString()}/><Suspense fallback={null}><SchoolWeather/></Suspense></div><Suspense fallback={null}><SchoolHeadsUp result={headsUp}/></Suspense></div></header>
  <HomeSearch/>
  <DailyScriptureCard initialDate={new Date().toISOString()} compact/>
  <FamilyNotices/>
  <div className={styles.overview}>
-  <div className={styles.dates}><Suspense fallback={<p className={styles.loading} role="status">Loading school dates…</p>}><PublicDates grades={profiles.map(profile=>profile.grade)} limit={2} title="Upcoming at St. John" featured/></Suspense></div>
+  <div className={styles.dates}><Suspense fallback={<p className={styles.loading} role="status">Loading today and tomorrow…</p>}><SchoolDayPlan result={dayPlan}/></Suspense></div>
 
  </div>
  <section className={styles.tasks} aria-labelledby="home-tasks-heading">
- <PinnedShortcuts heading={<h2 id="home-tasks-heading">Everyday essentials</h2>} items={[
+ <PinnedShortcuts heading={<h2 id="home-tasks-heading">Shortcuts</h2>} items={[
   {id:'lunch',label:'Lunch',card:<Link href="/lunch"><span className={styles.taskIcon}><Icon name="lunch"/></span><span><strong>Lunch</strong><span>Nutrislice & PaySchools</span></span></Link>},
   {id:'athletics',label:'Athletics',card:<Link href="/athletics"><span className={styles.taskIcon}><Icon name="shirt"/></span><span><strong>Athletics</strong><span>Saints teams & eligibility forms</span></span></Link>},
   {id:'pickup',label:'Pickup',card:<Link href="/pickup"><span className={styles.taskIcon}><Icon name="clock"/></span><span><strong>Pickup</strong><span>Dismissal & transportation help</span></span></Link>},

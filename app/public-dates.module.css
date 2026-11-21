@@ -16,3 +16,8 @@
 .provenance[open] summary:after{content:'−'}
 .provenance summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .provenance .source{margin:0 0 10px;font-size:14px;line-height:1.6}
+
+.studentLabel{font-size:14px;letter-spacing:1.15px;color:var(--blue);font-weight:700;margin:0 0 4px}
+.planSubheading{color:var(--muted);font-size:14px;margin:0 0 12px}
+.pickupNote{display:flex;flex-wrap:wrap;align-items:center;gap:0 12px;border-top:1px solid var(--line);margin:12px 0 0;font-size:14px;color:var(--muted)}
+.pickupNote a{display:inline-flex;align-items:center;min-height:44px;font-weight:600}

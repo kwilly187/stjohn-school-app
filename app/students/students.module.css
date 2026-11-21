@@ -34,3 +34,14 @@
 
 /* Consistent grouped surfaces, readable rows and comfortable controls. */
  .portalAccess{background:white;border:1px solid #e0e5ed;border-radius:12px;padding:23px;margin-bottom:24px}.portalAccess h2{font-size:22px;font-weight:600}.portalAccess p{font-size:16px;line-height:1.6}.choice{background:white;border-radius:10px;border:1px solid #dce3ed}.choice strong{font-size:16px}.sectionTitle{font-size:22px;font-weight:600}.dashboard{border:1px solid #e0e5ed;border-radius:12px;background:white;padding:20px}.heading{margin-bottom:0}.heading h1{font-weight:600}@media(max-width:680px){.portalAccess{padding:19px}.portalAccess h2{font-size:21px}.dashboard{padding:17px}}
+
+.devicePersonalization{background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 18px 12px;margin:0 0 18px;color:var(--ink)}
+.devicePersonalization summary{min-height:44px;display:list-item;align-content:center;font-weight:600;color:var(--blue);cursor:pointer}
+.devicePersonalization p{margin:6px 0 10px;color:var(--muted);font-size:14px}
+.devicePersonalization p:empty{display:none}
+.devicePersonalization form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 14px}
+.devicePersonalization label{display:grid;gap:4px;font-size:14px;font-weight:600}
+.devicePersonalization input,.devicePersonalization select{min-width:0;min-height:44px;border:1px solid #ccd7e8;border-radius:7px;padding:7px 9px;color:var(--navy);background:white}
+.deviceActions{grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+.deviceActions button:not([type=submit]){background:white;border:1px solid #ccd7e8;border-radius:7px;color:var(--blue);padding:8px 12px}
+@media(max-width:400px){.devicePersonalization form{grid-template-columns:1fr}}

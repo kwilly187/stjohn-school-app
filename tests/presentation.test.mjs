@@ -10,7 +10,7 @@ test('presentation renders real dates, not example notices or unapproved devotio
 
 test('parent dashboard reuses configured grades and obvious native contact/details',async()=>{
  const today=await readFile(new URL('../app/page.tsx',import.meta.url),'utf8'),dates=await readFile(new URL('../app/public-dates.tsx',import.meta.url),'utf8'),components=await readFile(new URL('../app/components.tsx',import.meta.url),'utf8'),view=await readFile(new URL('../app/calendar/view.tsx',import.meta.url),'utf8');
- assert.match(today,/grades={profiles.map\(profile=>profile.grade\)}/);assert.match(dates,/Key school dates/);assert.match(components,/href="\/updates#contact-heading"/);assert.match(view,/scrollIntoView/);assert.match(view,/preventScroll:true/);assert.match(view,/Back to My Students/);
+ assert.doesNotMatch(today,/profiles\.map/);assert.match(dates,/Key school dates/);assert.match(components,/href="\/updates#contact-heading"/);assert.match(view,/scrollIntoView/);assert.match(view,/preventScroll:true/);assert.match(view,/Back to My Students/);
 });
 
 test('public information routes stay native and office/meal support are available directly',async()=>{

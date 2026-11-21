@@ -4,8 +4,8 @@ import {readFile} from 'node:fs/promises';
 const read=p=>readFile(new URL('../'+p,import.meta.url),'utf8');
 test('Home keeps family data configured and real school calendar intact',async()=>{
  const page=await read('app/page.tsx');
- assert.match(page,/profiles\.map\(profile=>profile.grade\)/);
- assert.match(page,/limit=\{2\} title="Upcoming at St. John" featured/);
+ assert.doesNotMatch(page,/profiles\.map\(profile=>profile.grade\)/);
+ assert.match(page,/<SchoolDayPlan result=\{dayPlan\}/);
  for(const destination of ['/faq','/staff?contacts=saved','/lunch','/athletics','/store','/resources','/updates'])assert.ok(page.includes('href="'+destination+'"'));
  assert.doesNotMatch(page,/mock|demo student|John Doe|→/i);
 });
@@ -31,7 +31,7 @@ test('Home uses a quiet campus background rather than a repeated photo tile',asy
  assert.doesNotMatch(page,/className=\{styles.campus\}/);
  assert.match(await read('app/style.css'),/url\('\/stjohn-church.png'\)/);
  assert.match(css,/\.overview\{display:grid/);
- assert.ok(page.indexOf('<PublicDates')<page.indexOf('home-tasks'));
+ assert.ok(page.indexOf('<SchoolDayPlan')<page.indexOf('home-tasks'));
 });
 
 test('school screenshot styling retains readable interface type and uses existing school fleur',async()=>{
@@ -45,4 +45,4 @@ test('Home actions use high contrast neutral rows without a decorative blue bloc
 
 test('Saints Community is a dedicated hub with real event, involvement and store destinations',async()=>{const page=await read('app/page.tsx'),css=await read('app/home.module.css');assert.ok(page.indexOf('id="community-heading"')>page.indexOf('home-tasks-heading'));assert.match(page,/href="\/parent-actions\?category=Get%20involved"/);assert.equal((page.match(/href="\/store"/g)||[]).length,1);assert.match(page,/href="\/pickup"/);assert.match(css,/\.communityLinks a\{[^}]*min-height:91px/);assert.match(css,/\.communityLinks\{grid-template-columns:1fr\}/);});
 
- test('Home follows the requested six-section order on every viewport',async()=>{const page=await read('app/page.tsx');const sections=['<DailyScriptureCard','<FamilyNotices','<PublicDates','id="home-tasks-heading"','id="community-heading"','aria-label="Parent actions"'];const positions=sections.map(section=>page.indexOf(section));assert.ok(positions.every((position,index)=>position>=0&&(index===0||position>positions[index-1])));assert.match(page,/<DailyScriptureCard[^>]+compact/);});
+ test('Home follows the requested six-section order on every viewport',async()=>{const page=await read('app/page.tsx');const sections=['<DailyScriptureCard','<FamilyNotices','<SchoolDayPlan','id="home-tasks-heading"','id="community-heading"','aria-label="Parent actions"'];const positions=sections.map(section=>page.indexOf(section));assert.ok(positions.every((position,index)=>position>=0&&(index===0||position>positions[index-1])));assert.match(page,/<DailyScriptureCard[^>]+compact/);});
