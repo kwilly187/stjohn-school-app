@@ -7,6 +7,10 @@ import HomeSearch from './search/home-search';
 import FamilyNotices from './family-notices';
 import {Suspense} from 'react';
 import SchoolDayPlan from './school-day-plan';
+import {getLocalLinkedFamily,getPreviewDemoFamily,hasPreviewDemoConfig} from './linked-family.server.mjs';
+import {headers} from 'next/headers';
+import SchoolDayActivities from './school-day-activities';
+import {getPublicDayActivities} from './school-day-activities-data.mjs';
 import {getSchoolDayPlan,schoolHomeCalendar} from './school-day-plan-data.mjs';
 import {getSchoolHeadsUp} from './school-heads-up-data.mjs';
 import {Icon} from './components';
@@ -19,6 +23,7 @@ export default async function Today(){
  const now=new Date();
  const readCalendar=schoolHomeCalendar(now);
  const headsUp=getSchoolHeadsUp(now,readCalendar);
+ const linkedStudents=hasPreviewDemoConfig()?getPreviewDemoFamily((await headers()).get('host')):getLocalLinkedFamily();
  const dayPlan=getSchoolDayPlan(now,readCalendar,headsUp);
  return <div className={styles.home}>
  <header className={styles.heading}><div><h1>St. John Parent Portal</h1><div className={styles.schoolDay}><SchoolDayDate initialDate={new Date().toISOString()}/><Suspense fallback={null}><SchoolWeather/></Suspense></div><Suspense fallback={null}><SchoolHeadsUp result={headsUp}/></Suspense></div></header>
@@ -26,7 +31,7 @@ export default async function Today(){
  <DailyScriptureCard initialDate={new Date().toISOString()} compact/>
  <FamilyNotices/>
  <div className={styles.overview}>
-  <div className={styles.dates}><Suspense fallback={<p className={styles.loading} role="status">Loading today and tomorrow…</p>}><SchoolDayPlan result={dayPlan}/></Suspense></div>
+  <div className={styles.dates}><Suspense fallback={<p className={styles.loading} role="status">Loading today and tomorrow…</p>}><SchoolDayPlan result={dayPlan} linkedStudents={linkedStudents}>{linkedStudents.length>0&&<Suspense fallback={null}><SchoolDayActivities result={getPublicDayActivities(now,readCalendar)} linkedStudents={linkedStudents}/></Suspense>}</SchoolDayPlan></Suspense></div>
 
  </div>
  <section className={styles.tasks} aria-labelledby="home-tasks-heading">

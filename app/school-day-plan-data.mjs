@@ -7,9 +7,10 @@ const localTime = new Intl.DateTimeFormat('en-US',{timeZone:SCHOOL_TIME_ZONE,hou
 export function schoolHomeCalendar(now,fetchCalendar=getCalendarFeed){
  const months=new Map();
  /** @type {typeof getCalendarFeed} */
- const read=({month})=>{
-  if(!months.has(month))months.set(month,fetchCalendar({source:'activities',month,now}));
-  return months.get(month);
+ const read=({source='activities',month})=>{
+  const key=source+':'+month;
+  if(!months.has(key))months.set(key,fetchCalendar({source,month,now}));
+  return months.get(key);
  };
  return read;
 }

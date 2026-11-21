@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Navigation from './navigation';
 import HeaderActions from './header-actions';
 import StudentMenu from './student-menu';
+import {getLocalLinkedFamily} from './linked-family.server.mjs';
 import './style.css';
 import {school,platform} from './school-data.mjs';
 const siteUrl='https://stjohn-school-app-git-codex-parent-fi-342ea3-seagull-management.vercel.app';
@@ -17,4 +18,4 @@ export const metadata = {
  manifest:'/manifest.webmanifest'
 };
 export const viewport={themeColor:'#2a3695',viewportFit:'cover' as const};
-export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body style={school.theme as React.CSSProperties}><a className="skip-link" href="#main">Skip to main content</a><div className="app"><aside className="school-identity" aria-label={school.name}><Link href="/" aria-label={`${school.appName} home`}><img src={school.logo} alt="" width="86" height="86"/><span>{school.brandName}</span><strong>{school.appName}</strong></Link><p>{school.location}</p></aside><div className="app-content"><header className="topbar"><Link className="brand" href="/" aria-label={`${school.appName} — Home`}><img src={school.logo} alt="" width="52" height="52"/><span>{school.brandName}<strong>{school.appName}</strong></span></Link><HeaderActions/><StudentMenu/></header><main id="main">{children}</main><footer className="footer">{school.name} <span>·</span> {school.location}<a className="powered-by" href={platform.url}>Powered by {platform.name}</a></footer></div><Navigation/></div></body></html>}
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body style={school.theme as React.CSSProperties}><a className="skip-link" href="#main">Skip to main content</a><div className="app"><aside className="school-identity" aria-label={school.name}><Link href="/" aria-label={`${school.appName} home`}><img src={school.logo} alt="" width="86" height="86"/><span>{school.brandName}</span><strong>{school.appName}</strong></Link><p>{school.location}</p></aside><div className="app-content"><header className="topbar"><Link className="brand" href="/" aria-label={`${school.appName} — Home`}><img src={school.logo} alt="" width="52" height="52"/><span>{school.brandName}<strong>{school.appName}</strong></span></Link><HeaderActions/><StudentMenu linkedStudents={getLocalLinkedFamily()}/></header><main id="main">{children}</main><footer className="footer">{school.name} <span>·</span> {school.location}<a className="powered-by" href={platform.url}>Powered by {platform.name}</a></footer></div><Navigation/></div></body></html>}
