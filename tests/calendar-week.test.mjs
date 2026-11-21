@@ -32,5 +32,10 @@ test('week feed spans crossed months, excludes cancellations/PRIVATE entries, an
 
 test('text uses only selected public details and flattens embedded newlines',()=>{
  const text=weekText({start:'2026-11-29',source:'athletics',events:[{title:'Basketball\nAway',dateText:'Dec 1, 2026 · 4:00 PM EST',location:'School gym',privateStudent:'not output'}]});
- assert.equal(text,'St. John | Nov 29 to Dec 5, 2026 (Athletics, Eastern time)\n\nDec 1, 2026 · 4:00 PM EST: Basketball Away | School gym');
+ assert.equal(text,'Would love for you to join.\n\nSt. John | Nov 29 to Dec 5, 2026 (Athletics, Eastern time)\n\nDec 1, 2026 · 4:00 PM EST: Basketball Away | School gym');
+});
+
+test('a text with multiple school events opens with one invitation',()=>{
+ const text=weekText({start:'2026-11-29',source:'activities',events:[{title:'Concert',dateText:'Dec 1',location:null},{title:'Open house',dateText:'Dec 3',location:'School gym'}]});
+ assert.deepEqual(text.split('\n\n'),['Would love for you to join.','St. John | Nov 29 to Dec 5, 2026 (School & activities, Eastern time)','Dec 1: Concert','Dec 3: Open house | School gym']);
 });

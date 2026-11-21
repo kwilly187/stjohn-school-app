@@ -33,5 +33,5 @@ const line=value=>String(value??'').replace(/[\r\n\u2028\u2029\u0000-\u001f\u007
 /** @param {{start:string,source:string,events:{title:string,dateText:string,location?:string|null}[]}} options */
 export function weekText({start,source,events}){
  const calendar=source==='athletics'?'Athletics':'School & activities';
- return [`St. John | ${weekLabel(start,true)} (${calendar}, Eastern time)`,...events.map(event=>`${line(event.dateText)}: ${line(event.title)}${event.location?` | ${line(event.location)}`:''}`)].join('\n\n');
+ return ['Would love for you to join.',`St. John | ${weekLabel(start,true)} (${calendar}, Eastern time)`,...events.map(event=>`${line(event.dateText)}: ${line(event.title)}${event.location?` | ${line(event.location)}`:''}`)].join('\n\n');
 }
