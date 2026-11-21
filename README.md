@@ -19,4 +19,4 @@ School identity, colors, contacts, calendars and resource URLs are centralized i
 
 ## School handoff
 
-See [handoff checklist](docs/school-handoff.md) for completed public features, school decisions and release acceptance checks.
+See [handoff checklist](docs/school-handoff.md) for school ownership, source recovery and release acceptance checks.
