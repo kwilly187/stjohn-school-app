@@ -45,3 +45,21 @@
 .deviceActions{grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
 .deviceActions button:not([type=submit]){background:white;border:1px solid #ccd7e8;border-radius:7px;color:var(--blue);padding:8px 12px}
 @media(max-width:400px){.devicePersonalization form{grid-template-columns:1fr}}
+
+/* Shared-preview demo: put student context before external account links. */
+.linkedOverview{margin:0 0 16px;border:1px solid var(--line);border-top:3px solid var(--blue);border-radius:12px;background:white;padding:16px 20px;color:var(--ink)}
+.linkedHeading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-bottom:11px}
+.linkedHeading p{color:var(--muted);font-size:14px;margin:0 0 3px;line-height:1.4}
+.linkedHeading h2{margin:0;font-size:26px;color:var(--navy)}
+.linkedHeading>span{color:var(--blue);background:#f1f4fb;border-radius:6px;padding:4px 9px;font-weight:600;font-size:14px}
+.linkedSection{border-top:1px solid var(--line);padding:11px 0 8px}
+.linkedSection h3{font-size:16px;margin:0 0 5px}
+.linkedSection p,.linkedSchedule span,.linkedRecords p{color:var(--muted);font-size:14px;margin:0;line-height:1.5}
+.linkedActivityList,.linkedSchedule{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;margin:0 0 5px;padding:0}
+.linkedActivityList li{font-size:14px;background:#f4f7fb;border-radius:5px;padding:3px 8px}
+.linkedSchedule{flex-direction:column}
+.linkedSchedule li{display:flex;flex-direction:column;align-items:flex-start}
+.linkedSchedule a,.linkedPickup,.linkedRecords a{display:inline-flex;align-items:center;min-height:44px;font-weight:600}
+.linkedRecords{padding:10px 0 18px}
+.linkedRecords h2{font-size:17px;margin:0 0 4px}
+@media(max-width:680px){.linkedOverview{padding:13px 15px}.linkedHeading h2{font-size:24px}}

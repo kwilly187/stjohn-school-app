@@ -1,4 +1,9 @@
 import Link from 'next/link';
+import {headers} from 'next/headers';
+import {getPreviewDemoFamily,hasPreviewDemoConfig} from '../linked-family.server.mjs';
+import {schoolHomeCalendar} from '../school-day-plan-data.mjs';
+import {getPublicDayActivities} from '../school-day-activities-data.mjs';
+import LinkedDemoOverview from './linked-demo-overview';
 import Announcements from '../announcements';
 import {Suspense} from 'react';
 import {school} from '../school-data.mjs';
@@ -10,6 +15,16 @@ import StudentRecords from './student-records';
 import {normalizeStudentSections} from './student-records-policy.mjs';
 export const metadata={title:'My Students'};
 export default async function Students({searchParams}:{searchParams:Promise<{student?:string|string[],mode?:string|string[]}>}){
+ const demo=hasPreviewDemoConfig()?getPreviewDemoFamily((await headers()).get('host')):[];
+ if(demo.length){
+  const now=new Date();
+  const publicActivities=getPublicDayActivities(now,schoolHomeCalendar(now));
+  return <div className={styles.page}>
+   <header className={styles.heading}><h1>My Students</h1></header>
+   {demo.map(student=><LinkedDemoOverview key={student.id} student={student} publicActivities={publicActivities}/>)}
+   <aside className={styles.linkedRecords} aria-labelledby="linked-records-title"><h2 id="linked-records-title">School records</h2><p>Grades and assignments stay in Alma. School sign-in is required.</p><a href={school.portal}>Open Alma</a></aside>
+  </div>;
+ }
  const {student}=await searchParams;
  const {selection,selected,valid}=resolveDashboardSelection(profiles,student);
  // No private source is connected. Only an authorized server adapter may replace this empty input.
