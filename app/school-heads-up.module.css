@@ -1,0 +1,3 @@
+.headsUp{margin-top:4px;font-size:14px;line-height:1.45;overflow-wrap:anywhere}
+.headsUp a{display:inline-flex;align-items:baseline;flex-wrap:wrap;column-gap:.25em;padding:.4em 0;color:var(--navy,#142545);text-underline-offset:3px;text-decoration-color:var(--gold,#d6ab39)}
+.headsUp a:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:2px}

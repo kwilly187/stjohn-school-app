@@ -3,6 +3,7 @@
 import ICAL from 'ical.js';
 import {calendarSources, school} from '../school-data.mjs';
 import {formatEventDate} from '../public-calendar.mjs';
+import {weekWindow} from './calendar-week.mjs';
 
 const MAX_BYTES=2_000_000, MAX_STEPS=100_000, CACHE_MS=300_000;
 const caches=new Map();
@@ -48,12 +49,17 @@ function validate(source,month) {
   const end=new Date(`${start}T00:00:00Z`);end.setUTCMonth(end.getUTCMonth()+1);
   return {start,end:end.toISOString().slice(0,10)};
 }
-/** @param {{source?:string,month:string,view?:string,now?:Date}} options */
-export function calendarFeedRange({source='activities',month,view='MONTH',now=new Date()}) {
+/** @param {{source?:string,month:string,view?:string,weekStart?:string,now?:Date}} options */
+export function calendarFeedRange({source='activities',month,view='MONTH',weekStart,now=new Date()}) {
   const window=validate(source,month);
   if(!['MONTH','AGENDA'].includes(view))throw new Error('Invalid calendar view');
   if(!Number.isFinite(now.getTime()))throw new Error('Invalid calendar reference time');
-  // Agenda and Month are two presentations of the same selected calendar month.
+  if(weekStart!==undefined){
+  const week=weekWindow(weekStart);
+  if(week.end<=window.start||week.start>=window.end)throw new Error('Week outside selected month');
+  return week;
+ }
+ // Agenda and Month are two presentations of the same selected calendar month.
   return window;
 }
 export function formatCalendarStart(event) {
@@ -64,10 +70,10 @@ const isPublic=component=>!['PRIVATE','CONFIDENTIAL'].includes(String(component.
 
 /** Read public title/date/location only. Throws on incomplete/unsupported parsing, never returns a partial success.
  * @param {string} text
- * @param {{source?:string,month:string,view?:string,now?:Date}} options
+ * @param {{source?:string,month:string,view?:string,weekStart?:string,now?:Date}} options
  */
-export function parseCalendarFeed(text,{source='activities',month,view='MONTH',now=new Date()}) {
-  const window=calendarFeedRange({source,month,view,now});
+export function parseCalendarFeed(text,{source='activities',month,view='MONTH',weekStart,now=new Date()}) {
+  const window=calendarFeedRange({source,month,view,weekStart,now});
   if (Buffer.byteLength(text,'utf8')>MAX_BYTES) throw new Error('Calendar exceeds size limit');
   if (!/^BEGIN:VCALENDAR\r?\n/.test(text)||!/END:VCALENDAR\s*$/.test(text)) throw new Error('Invalid calendar response');
   const started=Date.now();let steps=0;
@@ -151,16 +157,16 @@ async function retrieve(source,fetchImpl) {
   return {text:Buffer.concat(chunks).toString('utf8'),retrievedAt:new Date().toISOString()};
 }
 
-/** @param {{source?:string,month:string,view?:string,now?:Date,fetchImpl?:typeof fetch}} options */
-export async function getCalendarFeed({source='activities',month,view='MONTH',now=new Date(),fetchImpl=fetch}) {
+/** @param {{source?:string,month:string,view?:string,weekStart?:string,now?:Date,fetchImpl?:typeof fetch}} options */
+export async function getCalendarFeed({source='activities',month,view='MONTH',weekStart,now=new Date(),fetchImpl=fetch}) {
   try {
-    const range=calendarFeedRange({source,month,view,now});
+    const range=calendarFeedRange({source,month,view,weekStart,now});
     if(!Number.isFinite(now.getTime()))throw new Error('Invalid calendar reference time');
     const current=localDay(now).slice(0,7),index=value=>Number(value.slice(0,4))*12+Number(value.slice(5,7));
     if(Math.abs(index(month)-index(current))>12)throw new Error('Calendar month outside supported range');
     let data=caches.get(source);
     if(fetchImpl!==fetch||!data||Date.now()-Date.parse(data.retrievedAt)>=CACHE_MS)data=await retrieve(source,fetchImpl);
-    const events=parseCalendarFeed(data.text,{source,month,view,now});
+    const events=parseCalendarFeed(data.text,{source,month,view,weekStart,now});
     if(fetchImpl===fetch)caches.set(source,data);
     return {status:'ok',source,month,view,rangeStart:range.start,rangeEnd:range.end,retrievedAt:data.retrievedAt,sourceUrl:calendarFeedSources[source],events};
   } catch(error) {

@@ -1,4 +1,5 @@
 import SchoolDayDate from './school-day-date';
+import SchoolHeadsUp from './school-heads-up';
 import SchoolWeather from './school-weather';
 import CommunitySurprise from './community-surprise';
 import Link from 'next/link';
@@ -10,9 +11,11 @@ import {profiles} from './students/profile-config.mjs';
 import {Icon} from './components';
 import styles from './home.module.css';
 import DailyScriptureCard from './daily-scripture-card';
+import PinnedShortcuts from './pinned-shortcuts';
+import {school} from './school-data.mjs';
 export const dynamic='force-dynamic';
 export default async function Today(){return <div className={styles.home}>
- <header className={styles.heading}><div><h1>St. John Parent Portal</h1><div className={styles.schoolDay}><SchoolDayDate initialDate={new Date().toISOString()}/><Suspense fallback={null}><SchoolWeather/></Suspense></div></div></header>
+ <header className={styles.heading}><div><h1>St. John Parent Portal</h1><div className={styles.schoolDay}><SchoolDayDate initialDate={new Date().toISOString()}/><Suspense fallback={null}><SchoolWeather/></Suspense></div><Suspense fallback={null}><SchoolHeadsUp/></Suspense></div></header>
  <HomeSearch/>
  <DailyScriptureCard initialDate={new Date().toISOString()} compact/>
  <FamilyNotices/>
@@ -20,13 +23,15 @@ export default async function Today(){return <div className={styles.home}>
   <div className={styles.dates}><Suspense fallback={<p className={styles.loading} role="status">Loading school dates…</p>}><PublicDates grades={profiles.map(profile=>profile.grade)} limit={2} title="Upcoming at St. John" featured/></Suspense></div>
 
  </div>
- <section className={styles.tasks} aria-labelledby="home-tasks-heading"><div className={styles.sectionHeading}><h2 id="home-tasks-heading">Everyday essentials</h2></div>
- <nav className={styles.taskGrid} aria-label="Everyday school tasks">
- <Link href="/lunch"><span className={styles.taskIcon}><Icon name="lunch"/></span><span><strong>Lunch</strong><span>Nutrislice & PaySchools</span></span></Link>
- <Link href="/athletics"><span className={styles.taskIcon}><Icon name="shirt"/></span><span><strong>Athletics</strong><span>Saints teams & eligibility forms</span></span></Link>
- <Link href="/pickup"><span className={styles.taskIcon}><Icon name="clock"/></span><span><strong>Pickup</strong><span>Dismissal & transportation help</span></span></Link>
- <Link href="/resources"><span className={styles.taskIcon}><Icon name="resources"/></span><span><strong>Resources</strong><span>Tuition, aftercare & school forms</span></span></Link>
- </nav></section>
+ <section className={styles.tasks} aria-labelledby="home-tasks-heading">
+ <PinnedShortcuts heading={<h2 id="home-tasks-heading">Everyday essentials</h2>} items={[
+  {id:'lunch',label:'Lunch',card:<Link href="/lunch"><span className={styles.taskIcon}><Icon name="lunch"/></span><span><strong>Lunch</strong><span>Nutrislice & PaySchools</span></span></Link>},
+  {id:'athletics',label:'Athletics',card:<Link href="/athletics"><span className={styles.taskIcon}><Icon name="shirt"/></span><span><strong>Athletics</strong><span>Saints teams & eligibility forms</span></span></Link>},
+  {id:'pickup',label:'Pickup',card:<Link href="/pickup"><span className={styles.taskIcon}><Icon name="clock"/></span><span><strong>Pickup</strong><span>Dismissal & transportation help</span></span></Link>},
+  {id:'resources',label:'Resources',card:<Link href="/resources"><span className={styles.taskIcon}><Icon name="resources"/></span><span><strong>Resources</strong><span>Tuition, aftercare & school forms</span></span></Link>},
+  {id:'alma',label:'Alma',optional:true,card:<a href={school.portal}><span className={styles.taskIcon}><Icon name="book"/></span><span><strong>Alma</strong><span>School portal · Sign-in required</span></span></a>},
+ ]}/>
+ </section>
  <section className={styles.community} aria-labelledby="community-heading">
   <div className={styles.communityBanner}>
    <img className={styles.communityPhoto} src="/campus/courtyard.webp" alt="" width="438" height="288" loading="lazy"/>
