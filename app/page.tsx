@@ -1,3 +1,5 @@
+import SchoolDayDate from './school-day-date';
+import SchoolWeather from './school-weather';
 import CommunitySurprise from './community-surprise';
 import Link from 'next/link';
 import HomeSearch from './search/home-search';
@@ -10,7 +12,7 @@ import styles from './home.module.css';
 import DailyScriptureCard from './daily-scripture-card';
 export const dynamic='force-dynamic';
 export default async function Today(){return <div className={styles.home}>
- <header className={styles.heading}><div><h1>St. John Parent Portal</h1><p>Your school day, in one place.</p></div></header>
+ <header className={styles.heading}><div><h1>St. John Parent Portal</h1><div className={styles.schoolDay}><SchoolDayDate initialDate={new Date().toISOString()}/><Suspense fallback={null}><SchoolWeather/></Suspense></div></div></header>
  <HomeSearch/>
  <DailyScriptureCard initialDate={new Date().toISOString()} compact/>
  <FamilyNotices/>

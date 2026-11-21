@@ -1,0 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {parseObservation,schoolDate,loadOcalaWeather,OBSERVATION_URL} from '../app/school-weather-data.mjs';
+const now=Date.parse('2026-11-21T15:00:00Z');
+const observation=(overrides={})=>({properties:{timestamp:'2026-11-21T14:40:00Z',temperature:{value:20,unitCode:'wmoUnit:degC'},textDescription:'Partly Cloudy',...overrides}});
+test('Ocala observation converts Celsius to Fahrenheit',()=>assert.deepEqual(parseObservation(observation(),now),{temperature:68,condition:'Partly Cloudy',observedAt:'2026-11-21T14:40:00.000Z'}));
+test('school date uses Eastern across UTC midnight and DST',()=>{assert.equal(schoolDate('2026-11-22T01:00:00Z'),'Sat, Nov 21');assert.equal(schoolDate('2026-07-02T03:30:00Z'),'Wed, Jul 1');assert.equal(schoolDate('2026-03-08T07:00:00Z'),'Sun, Mar 8');});
+test('stale future missing malformed observations hide weather',()=>{for(const p of [{timestamp:'2026-11-21T10:00:00Z'},{timestamp:'2026-11-22T14:00:00Z'},{timestamp:null},{temperature:{value:null,unitCode:'wmoUnit:degC'}},{temperature:{value:'20',unitCode:'wmoUnit:degC'}},{temperature:{value:NaN,unitCode:'wmoUnit:degC'}},{temperature:{value:20,unitCode:'unknown'}},{textDescription:''}])assert.equal(parseObservation(observation(p),now),null);assert.equal(parseObservation(null,now),null);});
+test('fetch fixed school-area station without user or location parameters',async()=>{let options;const result=await loadOcalaWeather(async(url,o)=>{assert.equal(url,OBSERVATION_URL);options=o;return {ok:true,json:async()=>observation()};},now);assert.equal(result.temperature,68);assert.equal(options.next.revalidate,600);assert.equal(options.signal.aborted,false);assert.match(options.headers['User-Agent'],/SaintsParentPortal/);});
+test('HTTP and transport failures never reject page',async()=>{assert.equal(await loadOcalaWeather(async()=>({ok:false})),null);assert.equal(await loadOcalaWeather(async()=>{throw Error('offline');}),null);assert.equal(await loadOcalaWeather(async()=>({ok:true,json:async()=>{throw Error('bad json');}})),null);});
+test('no geolocation, cookies or browser storage added',()=>{for(const file of ['school-weather-data.mjs','school-weather.tsx','school-day-date.tsx'])assert.doesNotMatch(readFileSync(new URL('../app/'+file,import.meta.url),'utf8'),/navigator\.geolocation|localStorage|document\.cookie/);});

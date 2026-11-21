@@ -94,3 +94,11 @@
 
 /* Allow the community title to reflow rather than push past its crest. */
 .communityBanner .communityIntro>div{min-width:0;overflow-wrap:anywhere}
+
+
+/* Home-only date and fixed Ocala weather; no extra dashboard card. */
+.schoolDay{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 16px;color:var(--muted);font-size:14px;line-height:1.5}
+.schoolDay time{white-space:nowrap}
+.schoolDay .weather{font-size:14px;color:inherit;text-decoration:none;overflow-wrap:anywhere}
+.schoolDay .weather:hover{text-decoration:underline}
+.weatherDetail{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
