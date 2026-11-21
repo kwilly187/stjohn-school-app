@@ -94,3 +94,31 @@ test('Agenda retains earlier current-month events and excludes following-month e
  assert.notEqual(nov[0].id,dec[0].id);
  for(const view of ['MONTH','AGENDA'])assert.deepEqual(calendarFeedRange({...opts,month:'2028-02',view}),{start:'2028-02-01',end:'2028-03-01'});
 });
+
+test('a source outage warns once with source and last successful retrieval, without exposing raw errors',async t=>{
+ let clock=Date.now(), mode='healthy';
+ const warnings=[];
+ t.mock.method(Date,'now',()=>clock);
+ t.mock.method(console,'warn',message=>warnings.push(JSON.parse(message)));
+ t.mock.method(globalThis,'fetch',async input=>{
+  if(input===calendarFeedSources.athletics&&mode==='failed')throw new Error('hidden raw provider payload');
+  if(input===calendarFeedSources.athletics&&mode==='parse')return new Response('hidden raw provider body');
+  return new Response(cal([base()]));
+ });
+ const athletics={...opts,source:'athletics'};
+ const baseline=await getCalendarFeed(athletics);
+ assert.equal(baseline.status,'ok');
+ clock=Date.parse(baseline.retrievedAt)+300_001;mode='failed';
+ assert.equal((await getCalendarFeed(athletics)).status,'unavailable');
+ assert.equal((await getCalendarFeed(athletics)).status,'unavailable');
+ assert.equal((await getCalendarFeed(opts)).status,'ok');
+ assert.equal((await getCalendarFeed({...opts,source:'garbage'})).status,'unavailable');
+ assert.deepEqual(warnings,[{event:'school_calendar_unavailable',source:'athletics',phase:'fetch',lastSuccessfulFetch:baseline.retrievedAt}]);
+ mode='healthy';
+ const recovered=await getCalendarFeed(athletics);
+ assert.equal(recovered.status,'ok');
+ clock=Date.parse(recovered.retrievedAt)+300_001;mode='parse';
+ assert.equal((await getCalendarFeed(athletics)).status,'unavailable');
+ assert.equal(warnings.length,2);assert.equal(warnings[1].phase,'parse');
+ assert.doesNotMatch(JSON.stringify(warnings),/hidden raw|https:\/\//);
+});

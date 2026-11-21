@@ -7,6 +7,7 @@ import {weekWindow} from './calendar-week.mjs';
 
 const MAX_BYTES=2_000_000, MAX_STEPS=100_000, CACHE_MS=300_000;
 const caches=new Map();
+const lastWarnings=new Map();
 // Only these five deep links were checked in the public source event popups.
 const verifiedAthleticsLinks={
   "1v6ipvfhkntdgbovsm1h3kiedg@google.com": {
@@ -159,17 +160,31 @@ async function retrieve(source,fetchImpl) {
 
 /** @param {{source?:string,month:string,view?:string,weekStart?:string,now?:Date,fetchImpl?:typeof fetch}} options */
 export async function getCalendarFeed({source='activities',month,view='MONTH',weekStart,now=new Date(),fetchImpl=fetch}) {
+  let phase='input';
   try {
     const range=calendarFeedRange({source,month,view,weekStart,now});
     if(!Number.isFinite(now.getTime()))throw new Error('Invalid calendar reference time');
     const current=localDay(now).slice(0,7),index=value=>Number(value.slice(0,4))*12+Number(value.slice(5,7));
     if(Math.abs(index(month)-index(current))>12)throw new Error('Calendar month outside supported range');
     let data=caches.get(source);
+    phase='fetch';
     if(fetchImpl!==fetch||!data||Date.now()-Date.parse(data.retrievedAt)>=CACHE_MS)data=await retrieve(source,fetchImpl);
+    phase='parse';
     const events=parseCalendarFeed(data.text,{source,month,view,weekStart,now});
-    if(fetchImpl===fetch)caches.set(source,data);
+    if(fetchImpl===fetch){
+      if(data!==caches.get(source))lastWarnings.delete(source);
+      caches.set(source,data);
+    }
     return {status:'ok',source,month,view,rangeStart:range.start,rangeEnd:range.end,retrievedAt:data.retrievedAt,sourceUrl:calendarFeedSources[source],events};
   } catch(error) {
+    if(phase!=='input'&&fetchImpl===fetch){
+      const at=Date.now(), prior=lastWarnings.get(source);
+      if(prior===undefined||at-prior>=CACHE_MS){
+        lastWarnings.set(source,at);
+        // No upstream errors, URLs or event content in operator logs.
+        console.warn(JSON.stringify({event:'school_calendar_unavailable',source,phase,lastSuccessfulFetch:caches.get(source)?.retrievedAt??null}));
+      }
+    }
     return {status:'unavailable',source,month,view,rangeStart:null,rangeEnd:null,retrievedAt:null,sourceUrl:Object.hasOwn(calendarFeedSources,source)?calendarFeedSources[source]:'https://stjohnocala.org/calendar/',events:[],error:error instanceof Error?error.message:'Calendar unavailable'};
   }
 }

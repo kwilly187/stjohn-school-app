@@ -1,0 +1,16 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {createRequire} from 'node:module';
+import ts from 'typescript';
+import React from 'react';
+import {renderToStaticMarkup} from 'react-dom/server';
+const url=new URL('../app/student-announcements.tsx',import.meta.url);
+const req=createRequire(url);
+const compiled=ts.transpileModule(readFileSync(url,'utf8'),{compilerOptions:{jsx:ts.JsxEmit.ReactJSX,module:ts.ModuleKind.CommonJS,esModuleInterop:true}}).outputText;
+const module={exports:{}};
+new Function('require','module','exports',compiled)(name=>name.endsWith('.module.css')?new Proxy({},{get:(_,key)=>String(key)}):req(name),module,module.exports);
+const render=(status,items=[])=>renderToStaticMarkup(React.createElement(module.exports.default,{status,items}));
+const notice={id:'synthetic-notice',title:'Synthetic school message',body:'Test fixture only.',publishedAt:'2026-11-21',category:'school'};
+test('disconnected announcements disclose Alma handoff without empty filters, search or stale content',()=>{const html=render('not-connected',[notice]);assert.match(html,/Student updates aren’t connected yet\. Check Alma/);assert.doesNotMatch(html,/Announcement category|Find an announcement|No announcements match|Synthetic school message|<button|type="search"/);});
+test('connected announcements preserve search and category controls, and report a real empty result',()=>{const html=render('connected',[notice]);assert.match(html,/Announcement category/);assert.match(html,/Find an announcement/);assert.match(html,/Synthetic school message/);assert.match(render('connected'),/No announcements match this filter/);});
