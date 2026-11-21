@@ -37,7 +37,7 @@ export default function StaffView({staff,departments}:{staff:Staff[];departments
   const goPage=(page:number)=>{focusPage.current=true;window.history.pushState(null,'',savedContactsHref({query,department,page},view));};
   const pager=(label:string)=>pagination.pages>1?<nav className={styles.pager} aria-label={label}><button type="button" disabled={pagination.page===1} onClick={()=>goPage(pagination.page-1)}>Previous</button><span>Page {pagination.page} of {pagination.pages}</span><button type="button" disabled={pagination.page===pagination.pages} onClick={()=>goPage(pagination.page+1)}>Next</button></nav>:null;
   const reset=()=>{update('','all');document.getElementById('staff-search')?.focus();};
-  const changeView=(next:string)=>{window.history.pushState(null,'',savedContactsHref({query,department},next));};
+  const changeView=(next:string)=>{if(next===view)return;if(next==='saved')setQuery('');window.history.pushState(null,'',savedContactsHref(next==='saved'?{}:{query,department},next));};
   const toggle=(person:Staff)=>{
     const removing=saved.includes(person.id);
     const next=toggleSavedContact(saved,person.id,knownIds);

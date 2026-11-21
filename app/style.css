@@ -415,3 +415,7 @@ main::before{content:'';position:absolute;z-index:-1;pointer-events:none;top:0;r
   .bottom-nav{position:relative;inset:auto;transform:none;width:100%;max-width:none;padding-bottom:calc(7px + env(safe-area-inset-bottom,0px))}
  }
 }
+
+/* Reading order follows the desktop header and the mobile two-row header. */
+.student-menu-symbol{display:inline-flex;width:16px;flex-shrink:0}.student-menu-trigger .student-menu-symbol svg{display:block;width:16px;height:16px}
+@media(min-width:1000px){.topbar{justify-content:space-between}.header-actions{margin-right:0}}

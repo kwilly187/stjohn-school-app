@@ -21,7 +21,7 @@ export default function LinkedDemoOverview({student,publicActivities}:OverviewPr
  return <article className={styles.linkedOverview} aria-labelledby={`student-overview-${student.id}`}>
   <header className={styles.linkedHeading}><div><p>Linked demo student</p><h2 id={`student-overview-${student.id}`}>{student.name}</h2></div><span>Grade {student.grade}</span></header>
   <div className={styles.linkedSection}><h3>Activities</h3><ul className={styles.linkedActivityList}>{activities.map(activity=><li key={activity.id}>{activity.label}</li>)}</ul><p>Public school schedules only. These selections don’t imply enrollment.</p></div>
-  <div className={styles.linkedSection}><h3>Next public dates</h3><Suspense fallback={<p role="status">Checking public calendars…</p>}><PublicDatesForDemo student={student} publicActivities={publicActivities}/></Suspense></div>
-  {student.grade>=6&&student.grade<=12&&<div className={styles.linkedSection}><h3>Grade-level pickup</h3><Link href="/pickup" className={styles.linkedPickup}>Front pickup map</Link><p>School guidance for grades 6–12.</p></div>}
+  <div className={styles.linkedSection}><h3>Today &amp; tomorrow</h3><Suspense fallback={<p role="status">Checking public calendars…</p>}><PublicDatesForDemo student={student} publicActivities={publicActivities}/></Suspense></div>
+  {student.grade>=6&&student.grade<=12&&<p className={styles.linkedUtility}><Link href="/pickup" className={styles.linkedPickup}>Front pickup map</Link><span>Grades 6–12</span></p>}
  </article>;
 }

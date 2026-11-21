@@ -63,3 +63,4 @@
 .linkedRecords{padding:10px 0 18px}
 .linkedRecords h2{font-size:17px;margin:0 0 4px}
 @media(max-width:680px){.linkedOverview{padding:13px 15px}.linkedHeading h2{font-size:24px}}
+.linkedUtility{display:flex;align-items:center;flex-wrap:wrap;gap:2px 10px;margin:0;color:var(--muted);font-size:14px}

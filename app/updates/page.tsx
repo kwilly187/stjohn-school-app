@@ -5,14 +5,12 @@ import styles from './help.module.css';
 export const metadata={title:'School contacts'};
 export default function Updates(){return <>
   <Heading eyebrow="ST. JOHN LUTHERAN SCHOOL" title="School contacts">Teacher directory, school office and department contacts.</Heading>
-  <div className={styles.savedAccess}><Link href="/staff?contacts=saved">Saved contacts </Link></div>
   <div className={styles.primary}>
-    <Link href="/staff" className={styles.teacher}><span className={styles.symbol}><Icon name="people"/></span><span><strong>Find & email a teacher</strong><span>Search the staff directory</span></span></Link>
+    <div className={styles.teacherGroup}><Link href="/staff" className={styles.teacher}><span className={styles.symbol}><Icon name="people"/></span><span><strong>Find & email a teacher</strong><span>Search the staff directory</span></span></Link><Link className={styles.savedQuick} href="/staff?contacts=saved">Saved contacts</Link></div>
     <a href={school.phone} className={styles.call}><span className={styles.symbol}><Icon name="home"/></span><span><strong>Call the school office</strong><span>{school.phoneDisplay}</span></span></a>
   </div>
   <section className={styles.tasks} aria-labelledby="help-tasks"><h2 id="help-tasks">What do you need help with?</h2><div className={styles.taskGrid}>
-    <Link href="#contact-heading" className={styles.task}><Icon name="clock"/><span><strong>Attendance questions</strong><span>Ask the school office</span></span></Link>
-    <Link href="#contact-heading" className={styles.task}><Icon name="file"/><span><strong>Forms & paperwork</strong><span>Ask the office for the right form</span></span></Link>
+    <Link href="#contact-heading" className={styles.task}><Icon name="file"/><span><strong>Attendance, forms & paperwork</strong><span>Ask the school office</span></span></Link>
     <Link href="/athletics" className={styles.task}><Icon name="shirt"/><span><strong>Athletics</strong><span>Teams, requirements & contact</span></span></Link>
     <Link href="/lunch#meal-help" className={styles.task}><Icon name="lunch"/><span><strong>Lunch & meal help</strong><span>Food-service contact & meal accounts</span></span></Link>
   </div></section>

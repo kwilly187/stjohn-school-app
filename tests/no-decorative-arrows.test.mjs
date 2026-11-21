@@ -16,7 +16,7 @@ test('calendar and resource layouts keep primary controls compact',()=>{
  const transfer=readFileSync(new URL('../app/calendar/transfer.module.css',import.meta.url),'utf8');
  assert.ok(transfer.includes('summary::-webkit-details-marker{display:none}'));
  const resources=readFileSync(new URL('../app/resources/page.tsx',import.meta.url),'utf8');
- assert.ok(resources.includes("['School accounts',...resourceGroups.filter"));
+ assert.ok(resources.includes("['School accounts','Pickup',...resourceGroups.filter"));
  assert.ok(resources.includes('styles.groups'));
  assert.ok(!resources.includes('name="heart"'));
 });

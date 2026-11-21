@@ -102,3 +102,6 @@
 .schoolDay .weather{font-size:14px;color:inherit;text-decoration:none;overflow-wrap:anywhere}
 .schoolDay .weather:hover{text-decoration:underline}
 .weatherDetail{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* On phones, expose more quick actions without shrinking their tap area. */
+@media(max-width:680px){ .taskGrid a{min-height:112px;padding:13px;gap:8px}.taskGrid .taskIcon{width:32px;height:32px}.taskGrid .taskIcon svg{width:20px;height:20px}.taskGrid a>span{gap:3px} }
