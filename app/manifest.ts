@@ -1,0 +1,2 @@
+import type {MetadataRoute} from 'next';
+export default function manifest():MetadataRoute.Manifest{return {name:'Saints Parent | St. John Lutheran School',short_name:'Saints Parent',description:'School dates, family resources and everyday parent essentials.',start_url:'/',scope:'/',display:'standalone',background_color:'#ffffff',theme_color:'#2a3695',icons:[{src:'/brand/saints-parent-192.png',sizes:'192x192',type:'image/png',purpose:'any'},{src:'/brand/saints-parent-512.png',sizes:'512x512',type:'image/png',purpose:'any'}]};}

@@ -1,0 +1,107 @@
+.home{padding:28px 0 10px}
+.heading{display:grid;grid-template-columns:minmax(0,1fr) 180px;align-items:center;gap:28px;padding:0 0 25px}
+.kicker{display:block;color:var(--blue);font-size:14px;letter-spacing:1.5px;font-weight:600;margin-bottom:12px}
+.heading h1{color:var(--blue);font-weight:400;font-size:36px;line-height:1.15;letter-spacing:-1.2px;margin:0 0 12px;max-width:430px}
+.heading p{margin:0;font-size:15px;color:var(--muted)}
+.campus{height:136px;border-radius:32px 5px 5px 5px;overflow:hidden;border-bottom:3px solid var(--gold)}.campus img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 55%}
+.search{display:flex;align-items:center;gap:13px;min-height:57px;border:1px solid #d9e1ed;border-radius:8px;background:white;padding:12px 18px;text-decoration:none;color:#53627a;margin-bottom:28px;box-shadow:0 3px 10px #12274b03}
+.search>span:first-of-type{flex:1;font-size:15px}.search>span:last-child{font-size:14px;color:var(--blue);background:#edf1f8;padding:5px 9px;border-radius:4px}.search:hover{border-color:#9daecb}
+.overview{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(225px,1fr);gap:25px;margin:0 0 32px}
+.dates{min-width:0;background:white;border:1px solid #e1e6ee;border-radius:8px;padding:24px}
+.dates section{margin:0;padding:0}.dates h2{font-size:23px!important;font-weight:500;line-height:1.25}.dates section>div:first-child{align-items:flex-start;gap:12px;flex-wrap:wrap}
+.dates section>div:first-child>a{font-size:14px;min-height:32px;white-space:nowrap}
+.dates article{padding:21px 0!important;grid-template-columns:54px minmax(0,1fr)!important;gap:15px!important;align-items:center}
+.dates article h3{font-size:20px!important;line-height:1.4!important;font-weight:500;letter-spacing:0}.dates article h3 a{text-decoration:none}.dates article h3 a:hover{text-decoration:underline}
+.dates article>div:first-child>span{width:52px;height:63px;margin:0;background:#f5f7fc;border:0;border-top:3px solid var(--blue);border-radius:4px;box-shadow:none}.dates article>div:first-child>span strong{font-size:25px}.dates article>div:first-child>span span{font-size:14px}.dates p{font-size:14px;line-height:1.6}.loading{min-height:180px;margin:0}
+.actions{background:#fff;border:1px solid #e1e6ee;border-radius:8px;padding:23px;color:#243a5a;display:flex;flex-direction:column;align-items:stretch;align-self:start}
+.actions h2{font-size:22px;font-weight:500;line-height:1.3;color:#243a5a;margin:0 0 12px}
+.actions a{display:flex;align-items:center;gap:13px;min-height:58px;text-decoration:none;color:#2a3695;font-size:16px;font-weight:500;line-height:1.45;border-top:1px solid #e6eaf0;padding:15px 0}.actions a svg{width:22px;height:22px;flex-shrink:0;color:#2a3695}.actions a span{display:block}.actions a:hover,.actions a:focus-visible{color:#20286f;background:#f3f5fa}.actions .actionPrimary{color:#2a3695;background:transparent;margin:0;border-radius:0}.actions .actionPrimary:hover,.actions .actionPrimary:focus-visible{color:#20286f;background:#f3f5fa}
+.faq{display:inline-flex;min-height:44px}
+.tasks{margin:0 0 32px}.sectionHeading{margin-bottom:17px}.sectionHeading .kicker{margin-bottom:7px;font-size:14px}.sectionHeading h2{font-size:25px;font-weight:400;letter-spacing:-.4px;margin:0;color:var(--navy)}
+.taskGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.taskGrid a{display:flex;flex-direction:column;gap:18px;border:1px solid #dfe5ef;border-radius:7px;background:white;padding:20px 17px;text-decoration:none;color:var(--navy);min-width:0}.taskGrid a:hover{border-color:#99aace;background:#f8faff}.taskGrid a>span{display:flex;flex-direction:column;gap:6px}.taskIcon{width:34px;height:34px;color:var(--blue);display:flex!important;justify-content:center}.taskIcon svg{width:27px;height:27px}.taskGrid strong{font-size:16px;font-weight:600;line-height:1.3}.taskGrid a>span>span{font-size:14px;line-height:1.5;color:var(--muted)}
+.contact{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:25px 0 12px}.contact>div{display:flex;align-items:center;gap:13px}.contact svg{color:var(--blue);flex-shrink:0;width:25px;height:25px}.contact h2{font-size:18px;font-weight:500;margin:0 0 5px}.contact p{font-size:14px;margin:0}.contact>a{display:inline-flex;align-items:center;min-height:44px;font-size:14px;font-weight:500;color:var(--blue);text-decoration:none}.contact>a:hover{text-decoration:underline}
+@media(max-width:680px){.home{padding-top:23px}.heading{grid-template-columns:minmax(0,1fr) 110px;gap:18px;padding-bottom:23px}.heading h1{font-size:27px;letter-spacing:-.8px;margin-bottom:9px}.kicker{font-size:14px;letter-spacing:1px;line-height:1.5;margin-bottom:10px}.heading p{font-size:14px;line-height:1.5}.campus{height:133px;border-radius:28px 4px 4px 4px}.search{padding:11px 14px;min-height:53px;margin-bottom:23px}.search>span:first-of-type{font-size:14px}.overview{grid-template-columns:1fr;gap:17px;margin-bottom:28px}.dates{padding:21px 18px}.dates h2{font-size:21px!important}.dates article h3{font-size:19px!important}.dates article{padding:19px 0!important;gap:13px!important}.actions{padding:22px}.actions h2{font-size:22px;margin:0 0 12px}.actions a{min-height:58px}.tasks{margin-bottom:28px}.taskGrid{grid-template-columns:1fr 1fr;gap:11px}.taskGrid a{padding:18px 16px;gap:14px}.taskGrid strong{font-size:16px}.taskGrid a>span>span{font-size:14px}.sectionHeading h2{font-size:23px}.contact{flex-wrap:wrap;gap:8px}.contact>a{margin-left:38px}}
+@media(max-width:359px){.heading{grid-template-columns:1fr 90px;gap:13px}.heading h1{font-size:25px}.campus{height:125px}.taskGrid a{padding:16px 13px}.actions{padding:21px}.dates{padding:19px 15px}}
+@media(prefers-reduced-motion:reduce){.taskGrid a{transition:none}}
+
+/* A compact school-day header and a prominent, purposeful community hub. */
+.heading{display:block;padding-bottom:18px}
+.heading h1{max-width:none;font-size:30px;font-weight:600;letter-spacing:-.8px;margin-bottom:7px}
+.heading p{font-size:16px}
+.search{margin-bottom:22px;border-radius:12px;min-height:52px}
+.community{background:#fff;border:1px solid #e0e5ed;border-radius:16px;overflow:hidden;margin-bottom:24px}
+.communityIntro{display:grid;grid-template-columns:minmax(0,1fr) 32%;align-items:center;min-height:160px}
+.communityIntro>div:first-child{padding:25px 28px}
+.communityIntro h2{font-size:30px;line-height:1.2;letter-spacing:-.7px;color:#24345b;margin:0 0 10px;font-weight:600}
+.communityIntro p{font-size:16px;line-height:1.55;color:#566277;margin:0;max-width:320px}
+.community .campus{height:100%;min-height:160px;border:0;border-radius:0}
+.community .campus img{height:100%;object-position:center 55%}
+.communityLinks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid #e0e5ed}
+.communityLinks a{display:flex;align-items:center;gap:12px;min-height:91px;padding:17px 22px;color:#2a3695;text-decoration:none}
+.communityLinks a+a{border-left:1px solid #e0e5ed}
+.communityLinks a>svg{width:24px;height:24px;flex-shrink:0}
+.communityLinks a>span{display:grid;gap:5px}
+.communityLinks strong{font-size:16px;line-height:1.35;font-weight:600}
+.communityLinks a>span>span{font-size:14px;line-height:1.45;color:#596579}
+.communityLinks a:hover,.communityLinks a:focus-visible{background:#f3f5fb;color:#20286f}
+.overview{gap:20px;margin-bottom:26px}
+.dates,.actions{border-radius:12px}
+.sectionHeading h2{font-size:22px;font-weight:600;letter-spacing:-.4px}
+.taskGrid a{border-radius:12px;gap:13px}
+@media(max-width:680px){
+ .home{padding-top:18px}.heading h1{font-size:26px;line-height:1.2}.heading p{font-size:15px}.heading{padding-bottom:16px}
+ .search{margin-bottom:18px}.search>span:first-of-type{font-size:16px}
+ .community{margin-bottom:20px;border-radius:14px}.communityIntro{grid-template-columns:minmax(0,1fr) 110px;min-height:148px}
+ .communityIntro>div:first-child{padding:20px 16px}.communityIntro h2{font-size:25px;letter-spacing:-.6px;margin-bottom:8px}.communityIntro p{font-size:14px;line-height:1.5}
+ .community .campus{min-height:148px}.communityLinks{grid-template-columns:1fr}.communityLinks a{min-height:70px;padding:14px 18px;gap:15px}.communityLinks a+a{border-left:0;border-top:1px solid #edf0f4}
+ .communityLinks a>span{gap:3px}.communityLinks strong{font-size:16px}
+ .overview{gap:16px}.dates,.actions{padding:20px 18px}
+}
+
+/* Parent-requested reading order stays identical at every screen size. */
+.overview{grid-template-columns:1fr;margin-bottom:26px}
+.actions{margin-bottom:20px;display:grid;grid-template-columns:1fr 1fr;column-gap:26px}
+.actions h2{grid-column:1/-1}
+@media(max-width:680px){.actions{grid-template-columns:1fr}.overview{margin-bottom:24px}.communityIntro{min-height:130px}.community .campus{min-height:130px}}
+
+/* Campus identity lives in the quiet application background, not a repeated photo tile. */
+.communityIntro{display:block;min-height:0}
+.communityIntro>div:first-child{padding:22px 24px}
+.communityIntro p{max-width:none}
+@media(max-width:680px){.communityIntro{display:block;min-height:0}.communityIntro>div:first-child{padding:20px 18px}}
+
+/* Everyday essentials share a quiet, consistent icon-first treatment. */
+.taskGrid{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.taskGrid a{display:flex;flex-direction:column;align-items:flex-start;gap:15px;min-height:158px;padding:20px;border-radius:12px}
+.taskGrid .taskIcon{width:38px;height:38px;flex-shrink:0;border-radius:10px;background:#f1f3fb;align-items:center;color:#2a3695}
+.taskGrid .taskIcon svg{width:24px;height:24px}
+.taskGrid a>span>span{font-size:14px;line-height:1.5}
+.communityPhoto{display:block;width:100%;height:174px;object-fit:cover;object-position:center 50%;border-bottom:1px solid #e0e5ed}
+@media(max-width:900px){.taskGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.taskGrid{gap:12px}.taskGrid a{padding:17px;min-height:154px;gap:13px}.communityPhoto{height:130px;object-position:center 48%}}
+
+/* The school's royal photo treatment belongs to Community, not the whole interface. */
+.communityBanner{position:relative;isolation:isolate;overflow:hidden;background:#2a3695}
+.communityBanner:after{content:'';position:absolute;inset:0;background:linear-gradient(110deg,rgba(30,43,128,.94),rgba(42,54,149,.82));z-index:-1;pointer-events:none}
+.communityBanner .communityPhoto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%;border:0;z-index:-2}
+.communityBanner .communityIntro{display:flex;align-items:center;gap:22px;min-height:188px;padding:28px}
+.communityBanner .communityIntro>div:first-child{padding:0}
+.communityBanner .communityIntro>div{padding:0}
+.communityBanner .communityCrest{display:block;flex-shrink:0;width:88px;height:88px;object-fit:contain}
+.communityBanner .communityIntro h2{color:#fff;font-size:30px;margin:0 0 9px;line-height:1.2}
+.communityBanner .communityIntro p{color:#fff;font-size:16px;line-height:1.5;max-width:430px;margin:0}
+@media(max-width:680px){.communityBanner .communityIntro{min-height:166px;padding:22px 18px;gap:16px}.communityBanner .communityCrest{width:65px;height:65px}.communityBanner .communityIntro h2{font-size:25px}.communityBanner .communityIntro p{font-size:14px;line-height:1.5}}
+
+/* Allow the community title to reflow rather than push past its crest. */
+.communityBanner .communityIntro>div{min-width:0;overflow-wrap:anywhere}
+
+
+/* Home-only date and fixed Ocala weather; no extra dashboard card. */
+.schoolDay{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 16px;color:var(--muted);font-size:14px;line-height:1.5}
+.schoolDay time{white-space:nowrap}
+.schoolDay .weather{font-size:14px;color:inherit;text-decoration:none;overflow-wrap:anywhere}
+.schoolDay .weather:hover{text-decoration:underline}
+.weatherDetail{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* On phones, expose more quick actions without shrinking their tap area. */
+@media(max-width:680px){ .taskGrid a{min-height:112px;padding:13px;gap:8px}.taskGrid .taskIcon{width:32px;height:32px}.taskGrid .taskIcon svg{width:20px;height:20px}.taskGrid a>span{gap:3px} }

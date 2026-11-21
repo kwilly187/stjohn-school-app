@@ -1,0 +1,7 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {sportsSeasons, athleticsForms, dressCodeRules, publicInfoChecked, publicInfoSources} from '../app/public-info-data.mjs';
+test('public information records verified provenance and all seasons',()=>{assert.equal(publicInfoChecked,'November 1, 2026');assert.equal(new URL(publicInfoSources.athletics).hostname,'stjohnocala.org');assert.deepEqual(sportsSeasons.map(x=>x.season),['Fall','Winter','Spring']);assert.equal(sportsSeasons.flatMap(x=>x.sports).length,17);});
+test('athletic downloads use verified school-hosted forms, not stale schedules',()=>{assert.equal(athleticsForms.length,2);for(const form of athleticsForms)assert.match(form.url,/stjohnocala\.org\/wp-content\/uploads\/2026\/01\/el[23]/);const page=readFileSync(new URL('../app/athletics/page.tsx',import.meta.url),'utf8');assert.match(page,/\/calendar\?source=athletics/);assert.match(page,/Ask athletics for current GA4/);assert.doesNotMatch(page,/2025|href="[^"\n]*GA4/i);});
+test('uniform summary preserves all rules and high-school jeans exception',()=>{assert.equal(dressCodeRules.length,8);assert.match(dressCodeRules.find(x=>x.title==='Jeans').detail,/Friday-only, except for high school/);assert.match(dressCodeRules.find(x=>x.title==='Piercings').detail,/female.*male/);assert.match(dressCodeRules.find(x=>x.title==='Footwear').detail,/Crocs.*boots.*Uggs.*slides/);});
